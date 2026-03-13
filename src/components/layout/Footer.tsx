@@ -12,12 +12,13 @@ export function Footer() {
               <Image
                 src="/icon.png"
                 alt="VeraDial"
-                width={28}
-                height={28}
-                className="rounded-lg"
+                width={36}
+                height={36}
+                className="rounded-xl"
               />
-              <span className="font-display text-base font-semibold text-text-primary">
-                VeraDial
+              <span className="font-display text-lg font-semibold">
+                <span className="text-text-primary">Vera</span>
+                <span className="text-accent">Dial</span>
               </span>
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-text-secondary">

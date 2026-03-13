@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS } from "@/lib/constants";
+import { APP_PRIMARY_URL, NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 export function Header() {
@@ -26,12 +27,13 @@ export function Header() {
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5">
-          <Image src="/icon.png" alt="VeraDial" width={32} height={32} className="rounded-lg" />
-          <span className="font-display text-lg font-semibold text-text-primary">
-            VeraDial
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image src="/icon.png" alt="VeraDial" width={40} height={40} className="rounded-xl" />
+          <span className="font-display text-xl font-semibold">
+            <span className="text-text-primary">Vera</span>
+            <span className="text-accent">Dial</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-8 md:flex">
@@ -44,8 +46,8 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <Button variant="primary" href="#download">
-            App Store
+          <Button variant="primary" href={APP_PRIMARY_URL}>
+            Request Access
           </Button>
         </nav>
 
@@ -74,8 +76,8 @@ export function Header() {
               </a>
             ))}
             <div className="pt-2">
-              <Button variant="primary" href="#download" className="w-full">
-                App Store
+              <Button variant="primary" href={APP_PRIMARY_URL} className="w-full">
+                Request Access
               </Button>
             </div>
           </nav>

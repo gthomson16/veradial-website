@@ -1,37 +1,113 @@
 "use client";
 
-import { FEATURES } from "@/lib/constants";
+import { FEATURES, USE_CASES } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
+const [primaryFeature, ...secondaryFeatures] = FEATURES;
+
 export function Features() {
   return (
-    <section id="features" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <ScrollReveal>
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-bold sm:text-4xl">
-              Everything you need
-            </h2>
-            <p className="mt-4 text-text-secondary">
-              Professional calling tools built on carrier-grade infrastructure.
+    <section
+      id="features"
+      className="relative overflow-hidden py-24"
+    >
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.88fr_1.12fr]">
+        <div className="max-w-md">
+          <ScrollReveal>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              Why VeraDial
             </p>
-          </div>
-        </ScrollReveal>
+            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">
+              Built for outbound calls that need trust, not just dial tone.
+            </h2>
+          </ScrollReveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((feature, i) => (
-            <ScrollReveal key={feature.title} delay={i * 80}>
-              <Card className="p-6">
-                <feature.icon
-                  size={24}
-                  className="text-text-secondary"
-                  strokeWidth={1.5}
-                />
-                <h3 className="mt-4 font-display text-lg font-semibold">
+          <div className="mt-10 space-y-4">
+            {USE_CASES.map((useCase, index) => (
+              <ScrollReveal key={useCase.title} delay={index * 100}>
+                <div className="rounded-2xl border border-border bg-card/75 p-5">
+                  <p className="font-display text-xl text-text-primary">
+                    {useCase.title}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                    {useCase.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <ScrollReveal className="sm:col-span-2">
+            <Card className="overflow-hidden p-0">
+              <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="border-b border-border bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-7 lg:border-b-0 lg:border-r">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/12 text-accent">
+                    <primaryFeature.icon size={24} strokeWidth={1.8} />
+                  </div>
+                  <p className="mt-6 text-xs uppercase tracking-[0.28em] text-text-muted">
+                    Core workflow
+                  </p>
+                  <h3 className="mt-3 font-display text-3xl leading-tight text-text-primary">
+                    {primaryFeature.title}
+                  </h3>
+                  <p className="mt-4 max-w-md text-sm leading-relaxed text-text-secondary">
+                    {primaryFeature.description}
+                  </p>
+                </div>
+
+                <div className="bg-surface/75 p-7">
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    {[
+                      {
+                        label: "Identity",
+                        value: "Dedicated numbers for people who need repeatable outreach",
+                      },
+                      {
+                        label: "Trust",
+                        value: "Attestation and verification sit in the customer-facing experience",
+                      },
+                      {
+                        label: "Continuity",
+                        value: "Voice and follow-up messaging stay attached to the same number",
+                      },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className="rounded-2xl border border-white/8 bg-bg/40 p-4"
+                      >
+                        <p className="text-xs uppercase tracking-[0.22em] text-accent">
+                          {item.label}
+                        </p>
+                        <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                          {item.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </ScrollReveal>
+
+          {secondaryFeatures.map((feature, index) => (
+            <ScrollReveal
+              key={feature.title}
+              delay={index * 90}
+              className={
+                index === secondaryFeatures.length - 1 ? "sm:col-span-2" : ""
+              }
+            >
+              <Card className="h-full p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-accent">
+                  <feature.icon size={22} strokeWidth={1.8} />
+                </div>
+                <h3 className="mt-5 font-display text-xl text-text-primary">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                   {feature.description}
                 </p>
               </Card>

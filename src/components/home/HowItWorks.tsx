@@ -1,6 +1,7 @@
 "use client";
 
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Card } from "@/components/ui/Card";
 
 const STEPS = [
   {
@@ -26,39 +27,42 @@ const STEPS = [
 export function HowItWorks() {
   return (
     <section className="relative py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        <ScrollReveal>
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-bold sm:text-4xl">
-              How it works
-            </h2>
-            <p className="mt-4 text-text-secondary">
-              Three steps to verified business calling.
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.88fr_1.12fr]">
+        <div className="max-w-md">
+          <ScrollReveal>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              How It Works
             </p>
-          </div>
-        </ScrollReveal>
+            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">
+              Three steps to verified business calling.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-text-secondary sm:text-lg">
+              No onboarding calls, no setup fees. Pick a number, start calling,
+              and follow up from the same identity.
+            </p>
+          </ScrollReveal>
+        </div>
 
-        <div className="mt-16 space-y-12">
+        <div className="space-y-5">
           {STEPS.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 100}>
-              <div className="flex gap-6">
-                <div className="flex flex-col items-center">
-                  <span className="font-display text-2xl font-bold text-accent">
-                    {step.number}
-                  </span>
-                  {i < STEPS.length - 1 && (
-                    <div className="mt-3 h-full w-px bg-accent/20" />
-                  )}
+              <Card hover={false} className="p-6">
+                <div className="flex gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/12">
+                    <span className="font-display text-lg font-semibold text-accent">
+                      {step.number}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl text-text-primary">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="pb-2">
-                  <h3 className="font-display text-xl font-semibold">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
+              </Card>
             </ScrollReveal>
           ))}
         </div>

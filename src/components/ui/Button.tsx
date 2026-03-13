@@ -21,9 +21,9 @@ export function Button({
 
   const variants: Record<ButtonVariant, string> = {
     primary:
-      "bg-accent text-bg hover:brightness-110 hover:shadow-[0_0_24px_var(--color-accent-glow)]",
+      "bg-accent text-bg shadow-[inset_0_-1px_0_rgba(0,0,0,0.15)] hover:-translate-y-0.5 hover:brightness-105 hover:shadow-[0_0_24px_var(--color-accent-glow)]",
     ghost:
-      "border border-border text-text-secondary hover:text-text-primary hover:border-text-muted",
+      "border border-border bg-white/2 text-text-secondary hover:border-white/18 hover:bg-white/4 hover:text-text-primary",
   };
 
   const classes = `${base} ${variants[variant]} ${className}`;

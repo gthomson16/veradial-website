@@ -1,16 +1,79 @@
 import {
+  CheckCircle2,
+  Headphones,
   Phone,
   UserCheck,
   AudioLines,
   MessageSquare,
   ShieldCheck,
   Lock,
+  Shield,
+  Smartphone,
 } from "lucide-react";
+
+export const APP_PRIMARY_URL =
+  "mailto:support@veradial.com?subject=VeraDial%20iOS%20Access";
 
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Download", href: "#download" },
+  { label: "Access", href: "#download" },
+] as const;
+
+export const HERO_STATS = [
+  {
+    label: "Purchased numbers",
+    value: "A-level attestation",
+  },
+  {
+    label: "Coverage",
+    value: "US + Canada",
+  },
+  {
+    label: "Messaging",
+    value: "Voice + SMS",
+  },
+] as const;
+
+export const TRUST_SIGNALS = [
+  {
+    icon: CheckCircle2,
+    title: "Verified outbound identity",
+    detail: "Purchased numbers show up with A-level attestation.",
+  },
+  {
+    icon: Smartphone,
+    title: "One mobile workflow",
+    detail: "Buy numbers, place calls, send SMS, and swap identities in-app.",
+  },
+  {
+    icon: Shield,
+    title: "Carrier-grade delivery",
+    detail: "Voice and messaging route through hardened telecom infrastructure.",
+  },
+  {
+    icon: Headphones,
+    title: "Built for real operators",
+    detail: "Useful for solo operators, small teams, and field reps who need consistency.",
+  },
+] as const;
+
+export const USE_CASES = [
+  {
+    title: "Solo operators",
+    description:
+      "Keep a consistent business identity when you call clients from the road.",
+  },
+  {
+    title: "Sales teams",
+    description:
+      "Give outbound reps a cleaner first impression before the conversation even starts.",
+  },
+  {
+    title: "Field services",
+    description:
+      "Let technicians, dispatch, and follow-up messages all come from the same trusted number.",
+  },
 ] as const;
 
 export const FEATURES = [
@@ -100,11 +163,17 @@ export const MESSAGE_PACKS = [
   },
 ] as const;
 
+export const PRICING_FACTS = [
+  "Your first number is included with the account.",
+  "Additional number swaps cost $2.50 each.",
+  "All purchases are handled through iOS in-app purchases.",
+] as const;
+
 export const FOOTER_LINKS = {
   product: [
     { label: "Features", href: "#features" },
     { label: "Pricing", href: "#pricing" },
-    { label: "Download", href: "#download" },
+    { label: "Access", href: "#download" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },

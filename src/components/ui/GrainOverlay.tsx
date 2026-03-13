@@ -1,9 +1,6 @@
 export function GrainOverlay() {
   return (
-    <div
-      className="pointer-events-none fixed inset-0 z-50 opacity-[0.04]"
-      style={{ animation: "grain 8s steps(10) infinite" }}
-    >
+    <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.03]">
       <svg width="100%" height="100%">
         <filter id="grain-filter">
           <feTurbulence

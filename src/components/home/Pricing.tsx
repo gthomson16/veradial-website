@@ -1,10 +1,17 @@
 "use client";
 
-import { CALL_MINUTES, MESSAGE_PACKS } from "@/lib/constants";
+import { useState } from "react";
+import {
+  APP_PRIMARY_URL,
+  CALL_MINUTES,
+  MESSAGE_PACKS,
+  PRICING_FACTS,
+} from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
+type PricingView = "minutes" | "messages";
 
 type Pack = {
   name: string;
@@ -14,101 +21,189 @@ type Pack = {
   popular: boolean;
 };
 
-function PricingCard({ pack, index }: { pack: Pack; index: number }) {
+function PricingCard({
+  pack,
+  activeLabel,
+}: {
+  pack: Pack;
+  activeLabel: string;
+}) {
   return (
-    <ScrollReveal delay={index * 80}>
-      <Card glow={pack.popular} className="relative p-6">
-        {pack.popular && (
-          <Badge variant="filled" className="absolute -top-3 right-4">
-            Popular
-          </Badge>
-        )}
-        {pack.name === "Best Value" && (
-          <Badge variant="outline" className="absolute -top-3 right-4">
-            Best Value
-          </Badge>
-        )}
+    <Card
+      glow={pack.popular}
+      className={`h-full p-6 ${
+        pack.popular ? "bg-[linear-gradient(180deg,rgba(115,242,195,0.09),rgba(255,255,255,0.02))]" : ""
+      }`}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-medium text-text-secondary">{pack.name}</p>
+          <p className="mt-3 font-display text-4xl text-text-primary">
+            {pack.amount}
+          </p>
+        </div>
+        {pack.popular ? (
+          <span className="rounded-full border border-accent/25 bg-accent/12 px-3 py-1 text-xs uppercase tracking-[0.18em] text-accent">
+            Recommended
+          </span>
+        ) : null}
+      </div>
 
-        <p className="text-sm font-medium text-text-secondary">{pack.name}</p>
-        <p className="mt-2 font-display text-3xl font-bold">{pack.amount}</p>
-        <p className="mt-1 text-2xl font-semibold text-text-primary">
-          {pack.price}
-        </p>
-        <p className="mt-1 text-xs text-text-muted">{pack.perUnit}</p>
+      <div className="mt-8">
+        <p className="font-display text-3xl text-text-primary">{pack.price}</p>
+        <p className="mt-2 text-sm text-text-secondary">{pack.perUnit}</p>
+      </div>
 
-        <Button
-          variant={pack.popular ? "primary" : "ghost"}
-          className="mt-6 w-full"
-          href="#download"
-        >
-          Get Started
-        </Button>
-      </Card>
-    </ScrollReveal>
+      <div className="mt-8 space-y-3">
+        {[
+          `Instant ${activeLabel.toLowerCase()} credit`,
+          "Dedicated number stays attached to your account",
+          "App-based purchase and usage tracking",
+        ].map((item) => (
+          <div key={item} className="flex items-center gap-3">
+            <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+            <p className="text-sm text-text-secondary">{item}</p>
+          </div>
+        ))}
+      </div>
+
+      <Button variant={pack.popular ? "primary" : "ghost"} className="mt-8 w-full" href={APP_PRIMARY_URL}>
+        Request Access
+      </Button>
+    </Card>
   );
 }
 
 export function Pricing() {
+  const [view, setView] = useState<PricingView>("minutes");
+
+  const packs = view === "minutes" ? CALL_MINUTES : MESSAGE_PACKS;
+  const activeLabel = view === "minutes" ? "Call Minutes" : "Message Packs";
+
   return (
-    <section id="pricing" className="relative py-24">
-      <div className="absolute inset-0 bg-gradient-to-b from-bg via-surface to-bg" />
+    <section id="pricing" className="relative overflow-hidden py-24">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,27,46,0.28),transparent_28%,rgba(11,27,46,0.18))]" />
 
-      <div className="relative mx-auto max-w-7xl px-6">
-        <ScrollReveal>
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-bold sm:text-4xl">
-              Pay as you go
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.84fr_1.16fr]">
+        <div className="max-w-md">
+          <ScrollReveal>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              Pricing
+            </p>
+            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">
+              Flexible credits instead of rigid seats or contracts.
             </h2>
-            <p className="mt-4 text-text-secondary">
-              No subscriptions. Buy packs in-app, use them when you need them.
+            <p className="mt-5 text-base leading-relaxed text-text-secondary sm:text-lg">
+              VeraDial is structured for people who want dedicated outbound
+              identity without monthly seat bloat. Buy what you need, keep your
+              number, and scale usage when the workflow demands it.
             </p>
-          </div>
-        </ScrollReveal>
-
-        {/* Call Minutes */}
-        <div className="mt-16">
-          <ScrollReveal>
-            <h3 className="mb-6 text-center font-display text-xl font-semibold">
-              Call Minutes
-            </h3>
           </ScrollReveal>
-          <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-3">
-            {CALL_MINUTES.map((pack, i) => (
-              <PricingCard key={pack.name} pack={pack} index={i} />
+
+          <ScrollReveal delay={120} className="mt-8">
+            <div className="inline-flex rounded-full border border-border bg-card/80 p-1">
+              {[
+                { value: "minutes", label: "Call Minutes" },
+                { value: "messages", label: "Message Packs" },
+              ].map((option) => {
+                const active = view === option.value;
+
+                return (
+                  <button
+                    key={option.value}
+                    type="button"
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                      active
+                        ? "bg-accent text-bg"
+                        : "text-text-secondary hover:text-text-primary"
+                    }`}
+                    onClick={() => setView(option.value as PricingView)}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-8 space-y-4">
+            {PRICING_FACTS.map((fact, index) => (
+              <ScrollReveal key={fact} delay={160 + index * 60}>
+                <div className="rounded-2xl border border-border bg-card/70 px-5 py-4">
+                  <p className="text-sm text-text-secondary">{fact}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
-        {/* Message Packs */}
-        <div className="mt-16">
+        <div className="space-y-6">
           <ScrollReveal>
-            <h3 className="mb-6 text-center font-display text-xl font-semibold">
-              Message Packs
-            </h3>
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.22em] text-text-muted">
+                  Active pack type
+                </p>
+                <h3 className="mt-2 font-display text-3xl text-text-primary">
+                  {activeLabel}
+                </h3>
+              </div>
+              <p className="max-w-xs text-right text-sm text-text-secondary">
+                Use the same page for calling credits or follow-up messaging.
+              </p>
+            </div>
           </ScrollReveal>
-          <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-3">
-            {MESSAGE_PACKS.map((pack, i) => (
-              <PricingCard key={pack.name} pack={pack} index={i} />
+
+          <div className="-mx-6 flex snap-x gap-5 overflow-x-auto px-6 pb-2 xl:mx-0 xl:grid xl:grid-cols-3 xl:overflow-visible xl:px-0 xl:pb-0">
+            {packs.map((pack, index) => (
+              <ScrollReveal
+                key={`${view}-${pack.name}`}
+                delay={index * 90}
+                className="min-w-[min(82vw,320px)] shrink-0 snap-start xl:min-w-0"
+              >
+                <PricingCard pack={pack} activeLabel={activeLabel} />
+              </ScrollReveal>
             ))}
           </div>
-        </div>
 
-        {/* Numbers */}
-        <ScrollReveal delay={200}>
-          <div className="mx-auto mt-16 max-w-lg rounded-2xl border border-border bg-card p-6 text-center">
-            <h3 className="font-display text-xl font-semibold">Numbers</h3>
-            <p className="mt-2 text-sm text-text-secondary">
-              Your first number is included with your account.
-            </p>
-            <p className="mt-1 text-sm text-text-secondary">
-              Swap your number anytime &mdash; $2.50
-            </p>
-            <p className="mt-4 text-xs text-text-muted">
-              All purchases are made through the App Store. Prices may vary by
-              region.
-            </p>
-          </div>
-        </ScrollReveal>
+          <ScrollReveal delay={240}>
+            <Card hover={false} className="grid gap-6 p-6 lg:grid-cols-[0.95fr_1.05fr]">
+              <div>
+                <p className="text-xs uppercase tracking-[0.22em] text-text-muted">
+                  Included with setup
+                </p>
+                <h3 className="mt-3 font-display text-3xl text-text-primary">
+                  Your first number is already part of the entry point.
+                </h3>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Number included",
+                    description: "Start with a dedicated number attached to the account.",
+                  },
+                  {
+                    title: "Swap any time",
+                    description: "Change identities later for $2.50 when the workflow changes.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-border bg-surface/70 p-5"
+                  >
+                    <p className="font-display text-xl text-text-primary">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
