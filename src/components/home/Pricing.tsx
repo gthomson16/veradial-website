@@ -81,16 +81,16 @@ export function Pricing() {
   const activeLabel = view === "minutes" ? "Call Minutes" : "Message Packs";
 
   return (
-    <section id="pricing" className="relative overflow-hidden py-24">
+    <section id="pricing" className="relative overflow-x-hidden py-24">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,27,46,0.28),transparent_28%,rgba(11,27,46,0.18))]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.84fr_1.16fr]">
-        <div className="max-w-md">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-[0.84fr_1.16fr]">
+        <div className="min-w-0 overflow-hidden lg:max-w-md lg:overflow-visible">
           <ScrollReveal>
             <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
               Pricing
             </p>
-            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">
+            <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
               Flexible credits instead of rigid seats or contracts.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-text-secondary sm:text-lg">
@@ -137,9 +137,9 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           <ScrollReveal>
-            <div className="flex items-end justify-between gap-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.22em] text-text-muted">
                   Active pack type
@@ -148,10 +148,16 @@ export function Pricing() {
                   {activeLabel}
                 </h3>
               </div>
-              <p className="max-w-xs text-right text-sm text-text-secondary">
+              <p className="max-w-xs text-sm text-text-secondary sm:text-right">
                 Use the same page for calling credits or follow-up messaging.
               </p>
             </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={60}>
+            <p className="text-xs uppercase tracking-[0.18em] text-text-muted sm:hidden">
+              Swipe to compare packs
+            </p>
           </ScrollReveal>
 
           <div className="-mx-6 flex snap-x gap-5 overflow-x-auto px-6 pb-2 xl:mx-0 xl:grid xl:grid-cols-3 xl:overflow-visible xl:px-0 xl:pb-0">

@@ -14,7 +14,7 @@ export function CTA() {
             <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
               Ready When You Are
             </p>
-            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">
+            <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
               Put a verified identity behind every outbound call.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">

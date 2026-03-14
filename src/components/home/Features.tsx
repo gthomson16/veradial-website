@@ -13,12 +13,12 @@ export function Features() {
       className="relative overflow-hidden py-24"
     >
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.88fr_1.12fr]">
-        <div className="max-w-md">
+        <div className="min-w-0 lg:max-w-md">
           <ScrollReveal>
             <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
               Why VeraDial
             </p>
-            <h2 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">
+            <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
               Built for outbound calls that need trust, not just dial tone.
             </h2>
           </ScrollReveal>

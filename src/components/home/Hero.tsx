@@ -44,7 +44,7 @@ export function Hero() {
       <GradientMesh />
 
       <div className="relative mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-10 lg:min-h-[calc(100vh-88px)] lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-        <div className="max-w-2xl">
+        <div className="min-w-0 max-w-2xl">
           <Stagger index={0} mounted={mounted}>
             <Image
               src="/icon.png"
@@ -65,14 +65,14 @@ export function Hero() {
           </Stagger>
 
           <Stagger index={2} mounted={mounted} className="mt-6">
-            <h1 className="font-display text-5xl font-semibold leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+            <h1 className="font-display text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.03em] min-[420px]:text-4xl sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
               Business calling that looks
               <span className="block text-accent">trusted before you say hello.</span>
             </h1>
           </Stagger>
 
           <Stagger index={3} mounted={mounted} className="mt-6">
-            <p className="max-w-xl text-lg leading-relaxed text-text-secondary sm:text-xl">
+            <p className="text-base leading-relaxed text-text-secondary sm:text-lg lg:text-xl lg:max-w-xl">
               VeraDial gives you dedicated calling identities, carrier-backed
               verification, and clean follow-up messaging so your outbound calls
               land with more credibility from the first ring.
@@ -100,11 +100,11 @@ export function Hero() {
           </Stagger>
 
           <Stagger index={5} mounted={mounted} className="mt-10">
-            <div className="-mx-6 flex gap-3 overflow-x-auto px-6 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0">
+            <div className="grid gap-3 sm:grid-cols-3">
               {HERO_STATS.map((stat) => (
                 <div
                   key={stat.label}
-                  className="min-w-[170px] rounded-2xl border border-border bg-card/70 p-4 backdrop-blur-sm sm:min-w-0"
+                  className="rounded-2xl border border-border bg-card/70 p-4 backdrop-blur-sm"
                 >
                   <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
                     {stat.label}
