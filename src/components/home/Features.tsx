@@ -59,19 +59,19 @@ export function Features() {
                 </div>
 
                 <div className="bg-surface/75 p-7">
-                  <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="grid gap-4">
                     {[
                       {
                         label: "Identity",
-                        value: "Dedicated numbers for people who need repeatable outreach",
+                        value: "Dedicated numbers for repeatable outreach",
                       },
                       {
                         label: "Trust",
-                        value: "Attestation and verification sit in the customer-facing experience",
+                        value: "Carrier-backed attestation on every call",
                       },
                       {
                         label: "Continuity",
-                        value: "Voice and follow-up messaging stay attached to the same number",
+                        value: "Voice and SMS from the same number",
                       },
                     ].map((item) => (
                       <div

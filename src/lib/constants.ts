@@ -115,26 +115,26 @@ export const FEATURES = [
   },
 ] as const;
 
-export const CALL_MINUTES = [
+export const CALL_CREDITS = [
   {
     name: "Starter",
-    amount: "60 min",
+    amount: "60 credits",
     price: "$9.99",
-    perUnit: "~$0.17/min",
+    perUnit: "~$0.17/credit",
     popular: false,
   },
   {
     name: "Popular",
-    amount: "200 min",
+    amount: "200 credits",
     price: "$24.99",
-    perUnit: "~$0.12/min",
+    perUnit: "~$0.12/credit",
     popular: true,
   },
   {
     name: "Best Value",
-    amount: "500 min",
+    amount: "500 credits",
     price: "$49.99",
-    perUnit: "~$0.10/min",
+    perUnit: "~$0.10/credit",
     popular: false,
   },
 ] as const;
@@ -174,6 +174,14 @@ export const FOOTER_LINKS = {
     { label: "Features", href: "#features" },
     { label: "Pricing", href: "#pricing" },
     { label: "Access", href: "#download" },
+  ],
+  compare: [
+    { label: "vs SpoofCard", href: "/compare/spoofcard" },
+    { label: "vs Hushed", href: "/compare/hushed" },
+    { label: "vs Burner", href: "/compare/burner" },
+    { label: "vs Google Voice", href: "/compare/google-voice" },
+    { label: "vs Sideline", href: "/compare/sideline" },
+    { label: "vs TextNow", href: "/compare/textnow" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },

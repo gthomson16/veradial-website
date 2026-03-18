@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { APP_PRIMARY_URL, NAV_LINKS } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
+import { NAV_LINKS } from "@/lib/constants";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,9 +45,6 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <Button variant="primary" href={APP_PRIMARY_URL}>
-            Request Access
-          </Button>
         </nav>
 
         {/* Mobile Toggle */}
@@ -75,11 +71,6 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <div className="pt-2">
-              <Button variant="primary" href={APP_PRIMARY_URL} className="w-full">
-                Request Access
-              </Button>
-            </div>
           </nav>
         </div>
       )}

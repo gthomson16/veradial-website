@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { APP_PRIMARY_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export function CTA() {
   return (
@@ -18,25 +17,14 @@ export function CTA() {
               Put a verified identity behind every outbound call.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-              Available on iOS. Android coming soon.
+              Coming soon to iOS and Android.
             </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Button variant="primary" href={APP_PRIMARY_URL}>
-                Request iOS Access
-              </Button>
+            <div className="mt-8 flex justify-center">
               <Button variant="ghost" href="mailto:support@veradial.com">
                 Email Support
               </Button>
             </div>
-            <a href={APP_PRIMARY_URL} className="mt-6 inline-block">
-              <Image
-                src="/app-store-badge.svg"
-                alt="Download on the App Store"
-                width={150}
-                height={50}
-                className="opacity-80 transition-opacity hover:opacity-100"
-              />
-            </a>
+            <StoreBadges className="mt-6 justify-center" />
           </div>
         </ScrollReveal>
       </div>

@@ -9,7 +9,7 @@ export default function TermsPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Terms of Service</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: March 13, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: March 17, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -107,7 +107,59 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            7. Purchases &amp; Billing
+            7. AI Calling
+          </h2>
+          <p className="mt-4">
+            VeraDial&apos;s AI Call feature allows you to dispatch an AI agent to make
+            phone calls on your behalf. By using this feature, you agree to the
+            following:
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              AI calls are placed by an automated AI agent, not a human. The AI agent
+              will identify itself as an automated system at the start of each call.
+            </li>
+            <li>
+              You are solely responsible for the content of any custom prompts or
+              instructions you provide to the AI agent. Do not instruct the AI to engage
+              in illegal, deceptive, or harmful behavior.
+            </li>
+            <li>
+              You must have a legitimate reason to contact the recipient. Using AI Call
+              to harass, spam, stalk, threaten, or deceive any person is strictly
+              prohibited.
+            </li>
+            <li>
+              AI calls are recorded. Full transcripts and AI-generated summaries are
+              stored in your account and may be reviewed for abuse prevention.
+            </li>
+            <li>
+              Call audio is processed by a third-party AI provider (ElevenLabs). By
+              using AI Call, you consent to this processing.
+            </li>
+            <li>
+              AI calls consume minutes at a rate of 3 minutes per minute of call time.
+            </li>
+            <li>
+              The AI agent may produce inaccurate, inappropriate, or unexpected
+              responses. VeraDial is not liable for the content of AI-generated speech.
+            </li>
+            <li>
+              You must comply with all applicable laws regarding automated and
+              AI-generated calls, including the Telephone Consumer Protection Act (TCPA),
+              FTC Telemarketing Sales Rule, and any applicable state or provincial
+              regulations.
+            </li>
+            <li>
+              Misuse of AI Call may result in immediate account suspension or
+              termination without refund.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            8. Purchases &amp; Billing
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -124,7 +176,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            8. Emergency Services Disclaimer
+            9. Emergency Services Disclaimer
           </h2>
           <div className="mt-4 space-y-3">
             <p>
@@ -141,7 +193,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            9. Account Suspension &amp; Termination
+            10. Account Suspension &amp; Termination
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -167,7 +219,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            10. Limitation of Liability
+            11. Limitation of Liability
           </h2>
           <p className="mt-4">
             VeraDial is provided &ldquo;as-is&rdquo; without warranty of any kind,
@@ -181,7 +233,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            11. Governing Law
+            12. Governing Law
           </h2>
           <p className="mt-4">
             These terms shall be governed by and construed in accordance with the laws of
@@ -192,7 +244,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            12. Contact
+            13. Contact
           </h2>
           <p className="mt-4">
             For questions about these terms, contact us at{" "}
