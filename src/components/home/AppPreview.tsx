@@ -57,19 +57,19 @@ export function AppPreview() {
           </div>
         </ScrollReveal>
 
-        {/* Phone spread */}
-        <div className="mt-16 flex items-end justify-center gap-5 sm:gap-8 lg:gap-12">
+        {/* Phone spread — horizontal scroll on mobile, centered row on sm+ */}
+        <div className="mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 sm:snap-none sm:items-end sm:justify-center sm:gap-8 sm:overflow-x-visible sm:pb-0 lg:gap-12">
           {SCREENS.map((screen, index) => {
             const isCenter = index === 1 || index === 2;
             return (
               <ScrollReveal key={screen.src} delay={index * 120}>
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex shrink-0 snap-center flex-col items-center gap-4">
                   <PhoneFrame
-                    className={
+                    className={`w-[200px] ${
                       isCenter
-                        ? "w-[160px] sm:w-[220px] lg:w-[260px]"
-                        : "w-[130px] sm:w-[190px] lg:w-[230px] opacity-85"
-                    }
+                        ? "sm:w-[220px] lg:w-[260px]"
+                        : "sm:w-[190px] lg:w-[230px] sm:opacity-85"
+                    }`}
                   >
                     <Image
                       src={screen.src}
@@ -79,7 +79,7 @@ export function AppPreview() {
                       className="w-full"
                     />
                   </PhoneFrame>
-                  <p className="hidden text-sm text-text-secondary sm:block">
+                  <p className="text-sm text-text-secondary">
                     {screen.label}
                   </p>
                 </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 export function StoreBadges({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
-      <div className="w-fit">
+      <div className="mx-auto w-fit">
         <div className="flex flex-wrap items-center gap-3">
           <Image
             src="/app-store-badge.svg"
