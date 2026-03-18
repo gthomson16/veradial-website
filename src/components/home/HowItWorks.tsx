@@ -12,15 +12,15 @@ const STEPS = [
   },
   {
     number: "02",
-    title: "Make Your Call",
+    title: "Set Your Goal",
     description:
-      "Dial from the app. Your purchased number appears as the caller ID with carrier verification.",
+      "Tell the AI what you need \u2014 book an appointment, confirm a job, or follow up with a client.",
   },
   {
     number: "03",
-    title: "Stay in Control",
+    title: "AI Makes the Call",
     description:
-      "Add voice effects, send SMS, or swap your number anytime. All from one app.",
+      "Your AI assistant calls, handles the conversation, and delivers a full transcript when it\u2019s done.",
   },
 ];
 
@@ -34,11 +34,11 @@ export function HowItWorks() {
               How It Works
             </p>
             <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-              Three steps to verified business calling.
+              Three steps to AI-powered calling.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-text-secondary sm:text-lg">
-              No onboarding calls, no setup fees. Pick a number, start calling,
-              and follow up from the same identity.
+              No onboarding calls, no setup fees. Pick a number, tell the AI
+              what you need, and let it handle the rest.
             </p>
           </ScrollReveal>
         </div>

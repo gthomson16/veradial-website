@@ -3,6 +3,7 @@ import { siteMetadata } from "@/lib/metadata";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const clashDisplay = localFont({
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

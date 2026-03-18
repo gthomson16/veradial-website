@@ -22,8 +22,8 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-text-secondary">
-              Verified business calling. Purchase dedicated numbers, control
-              your caller ID, and communicate with confidence.
+              AI-powered business calling. Your AI assistant schedules,
+              follows up, and handles the conversations you don&apos;t have time for.
             </p>
           </div>
 

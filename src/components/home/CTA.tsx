@@ -14,7 +14,7 @@ export function CTA() {
               Ready When You Are
             </p>
             <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-              Put a verified identity behind every outbound call.
+              Let AI handle the calls you don&apos;t want to make.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
               Coming soon to iOS and Android.

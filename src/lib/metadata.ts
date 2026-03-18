@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
   title: {
-    default: "VeraDial \u2014 Verified Business Calling",
+    default: "VeraDial \u2014 AI-Powered Business Calling",
     template: "%s | VeraDial",
   },
   description:
-    "Purchase dedicated phone numbers, control your caller ID, and make business calls through secure, carrier-grade infrastructure.",
+    "Your AI assistant makes calls on your behalf \u2014 scheduling appointments, following up with clients, and handling routine conversations with verified caller ID.",
   keywords: [
+    "AI calling",
+    "AI phone assistant",
     "business calling",
     "caller ID",
-    "phone number",
+    "AI appointment scheduling",
     "verified calling",
-    "STIR SHAKEN",
     "voice effects",
     "business SMS",
   ],
@@ -23,15 +24,15 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     url: "https://veradial.com",
     siteName: "VeraDial",
-    title: "VeraDial \u2014 Verified Business Calling",
+    title: "VeraDial \u2014 AI-Powered Business Calling",
     description:
-      "Purchase dedicated phone numbers, control your caller ID, and make business calls through secure, carrier-grade infrastructure.",
+      "Your AI assistant makes calls on your behalf \u2014 scheduling appointments, following up with clients, and handling routine conversations with verified caller ID.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "VeraDial \u2014 Verified Business Calling",
+    title: "VeraDial \u2014 AI-Powered Business Calling",
     description:
-      "Purchase dedicated phone numbers, control your caller ID, and make business calls through secure, carrier-grade infrastructure.",
+      "Your AI assistant makes calls on your behalf \u2014 scheduling appointments, following up with clients, and handling routine conversations with verified caller ID.",
   },
   robots: {
     index: true,

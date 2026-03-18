@@ -1,4 +1,5 @@
 import {
+  Bot,
   CheckCircle2,
   Headphones,
   Phone,
@@ -17,21 +18,22 @@ export const APP_PRIMARY_URL =
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "/faq" },
   { label: "Access", href: "#download" },
 ] as const;
 
 export const HERO_STATS = [
   {
-    label: "Purchased numbers",
+    label: "AI Calling",
+    value: "Hands-free conversations",
+  },
+  {
+    label: "Verified Identity",
     value: "A-level attestation",
   },
   {
     label: "Coverage",
     value: "US + Canada",
-  },
-  {
-    label: "Messaging",
-    value: "Voice + SMS",
   },
 ] as const;
 
@@ -62,32 +64,26 @@ export const USE_CASES = [
   {
     title: "Solo operators",
     description:
-      "Keep a consistent business identity when you call clients from the road.",
+      "Your AI books appointments while you\u2019re on the job. Show up as a trusted business number, not an unknown caller.",
   },
   {
     title: "Sales teams",
     description:
-      "Give outbound reps a cleaner first impression before the conversation even starts.",
+      "Let AI handle initial outreach and follow-ups. Every call carries your verified business identity.",
   },
   {
     title: "Field services",
     description:
-      "Let technicians, dispatch, and follow-up messages all come from the same trusted number.",
+      "AI confirms appointments and dispatches updates. Technicians and office staff share one trusted number.",
   },
 ] as const;
 
 export const FEATURES = [
   {
-    icon: Phone,
-    title: "Real Phone Numbers",
+    icon: Bot,
+    title: "AI Calling",
     description:
-      "Purchase dedicated US & Canadian numbers. Purchased numbers carry full STIR/SHAKEN A-level attestation.",
-  },
-  {
-    icon: UserCheck,
-    title: "Caller ID Control",
-    description:
-      "Choose which number appears when you call. Use your purchased number or a verified number you own.",
+      "Your AI assistant handles calls for you. Schedule appointments, confirm bookings, and follow up with clients \u2014 without picking up the phone.",
   },
   {
     icon: AudioLines,
@@ -96,16 +92,22 @@ export const FEATURES = [
       "Built-in voice effects for privacy. Four modes: Deep, High, Robot, and Normal.",
   },
   {
+    icon: UserCheck,
+    title: "Caller ID Control",
+    description:
+      "Choose which number appears when you call. Use a purchased number or verify one you already own.",
+  },
+  {
+    icon: Phone,
+    title: "Real Phone Numbers",
+    description:
+      "Purchase dedicated US & Canadian numbers. Purchased numbers carry full STIR/SHAKEN A-level attestation.",
+  },
+  {
     icon: MessageSquare,
     title: "Business SMS",
     description:
       "Send and receive texts from your purchased number. Available on US numbers and Canadian toll-free numbers.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Number Verification",
-    description:
-      "Verify a number you already own to use as caller ID. Verified numbers carry B-level attestation (voice only).",
   },
   {
     icon: Lock,
@@ -173,6 +175,7 @@ export const FOOTER_LINKS = {
   product: [
     { label: "Features", href: "#features" },
     { label: "Pricing", href: "#pricing" },
+    { label: "FAQ", href: "/faq" },
     { label: "Access", href: "#download" },
   ],
   compare: [

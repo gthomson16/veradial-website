@@ -19,7 +19,7 @@ export function Features() {
               Why VeraDial
             </p>
             <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-              Built for outbound calls that need trust, not just dial tone.
+              Smart calling that works while you don&apos;t.
             </h2>
           </ScrollReveal>
 
@@ -48,7 +48,7 @@ export function Features() {
                     <primaryFeature.icon size={24} strokeWidth={1.8} />
                   </div>
                   <p className="mt-6 text-xs uppercase tracking-[0.28em] text-text-muted">
-                    Core workflow
+                    Lead feature
                   </p>
                   <h3 className="mt-3 font-display text-3xl leading-tight text-text-primary">
                     {primaryFeature.title}
@@ -62,16 +62,16 @@ export function Features() {
                   <div className="grid gap-4">
                     {[
                       {
-                        label: "Identity",
-                        value: "Dedicated numbers for repeatable outreach",
+                        label: "Scheduling",
+                        value: "AI books and confirms appointments for you",
                       },
                       {
-                        label: "Trust",
-                        value: "Carrier-backed attestation on every call",
+                        label: "Follow-ups",
+                        value: "Automated callbacks and client check-ins",
                       },
                       {
-                        label: "Continuity",
-                        value: "Voice and SMS from the same number",
+                        label: "Transcripts",
+                        value: "Full conversation logs after every AI call",
                       },
                     ].map((item) => (
                       <div

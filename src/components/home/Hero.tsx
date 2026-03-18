@@ -60,22 +60,23 @@ export function Hero() {
               variant="outline"
               className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
             >
-              Verified outbound identity for modern operators
+              AI-powered business calling
             </Badge>
           </Stagger>
 
           <Stagger index={2} mounted={mounted} className="mt-6">
             <h1 className="font-display text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.03em] min-[420px]:text-4xl sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
-              Business calling that looks
-              <span className="block text-accent">trusted before you say hello.</span>
+              Your AI assistant calls
+              <span className="block text-accent">so you don&apos;t have to.</span>
             </h1>
           </Stagger>
 
           <Stagger index={3} mounted={mounted} className="mt-6">
             <p className="text-base leading-relaxed text-text-secondary sm:text-lg lg:text-xl lg:max-w-xl">
-              VeraDial gives you dedicated calling identities, carrier-backed
-              verification, and clean follow-up messaging so your outbound calls
-              land with more credibility from the first ring.
+              VeraDial&apos;s AI makes calls on your behalf &mdash; scheduling
+              appointments, following up with clients, and handling routine
+              conversations. Backed by verified caller ID so every call lands
+              with trust.
             </p>
           </Stagger>
 
@@ -111,8 +112,8 @@ export function Hero() {
             <div className="rounded-[3rem] border-[3px] border-white/10 bg-black p-2 shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
               <div className="overflow-hidden rounded-[2.25rem]">
                 <Image
-                  src="/screenshots/dialer.jpg"
-                  alt="VeraDial dialer with caller ID, voice effects, and call recording"
+                  src="/screenshots/ai-composer.jpg"
+                  alt="VeraDial AI calling with presets and custom goals"
                   width={390}
                   height={844}
                   priority
@@ -124,10 +125,10 @@ export function Hero() {
             {/* Floating accent card */}
             <div className="absolute -left-4 bottom-24 hidden rounded-2xl border border-accent/20 bg-card/90 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:block sm:-left-16">
               <p className="text-[11px] uppercase tracking-[0.22em] text-text-muted">
-                Voice Effects
+                AI Calling
               </p>
               <p className="mt-1 font-display text-lg text-text-primary">
-                Normal · Male · Female · Privacy
+                Schedule · Follow up · Confirm
               </p>
             </div>
           </div>
