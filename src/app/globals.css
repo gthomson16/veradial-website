@@ -40,6 +40,15 @@ html {
   border-radius: 3px;
 }
 
+/* Hide scrollbar utility */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* Grain overlay animation */
 @keyframes grain {
   0%, 100% { transform: translate(0, 0); }

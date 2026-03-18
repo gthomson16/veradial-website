@@ -58,7 +58,7 @@ export function AppPreview() {
         </ScrollReveal>
 
         {/* Phone spread — horizontal scroll on mobile, centered row on sm+ */}
-        <div className="mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 sm:snap-none sm:items-end sm:justify-center sm:gap-8 sm:overflow-x-visible sm:pb-0 lg:gap-12">
+        <div className="mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 scrollbar-none sm:snap-none sm:items-end sm:justify-center sm:gap-8 sm:overflow-x-visible sm:pb-0 lg:gap-12">
           {SCREENS.map((screen, index) => {
             const isCenter = index === 1 || index === 2;
             return (
