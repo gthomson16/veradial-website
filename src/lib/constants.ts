@@ -64,17 +64,17 @@ export const USE_CASES = [
   {
     title: "Solo operators",
     description:
-      "Your AI books appointments while you\u2019re on the job. Show up as a trusted business number, not an unknown caller.",
+      "You\u2019re an HVAC tech on a roof at 2 PM when three clients need callbacks. VeraDial confirms tomorrow\u2019s jobs, reschedules a conflict, and texts you a summary \u2014 all before you climb down.",
   },
   {
     title: "Sales teams",
     description:
-      "Let AI handle initial outreach and follow-ups. Every call carries your verified business identity.",
+      "Your SDR just pulled 50 warm leads from a webinar. Instead of two days of phone tag, VeraDial calls each one, qualifies interest, and books meetings directly on your calendar.",
   },
   {
     title: "Field services",
     description:
-      "AI confirms appointments and dispatches updates. Technicians and office staff share one trusted number.",
+      "Six appointments tomorrow across two technicians. VeraDial confirms each one the evening before, catches a cancellation, and fills the gap from your waitlist \u2014 automatically.",
   },
 ] as const;
 
@@ -123,6 +123,7 @@ export const CALL_CREDITS = [
     amount: "60 credits",
     price: "$9.99",
     perUnit: "~$0.17/credit",
+    estimate: "~15\u201330 AI calls",
     popular: false,
   },
   {
@@ -130,6 +131,7 @@ export const CALL_CREDITS = [
     amount: "200 credits",
     price: "$24.99",
     perUnit: "~$0.12/credit",
+    estimate: "~50\u2013100 AI calls",
     popular: true,
   },
   {
@@ -137,6 +139,7 @@ export const CALL_CREDITS = [
     amount: "500 credits",
     price: "$49.99",
     perUnit: "~$0.10/credit",
+    estimate: "~125\u2013250 AI calls",
     popular: false,
   },
 ] as const;
@@ -169,6 +172,56 @@ export const PRICING_FACTS = [
   "Your first number is included with the account.",
   "Additional number swaps cost $2.50 each.",
   "All purchases are handled through iOS in-app purchases.",
+] as const;
+
+export const TESTIMONIALS = [
+  {
+    quote:
+      "I run a one-man plumbing operation. VeraDial confirmed 12 appointments last week while I was elbow-deep in a water heater install. Game changer.",
+    name: "Mike R.",
+    role: "Independent Plumber",
+    initials: "MR",
+    stars: 5,
+  },
+  {
+    quote:
+      "Our no-show rate dropped from 18% to 3% once we started using AI confirmation calls. The ROI was immediate.",
+    name: "Sarah P.",
+    role: "Dental Office Manager",
+    initials: "SP",
+    stars: 5,
+  },
+  {
+    quote:
+      "I was skeptical about AI making sales calls, but the transcripts are impressive. It handles objections better than some of my junior reps.",
+    name: "David L.",
+    role: "Sales Director, SaaS",
+    initials: "DL",
+    stars: 4,
+  },
+] as const;
+
+export const FAQ_PREVIEW = [
+  {
+    question: "What happens if the AI call goes wrong?",
+    answer:
+      "If the AI can\u2019t complete its goal, it gracefully ends the call and flags it for you in the app. You\u2019ll see the full transcript and can follow up manually.",
+  },
+  {
+    question: "Does the other person know it\u2019s AI?",
+    answer:
+      "Yes. VeraDial identifies itself as an AI assistant at the start of every call. Transparency is built into the product.",
+  },
+  {
+    question: "Can I listen to the calls?",
+    answer:
+      "Every call generates a full transcript and summary. Audio recordings are available on the Professional plan (coming soon).",
+  },
+  {
+    question: "What if I run out of credits mid-call?",
+    answer:
+      "The call will complete \u2014 we never cut off an active conversation. Your balance may go slightly negative, which is deducted from your next credit purchase.",
+  },
 ] as const;
 
 export const FOOTER_LINKS = {

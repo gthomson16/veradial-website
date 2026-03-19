@@ -1,8 +1,44 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+
+function CTAWaitlistForm() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return (
+      <p className="text-sm font-medium text-accent">
+        You&apos;re on the list! We&apos;ll email you when VeraDial launches.
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="mx-auto flex max-w-md gap-3">
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="your@email.com"
+        className="flex-1 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-accent/50"
+      />
+      <Button variant="primary" type="submit">
+        Get Early Access
+      </Button>
+    </form>
+  );
+}
 
 export function CTA() {
   return (
@@ -17,13 +53,15 @@ export function CTA() {
               Let AI handle the calls you don&apos;t want to make.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-              Coming soon to iOS and Android.
+              Coming soon to iOS and Android. Join the waitlist to get early
+              access.
             </p>
-            <div className="mt-8 flex justify-center">
-              <Button variant="ghost" href="mailto:support@veradial.com">
-                Email Support
-              </Button>
+            <div className="mt-8">
+              <CTAWaitlistForm />
             </div>
+            <p className="mt-3 text-xs text-text-muted">
+              No spam. We&apos;ll email you when the app launches.
+            </p>
             <StoreBadges className="mt-6 justify-center" />
           </div>
         </ScrollReveal>

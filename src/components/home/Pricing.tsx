@@ -15,6 +15,7 @@ type Pack = {
   amount: string;
   price: string;
   perUnit: string;
+  estimate?: string;
   popular: boolean;
 };
 
@@ -45,6 +46,11 @@ function PricingCard({ pack }: { pack: Pack }) {
       <div className="mt-6">
         <p className="font-display text-3xl text-text-primary">{pack.price}</p>
         <p className="mt-2 text-sm text-text-secondary">{pack.perUnit}</p>
+        {pack.estimate ? (
+          <p className="mt-3 border-t border-border pt-3 text-sm text-text-secondary">
+            {pack.estimate}
+          </p>
+        ) : null}
       </div>
     </Card>
   );
@@ -99,6 +105,16 @@ export function Pricing() {
                 );
               })}
             </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={120}>
+          <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-accent/20 bg-accent/5 px-5 py-4 text-center text-sm text-text-secondary">
+            <span className="font-semibold text-text-primary">
+              What&apos;s a credit?
+            </span>{" "}
+            1 credit = 1 minute of AI call time. A typical scheduling call uses
+            2&ndash;4 credits.
           </div>
         </ScrollReveal>
 

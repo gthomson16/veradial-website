@@ -1,12 +1,150 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, useCallback, type FormEvent } from "react";
 import Image from "next/image";
-import { HERO_STATS } from "@/lib/constants";
+import { Play, Pause } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+
+function WaitlistForm() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return (
+      <p className="text-sm font-medium text-accent">
+        You&apos;re on the list! We&apos;ll email you when VeraDial launches.
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex max-w-md gap-3">
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email for early access"
+        className="flex-1 rounded-full border border-border bg-card/80 px-4 py-3 text-sm text-text-primary outline-none backdrop-blur-sm transition-colors placeholder:text-text-muted focus:border-accent/50"
+      />
+      <Button variant="primary" type="submit">
+        Join Waitlist
+      </Button>
+    </form>
+  );
+}
+
+function formatTime(seconds: number) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+function HeroDemoPlayer() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    function onLoadedMetadata() {
+      setDuration(audio!.duration);
+    }
+    function onTimeUpdate() {
+      setCurrentTime(audio!.currentTime);
+    }
+    function onEnded() {
+      setPlaying(false);
+      setCurrentTime(0);
+    }
+
+    audio.addEventListener("loadedmetadata", onLoadedMetadata);
+    audio.addEventListener("timeupdate", onTimeUpdate);
+    audio.addEventListener("ended", onEnded);
+
+    if (audio.readyState >= 1) {
+      setDuration(audio.duration);
+    }
+
+    return () => {
+      audio.removeEventListener("loadedmetadata", onLoadedMetadata);
+      audio.removeEventListener("timeupdate", onTimeUpdate);
+      audio.removeEventListener("ended", onEnded);
+    };
+  }, []);
+
+  const togglePlay = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (playing) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setPlaying(!playing);
+  }, [playing]);
+
+  function handleSeek(e: React.MouseEvent<HTMLDivElement>) {
+    const audio = audioRef.current;
+    const bar = progressRef.current;
+    if (!audio || !bar || !duration) return;
+    const rect = bar.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    audio.currentTime = ratio * duration;
+  }
+
+  const progress = duration ? (currentTime / duration) * 100 : 0;
+
+  return (
+    <div className="mt-6 rounded-2xl border border-border bg-card/80 px-4 py-3 backdrop-blur-sm">
+      <audio ref={audioRef} src="/demo-call.mp3" preload="metadata" />
+      <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-text-muted">
+        Hear a demo call
+      </p>
+      <div className="flex items-center gap-3">
+        <button
+          onClick={togglePlay}
+          className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent text-bg transition-transform hover:scale-105"
+        >
+          {playing ? (
+            <Pause size={16} fill="currentColor" />
+          ) : (
+            <Play size={16} fill="currentColor" className="ml-0.5" />
+          )}
+        </button>
+        <div className="flex-1">
+          <div
+            ref={progressRef}
+            onClick={handleSeek}
+            className="h-1 cursor-pointer overflow-hidden rounded-full bg-white/10"
+          >
+            <div
+              className="h-full rounded-full bg-accent"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <div className="mt-1 flex justify-between text-[10px] text-text-muted">
+            <span>{formatTime(currentTime)}</span>
+            <span>{duration ? formatTime(duration) : "0:00"}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function Stagger({
   index,
@@ -74,34 +212,35 @@ export function Hero() {
           <Stagger index={3} mounted={mounted} className="mt-6">
             <p className="text-base leading-relaxed text-text-secondary sm:text-lg lg:text-xl lg:max-w-xl">
               VeraDial&apos;s AI makes calls on your behalf &mdash; scheduling
-              appointments, following up with clients, and handling routine
-              conversations. Backed by verified caller ID so every call lands
-              with trust.
+              appointments, following up with clients, and handling the
+              conversations you don&apos;t have time for.
             </p>
           </Stagger>
 
           <Stagger index={4} mounted={mounted} className="mt-8">
-            <Button variant="ghost" href="#pricing">
-              See Pricing
-            </Button>
+            <WaitlistForm />
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <Button variant="ghost" href="#pricing">
+                See Pricing
+              </Button>
+            </div>
             <StoreBadges className="mt-6" />
           </Stagger>
 
           <Stagger index={5} mounted={mounted} className="mt-10">
-            <div className="grid gap-3 sm:grid-cols-3">
-              {HERO_STATS.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-border bg-card/70 p-4 backdrop-blur-sm"
-                >
-                  <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
-                    {stat.label}
-                  </p>
-                  <p className="mt-2 font-display text-lg text-text-primary">
-                    {stat.value}
-                  </p>
-                </div>
-              ))}
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
+              <div className="flex items-center gap-2 text-sm text-text-muted">
+                <span className="text-accent">&#10003;</span>
+                STIR/SHAKEN A-level attestation
+              </div>
+              <div className="flex items-center gap-2 text-sm text-text-muted">
+                <span className="text-accent">&#128274;</span>
+                Twilio SOC 2 infrastructure
+              </div>
+              <div className="flex items-center gap-2 text-sm text-text-muted">
+                <span className="text-accent">&#127758;</span>
+                US + Canada coverage
+              </div>
             </div>
           </Stagger>
         </div>
@@ -130,6 +269,10 @@ export function Hero() {
               <p className="mt-1 font-display text-lg text-text-primary">
                 Schedule · Follow up · Confirm
               </p>
+            </div>
+
+            <div className="mt-12">
+              <HeroDemoPlayer />
             </div>
           </div>
         </Stagger>
