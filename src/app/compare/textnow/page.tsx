@@ -70,9 +70,9 @@ const COMPARISON_ROWS: FeatureRow[] = [
     textnow: "yes",
   },
   {
-    feature: "Voicemail",
-    veradial: "no",
-    textnow: "yes",
+    feature: "Voicemail transcription",
+    veradial: "yes",
+    textnow: "partial",
   },
   {
     feature: "Free tier (ad-supported)",

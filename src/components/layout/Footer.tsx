@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FOOTER_LINKS } from "@/lib/constants";
 
 export function Footer() {
@@ -35,12 +36,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {FOOTER_LINKS.product.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-text-secondary transition-colors hover:text-text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -54,12 +55,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {FOOTER_LINKS.compare.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-text-secondary transition-colors hover:text-text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -73,12 +74,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {FOOTER_LINKS.legal.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-text-secondary transition-colors hover:text-text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -92,12 +93,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {FOOTER_LINKS.contact.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-text-secondary transition-colors hover:text-text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

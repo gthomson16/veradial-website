@@ -76,9 +76,9 @@ const COMPARISON_ROWS: FeatureRow[] = [
     sideline: "yes",
   },
   {
-    feature: "Voicemail",
-    veradial: "no",
-    sideline: "yes",
+    feature: "Voicemail transcription",
+    veradial: "yes",
+    sideline: "partial",
   },
   {
     feature: "Unlimited calling & texting",
@@ -86,7 +86,12 @@ const COMPARISON_ROWS: FeatureRow[] = [
     sideline: "yes",
   },
   {
-    feature: "No monthly subscription required",
+    feature: "Low-cost subscription ($4.99/mo)",
+    veradial: "yes",
+    sideline: "$9.99/mo",
+  },
+  {
+    feature: "Call forwarding & AI screening",
     veradial: "yes",
     sideline: "no",
   },
@@ -156,9 +161,9 @@ const DIFFERENTIATORS = [
       "Toggle recording on any call — regular or AI — and get both sides captured. Recordings are stored in your call history for easy playback. Sideline doesn't offer call recording.",
   },
   {
-    title: "Pay as you go, not monthly",
+    title: "Half the price, more features",
     description:
-      "VeraDial uses credit packs that never expire. Pay for what you use with no recurring subscription. Sideline charges $9.99/month whether you make one call or a hundred.",
+      "VeraDial is $4.99/mo with a 3-day free trial — half the cost of Sideline's $9.99/mo. Plus you get AI calling, voicemail transcription, call forwarding, and voice effects that Sideline doesn't offer.",
   },
   {
     title: "Choose which number they see",
@@ -375,7 +380,7 @@ export default function CompareSidelinePage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get a verified number with AI calling, voice effects, and call
-                recording. Pay only for what you use — no monthly subscription.
+                recording, and voicemail transcription. Start with a 3-day free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">

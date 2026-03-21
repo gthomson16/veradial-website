@@ -1,20 +1,26 @@
-"use client";
-
-import { useState } from "react";
 import type { Metadata } from "next";
-import { ChevronDown } from "lucide-react";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { FAQContent, type FAQSection } from "@/components/faq/FAQContent";
 
-type FAQItem = {
-  question: string;
-  answer: string;
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions",
+  description:
+    "Everything you need to know about VeraDial — AI calling, phone numbers, pricing, voice effects, privacy, and getting started.",
+  keywords: [
+    "VeraDial FAQ",
+    "AI calling questions",
+    "AI phone assistant help",
+    "business calling FAQ",
+    "VeraDial pricing",
+    "STIR SHAKEN FAQ",
+  ],
 };
 
-const FAQ_SECTIONS: { title: string; items: FAQItem[] }[] = [
+const FAQ_SECTIONS: FAQSection[] = [
   {
     title: "AI Calling",
     items: [
@@ -51,7 +57,7 @@ const FAQ_SECTIONS: { title: string; items: FAQItem[] }[] = [
       {
         question: "What kind of numbers can I get?",
         answer:
-          "You can purchase dedicated US and Canadian phone numbers. These are real numbers assigned to your account — not shared or recycled. Your first number is included with the account.",
+          "You can get dedicated US and Canadian phone numbers — local or toll-free. These are real numbers assigned to your account, not shared or recycled. Your $4.99/mo subscription includes one active number.",
       },
       {
         question: "What is STIR/SHAKEN attestation?",
@@ -71,17 +77,22 @@ const FAQ_SECTIONS: { title: string; items: FAQItem[] }[] = [
     ],
   },
   {
-    title: "Voice Effects",
+    title: "Voice Changer",
     items: [
       {
         question: "What voice effects are available?",
         answer:
-          "VeraDial offers four voice modes: Normal (no effect), Deep, High, and Robot. Effects use FFT-based formant shifting for natural-sounding results — no chipmunk or novelty voices.",
+          "VeraDial offers three voice modes: Male, Female, and Privacy. Effects use FFT-based formant shifting for natural-sounding results — no chipmunk or novelty voices.",
       },
       {
         question: "Do voice effects work on AI calls?",
         answer:
           "Voice effects apply to manual calls where you're speaking. AI calls use the AI's own natural voice.",
+      },
+      {
+        question: "How much do voice-changed calls cost?",
+        answer:
+          "Voice-changed calls use 2 credits per minute, compared to 1 credit per minute for standard calls.",
       },
     ],
   },
@@ -91,17 +102,21 @@ const FAQ_SECTIONS: { title: string; items: FAQItem[] }[] = [
       {
         question: "How does pricing work?",
         answer:
-          "VeraDial uses a credit-based system — no subscriptions or monthly fees. You buy credit packs (starting at 60 credits for $9.99) and use them for calls. Message packs are purchased separately. Your first number is included.",
+          "VeraDial is $4.99/mo per line, which gives you a dedicated phone number with inbound calls, voicemail, call forwarding, and SMS. You then buy credit packs for outbound calls and message packs for SMS. Your first subscription includes a 3-day free trial and a welcome bonus of 15 call credits + 10 SMS messages.",
       },
       {
         question: "How many credits does a call cost?",
         answer:
-          "Credit usage depends on call duration. AI calls also include the cost of AI processing. You can see exact credit costs in the app before and after each call.",
+          "Standard calls use 1 credit per minute. Voice-changed calls use 2 credits per minute. AI calls use 3 credits per minute. You can see exact credit costs in the app before and after each call.",
       },
       {
         question: "Do credits expire?",
+        answer: "No. Credits stay in your account until you use them.",
+      },
+      {
+        question: "Is there a free trial?",
         answer:
-          "No. Credits stay in your account until you use them.",
+          "Yes. Your first subscription includes a 3-day free trial. You also get a welcome bonus of 15 call credits and 10 SMS messages to get started.",
       },
     ],
   },
@@ -136,7 +151,7 @@ const FAQ_SECTIONS: { title: string; items: FAQItem[] }[] = [
       {
         question: "Do I need a subscription?",
         answer:
-          "No. VeraDial has no monthly fees, no seat fees, and no contracts. You buy credits when you need them.",
+          "Yes — a $4.99/mo subscription is required to hold a phone number. It includes inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and a welcome bonus.",
       },
       {
         question: "Can I use VeraDial for personal calls?",
@@ -147,45 +162,37 @@ const FAQ_SECTIONS: { title: string; items: FAQItem[] }[] = [
   },
 ];
 
-function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
-  const [open, setOpen] = useState(false);
+function FAQJsonLd() {
+  const faqItems = FAQ_SECTIONS.flatMap((section) =>
+    section.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    }))
+  );
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems,
+  };
 
   return (
-    <ScrollReveal delay={index * 60}>
-      <div className="border-b border-border">
-        <button
-          onClick={() => setOpen(!open)}
-          className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-accent"
-        >
-          <span className="font-display text-base text-text-primary sm:text-lg">
-            {item.question}
-          </span>
-          <ChevronDown
-            size={18}
-            className={`shrink-0 text-text-muted transition-transform duration-200 ${
-              open ? "rotate-180" : ""
-            }`}
-          />
-        </button>
-        <div
-          className={`grid transition-all duration-200 ease-out ${
-            open ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
-          }`}
-        >
-          <div className="overflow-hidden">
-            <p className="max-w-2xl text-sm leading-relaxed text-text-secondary">
-              {item.answer}
-            </p>
-          </div>
-        </div>
-      </div>
-    </ScrollReveal>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
   );
 }
 
 export default function FAQPage() {
   return (
     <>
+      <FAQJsonLd />
+
       {/* Hero */}
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
@@ -211,23 +218,7 @@ export default function FAQPage() {
       {/* FAQ sections */}
       <section className="relative py-20">
         <div className="mx-auto max-w-3xl px-6">
-          {FAQ_SECTIONS.map((section, sectionIndex) => (
-            <div
-              key={section.title}
-              className={sectionIndex > 0 ? "mt-16" : ""}
-            >
-              <ScrollReveal>
-                <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
-                  {section.title}
-                </p>
-              </ScrollReveal>
-              <div className="mt-6">
-                {section.items.map((item, index) => (
-                  <FAQAccordion key={item.question} item={item} index={index} />
-                ))}
-              </div>
-            </div>
-          ))}
+          <FAQContent sections={FAQ_SECTIONS} />
         </div>
       </section>
 

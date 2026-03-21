@@ -19,8 +19,12 @@ export function Features() {
               Why VeraDial
             </p>
             <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-              Smart calling that works while you don&apos;t.
+              Not another second number app.
             </h2>
+            <p className="mt-4 text-base leading-relaxed text-text-secondary">
+              Most business phone tools give you a number and leave you to do the
+              work. VeraDial does the calling for you.
+            </p>
           </ScrollReveal>
 
           <div className="mt-10 space-y-4">
@@ -62,16 +66,16 @@ export function Features() {
                   <div className="grid gap-4">
                     {[
                       {
-                        label: "Scheduling",
-                        value: "AI books and confirms appointments for you",
+                        label: "Caller Profile",
+                        value: "Set your business name, website, and context once — AI uses it on every call",
                       },
                       {
-                        label: "Follow-ups",
-                        value: "Automated callbacks and client check-ins",
+                        label: "Custom Goals",
+                        value: "Describe what you need and add per-call notes for extra detail",
                       },
                       {
                         label: "Transcripts",
-                        value: "Full conversation logs after every AI call",
+                        value: "Full conversation log and summary after every AI call",
                       },
                     ].map((item) => (
                       <div
@@ -97,7 +101,10 @@ export function Features() {
               key={feature.title}
               delay={index * 90}
               className={
-                index === secondaryFeatures.length - 1 ? "sm:col-span-2" : ""
+                secondaryFeatures.length % 2 !== 0 &&
+                index === secondaryFeatures.length - 1
+                  ? "sm:col-span-2"
+                  : ""
               }
             >
               <Card className="h-full p-6">

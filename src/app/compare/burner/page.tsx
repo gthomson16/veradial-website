@@ -71,7 +71,17 @@ const COMPARISON_ROWS: FeatureRow[] = [
     burner: "yes",
   },
   {
-    feature: "No monthly subscription required",
+    feature: "Low-cost subscription ($4.99/mo)",
+    veradial: "yes",
+    burner: "$4.99/mo+",
+  },
+  {
+    feature: "Voicemail transcription",
+    veradial: "yes",
+    burner: "no",
+  },
+  {
+    feature: "Call forwarding & AI screening",
     veradial: "yes",
     burner: "no",
   },
@@ -146,9 +156,9 @@ const DIFFERENTIATORS = [
       "Toggle recording on any call — regular or AI — and get both sides captured. Recordings are stored in your call history for easy access. Burner doesn't offer call recording, so you'd need a separate app.",
   },
   {
-    title: "Pay as you go, not monthly",
+    title: "Simple, transparent pricing",
     description:
-      "VeraDial uses credit packs with no expiration — buy what you need, use it when you need it. Burner requires a monthly subscription starting at $4.99/mo per line, with costs adding up fast if you need multiple numbers.",
+      "VeraDial is $4.99/mo for a dedicated line with a 3-day free trial, plus credit packs that never expire. Burner also charges $4.99/mo per line, but without AI calling, voicemail transcription, or call forwarding included.",
   },
   {
     title: "Carrier-grade infrastructure",
@@ -365,8 +375,8 @@ export default function CompareBurnerPage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get a dedicated number with carrier-level verification, AI
-                calling, voice effects, and call recording. No subscriptions, no
-                expiring numbers.
+                calling, voice effects, and call recording. Start with a 3-day
+                free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">

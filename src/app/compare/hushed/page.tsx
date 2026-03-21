@@ -61,9 +61,14 @@ const COMPARISON_ROWS: FeatureRow[] = [
     hushed: "yes",
   },
   {
-    feature: "Voicemail",
-    veradial: "no",
-    hushed: "yes",
+    feature: "Voicemail transcription",
+    veradial: "yes",
+    hushed: "partial",
+  },
+  {
+    feature: "Call forwarding & AI screening",
+    veradial: "yes",
+    hushed: "no",
   },
   {
     feature: "Multiple numbers simultaneously",
@@ -76,7 +81,7 @@ const COMPARISON_ROWS: FeatureRow[] = [
     hushed: "yes",
   },
   {
-    feature: "No subscription required",
+    feature: "Low-cost subscription ($4.99/mo)",
     veradial: "yes",
     hushed: "partial",
   },
@@ -146,9 +151,9 @@ const DIFFERENTIATORS = [
       "Toggle call recording on any outbound call -- regular or AI. Both sides of the conversation are captured and stored in your call history. Hushed does not offer call recording.",
   },
   {
-    title: "No subscription trap",
+    title: "More features for the price",
     description:
-      "VeraDial uses credit packs that never expire. Pay for what you use without recurring charges. Hushed offers subscription plans and pay-as-you-go, but most features require an active subscription to maintain your numbers.",
+      "VeraDial is $4.99/mo with a 3-day free trial, plus credit packs that never expire. Your subscription includes voicemail transcription, call forwarding, and AI call screening — features Hushed doesn't offer at any price.",
   },
   {
     title: "Built for business outreach",

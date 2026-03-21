@@ -67,7 +67,7 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "Voicemail transcription",
-    veradial: "no",
+    veradial: "yes",
     googleVoice: "yes",
   },
   {
@@ -87,7 +87,7 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "Call forwarding & screening",
-    veradial: "no",
+    veradial: "yes",
     googleVoice: "yes",
   },
   {

@@ -25,7 +25,9 @@ function CTAWaitlistForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto flex max-w-md gap-3">
+      <label htmlFor="cta-email" className="sr-only">Email address</label>
       <input
+        id="cta-email"
         type="email"
         required
         value={email}

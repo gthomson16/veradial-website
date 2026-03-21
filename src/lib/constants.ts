@@ -16,10 +16,10 @@ export const APP_PRIMARY_URL =
   "mailto:support@veradial.com?subject=VeraDial%20iOS%20Access";
 
 export const NAV_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
   { label: "FAQ", href: "/faq" },
-  { label: "Access", href: "#download" },
+  { label: "Access", href: "/#download" },
 ] as const;
 
 export const HERO_STATS = [
@@ -83,13 +83,13 @@ export const FEATURES = [
     icon: Bot,
     title: "AI Calling",
     description:
-      "Your AI assistant handles calls for you. Schedule appointments, confirm bookings, and follow up with clients \u2014 without picking up the phone.",
+      "Your AI assistant handles calls for you. Describe a goal, set up a caller profile, and get a full transcript and summary when it\u2019s done.",
   },
   {
     icon: AudioLines,
-    title: "Voice Effects",
+    title: "Voice Changer",
     description:
-      "Built-in voice effects for privacy. Four modes: Deep, High, Robot, and Normal.",
+      "Real-time voice effects on any call. Three modes: Male, Female, and Privacy \u2014 natural-sounding formant shifting, not novelty filters.",
   },
   {
     icon: UserCheck,
@@ -101,13 +101,13 @@ export const FEATURES = [
     icon: Phone,
     title: "Real Phone Numbers",
     description:
-      "Purchase dedicated US & Canadian numbers. Purchased numbers carry full STIR/SHAKEN A-level attestation.",
+      "Dedicated US & Canadian numbers with full STIR/SHAKEN verification. Search by area code, region, or pattern.",
   },
   {
     icon: MessageSquare,
     title: "Business SMS",
     description:
-      "Send and receive texts from your purchased number. Available on US numbers and Canadian toll-free numbers.",
+      "Send and receive texts from your business number with conversation threading and delivery tracking.",
   },
   {
     icon: Lock,
@@ -123,7 +123,7 @@ export const CALL_CREDITS = [
     amount: "60 credits",
     price: "$9.99",
     perUnit: "~$0.17/credit",
-    estimate: "~15\u201330 AI calls",
+    estimate: "~20 AI calls or ~60 standard calls",
     popular: false,
   },
   {
@@ -131,7 +131,7 @@ export const CALL_CREDITS = [
     amount: "200 credits",
     price: "$24.99",
     perUnit: "~$0.12/credit",
-    estimate: "~50\u2013100 AI calls",
+    estimate: "~66 AI calls or ~200 standard calls",
     popular: true,
   },
   {
@@ -139,7 +139,7 @@ export const CALL_CREDITS = [
     amount: "500 credits",
     price: "$49.99",
     perUnit: "~$0.10/credit",
-    estimate: "~125\u2013250 AI calls",
+    estimate: "~166 AI calls or ~500 standard calls",
     popular: false,
   },
 ] as const;
@@ -169,9 +169,16 @@ export const MESSAGE_PACKS = [
 ] as const;
 
 export const PRICING_FACTS = [
-  "Your first number is included with the account.",
-  "Additional number swaps cost $2.50 each.",
-  "All purchases are handled through iOS in-app purchases.",
+  "3-day free trial on your first subscription.",
+  "Number swaps cost $2.50 each.",
+  "All purchases handled through in-app purchase.",
+] as const;
+
+export const PER_USE_COSTS = [
+  { action: "Standard call", cost: "1 credit/min" },
+  { action: "Voice-changed call", cost: "2 credits/min" },
+  { action: "AI call", cost: "3 credits/min" },
+  { action: "SMS message", cost: "1 message credit/segment" },
 ] as const;
 
 export const TESTIMONIALS = [
@@ -215,7 +222,7 @@ export const FAQ_PREVIEW = [
   {
     question: "Can I listen to the calls?",
     answer:
-      "Every call generates a full transcript and summary. Audio recordings are available on the Professional plan (coming soon).",
+      "Yes. You can record calls with one tap and play them back anytime. Every call also generates a full transcript and summary.",
   },
   {
     question: "What if I run out of credits mid-call?",
@@ -226,10 +233,10 @@ export const FAQ_PREVIEW = [
 
 export const FOOTER_LINKS = {
   product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Features", href: "/#features" },
+    { label: "Pricing", href: "/#pricing" },
     { label: "FAQ", href: "/faq" },
-    { label: "Access", href: "#download" },
+    { label: "Access", href: "/#download" },
   ],
   compare: [
     { label: "vs SpoofCard", href: "/compare/spoofcard" },

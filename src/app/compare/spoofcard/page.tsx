@@ -76,9 +76,19 @@ const COMPARISON_ROWS: FeatureRow[] = [
     spoofcard: "no",
   },
   {
-    feature: "No monthly subscription required",
+    feature: "Low-cost subscription ($4.99/mo)",
     veradial: "yes",
-    spoofcard: "yes",
+    spoofcard: "Credit-based",
+  },
+  {
+    feature: "Voicemail transcription",
+    veradial: "yes",
+    spoofcard: "no",
+  },
+  {
+    feature: "Call forwarding & AI screening",
+    veradial: "yes",
+    spoofcard: "no",
   },
   {
     feature: "Carrier-grade infrastructure (Twilio)",

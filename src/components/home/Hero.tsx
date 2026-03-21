@@ -28,7 +28,9 @@ function WaitlistForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex max-w-md gap-3">
+      <label htmlFor="hero-email" className="sr-only">Email address</label>
       <input
+        id="hero-email"
         type="email"
         required
         value={email}
@@ -220,7 +222,7 @@ export function Hero() {
           <Stagger index={4} mounted={mounted} className="mt-8">
             <WaitlistForm />
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <Button variant="ghost" href="#pricing">
+              <Button variant="ghost" href="/#pricing">
                 See Pricing
               </Button>
             </div>
