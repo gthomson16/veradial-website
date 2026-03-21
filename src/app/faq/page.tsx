@@ -92,7 +92,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How much do voice-changed calls cost?",
         answer:
-          "Voice-changed calls use 2 credits per minute, compared to 1 credit per minute for standard calls.",
+          "Voice-changed calls use 4 credits per minute, compared to 2 credits per minute for standard calls.",
       },
     ],
   },
@@ -102,12 +102,12 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How does pricing work?",
         answer:
-          "VeraDial is $4.99/mo per line, which gives you a dedicated phone number with inbound calls, voicemail, call forwarding, and SMS. You then buy credit packs for outbound calls and message packs for SMS. Your first subscription includes a 3-day free trial and a welcome bonus of 15 call credits + 10 SMS messages.",
+          "VeraDial is $4.99/mo per line, which gives you a dedicated phone number with inbound calls, voicemail, call forwarding, and SMS. You buy credit packs for outbound calls and messages. Your first subscription includes a 3-day free trial and a welcome bonus of 50 credits.",
       },
       {
         question: "How many credits does a call cost?",
         answer:
-          "Standard calls use 1 credit per minute. Voice-changed calls use 2 credits per minute. AI calls use 3 credits per minute. You can see exact credit costs in the app before and after each call.",
+          "Standard calls use 2 credits per minute. Voice-changed calls use 4 credits per minute. AI calls use 10 credits per minute. SMS costs 1 credit per segment. You can see exact credit costs in the app before and after each call.",
       },
       {
         question: "Do credits expire?",
@@ -116,7 +116,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is there a free trial?",
         answer:
-          "Yes. Your first subscription includes a 3-day free trial. You also get a welcome bonus of 15 call credits and 10 SMS messages to get started.",
+          "Yes. Your first subscription includes a 3-day free trial and a welcome bonus of 50 credits to get started.",
       },
     ],
   },
@@ -151,7 +151,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Do I need a subscription?",
         answer:
-          "Yes — a $4.99/mo subscription is required to hold a phone number. It includes inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and a welcome bonus.",
+          "Yes — a $4.99/mo subscription is required to hold a phone number. It includes inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and 50 bonus credits.",
       },
       {
         question: "Can I use VeraDial for personal calls?",

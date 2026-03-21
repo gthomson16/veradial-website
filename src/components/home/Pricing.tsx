@@ -1,15 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Gift, Sparkles } from "lucide-react";
-import {
-  CALL_CREDITS,
-  MESSAGE_PACKS,
-} from "@/lib/constants";
+import { CREDIT_PACKS } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-
-type PricingView = "minutes" | "messages";
 
 type Pack = {
   name: string;
@@ -66,10 +60,6 @@ const INCLUDED_PERKS = [
 ] as const;
 
 export function Pricing() {
-  const [view, setView] = useState<PricingView>("minutes");
-
-  const packs = view === "minutes" ? CALL_CREDITS : MESSAGE_PACKS;
-
   return (
     <section id="pricing" className="relative overflow-x-hidden py-24">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,27,46,0.28),transparent_28%,rgba(11,27,46,0.18))]" />
@@ -135,51 +125,29 @@ export function Pricing() {
                   <span className="font-semibold text-text-primary">
                     Welcome bonus:
                   </span>{" "}
-                  15 call credits + 10 SMS messages with your first subscription.
+                  50 credits included with your first subscription.
                 </p>
               </div>
 
               {/* Per-use rates */}
               <p className="mt-5 text-xs text-text-muted">
-                Credit usage: 1/min standard &middot; 2/min voice-changed &middot; 3/min AI calls
+                Credit usage: 2/min standard &middot; 4/min voice-changed &middot; 10/min AI &middot; 1/SMS
               </p>
             </Card>
           </div>
         </ScrollReveal>
 
-        {/* Credit/message toggle */}
+        {/* Credit packs heading */}
         <ScrollReveal delay={120}>
-          <div className="mt-14 flex justify-center">
-            <div className="inline-flex rounded-full border border-border bg-card/80 p-1">
-              {[
-                { value: "minutes", label: "Call Credits" },
-                { value: "messages", label: "Message Packs" },
-              ].map((option) => {
-                const active = view === option.value;
-
-                return (
-                  <button
-                    key={option.value}
-                    type="button"
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                      active
-                        ? "bg-accent text-bg"
-                        : "text-text-secondary hover:text-text-primary"
-                    }`}
-                    onClick={() => setView(option.value as PricingView)}
-                  >
-                    {option.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          <p className="mt-14 text-center text-xs uppercase tracking-[0.22em] text-text-muted">
+            Credit Packs
+          </p>
         </ScrollReveal>
 
         {/* Credit packs */}
-        <div className="mx-auto mt-8 grid max-w-4xl gap-5 sm:grid-cols-3">
-          {packs.map((pack, index) => (
-            <ScrollReveal key={`${view}-${pack.name}`} delay={index * 90}>
+        <div className="mx-auto mt-6 grid max-w-4xl gap-5 sm:grid-cols-3">
+          {CREDIT_PACKS.map((pack, index) => (
+            <ScrollReveal key={pack.name} delay={index * 90}>
               <PricingCard pack={pack} />
             </ScrollReveal>
           ))}

@@ -117,68 +117,31 @@ export const FEATURES = [
   },
 ] as const;
 
-export const CALL_CREDITS = [
+export const CREDIT_PACKS = [
   {
     name: "Starter",
-    amount: "60 credits",
+    amount: "100 credits",
     price: "$9.99",
-    perUnit: "~$0.17/credit",
-    estimate: "~20 AI calls or ~60 standard calls",
-    popular: false,
-  },
-  {
-    name: "Popular",
-    amount: "200 credits",
-    price: "$24.99",
-    perUnit: "~$0.12/credit",
-    estimate: "~66 AI calls or ~200 standard calls",
-    popular: true,
-  },
-  {
-    name: "Best Value",
-    amount: "500 credits",
-    price: "$49.99",
     perUnit: "~$0.10/credit",
-    estimate: "~166 AI calls or ~500 standard calls",
-    popular: false,
-  },
-] as const;
-
-export const MESSAGE_PACKS = [
-  {
-    name: "Starter",
-    amount: "50 msg",
-    price: "$9.99",
-    perUnit: "~$0.20/msg",
+    estimate: "~10 AI calls or ~50 standard calls",
     popular: false,
   },
   {
     name: "Popular",
-    amount: "200 msg",
+    amount: "300 credits",
     price: "$24.99",
-    perUnit: "~$0.12/msg",
+    perUnit: "~$0.08/credit",
+    estimate: "~30 AI calls or ~150 standard calls",
     popular: true,
   },
   {
     name: "Best Value",
-    amount: "500 msg",
+    amount: "1,000 credits",
     price: "$49.99",
-    perUnit: "~$0.10/msg",
+    perUnit: "~$0.05/credit",
+    estimate: "~100 AI calls or ~500 standard calls",
     popular: false,
   },
-] as const;
-
-export const PRICING_FACTS = [
-  "3-day free trial on your first subscription.",
-  "Number swaps cost $2.50 each.",
-  "All purchases handled through in-app purchase.",
-] as const;
-
-export const PER_USE_COSTS = [
-  { action: "Standard call", cost: "1 credit/min" },
-  { action: "Voice-changed call", cost: "2 credits/min" },
-  { action: "AI call", cost: "3 credits/min" },
-  { action: "SMS message", cost: "1 message credit/segment" },
 ] as const;
 
 export const TESTIMONIALS = [

@@ -22,6 +22,10 @@ Marketing site for VeraDial — AI-powered business calling app.
 - `src/components/` — shared and page-specific components
 - `src/lib/` — constants, metadata, utilities
 
+## Product Reference
+
+- Source of truth for pricing, features, and content: `/Users/gthomson/Development/VeraDial/website.md`
+
 ## Conventions
 
 - Use Tailwind utility classes for styling
