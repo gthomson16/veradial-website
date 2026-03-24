@@ -148,7 +148,7 @@ const DIFFERENTIATORS = [
   {
     title: "Voice effects for privacy and flexibility",
     description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Whether you need a subtle disguise or a different vocal presence, it sounds natural, not robotic. Burner offers no voice effects at all.",
+      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Whether you need voice privacy or a different vocal presence, it sounds natural, not robotic. Burner offers no voice effects at all.",
   },
   {
     title: "Call recording built in",

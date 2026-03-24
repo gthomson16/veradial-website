@@ -131,7 +131,7 @@ export function Pricing() {
 
               {/* Per-use rates */}
               <p className="mt-5 text-xs text-text-muted">
-                Credit usage: 2/min standard &middot; 4/min voice-changed &middot; 10/min AI &middot; 1/SMS
+                Credit usage: 2/min standard &middot; 3/min recorded &middot; 4/min voice privacy &middot; 10/min AI &middot; 1/SMS
               </p>
             </Card>
           </div>

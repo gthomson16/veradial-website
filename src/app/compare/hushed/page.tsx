@@ -143,7 +143,7 @@ const DIFFERENTIATORS = [
   {
     title: "Voice effects for every situation",
     description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes -- Male, Female, and Privacy. Whether you need voice disguise for safety or a professional presentation, the technology sounds natural. Hushed offers no voice effects.",
+      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Whether you need voice privacy for safety or a professional presentation, the technology sounds natural. Hushed offers no voice effects.",
   },
   {
     title: "Record every call",

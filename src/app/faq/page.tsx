@@ -77,7 +77,7 @@ const FAQ_SECTIONS: FAQSection[] = [
     ],
   },
   {
-    title: "Voice Changer",
+    title: "Voice Privacy",
     items: [
       {
         question: "What voice effects are available?",
@@ -92,7 +92,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How much do voice-changed calls cost?",
         answer:
-          "Voice-changed calls use 4 credits per minute, compared to 2 credits per minute for standard calls.",
+          "Voice privacy calls use 4 credits per minute, compared to 2 credits per minute for standard calls.",
       },
     ],
   },
@@ -107,7 +107,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How many credits does a call cost?",
         answer:
-          "Standard calls use 2 credits per minute. Voice-changed calls use 4 credits per minute. AI calls use 10 credits per minute. SMS costs 1 credit per segment. You can see exact credit costs in the app before and after each call.",
+          "Standard calls use 2 credits per minute. Recorded calls use 3 credits per minute. Voice privacy calls use 4 credits per minute. AI calls use 10 credits per minute. SMS costs 1 credit per segment. You can see exact credit costs in the app before and after each call.",
       },
       {
         question: "Do credits expire?",

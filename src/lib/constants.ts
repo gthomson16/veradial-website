@@ -1,6 +1,7 @@
 import {
   Bot,
   CheckCircle2,
+  Eye,
   Headphones,
   Phone,
   UserCheck,
@@ -54,6 +55,11 @@ export const TRUST_SIGNALS = [
     detail: "Voice and messaging route through hardened telecom infrastructure.",
   },
   {
+    icon: Eye,
+    title: "AI transparency built in",
+    detail: "AI calls identify themselves upfront. Full transcripts and summaries after every call.",
+  },
+  {
     icon: Headphones,
     title: "Built for real operators",
     detail: "Useful for solo operators, small teams, and field reps who need consistency.",
@@ -87,7 +93,7 @@ export const FEATURES = [
   },
   {
     icon: AudioLines,
-    title: "Voice Changer",
+    title: "Voice Privacy",
     description:
       "Real-time voice effects on any call. Three modes: Male, Female, and Privacy \u2014 natural-sounding formant shifting, not novelty filters.",
   },

@@ -161,9 +161,9 @@ const DIFFERENTIATORS = [
       "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. No chipmunk effects. SpoofCard offers voice changing but it's designed more for novelty than professional use.",
   },
   {
-    title: "Built for business, not pranks",
+    title: "Built for business use",
     description:
-      "VeraDial is designed for solo operators, sales teams, and field services who need consistent outbound identity. SpoofCard has historically focused on novelty use cases like background noise effects and pranks.",
+      "VeraDial is designed for solo operators, sales teams, and field services who need consistent outbound identity. SpoofCard has historically focused on novelty use cases like background noise effects.",
   },
 ];
 
