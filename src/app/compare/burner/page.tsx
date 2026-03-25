@@ -71,8 +71,8 @@ const COMPARISON_ROWS: FeatureRow[] = [
     burner: "yes",
   },
   {
-    feature: "Low-cost subscription ($4.99/mo)",
-    veradial: "yes",
+    feature: "Subscription with credits ($9.99/mo)",
+    veradial: "100 credits/mo",
     burner: "$4.99/mo+",
   },
   {
@@ -158,7 +158,7 @@ const DIFFERENTIATORS = [
   {
     title: "Simple, transparent pricing",
     description:
-      "VeraDial is $4.99/mo for a dedicated line with a 3-day free trial, plus credit packs that never expire. Burner also charges $4.99/mo per line, but without AI calling, voicemail transcription, or call forwarding included.",
+      "VeraDial is $9.99/mo for a dedicated line with 100 credits every month and a 3-day free trial. Burner charges $4.99/mo but doesn't include AI calling, voicemail transcription, or call forwarding.",
   },
   {
     title: "Carrier-grade infrastructure",

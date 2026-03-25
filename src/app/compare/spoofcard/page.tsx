@@ -76,8 +76,8 @@ const COMPARISON_ROWS: FeatureRow[] = [
     spoofcard: "no",
   },
   {
-    feature: "Low-cost subscription ($4.99/mo)",
-    veradial: "yes",
+    feature: "Subscription with credits ($9.99/mo)",
+    veradial: "100 credits/mo",
     spoofcard: "Credit-based",
   },
   {

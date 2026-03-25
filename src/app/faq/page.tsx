@@ -57,7 +57,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What kind of numbers can I get?",
         answer:
-          "You can get dedicated US and Canadian phone numbers — local or toll-free. These are real numbers assigned to your account, not shared or recycled. Your $4.99/mo subscription includes one active number.",
+          "You can get dedicated US and Canadian phone numbers — local or toll-free. These are real numbers assigned to your account, not shared or recycled. Your $9.99/mo subscription includes one active number and 100 credits every month.",
       },
       {
         question: "What is STIR/SHAKEN attestation?",
@@ -72,7 +72,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Can I change my number later?",
         answer:
-          "Yes. Number swaps cost $2.50 each. You can switch to a different area code or region whenever you need to.",
+          "Yes. Number swaps cost $4.99 each. You can switch to a different area code or region whenever you need to.",
       },
     ],
   },
@@ -102,7 +102,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How does pricing work?",
         answer:
-          "VeraDial is $4.99/mo per line, which gives you a dedicated phone number with inbound calls, voicemail, call forwarding, and SMS. You buy credit packs for outbound calls and messages. Your first subscription includes a 3-day free trial and a welcome bonus of 50 credits.",
+          "VeraDial is $9.99/mo per line, which gives you a dedicated phone number with 100 credits every month — enough for calls, SMS, and AI features. Need more? Buy credit packs anytime — they never expire. Your first subscription includes a 3-day free trial with 50 credits to try everything.",
       },
       {
         question: "How many credits does a call cost?",
@@ -116,7 +116,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is there a free trial?",
         answer:
-          "Yes. Your first subscription includes a 3-day free trial and a welcome bonus of 50 credits to get started.",
+          "Yes. Your first subscription includes a 3-day free trial with 50 credits to try everything. Once the trial converts, you get 100 credits every month.",
       },
     ],
   },
@@ -151,7 +151,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Do I need a subscription?",
         answer:
-          "Yes — a $4.99/mo subscription is required to hold a phone number. It includes inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and 50 bonus credits.",
+          "Yes — a $9.99/mo subscription is required to hold a phone number. It includes 100 credits every month, inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and 50 bonus credits.",
       },
       {
         question: "Can I use VeraDial for personal calls?",

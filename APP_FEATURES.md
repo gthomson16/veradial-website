@@ -10,7 +10,7 @@ VeraDial is a verified business calling app that lets users make calls and send 
 
 ### Caller ID Control
 - Purchase dedicated US/CA phone numbers on-demand
-- One active number per user, swap for $2.50
+- One active number per user, swap for $4.99
 - Add verified caller IDs (secondary voice-only numbers)
 - Recipients see your chosen number, not your personal number
 - E.164 format, local and toll-free numbers available
@@ -26,7 +26,7 @@ VeraDial is a verified business calling app that lets users make calls and send 
 - **Female** — higher pitch with female vocal tract formants
 - **Privacy** — subtle voice disguise, sounds like you but unrecognizable
 - Uses FFT-based phase vocoder for natural-sounding formant shifting (not chipmunk pitch shift)
-- Voice-changed calls cost 2 credits per minute
+- Voice-changed calls cost 4 credits per minute
 
 ### AI Calling (ElevenLabs Agent)
 - Dispatch an AI agent to make phone calls on your behalf
@@ -38,8 +38,8 @@ VeraDial is a verified business calling app that lets users make calls and send 
 - Post-call transcript and AI-generated summary stored in your account
 - Call success/failure analysis
 - Chat-bubble style transcript viewer
-- AI calls cost 3 credits per minute
-- Powered by ElevenLabs Conversational AI with Gemini 3 Flash LLM
+- AI calls cost 10 credits per minute
+- Powered by ElevenLabs Conversational AI
 - One-time consent screen before first use
 
 ### Call Recording
@@ -64,30 +64,26 @@ VeraDial is a verified business calling app that lets users make calls and send 
 
 ## Billing & Credits
 
-### Credit System
-- **Credits** — used for calls (regular, voice-changed, AI, recording)
-- **Messages** — used for SMS (separate balance)
-- Credits and messages do not expire
+### Subscription
+- **$9.99/mo per line** — required to hold a phone number
+- 3-day free trial (50 credits to try)
+- 100 credits included every month
+- Credits never expire
 
-### Credit Packs (In-App Purchase)
-- 60 Credits — $9.99 (Starter)
-- 200 Credits — $24.99 (Popular)
-- 500 Credits — $49.99 (Best Value)
-
-### Message Packs
-- 50 Messages — $9.99
-- 200 Messages — $24.99
-- 500 Messages — $49.99
+### Credit Packs (In-App Purchase, top-ups)
+- 100 Credits — $5.99 (Starter)
+- 300 Credits — $14.99 (Popular)
+- 1,000 Credits — $39.99 (Best Value)
 
 ### Cost Rates
 | Feature | Cost |
 |---------|------|
-| Standard call | 1 credit/min |
-| Voice-changed call | 2 credits/min |
-| AI call | 3 credits/min |
-| Call recording | +1 credit/call |
-| SMS | 1 message/segment |
-| Number swap | $2.50 |
+| Standard call | 2 credits/min |
+| Recorded call | 3 credits/min |
+| Voice privacy call | 4 credits/min |
+| AI call | 10 credits/min |
+| SMS | 1 credit/segment |
+| Number swap | $4.99 |
 
 ## App Structure
 

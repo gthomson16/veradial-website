@@ -86,8 +86,8 @@ const COMPARISON_ROWS: FeatureRow[] = [
     sideline: "yes",
   },
   {
-    feature: "Low-cost subscription ($4.99/mo)",
-    veradial: "yes",
+    feature: "Subscription with credits ($9.99/mo)",
+    veradial: "100 credits/mo",
     sideline: "$9.99/mo",
   },
   {
@@ -161,9 +161,9 @@ const DIFFERENTIATORS = [
       "Toggle recording on any call — regular or AI — and get both sides captured. Recordings are stored in your call history for easy playback. Sideline doesn't offer call recording.",
   },
   {
-    title: "Half the price, more features",
+    title: "Same price, way more features",
     description:
-      "VeraDial is $4.99/mo with a 3-day free trial — half the cost of Sideline's $9.99/mo. Plus you get AI calling, voicemail transcription, call forwarding, and voice effects that Sideline doesn't offer.",
+      "VeraDial is $9.99/mo with a 3-day free trial and 100 credits every month — the same price as Sideline. But you also get AI calling, voicemail transcription, call forwarding, and voice effects that Sideline doesn't offer.",
   },
   {
     title: "Choose which number they see",

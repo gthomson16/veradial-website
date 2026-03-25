@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 const DIFFERENTIATORS = [
   {
     others: "Expensive plans with unused minutes",
-    veradial: "$4.99/mo + pay only for what you use",
+    veradial: "$9.99/mo with 100 credits included",
   },
   {
     others: "Calls flagged as spam or unknown",

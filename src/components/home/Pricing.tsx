@@ -74,8 +74,8 @@ export function Pricing() {
               One line. One low price.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-text-secondary sm:text-lg">
-              $4.99/mo gets you a dedicated business number. Add credits as you
-              need them &mdash; they never expire.
+              $9.99/mo gets you a dedicated business number with 100 credits
+              every month. Need more? Add credit packs anytime &mdash; they never expire.
             </p>
           </div>
         </ScrollReveal>
@@ -88,7 +88,7 @@ export function Pricing() {
                 <div>
                   <div className="flex items-center gap-3">
                     <p className="font-display text-2xl font-semibold text-text-primary sm:text-3xl">
-                      $4.99
+                      $9.99
                       <span className="text-lg font-normal text-text-secondary">
                         /mo
                       </span>
@@ -118,14 +118,14 @@ export function Pricing() {
                 </div>
               </div>
 
-              {/* Welcome bonus */}
+              {/* Monthly credits */}
               <div className="mt-6 flex items-center gap-3 rounded-xl border border-[var(--color-accent-secondary)]/15 bg-[var(--color-accent-secondary)]/5 px-4 py-3">
                 <Gift size={18} className="shrink-0 text-[var(--color-accent-secondary)]" />
                 <p className="text-sm text-text-secondary">
                   <span className="font-semibold text-text-primary">
-                    Welcome bonus:
+                    100 credits every month
                   </span>{" "}
-                  50 credits included with your first subscription.
+                  included with your subscription. Plus 50 bonus credits during your free trial.
                 </p>
               </div>
 
@@ -158,7 +158,7 @@ export function Pricing() {
           <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-text-muted">
             <p>Credits never expire</p>
             <p>·</p>
-            <p>Number swaps $2.50</p>
+            <p>Number swaps $4.99</p>
             <p>·</p>
             <p>In-app purchase</p>
           </div>

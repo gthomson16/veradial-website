@@ -9,7 +9,7 @@ export default function TermsPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Terms of Service</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: March 17, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: March 25, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -17,9 +17,11 @@ export default function TermsPage() {
             1. Service Description
           </h2>
           <p className="mt-4">
-            VeraDial provides caller ID-controlled voice calling and SMS messaging through
-            purchased and verified phone numbers. The service is delivered through mobile
-            applications available on the Apple App Store and Google Play Store.
+            VeraDial provides caller ID-controlled voice calling, SMS messaging,
+            AI-powered calling, call screening, voicemail, and call transcription
+            through purchased and verified phone numbers. The service is delivered
+            through mobile applications available on the Apple App Store and Google
+            Play Store.
           </p>
         </section>
 
@@ -68,7 +70,7 @@ export default function TermsPage() {
             </li>
             <li>We do not guarantee number portability.</li>
             <li>
-              Swap fee: $2.50 per number swap, charged via your in-app wallet balance.
+              Swap fee: $4.99 per number swap, charged via your in-app wallet balance.
             </li>
           </ul>
         </section>
@@ -138,7 +140,7 @@ export default function TermsPage() {
               using AI Call, you consent to this processing.
             </li>
             <li>
-              AI calls consume minutes at a rate of 3 minutes per minute of call time.
+              AI calls consume credits at a rate of 10 credits per minute of call time.
             </li>
             <li>
               The AI agent may produce inaccurate, inappropriate, or unexpected
@@ -159,9 +161,144 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            8. Purchases &amp; Billing
+            8. Call Screening
+          </h2>
+          <p className="mt-4">
+            VeraDial offers AI-powered call screening for inbound calls. When enabled,
+            an AI agent answers incoming calls on your behalf, asks the caller to
+            identify themselves and state their purpose, and reports this information
+            to you.
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              Call screening is optional and can be enabled or disabled in your account
+              settings.
+            </li>
+            <li>
+              Screening interactions are processed by a third-party AI provider
+              (ElevenLabs). By enabling call screening, you consent to inbound call
+              audio being processed by this provider.
+            </li>
+            <li>
+              Screening data (caller identity and stated intent) is stored in your
+              account.
+            </li>
+            <li>
+              Call screening is limited to 50 screened calls per day, with each
+              screening interaction lasting a maximum of 30 seconds.
+            </li>
+            <li>
+              The AI screening agent may produce inaccurate transcriptions or
+              misinterpret caller intent. VeraDial is not liable for screening
+              inaccuracies.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            9. Voicemail
+          </h2>
+          <div className="mt-4 space-y-3">
+            <p>
+              When an inbound call to your VeraDial number is not answered and no call
+              forwarding is configured, the call is directed to voicemail.
+            </p>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
+              <li>
+                Voicemail recordings have a maximum duration of 120 seconds.
+              </li>
+              <li>
+                Recordings are automatically transcribed and stored in your account
+                history.
+              </li>
+              <li>
+                You may set a custom voicemail greeting using AI-generated
+                text-to-speech. Greeting text (up to 500 characters) is converted to
+                audio by a third-party AI provider (ElevenLabs) and stored in your
+                account.
+              </li>
+              <li>
+                Custom greeting generation is limited to 5 generations per hour.
+              </li>
+              <li>
+                If no custom greeting is active, a default system greeting is used.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            10. Call Recording &amp; Transcription
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
+            <li>
+              You may opt to record outbound calls. Recorded calls are stored in your
+              account history.
+            </li>
+            <li>
+              Recorded calls are automatically transcribed by a third-party speech
+              recognition service (Deepgram). By using call recording, you consent to
+              call audio being processed by this provider.
+            </li>
+            <li>
+              Transcripts include speaker identification and timestamps and are stored
+              alongside call records in your account.
+            </li>
+            <li>
+              You are responsible for complying with all applicable call recording laws,
+              including one-party and two-party consent requirements in your
+              jurisdiction.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            11. Push Notifications
+          </h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5">
+            <li>
+              VeraDial sends push notifications to your device for events including
+              incoming messages, new voicemails, missed calls, AI call completions, and
+              low credit balance alerts.
+            </li>
+            <li>
+              For your privacy, notifications do not display message content, AI
+              summaries, or other sensitive details on your lock screen.
+            </li>
+            <li>
+              You can manage notification permissions through your device&apos;s system
+              settings at any time.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            12. Subscription &amp; Billing
+          </h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5">
+            <li>
+              VeraDial requires a monthly subscription ($9.99/month) to access phone
+              number features. The subscription includes a 3-day free trial for new
+              users.
+            </li>
+            <li>
+              New subscribers receive 50 welcome credits upon starting their free trial.
+              Each paid billing cycle includes 100 credits.
+            </li>
+            <li>
+              Additional credit packs may be purchased separately through the app.
+            </li>
+            <li>
+              Credits do not expire and can be used for calls, SMS, and AI calling.
+            </li>
+            <li>
+              If your subscription lapses, your phone number is reserved for 25 days
+              before being released.
+            </li>
             <li>
               All purchases are processed through the Apple App Store or Google Play Store.
             </li>
@@ -169,14 +306,13 @@ export default function TermsPage() {
               Refund requests must be directed to Apple or Google per their respective
               refund policies.
             </li>
-            <li>Minutes and message credits do not expire.</li>
             <li>We reserve the right to change pricing with reasonable notice.</li>
           </ul>
         </section>
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            9. Emergency Services Disclaimer
+            13. Emergency Services Disclaimer
           </h2>
           <div className="mt-4 space-y-3">
             <p>
@@ -193,7 +329,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            10. Account Suspension &amp; Termination
+            14. Account Suspension &amp; Termination
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -219,7 +355,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            11. Limitation of Liability
+            15. Limitation of Liability
           </h2>
           <p className="mt-4">
             VeraDial is provided &ldquo;as-is&rdquo; without warranty of any kind,
@@ -233,7 +369,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            12. Governing Law
+            16. Governing Law
           </h2>
           <p className="mt-4">
             These terms shall be governed by and construed in accordance with the laws of
@@ -244,7 +380,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            13. Contact
+            17. Contact
           </h2>
           <p className="mt-4">
             For questions about these terms, contact us at{" "}
