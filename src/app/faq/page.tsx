@@ -57,7 +57,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What kind of numbers can I get?",
         answer:
-          "You can get dedicated US and Canadian phone numbers — local or toll-free. These are real numbers assigned to your account, not shared or recycled. Your $9.99/mo subscription includes one active number and 100 credits every month.",
+          "You can get dedicated US and Canadian phone numbers — local or toll-free. These are real numbers assigned to your account, not shared or recycled. Your $9.99/mo subscription includes one active number and 100 credits every month. Need more lines? Add up to 4 extra numbers with an add-on subscription.",
       },
       {
         question: "What is STIR/SHAKEN attestation?",

@@ -67,7 +67,7 @@ export function Features() {
                     {[
                       {
                         label: "Caller Profile",
-                        value: "Set your business name, website, and context once — AI uses it on every call",
+                        value: "Set your display name, website, and context once — AI uses it on every call",
                       },
                       {
                         label: "Custom Goals",

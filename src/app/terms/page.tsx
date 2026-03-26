@@ -85,8 +85,8 @@ export default function TermsPage() {
               automatically.
             </li>
             <li>
-              Canadian local numbers do not support SMS. Use toll-free numbers for Canadian
-              SMS messaging.
+              Canadian local numbers support SMS. Toll-free SMS in Canada requires
+              Twilio toll-free verification.
             </li>
             <li>We enforce TCPA-compliant opt-out handling automatically.</li>
             <li>
