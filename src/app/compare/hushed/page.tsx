@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import Link from "next/link";
+import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
 import Image from "next/image";
 import { Check, X, Minus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -8,10 +9,11 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "VeraDial vs Hushed — Comparison",
   description:
     "Compare VeraDial and Hushed side by side. See how verified business calling with AI agents and STIR/SHAKEN attestation stacks up against a privacy-focused second number app.",
+  path: "/compare/hushed",
   keywords: [
     "Hushed alternative",
     "VeraDial vs Hushed",
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     "verified calling",
     "STIR SHAKEN",
   ],
-};
+});
 
 type FeatureRow = {
   feature: string;
@@ -163,12 +165,29 @@ const DIFFERENTIATORS = [
 ];
 
 export default function CompareHushedPage() {
+  const breadcrumb = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Compare", path: "/compare" },
+    { name: "VeraDial vs Hushed", path: "/compare/hushed" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
+          <nav className="mb-4 text-sm text-text-muted">
+            <Link href="/" className="hover:text-text-secondary transition-colors">Home</Link>
+            <span className="mx-2">/</span>
+            <Link href="/compare" className="hover:text-text-secondary transition-colors">Compare</Link>
+            <span className="mx-2">/</span>
+            <span className="text-text-secondary">Hushed</span>
+          </nav>
           <Badge
             variant="outline"
             className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"

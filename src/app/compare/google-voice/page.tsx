@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import Link from "next/link";
+import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
 import Image from "next/image";
 import { Check, X, Minus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -8,10 +9,11 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "VeraDial vs Google Voice — Comparison",
   description:
     "Compare VeraDial and Google Voice side by side. See how AI-powered business calling with verified caller ID stacks up against Google's free second number.",
+  path: "/compare/google-voice",
   keywords: [
     "Google Voice alternative",
     "VeraDial vs Google Voice",
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     "STIR SHAKEN",
     "AI calling",
   ],
-};
+});
 
 type FeatureRow = {
   feature: string;
@@ -178,12 +180,29 @@ const DIFFERENTIATORS = [
 ];
 
 export default function CompareGoogleVoicePage() {
+  const breadcrumb = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Compare", path: "/compare" },
+    { name: "VeraDial vs Google Voice", path: "/compare/google-voice" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
+          <nav className="mb-4 text-sm text-text-muted">
+            <Link href="/" className="hover:text-text-secondary transition-colors">Home</Link>
+            <span className="mx-2">/</span>
+            <Link href="/compare" className="hover:text-text-secondary transition-colors">Compare</Link>
+            <span className="mx-2">/</span>
+            <span className="text-text-secondary">Google Voice</span>
+          </nav>
           <Badge
             variant="outline"
             className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"

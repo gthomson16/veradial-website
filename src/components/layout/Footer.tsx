@@ -50,7 +50,9 @@ export function Footer() {
           {/* Compare */}
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
-              Compare
+              <Link href="/compare" className="transition-colors hover:text-text-primary">
+                Compare
+              </Link>
             </h3>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.compare.map((link) => (

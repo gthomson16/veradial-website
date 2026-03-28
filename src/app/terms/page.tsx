@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata-helpers";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Terms of Service",
   description: "VeraDial Terms of Service — rules and guidelines for using our service.",
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

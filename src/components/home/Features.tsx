@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FEATURES, USE_CASES } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -23,7 +24,10 @@ export function Features() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-text-secondary">
               Most business phone tools give you a number and leave you to do the
-              work. VeraDial does the calling for you.
+              work. VeraDial does the calling for you.{" "}
+              <Link href="/compare" className="text-accent hover:underline">
+                See how we compare
+              </Link>.
             </p>
           </ScrollReveal>
 

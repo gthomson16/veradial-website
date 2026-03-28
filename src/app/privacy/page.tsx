@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata-helpers";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy Policy",
   description: "VeraDial Privacy Policy — how we collect, use, and protect your data.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

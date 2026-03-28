@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { FAQContent, type FAQSection } from "@/components/faq/FAQContent";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Frequently Asked Questions",
   description:
     "Everything you need to know about VeraDial — AI calling, phone numbers, pricing, voice effects, privacy, and getting started.",
+  path: "/faq",
   keywords: [
     "VeraDial FAQ",
     "AI calling questions",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     "VeraDial pricing",
     "STIR SHAKEN FAQ",
   ],
-};
+});
 
 const FAQ_SECTIONS: FAQSection[] = [
   {
