@@ -32,7 +32,6 @@ export default async function OgImage() {
             marginBottom: "32px",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={logoSrc}
             alt=""

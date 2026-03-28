@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://veradial.com";
 export const SITE_NAME = "VeraDial";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
 export const DEFAULT_DESCRIPTION =
   "Your AI assistant makes calls on your behalf \u2014 scheduling appointments, following up with clients, and handling routine conversations with verified caller ID.";
 

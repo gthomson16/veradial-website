@@ -10,7 +10,7 @@ export default function TermsPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Terms of Service</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: March 25, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: March 28, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -99,18 +99,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            6. Voice Effects
-          </h2>
-          <p className="mt-4">
-            Voice effects are provided for privacy purposes. Using voice modification to
-            impersonate another person for fraudulent purposes is strictly prohibited and
-            may result in immediate account termination.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="font-display text-xl font-semibold text-text-primary">
-            7. AI Calling
+            6. AI Calling
           </h2>
           <p className="mt-4">
             VeraDial&apos;s AI Call feature allows you to dispatch an AI agent to make
@@ -137,8 +126,10 @@ export default function TermsPage() {
               stored in your account and may be reviewed for abuse prevention.
             </li>
             <li>
-              Call audio is processed by a third-party AI provider (ElevenLabs). By
-              using AI Call, you consent to this processing.
+              Call audio is processed in real-time by third-party AI providers,
+              including ElevenLabs, OpenAI, and Google (Gemini). The provider used
+              for each call is selected by our server. By using AI Call, you consent
+              to this processing.
             </li>
             <li>
               AI calls consume credits at a rate of 10 credits per minute of call time.
@@ -162,7 +153,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            8. Call Screening
+            7. Call Screening
           </h2>
           <p className="mt-4">
             VeraDial offers AI-powered call screening for inbound calls. When enabled,
@@ -198,7 +189,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            9. Voicemail
+            8. Voicemail
           </h2>
           <div className="mt-4 space-y-3">
             <p>
@@ -215,12 +206,13 @@ export default function TermsPage() {
               </li>
               <li>
                 You may set a custom voicemail greeting using AI-generated
-                text-to-speech. Greeting text (up to 500 characters) is converted to
-                audio by a third-party AI provider (ElevenLabs) and stored in your
-                account.
+                text-to-speech (up to 500 characters, converted to audio by
+                ElevenLabs) or by recording your own greeting (maximum 30 seconds,
+                2&nbsp;MB file size). Greetings are stored in your account.
               </li>
               <li>
-                Custom greeting generation is limited to 5 generations per hour.
+                Greeting creation is limited to 5 generations or uploads per hour,
+                with a maximum of 10 saved greetings.
               </li>
               <li>
                 If no custom greeting is active, a default system greeting is used.
@@ -231,7 +223,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            10. Call Recording &amp; Transcription
+            9. Call Recording &amp; Transcription
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -251,6 +243,28 @@ export default function TermsPage() {
               You are responsible for complying with all applicable call recording laws,
               including one-party and two-party consent requirements in your
               jurisdiction.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            10. Call Map &amp; Location Data
+          </h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5">
+            <li>
+              VeraDial may collect your device&apos;s GPS location when you make or
+              receive calls. This data is used to display your calls on an interactive
+              map within the app.
+            </li>
+            <li>
+              Location collection requires your device&apos;s location permission and
+              is optional. You can revoke location access at any time through your
+              device&apos;s system settings.
+            </li>
+            <li>
+              Location data is stored alongside call records in your account and is not
+              shared with third parties.
             </li>
           </ul>
         </section>
@@ -282,13 +296,18 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              VeraDial requires a monthly subscription ($9.99/month) to access phone
-              number features. The subscription includes a 3-day free trial for new
-              users.
+              VeraDial requires a monthly subscription ($9.99/month per line) to access
+              phone number features. The subscription includes a 3-day free trial for
+              new users.
             </li>
             <li>
               New subscribers receive 50 welcome credits upon starting their free trial.
               Each paid billing cycle includes 100 credits.
+            </li>
+            <li>
+              Additional phone lines (up to 4 extra) are available as a tiered add-on
+              subscription. If your add-on subscription lapses, over-allowance numbers
+              receive a 7-day grace period before being suspended.
             </li>
             <li>
               Additional credit packs may be purchased separately through the app.

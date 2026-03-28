@@ -7,14 +7,13 @@ import {
   UserCheck,
   AudioLines,
   MessageSquare,
-  ShieldCheck,
   Lock,
   Shield,
   Smartphone,
 } from "lucide-react";
 
-export const APP_PRIMARY_URL =
-  "mailto:support@veradial.com?subject=VeraDial%20iOS%20Access";
+export const EARLY_ACCESS_URL =
+  "mailto:support@veradial.com?subject=VeraDial%20Early%20Access&body=Hi%20VeraDial%2C%0A%0AI%27d%20like%20early%20access%20to%20the%20app.%0A";
 
 export const NAV_LINKS = [
   { label: "Features", href: "/#features" },
