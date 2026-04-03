@@ -108,7 +108,23 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-border pt-6">
+        <div className="mt-12 flex flex-col items-center gap-4 border-t border-border pt-6">
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-text-muted">Supported by</span>
+            <a
+              href="https://elevenlabs.io/startup-grants"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp"
+                alt="Backed by ElevenLabs Grants"
+                width={200}
+                height={40}
+                className="opacity-70 transition-opacity hover:opacity-100"
+              />
+            </a>
+          </div>
           <p className="text-center text-xs text-text-muted">
             &copy; {new Date().getFullYear()} VeraDial. All rights reserved.
           </p>
