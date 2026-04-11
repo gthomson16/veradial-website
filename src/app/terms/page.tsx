@@ -10,7 +10,7 @@ export default function TermsPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Terms of Service</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: March 28, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: April 11, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -19,10 +19,10 @@ export default function TermsPage() {
           </h2>
           <p className="mt-4">
             VeraDial provides caller ID-controlled voice calling, SMS messaging,
-            AI-powered calling, call screening, voicemail, and call transcription
-            through purchased and verified phone numbers. The service is delivered
-            through mobile applications available on the Apple App Store and Google
-            Play Store.
+            AI-powered calling, call screening, call forwarding, voicemail, and call
+            transcription through purchased and verified phone numbers. The service is
+            delivered through mobile applications available on the Apple App Store and
+            Google Play Store.
           </p>
         </section>
 
@@ -127,9 +127,13 @@ export default function TermsPage() {
             </li>
             <li>
               Call audio is processed in real-time by third-party AI providers,
-              including ElevenLabs, OpenAI, and Google (Gemini). The provider used
-              for each call is selected by our server. By using AI Call, you consent
+              including ElevenLabs, OpenAI, Google (Gemini), and xAI (Grok). The provider
+              used for each call is selected by our server. By using AI Call, you consent
               to this processing.
+            </li>
+            <li>
+              Call audio may be routed through LiveKit&apos;s real-time infrastructure
+              for SIP connectivity. By using AI Call, you consent to this routing.
             </li>
             <li>
               AI calls consume credits at a rate of 10 credits per minute of call time.
@@ -189,7 +193,38 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            8. Voicemail
+            8. Call Forwarding
+          </h2>
+          <p className="mt-4">
+            VeraDial allows you to forward unanswered inbound calls to another phone
+            number.
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              Call forwarding is optional and can be enabled or disabled in your account
+              settings.
+            </li>
+            <li>
+              When enabled, unanswered calls are forwarded to your configured number
+              after a 30-second timeout.
+            </li>
+            <li>
+              Call forwarding and call screening are mutually exclusive — only one can
+              be active at a time.
+            </li>
+            <li>
+              You are responsible for ensuring you have the right to use the forwarding
+              number you configure.
+            </li>
+            <li>
+              Standard carrier charges may apply to forwarded calls on the receiving end.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            9. Voicemail
           </h2>
           <div className="mt-4 space-y-3">
             <p>
@@ -223,12 +258,12 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            9. Call Recording &amp; Transcription
+            10. Call Recording &amp; Transcription
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              You may opt to record outbound calls. Recorded calls are stored in your
-              account history.
+              You may opt to record outbound calls and AI calls. Recorded calls are
+              stored in your account history.
             </li>
             <li>
               Recorded calls are automatically transcribed by a third-party speech
@@ -249,7 +284,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            10. Call Map &amp; Location Data
+            11. Call Map &amp; Location Data
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -271,7 +306,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            11. Push Notifications
+            12. Push Notifications
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -292,7 +327,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            12. Subscription &amp; Billing
+            13. Subscription &amp; Billing
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -332,7 +367,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            13. Emergency Services Disclaimer
+            14. Emergency Services Disclaimer
           </h2>
           <div className="mt-4 space-y-3">
             <p>
@@ -349,7 +384,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            14. Account Suspension &amp; Termination
+            15. Account Suspension &amp; Termination
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
@@ -375,7 +410,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            15. Limitation of Liability
+            16. Limitation of Liability
           </h2>
           <p className="mt-4">
             VeraDial is provided &ldquo;as-is&rdquo; without warranty of any kind,
@@ -389,7 +424,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            16. Governing Law
+            17. Governing Law
           </h2>
           <p className="mt-4">
             These terms shall be governed by and construed in accordance with the laws of
@@ -400,7 +435,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            17. Contact
+            18. Contact
           </h2>
           <p className="mt-4">
             For questions about these terms, contact us at{" "}

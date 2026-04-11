@@ -217,6 +217,7 @@ export const FOOTER_LINKS = {
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
+    { label: "Delete Account", href: "/delete-account" },
   ],
   contact: [{ label: "support@veradial.com", href: "mailto:support@veradial.com" }],
 } as const;
