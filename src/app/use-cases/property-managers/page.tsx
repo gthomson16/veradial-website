@@ -14,7 +14,11 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildUseCasePageJsonLd,
+} from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
@@ -22,10 +26,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
+const PAGE_TITLE = "VeraDial for Property Managers";
+const PAGE_DESCRIPTION =
+  "Business calling for property managers. Coordinate tenants and vendors, document conversations, and manage calls with AI calling and recordings.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial for Property Managers",
-  description:
-    "Business calling for property managers. Coordinate tenants and vendors, document conversations, and manage calls with AI calling and recordings.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/use-cases/property-managers",
   keywords: [
     "property manager phone app",
@@ -105,9 +112,19 @@ export default function PropertyManagersPage() {
     { name: "Use Cases", path: "/use-cases" },
     { name: "Property Managers", path: "/use-cases/property-managers" },
   ]);
+  const pageJsonLd = buildUseCasePageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/use-cases/property-managers",
+    audienceType: "Property Managers",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

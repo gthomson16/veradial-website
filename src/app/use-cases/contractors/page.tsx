@@ -19,7 +19,11 @@ import {
   Sunset,
   Moon,
 } from "lucide-react";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildUseCasePageJsonLd,
+} from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
@@ -27,10 +31,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
+const PAGE_TITLE = "VeraDial for Contractors & Home Services";
+const PAGE_DESCRIPTION =
+  "Business calling for plumbers, electricians, HVAC techs, and contractors. Get verified caller ID, AI calls, call mapping, and voicemail transcription.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial for Contractors & Home Services",
-  description:
-    "Business calling for plumbers, electricians, HVAC techs, and contractors. Get verified caller ID, AI calls, call mapping, and voicemail transcription.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/use-cases/contractors",
   keywords: [
     "business phone for plumber",
@@ -158,9 +165,19 @@ export default function ContractorsUseCasePage() {
     { name: "Use Cases", path: "/use-cases" },
     { name: "Contractors", path: "/use-cases/contractors" },
   ]);
+  const pageJsonLd = buildUseCasePageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/use-cases/contractors",
+    audienceType: "Contractors & Home Services",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

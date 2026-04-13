@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildUseCasePageJsonLd,
+} from "@/lib/metadata-helpers";
 import {
   Phone,
   ShieldCheck,
@@ -20,10 +24,13 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
+const PAGE_TITLE = "VeraDial for Freelancers & Consultants";
+const PAGE_DESCRIPTION =
+  "A business line for freelancers and consultants. Get a dedicated number with AI calling, voicemail transcription, call recording, and voice privacy.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial for Freelancers & Consultants",
-  description:
-    "A business line for freelancers and consultants. Get a dedicated number with AI calling, voicemail transcription, call recording, and voice privacy.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/use-cases/freelancers",
   keywords: [
     "business phone for freelancers",
@@ -136,9 +143,19 @@ export default function FreelancersUseCasePage() {
     { name: "Use Cases", path: "/use-cases" },
     { name: "Freelancers & Consultants", path: "/use-cases/freelancers" },
   ]);
+  const pageJsonLd = buildUseCasePageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/use-cases/freelancers",
+    audienceType: "Freelancers & Consultants",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

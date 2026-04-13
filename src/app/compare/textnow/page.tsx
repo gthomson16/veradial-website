@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildComparisonPageJsonLd,
+} from "@/lib/metadata-helpers";
 import Image from "next/image";
 import { Check, X, Minus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -9,10 +13,13 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
+const PAGE_TITLE = "VeraDial vs TextNow — Comparison";
+const PAGE_DESCRIPTION =
+  "Compare VeraDial and TextNow side by side. See how verified business calling with AI agents and caller ID control compares to a free ad-supported calling app.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial vs TextNow — Comparison",
-  description:
-    "Compare VeraDial and TextNow side by side. See how verified business calling with AI agents and caller ID control compares to a free ad-supported calling app.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/compare/textnow",
   keywords: [
     "TextNow alternative",
@@ -184,9 +191,19 @@ export default function CompareTextNowPage() {
     { name: "Compare", path: "/compare" },
     { name: "VeraDial vs TextNow", path: "/compare/textnow" },
   ]);
+  const pageJsonLd = buildComparisonPageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/compare/textnow",
+    comparedName: "TextNow",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

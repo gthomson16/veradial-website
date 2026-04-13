@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildCollectionPageJsonLd,
+} from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
@@ -8,10 +12,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
+const PAGE_TITLE = "VeraDial Alternatives & Comparisons";
+const PAGE_DESCRIPTION =
+  "Compare VeraDial with Google Voice, TextNow, Burner, Hushed, Sideline, and SpoofCard to find the right business calling app and caller ID setup.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial Alternatives & Comparisons",
-  description:
-    "Compare VeraDial with Google Voice, TextNow, Burner, Hushed, Sideline, and SpoofCard to find the right business calling app and caller ID setup.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/compare",
   keywords: [
     "VeraDial comparison",
@@ -100,9 +107,31 @@ function BreadcrumbJsonLd() {
   );
 }
 
+function CompareCollectionJsonLd() {
+  const jsonLd = buildCollectionPageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/compare",
+    itemListName: "VeraDial comparison pages",
+    items: COMPARISONS.map((comparison) => ({
+      name: `VeraDial vs ${comparison.name}`,
+      path: comparison.href,
+      description: comparison.tagline,
+    })),
+  });
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function ComparePage() {
   return (
     <>
+      <CompareCollectionJsonLd />
       <BreadcrumbJsonLd />
 
       {/* Hero */}

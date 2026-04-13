@@ -14,7 +14,11 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildUseCasePageJsonLd,
+} from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
@@ -22,10 +26,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
+const PAGE_TITLE = "VeraDial for Recruiters";
+const PAGE_DESCRIPTION =
+  "Business calling for recruiters. Screen candidates with AI, get transcripts for every call, and cut down on phone tag during hiring.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial for Recruiters",
-  description:
-    "Business calling for recruiters. Screen candidates with AI, get transcripts for every call, and cut down on phone tag during hiring.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/use-cases/recruiters",
   keywords: [
     "AI calling for recruiters",
@@ -105,9 +112,19 @@ export default function RecruitersPage() {
     { name: "Use Cases", path: "/use-cases" },
     { name: "Recruiters", path: "/use-cases/recruiters" },
   ]);
+  const pageJsonLd = buildUseCasePageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/use-cases/recruiters",
+    audienceType: "Recruiters",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

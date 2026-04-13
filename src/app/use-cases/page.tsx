@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildCollectionPageJsonLd,
+} from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
@@ -8,10 +12,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
+const PAGE_TITLE = "VeraDial Use Cases for Small Businesses";
+const PAGE_DESCRIPTION =
+  "See how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI calling and verified business numbers.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial Use Cases for Small Businesses",
-  description:
-    "See how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI calling and verified business numbers.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/use-cases",
   keywords: [
     "VeraDial use cases",
@@ -102,9 +109,31 @@ function BreadcrumbJsonLd() {
   );
 }
 
+function UseCaseCollectionJsonLd() {
+  const jsonLd = buildCollectionPageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/use-cases",
+    itemListName: "VeraDial use case pages",
+    items: USE_CASES.map((useCase) => ({
+      name: useCase.name,
+      path: useCase.href,
+      description: useCase.tagline,
+    })),
+  });
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function UseCasesPage() {
   return (
     <>
+      <UseCaseCollectionJsonLd />
       <BreadcrumbJsonLd />
 
       {/* Hero */}

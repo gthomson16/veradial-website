@@ -17,7 +17,11 @@ import {
   UserCheck,
   Users,
 } from "lucide-react";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildUseCasePageJsonLd,
+} from "@/lib/metadata-helpers";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GradientMesh } from "@/components/ui/GradientMesh";
@@ -29,10 +33,13 @@ import { Badge } from "@/components/ui/Badge";
 /*  Metadata                                                          */
 /* ------------------------------------------------------------------ */
 
+const PAGE_TITLE = "VeraDial for Real Estate Agents";
+const PAGE_DESCRIPTION =
+  "Business calling for real estate agents. Automate lead follow-up, show verified caller ID, track calls by neighborhood, and keep your personal number private.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial for Real Estate Agents",
-  description:
-    "Business calling for real estate agents. Automate lead follow-up, show verified caller ID, track calls by neighborhood, and keep your personal number private.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/use-cases/realtors",
   keywords: [
     "business phone for realtors",
@@ -151,9 +158,19 @@ export default function RealtorsUseCasePage() {
     { name: "Use Cases", path: "/use-cases" },
     { name: "Real Estate", path: "/use-cases/realtors" },
   ]);
+  const pageJsonLd = buildUseCasePageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/use-cases/realtors",
+    audienceType: "Real Estate Agents",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

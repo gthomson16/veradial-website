@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildComparisonPageJsonLd,
+} from "@/lib/metadata-helpers";
 import Image from "next/image";
 import { Check, X, Minus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -9,10 +13,13 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
+const PAGE_TITLE = "VeraDial vs Hushed — Comparison";
+const PAGE_DESCRIPTION =
+  "Compare VeraDial and Hushed side by side. See how verified business calling, AI calling, and voice privacy compare to a privacy-focused second-number app.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial vs Hushed — Comparison",
-  description:
-    "Compare VeraDial and Hushed side by side. See how verified business calling, AI calling, and voice privacy compare to a privacy-focused second-number app.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/compare/hushed",
   keywords: [
     "Hushed alternative",
@@ -170,9 +177,19 @@ export default function CompareHushedPage() {
     { name: "Compare", path: "/compare" },
     { name: "VeraDial vs Hushed", path: "/compare/hushed" },
   ]);
+  const pageJsonLd = buildComparisonPageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/compare/hushed",
+    comparedName: "Hushed",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

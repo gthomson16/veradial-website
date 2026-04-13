@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildComparisonPageJsonLd,
+} from "@/lib/metadata-helpers";
 import Image from "next/image";
 import { Check, X, Minus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -9,10 +13,13 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
+const PAGE_TITLE = "VeraDial vs Sideline — Comparison";
+const PAGE_DESCRIPTION =
+  "Compare VeraDial and Sideline side by side. See how AI calling, verified caller ID, voice privacy, and recordings compare to a standard second-number app.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial vs Sideline — Comparison",
-  description:
-    "Compare VeraDial and Sideline side by side. See how AI calling, verified caller ID, voice privacy, and recordings compare to a standard second-number app.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/compare/sideline",
   keywords: [
     "Sideline alternative",
@@ -180,9 +187,19 @@ export default function CompareSidelinePage() {
     { name: "Compare", path: "/compare" },
     { name: "VeraDial vs Sideline", path: "/compare/sideline" },
   ]);
+  const pageJsonLd = buildComparisonPageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/compare/sideline",
+    comparedName: "Sideline",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

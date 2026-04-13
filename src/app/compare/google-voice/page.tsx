@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildComparisonPageJsonLd,
+} from "@/lib/metadata-helpers";
 import Image from "next/image";
 import { Check, X, Minus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -9,10 +13,13 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
+const PAGE_TITLE = "VeraDial vs Google Voice — Comparison";
+const PAGE_DESCRIPTION =
+  "Compare VeraDial and Google Voice side by side. See how AI-powered business calling with verified caller ID stacks up against Google's free second number.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial vs Google Voice — Comparison",
-  description:
-    "Compare VeraDial and Google Voice side by side. See how AI-powered business calling with verified caller ID stacks up against Google's free second number.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/compare/google-voice",
   keywords: [
     "Google Voice alternative",
@@ -185,9 +192,19 @@ export default function CompareGoogleVoicePage() {
     { name: "Compare", path: "/compare" },
     { name: "VeraDial vs Google Voice", path: "/compare/google-voice" },
   ]);
+  const pageJsonLd = buildComparisonPageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/compare/google-voice",
+    comparedName: "Google Voice",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

@@ -19,7 +19,11 @@ import {
   Sun,
   Sunset,
 } from "lucide-react";
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import {
+  buildPageMetadata,
+  buildBreadcrumbJsonLd,
+  buildUseCasePageJsonLd,
+} from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
@@ -31,10 +35,13 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 /*  Metadata                                                          */
 /* ------------------------------------------------------------------ */
 
+const PAGE_TITLE = "VeraDial for Sales Teams";
+const PAGE_DESCRIPTION =
+  "Outbound calling for SDRs and sales reps. VeraDial runs first-touch AI calls, shows verified caller ID, and saves call transcripts and recordings.";
+
 export const metadata = buildPageMetadata({
-  title: "VeraDial for Sales Teams",
-  description:
-    "Outbound calling for SDRs and sales reps. VeraDial runs first-touch AI calls, shows verified caller ID, and saves call transcripts and recordings.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/use-cases/sales",
   keywords: [
     "AI cold calling app",
@@ -148,9 +155,19 @@ export default function SalesUseCasePage() {
     { name: "Use Cases", path: "/use-cases" },
     { name: "Sales Teams", path: "/use-cases/sales" },
   ]);
+  const pageJsonLd = buildUseCasePageJsonLd({
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/use-cases/sales",
+    audienceType: "Sales Teams",
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
