@@ -18,6 +18,8 @@ export const EARLY_ACCESS_URL =
 export const NAV_LINKS = [
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
+  { label: "Use Cases", href: "/use-cases" },
+  { label: "Compare", href: "/compare" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
   { label: "Access", href: "/#download" },
@@ -215,6 +217,14 @@ export const FOOTER_LINKS = {
     { label: "vs Google Voice", href: "/compare/google-voice" },
     { label: "vs Sideline", href: "/compare/sideline" },
     { label: "vs TextNow", href: "/compare/textnow" },
+  ],
+  useCases: [
+    { label: "Contractors", href: "/use-cases/contractors" },
+    { label: "Real Estate", href: "/use-cases/realtors" },
+    { label: "Freelancers", href: "/use-cases/freelancers" },
+    { label: "Sales Teams", href: "/use-cases/sales" },
+    { label: "Property Managers", href: "/use-cases/property-managers" },
+    { label: "Recruiters", href: "/use-cases/recruiters" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },

@@ -35,9 +35,12 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 
 ## Target Users
 
-- Solo operators (plumbers, electricians, consultants)
+- Contractors & home services (plumbers, electricians, HVAC)
+- Real estate agents
+- Freelancers & consultants
 - Sales teams (SDRs, outbound reps)
-- Field services (HVAC, dental offices, home services)
+- Property managers
+- Recruiters
 
 ## Status
 
@@ -49,6 +52,13 @@ Coming soon to iOS and Android. Currently in beta.
 - FAQ: https://veradial.com/faq
 - Comparisons: https://veradial.com/compare
 - About: https://veradial.com/about
+- Use Cases: https://veradial.com/use-cases
+- For Contractors: https://veradial.com/use-cases/contractors
+- For Realtors: https://veradial.com/use-cases/realtors
+- For Freelancers: https://veradial.com/use-cases/freelancers
+- For Sales Teams: https://veradial.com/use-cases/sales
+- For Property Managers: https://veradial.com/use-cases/property-managers
+- For Recruiters: https://veradial.com/use-cases/recruiters
 - Privacy Policy: https://veradial.com/privacy
 - Terms of Service: https://veradial.com/terms
 - Contact: support@veradial.com
