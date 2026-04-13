@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent, type KeyboardEvent } from "react";
 import { Play, Pause } from "lucide-react";
 
 function formatTime(seconds: number) {
@@ -82,6 +82,20 @@ export function HeroDemoPlayer() {
     audio.currentTime = ratio * duration;
   }
 
+  function handleScrubKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    const audio = audioRef.current;
+    if (!audio || !duration) return;
+
+    const step = 5; // seconds
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      audio.currentTime = Math.min(duration, audio.currentTime + step);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      audio.currentTime = Math.max(0, audio.currentTime - step);
+    }
+  }
+
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
@@ -106,7 +120,15 @@ export function HeroDemoPlayer() {
         <div className="flex-1">
           <div
             ref={progressRef}
+            role="slider"
+            tabIndex={0}
+            aria-label="Audio progress"
+            aria-valuemin={0}
+            aria-valuemax={Math.round(duration)}
+            aria-valuenow={Math.round(currentTime)}
+            aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
             onClick={handleSeek}
+            onKeyDown={handleScrubKeyDown}
             className="h-1 cursor-pointer overflow-hidden rounded-full bg-white/10"
           >
             <div

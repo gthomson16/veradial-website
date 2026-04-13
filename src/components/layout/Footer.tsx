@@ -142,6 +142,7 @@ export function Footer() {
                 alt="Backed by ElevenLabs Grants"
                 width={200}
                 height={40}
+                unoptimized
                 className="opacity-70 transition-opacity hover:opacity-100"
               />
             </a>

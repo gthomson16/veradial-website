@@ -16,12 +16,15 @@ export type FAQSection = {
 
 function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
   const [open, setOpen] = useState(false);
+  const panelId = `faq-panel-${index}`;
 
   return (
     <ScrollReveal delay={index * 60}>
       <div className="border-b border-border">
         <button
           onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls={panelId}
           className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-accent"
         >
           <span className="font-display text-base text-text-primary sm:text-lg">
@@ -35,6 +38,8 @@ function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
           />
         </button>
         <div
+          id={panelId}
+          role="region"
           className={`grid transition-all duration-200 ease-out ${
             open ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
           }`}
