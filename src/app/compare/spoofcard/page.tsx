@@ -206,7 +206,7 @@ export default function CompareSpoofCardPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             SpoofCard lets you display a different caller ID. VeraDial gives you
-            a real, verified phone number that carriers trust. Here's how they
+            a real, verified phone number that carriers trust. Here&apos;s how they
             compare.
           </p>
 
@@ -240,7 +240,7 @@ export default function CompareSpoofCardPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     Dedicated numbers with carrier-level verification. Your calls
                     display as <strong className="text-accent">verified</strong>{" "}
-                    on the recipient's device. You own the number, so you can
+                    on the recipient&apos;s device. You own the number, so you can
                     call, text, record, and even dispatch AI agents to make calls
                     on your behalf — all from one consistent identity.
                   </p>
@@ -262,8 +262,8 @@ export default function CompareSpoofCardPage() {
                     </span>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-                    Displays a chosen number on the recipient's caller ID using
-                    traditional spoofing. The number isn't yours — you can't
+                    Displays a chosen number on the recipient&apos;s caller ID using
+                    traditional spoofing. The number isn&apos;t yours — you can&apos;t
                     receive calls or texts on it. Carriers are increasingly
                     flagging or blocking spoofed calls under STIR/SHAKEN
                     regulations.
@@ -355,8 +355,8 @@ export default function CompareSpoofCardPage() {
               Spoofing is a liability. Verified identity is an asset.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
-              STIR/SHAKEN regulations mean carriers now verify who's behind
-              every call. Spoofed numbers get flagged as "Spam Likely" or
+              STIR/SHAKEN regulations mean carriers now verify who&apos;s behind
+              every call. Spoofed numbers get flagged as &ldquo;Spam Likely&rdquo; or
               blocked entirely. VeraDial works with the system, not against it.
             </p>
           </ScrollReveal>

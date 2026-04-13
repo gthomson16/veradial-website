@@ -25,7 +25,7 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 export const metadata = buildPageMetadata({
   title: "VeraDial for Property Managers",
   description:
-    "How property managers use VeraDial to manage tenant calls, coordinate vendors, and document every conversation with AI-powered calling, Call Map, and call recording.",
+    "Business calling for property managers. Coordinate tenants and vendors, document conversations, and manage calls with AI calling and recordings.",
   path: "/use-cases/property-managers",
   keywords: [
     "property manager phone app",

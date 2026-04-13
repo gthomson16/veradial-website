@@ -217,7 +217,7 @@ export default function CompareGoogleVoicePage() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Google Voice gives you a free second number. VeraDial gives you
             verified business calling with AI agents, caller ID control, and
-            voice effects. Here's how they compare.
+            voice effects. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -403,7 +403,7 @@ export default function CompareGoogleVoicePage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get verified caller ID, AI agents, voice effects, and call
-                recording — everything Google Voice doesn't offer for business
+                recording — everything Google Voice doesn&apos;t offer for business
                 calling.
               </p>
               <div className="mt-8 flex justify-center gap-4">

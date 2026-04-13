@@ -6,7 +6,6 @@ import {
   FileText,
   Mic,
   MapPin,
-  UserCheck,
   Clock,
   ShieldAlert,
   FileQuestion,
@@ -35,7 +34,7 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 export const metadata = buildPageMetadata({
   title: "VeraDial for Sales Teams",
   description:
-    "AI-powered outbound calling for SDRs and sales reps. VeraDial handles first-touch calls with custom scripts, delivers verified caller ID so prospects actually answer, and captures full transcripts and recordings after every conversation.",
+    "Outbound calling for SDRs and sales reps. VeraDial runs first-touch AI calls, shows verified caller ID, and saves call transcripts and recordings.",
   path: "/use-cases/sales",
   keywords: [
     "AI cold calling app",

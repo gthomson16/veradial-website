@@ -30,7 +30,7 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 export const metadata = buildPageMetadata({
   title: "VeraDial for Contractors & Home Services",
   description:
-    "The AI-powered business phone app built for plumbers, electricians, HVAC techs, and home service contractors. Verified caller ID, AI appointment calls, call mapping, and voicemail transcription — all for $9.99/mo.",
+    "Business calling for plumbers, electricians, HVAC techs, and contractors. Get verified caller ID, AI calls, call mapping, and voicemail transcription.",
   path: "/use-cases/contractors",
   keywords: [
     "business phone for plumber",

@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 export const metadata = buildPageMetadata({
   title: "VeraDial vs Sideline — Comparison",
   description:
-    "Compare VeraDial and Sideline side by side. See how AI-powered verified calling with voice effects and call recording stacks up against a traditional second phone number app.",
+    "Compare VeraDial and Sideline side by side. See how AI calling, verified caller ID, voice privacy, and recordings compare to a standard second-number app.",
   path: "/compare/sideline",
   keywords: [
     "Sideline alternative",

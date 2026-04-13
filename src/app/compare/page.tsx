@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export const metadata = buildPageMetadata({
-  title: "How VeraDial Compares",
+  title: "VeraDial Alternatives & Comparisons",
   description:
-    "See how VeraDial stacks up against Google Voice, TextNow, Burner, Hushed, Sideline, and SpoofCard. Compare AI calling, verified caller ID, voice privacy, and more.",
+    "Compare VeraDial with Google Voice, TextNow, Burner, Hushed, Sideline, and SpoofCard to find the right business calling app and caller ID setup.",
   path: "/compare",
   keywords: [
     "VeraDial comparison",

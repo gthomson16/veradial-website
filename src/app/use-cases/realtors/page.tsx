@@ -32,7 +32,7 @@ import { Badge } from "@/components/ui/Badge";
 export const metadata = buildPageMetadata({
   title: "VeraDial for Real Estate Agents",
   description:
-    "AI-powered business calling for real estate agents. Automate lead follow-ups, show verified caller ID, track calls by neighborhood on the Call Map, and keep your personal number private — all for $9.99/mo.",
+    "Business calling for real estate agents. Automate lead follow-up, show verified caller ID, track calls by neighborhood, and keep your personal number private.",
   path: "/use-cases/realtors",
   keywords: [
     "business phone for realtors",

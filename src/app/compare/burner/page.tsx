@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 export const metadata = buildPageMetadata({
   title: "VeraDial vs Burner — Comparison",
   description:
-    "Compare VeraDial and Burner side by side. See how verified business calling with AI agents and STIR/SHAKEN attestation stacks up against disposable phone numbers.",
+    "Compare VeraDial and Burner side by side. See how verified business calling, AI calling, and STIR/SHAKEN trust compare to disposable phone numbers.",
   path: "/compare/burner",
   keywords: [
     "Burner alternative",
@@ -207,7 +207,7 @@ export default function CompareBurnerPage() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Burner gives you disposable phone numbers that expire after use.
             VeraDial gives you a verified number with AI calling, voice effects,
-            and carrier-level trust. Here's how they compare.
+            and carrier-level trust. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -241,7 +241,7 @@ export default function CompareBurnerPage() {
                     A dedicated number with carrier-level verification. Your
                     calls display as{" "}
                     <strong className="text-accent">verified</strong> on the
-                    recipient's device. Make calls, send texts, record
+                    recipient&apos;s device. Make calls, send texts, record
                     conversations, apply voice effects, and dispatch AI agents —
                     all from one trusted identity. Pay as you go with credit
                     packs.
@@ -266,7 +266,7 @@ export default function CompareBurnerPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     Disposable phone numbers designed for short-term use. Create
                     temporary lines for calling and texting, then burn them when
-                    you're done. Also offers permanent "mini phone" lines.
+                    you&apos;re done. Also offers permanent &ldquo;mini phone&rdquo; lines.
                     Privacy-focused with auto-expiring numbers, but no call
                     verification, AI calling, or voice effects.
                   </p>
@@ -357,7 +357,7 @@ export default function CompareBurnerPage() {
               Disposable numbers expire. Verified identity compounds.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
-              Burner is great for one-off privacy scenarios. But if you're making
+              Burner is great for one-off privacy scenarios. But if you&apos;re making
               business calls, following up with clients, or building relationships
               over the phone, you need a number people recognize and trust —
               one that carriers verify instead of flag.

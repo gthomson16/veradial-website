@@ -25,7 +25,7 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 export const metadata = buildPageMetadata({
   title: "VeraDial for Recruiters",
   description:
-    "How recruiters use VeraDial to screen candidates with AI, get transcripts of every call, and stop playing phone tag. AI-powered calling built for recruiting workflows.",
+    "Business calling for recruiters. Screen candidates with AI, get transcripts for every call, and cut down on phone tag during hiring.",
   path: "/use-cases/recruiters",
   keywords: [
     "AI calling for recruiters",

@@ -1,4 +1,4 @@
-import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
+import { buildPageMetadata } from "@/lib/metadata-helpers";
 import { Hero } from "@/components/home/Hero";
 import { SocialProof } from "@/components/home/SocialProof";
 import { AppPreview } from "@/components/home/AppPreview";

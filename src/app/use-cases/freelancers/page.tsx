@@ -10,10 +10,8 @@ import {
   Voicemail,
   UserX,
   Clock,
-  Headphones,
   MapPin,
   FileText,
-  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
@@ -25,7 +23,7 @@ import { Badge } from "@/components/ui/Badge";
 export const metadata = buildPageMetadata({
   title: "VeraDial for Freelancers & Consultants",
   description:
-    "A professional business line without a second phone. VeraDial gives freelancers and consultants a dedicated business number with AI calling, voicemail transcription, call recording, and voice privacy — all for $9.99/mo.",
+    "A business line for freelancers and consultants. Get a dedicated number with AI calling, voicemail transcription, call recording, and voice privacy.",
   path: "/use-cases/freelancers",
   keywords: [
     "business phone for freelancers",
@@ -208,7 +206,7 @@ export default function FreelancersUseCasePage() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
               Most freelancers start by giving out their personal cell number.
-              It works — until it doesn't. As your client base grows, the cracks
+              It works — until it doesn&apos;t. As your client base grows, the cracks
               start to show. Here are the three biggest pain points independent
               professionals face every day.
             </p>

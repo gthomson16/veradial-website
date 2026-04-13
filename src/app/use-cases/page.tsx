@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export const metadata = buildPageMetadata({
-  title: "Who Uses VeraDial",
+  title: "VeraDial Use Cases for Small Businesses",
   description:
-    "Discover how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI-powered business calling, verified caller ID, and call management.",
+    "See how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI calling and verified business numbers.",
   path: "/use-cases",
   keywords: [
     "VeraDial use cases",

@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 export const metadata = buildPageMetadata({
   title: "VeraDial vs Hushed — Comparison",
   description:
-    "Compare VeraDial and Hushed side by side. See how verified business calling with AI agents and STIR/SHAKEN attestation stacks up against a privacy-focused second number app.",
+    "Compare VeraDial and Hushed side by side. See how verified business calling, AI calling, and voice privacy compare to a privacy-focused second-number app.",
   path: "/compare/hushed",
   keywords: [
     "Hushed alternative",
@@ -201,7 +201,7 @@ export default function CompareHushedPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Hushed gives you anonymous second numbers for privacy. VeraDial
-            gives you a verified business number that carriers trust. Here's
+            gives you a verified business number that carriers trust. Here&apos;s
             how they compare.
           </p>
 
@@ -236,7 +236,7 @@ export default function CompareHushedPage() {
                     A dedicated phone number with carrier-level verification.
                     Your calls display as{" "}
                     <strong className="text-accent">verified</strong> on the
-                    recipient's device. Make calls, send texts, record
+                    recipient&apos;s device. Make calls, send texts, record
                     conversations, apply voice effects, and dispatch AI agents
                     to call on your behalf -- all from one professional
                     identity.

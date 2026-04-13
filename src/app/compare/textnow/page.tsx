@@ -216,7 +216,7 @@ export default function CompareTextNowPage() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             TextNow gives you a free phone number for calling and texting.
             VeraDial gives you a verified business identity with AI agents,
-            voice effects, and caller ID control. Here's how they compare.
+            voice effects, and caller ID control. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -249,7 +249,7 @@ export default function CompareTextNowPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     Dedicated numbers with carrier-level verification. Your calls
                     display as <strong className="text-accent">verified</strong>{" "}
-                    on the recipient's device. Choose your number, control your
+                    on the recipient&apos;s device. Choose your number, control your
                     caller ID, record calls, apply voice effects, and dispatch AI
                     agents — all from one professional identity.
                   </p>
@@ -364,7 +364,7 @@ export default function CompareTextNowPage() {
               Free calls are great. Verified business identity is better.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
-              TextNow is excellent for personal use on a budget. But when you're
+              TextNow is excellent for personal use on a budget. But when you&apos;re
               calling prospects, clients, or patients, you need calls that land
               as trusted — with a number you control and an identity carriers
               verify.
