@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { buildPageMetadata } from "@/lib/metadata-helpers";
+import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
@@ -86,9 +86,25 @@ const COMPARISONS = [
   },
 ];
 
+function BreadcrumbJsonLd() {
+  const jsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Compare", path: "/compare" },
+  ]);
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function ComparePage() {
   return (
     <>
+      <BreadcrumbJsonLd />
+
       {/* Hero */}
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />

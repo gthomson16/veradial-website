@@ -18,7 +18,7 @@ export function Features() {
           <p className="mt-4 text-base leading-relaxed text-text-secondary">
             Most business phone tools give you a number and leave you to do the
             work. VeraDial does the calling for you.{" "}
-            <Link href="/compare" className="text-accent hover:underline">
+            <Link href="/compare" className="text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent">
               See how we compare
             </Link>.
           </p>

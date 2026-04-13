@@ -450,14 +450,12 @@ export default function PrivacyPage() {
               Retained by Sentry per their data retention policies.
             </li>
             <li>
-              <strong className="text-text-primary">Account deletion:</strong> Contact{" "}
-              <a
-                href="mailto:support@veradial.com"
-                className="text-accent hover:underline"
-              >
-                support@veradial.com
+              <strong className="text-text-primary">Account deletion:</strong>{" "}
+              Use the in-app deletion flow in VeraDial or visit{" "}
+              <a href="/delete-account" className="text-accent hover:underline">
+                veradial.com/delete-account
               </a>{" "}
-              to request full deletion of your account and associated data.
+              for deletion instructions and retention details.
             </li>
           </ul>
         </section>

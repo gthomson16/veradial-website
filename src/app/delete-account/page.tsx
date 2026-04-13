@@ -10,9 +10,7 @@ export const metadata = buildPageMetadata({
 export default function DeleteAccountPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
-      <h1 className="font-display text-4xl font-bold">
-        Delete Your Account
-      </h1>
+      <h1 className="font-display text-4xl font-bold">Delete Your Account</h1>
       <p className="mt-2 text-sm text-text-muted">Last updated: April 11, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
@@ -26,7 +24,9 @@ export default function DeleteAccountPage() {
               app:
             </p>
             <ol className="list-decimal space-y-1 pl-5">
-              <li>Open the <strong className="text-text-primary">VeraDial</strong> app</li>
+              <li>
+                Open the <strong className="text-text-primary">VeraDial</strong> app
+              </li>
               <li>Go to <strong className="text-text-primary">Settings</strong></li>
               <li>Tap <strong className="text-text-primary">Delete Account</strong></li>
               <li>
@@ -38,6 +38,17 @@ export default function DeleteAccountPage() {
             <p>
               Account deletion is immediate and irreversible. Once confirmed,
               your account and all associated data are permanently removed.
+            </p>
+            <p>
+              If you can&apos;t access the app, email{" "}
+              <a
+                href="mailto:support@veradial.com?subject=VeraDial%20Account%20Deletion%20Request"
+                className="text-accent underline underline-offset-2"
+              >
+                support@veradial.com
+              </a>{" "}
+              from the email address on your account and request account
+              deletion.
             </p>
           </div>
         </section>
@@ -52,13 +63,13 @@ export default function DeleteAccountPage() {
               erased:
             </p>
             <ul className="list-disc space-y-1 pl-5">
-              <li>Phone numbers (released back to the carrier)</li>
-              <li>Call history and recordings</li>
-              <li>Text messages</li>
-              <li>Voicemails and greetings</li>
-              <li>AI call history and transcripts</li>
-              <li>Account balance and credits</li>
-              <li>Profile information and caller identity</li>
+              <li>Profile information, caller identity, and verified caller IDs</li>
+              <li>Purchased VeraDial phone numbers, which are released back to the carrier</li>
+              <li>Call history, voicemail, and related transcripts</li>
+              <li>Text messages and SMS consent records</li>
+              <li>AI call history, notes, transcripts, and summaries</li>
+              <li>Voicemail greetings and uploaded greeting audio</li>
+              <li>Support tickets, push tokens, account balance, credits, and subscriptions</li>
             </ul>
           </div>
         </section>
@@ -69,14 +80,32 @@ export default function DeleteAccountPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              VeraDial does not retain your personal data after account deletion.
-              All records listed above are purged from our systems when the
-              deletion completes.
+              VeraDial deletes the account data listed above from our own
+              systems when the deletion workflow completes.
             </p>
             <p>
-              Anonymized, aggregated analytics (such as total call volume) that
-              cannot be linked back to you may persist for internal reporting
-              purposes.
+              Some limited records may persist outside VeraDial or temporarily
+              during processing:
+            </p>
+            <ul className="list-disc space-y-1 pl-5">
+              <li>
+                App Store / Google Play / RevenueCat transaction records are
+                maintained by those providers under their own retention policies
+              </li>
+              <li>
+                Carrier, cloud, and infrastructure providers may retain
+                operational logs or backups for a limited period under their own
+                policies
+              </li>
+              <li>
+                VeraDial keeps a minimal deletion tombstone record only as long
+                as needed to complete deletion safely and retry provider cleanup
+                if required
+              </li>
+            </ul>
+            <p>
+              VeraDial does not use your deleted account data for advertising or
+              marketing after deletion.
             </p>
           </div>
         </section>

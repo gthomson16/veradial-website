@@ -52,7 +52,7 @@ export function Hero() {
               Email{" "}
               <a
                 href="mailto:support@veradial.com"
-                className="text-accent hover:underline"
+                className="text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent"
               >
                 support@veradial.com
               </a>{" "}

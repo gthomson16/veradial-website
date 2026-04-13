@@ -19,6 +19,7 @@ export const NAV_LINKS = [
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQ", href: "/faq" },
+  { label: "About", href: "/about" },
   { label: "Access", href: "/#download" },
 ] as const;
 
@@ -204,6 +205,7 @@ export const FOOTER_LINKS = {
     { label: "Features", href: "/#features" },
     { label: "Pricing", href: "/#pricing" },
     { label: "FAQ", href: "/faq" },
+    { label: "About", href: "/about" },
     { label: "Access", href: "/#download" },
   ],
   compare: [

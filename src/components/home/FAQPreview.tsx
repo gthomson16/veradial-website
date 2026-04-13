@@ -16,9 +16,9 @@ export function FAQPreview() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {FAQ_PREVIEW.map((faq) => (
             <Card key={faq.question} hover={false} className="h-full p-6">
-              <h4 className="font-display text-base font-medium text-text-primary">
+              <h3 className="font-display text-base font-medium text-text-primary">
                 {faq.question}
-              </h4>
+              </h3>
               <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                 {faq.answer}
               </p>

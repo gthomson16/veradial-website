@@ -1,4 +1,4 @@
-import { buildPageMetadata } from "@/lib/metadata-helpers";
+import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -189,10 +189,25 @@ function FAQJsonLd() {
   );
 }
 
+function BreadcrumbJsonLd() {
+  const jsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "FAQ", path: "/faq" },
+  ]);
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function FAQPage() {
   return (
     <>
       <FAQJsonLd />
+      <BreadcrumbJsonLd />
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-[88px]">
