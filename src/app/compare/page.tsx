@@ -14,7 +14,7 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 
 const PAGE_TITLE = "VeraDial Alternatives & Comparisons";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial with Google Voice, TextNow, Burner, Hushed, Sideline, and SpoofCard to find the right business calling app and caller ID setup.";
+  "Compare VeraDial with Google Voice, OpenPhone, Grasshopper, Line2, iPlum, Dialpad, RingCentral, Vonage, and more to find the right business calling app.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -27,6 +27,11 @@ export const metadata = buildPageMetadata({
     "Google Voice alternative",
     "second phone number app comparison",
     "verified caller ID",
+    "OpenPhone alternative",
+    "Grasshopper alternative",
+    "Dialpad alternative",
+    "RingCentral alternative",
+    "Vonage alternative",
   ],
 });
 
@@ -89,6 +94,76 @@ const COMPARISONS = [
       "Dedicated verified numbers",
       "Carrier-grade attestation",
       "Full call history and transcripts",
+    ],
+  },
+  {
+    name: "OpenPhone",
+    href: "/compare/openphone",
+    tagline: "Team VoIP platform vs. solo AI calling powerhouse",
+    highlights: [
+      "AI makes calls, not just summaries",
+      "Caller ID control",
+      "No per-seat pricing",
+    ],
+  },
+  {
+    name: "Grasshopper",
+    href: "/compare/grasshopper",
+    tagline: "Traditional call forwarding vs. modern AI calling",
+    highlights: [
+      "Dedicated VoIP, not call forwarding",
+      "AI-powered outbound calls",
+      "Lower price, more features",
+    ],
+  },
+  {
+    name: "Dialpad",
+    href: "/compare/dialpad",
+    tagline: "Enterprise contact center vs. focused AI calling",
+    highlights: [
+      "AI that calls, not just coaches",
+      "No enterprise bloat",
+      "Instant setup, no admin portal",
+    ],
+  },
+  {
+    name: "RingCentral",
+    href: "/compare/ringcentral",
+    tagline: "Full UCaaS suite vs. focused AI calling platform",
+    highlights: [
+      "Half the price, focused features",
+      "AI agent outbound calling",
+      "No complex setup required",
+    ],
+  },
+  {
+    name: "Vonage",
+    href: "/compare/vonage",
+    tagline: "Legacy platform vs. modern AI calling app",
+    highlights: [
+      "Active development, not legacy maintenance",
+      "AI calling out of the box",
+      "Verified caller identity",
+    ],
+  },
+  {
+    name: "Line2",
+    href: "/compare/line2",
+    tagline: "Spam-flagged second line vs. verified AI calling",
+    highlights: [
+      "Calls that get answered, not flagged",
+      "AI agents + voice effects",
+      "Lower price, more features",
+    ],
+  },
+  {
+    name: "iPlum",
+    href: "/compare/iplum",
+    tagline: "Compliance-focused phone vs. AI-powered calling",
+    highlights: [
+      "Verified caller identity",
+      "AI-powered outbound calls",
+      "Modern app experience",
     ],
   },
 ];

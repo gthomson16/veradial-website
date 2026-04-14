@@ -212,12 +212,13 @@ export const FOOTER_LINKS = {
     { label: "Access", href: "/#download" },
   ],
   compare: [
-    { label: "vs SpoofCard", href: "/compare/spoofcard" },
-    { label: "vs Hushed", href: "/compare/hushed" },
-    { label: "vs Burner", href: "/compare/burner" },
     { label: "vs Google Voice", href: "/compare/google-voice" },
-    { label: "vs Sideline", href: "/compare/sideline" },
-    { label: "vs TextNow", href: "/compare/textnow" },
+    { label: "vs OpenPhone", href: "/compare/openphone" },
+    { label: "vs Grasshopper", href: "/compare/grasshopper" },
+    { label: "vs RingCentral", href: "/compare/ringcentral" },
+    { label: "vs Dialpad", href: "/compare/dialpad" },
+    { label: "All Comparisons", href: "/compare" },
+    { label: "Alternatives", href: "/alternatives" },
   ],
   useCases: [
     { label: "Contractors", href: "/use-cases/contractors" },
@@ -226,6 +227,14 @@ export const FOOTER_LINKS = {
     { label: "Sales Teams", href: "/use-cases/sales" },
     { label: "Property Managers", href: "/use-cases/property-managers" },
     { label: "Recruiters", href: "/use-cases/recruiters" },
+  ],
+  numbers: [
+    { label: "All Numbers", href: "/numbers" },
+    { label: "(212) New York", href: "/numbers/212" },
+    { label: "(415) San Francisco", href: "/numbers/415" },
+    { label: "(312) Chicago", href: "/numbers/312" },
+    { label: "(416) Toronto", href: "/numbers/416" },
+    { label: "(305) Miami", href: "/numbers/305" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
