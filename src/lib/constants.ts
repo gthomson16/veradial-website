@@ -12,6 +12,9 @@ import {
   Smartphone,
 } from "lucide-react";
 
+export const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.veradial.app";
+
 export const EARLY_ACCESS_URL =
   "mailto:support@veradial.com?subject=VeraDial%20Early%20Access&body=Hi%20VeraDial%2C%0A%0AI%27d%20like%20early%20access%20to%20the%20app.%0A";
 
@@ -22,7 +25,7 @@ export const NAV_LINKS = [
   { label: "Compare", href: "/compare" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
-  { label: "Access", href: "/#download" },
+  { label: "Download", href: "/#download" },
 ] as const;
 
 export const HERO_STATS = [
@@ -209,7 +212,7 @@ export const FOOTER_LINKS = {
     { label: "Screenshots", href: "/screenshots" },
     { label: "FAQ", href: "/faq" },
     { label: "About", href: "/about" },
-    { label: "Access", href: "/#download" },
+    { label: "Download", href: "/#download" },
   ],
   compare: [
     { label: "vs Google Voice", href: "/compare/google-voice" },

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { AREA_CODES } from "@/lib/area-codes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://veradial.com";
@@ -112,6 +113,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/numbers`,
+      lastModified: new Date("2026-04-14"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...AREA_CODES.map((ac) => ({
+      url: `${baseUrl}/numbers/${ac.code}`,
+      lastModified: new Date("2026-04-14"),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date("2026-04-13"),

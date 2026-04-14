@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { StoreBadges } from "@/components/ui/StoreBadges";
-import { EARLY_ACCESS_URL } from "@/lib/constants";
+import { GOOGLE_PLAY_URL } from "@/lib/constants";
 import { HeroDemoPlayer } from "./HeroDemoPlayer";
 
 export function Hero() {
@@ -41,22 +41,15 @@ export function Hero() {
 
           <div className="mt-8">
             <div className="flex flex-wrap items-center gap-3">
-              <Button variant="primary" href={EARLY_ACCESS_URL}>
-                Request Early Access
+              <Button variant="primary" href={GOOGLE_PLAY_URL}>
+                Download for Android
               </Button>
               <Button variant="ghost" href="/#pricing">
                 See Pricing
               </Button>
             </div>
             <p className="mt-3 text-sm text-text-secondary">
-              Email{" "}
-              <a
-                href="mailto:support@veradial.com"
-                className="text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent"
-              >
-                support@veradial.com
-              </a>{" "}
-              to join the waitlist and we&apos;ll follow up when access opens.
+              Available now on Google Play. iOS coming soon.
             </p>
             <StoreBadges className="mt-6" />
           </div>

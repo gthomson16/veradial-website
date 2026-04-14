@@ -134,6 +134,47 @@ export function buildComparisonPageJsonLd({
   };
 }
 
+export function buildAreaCodePageJsonLd({
+  name,
+  description,
+  path,
+  areaCode,
+  city,
+  state,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  areaCode: string;
+  city: string;
+  state: string;
+}) {
+  const url = buildCanonicalUrl(path);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    name,
+    description,
+    url,
+    isPartOf: { "@id": WEBSITE_ID },
+    mainEntity: { "@id": APP_ID },
+    about: {
+      "@type": "Service",
+      name: `VeraDial (${areaCode}) ${city} Business Number`,
+      areaServed: {
+        "@type": "City",
+        name: city,
+        containedInPlace: {
+          "@type": "AdministrativeArea",
+          name: state,
+        },
+      },
+    },
+  };
+}
+
 export function buildUseCasePageJsonLd({
   name,
   description,

@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-7">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5">
@@ -77,6 +77,27 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.useCases.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Numbers */}
+          <div>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
+              <Link href="/numbers" className="transition-colors hover:text-text-primary">
+                Numbers
+              </Link>
+            </h3>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.numbers.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
