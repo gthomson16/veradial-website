@@ -24,6 +24,9 @@ const satoshi = localFont({
 
 export const metadata = siteMetadata;
 
+const GA_ID = "G-TFH4BRGT13";
+const IS_VERCEL_DEPLOYMENT = process.env.VERCEL === "1";
+
 export default function RootLayout({
   children,
 }: {
@@ -42,9 +45,13 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
-        <GoogleAnalytics gaId="G-TFH4BRGT13" />
-        <Analytics />
-        <SpeedInsights />
+        {IS_VERCEL_DEPLOYMENT ? (
+          <>
+            <GoogleAnalytics gaId={GA_ID} />
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   );

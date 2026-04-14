@@ -259,6 +259,7 @@ export default function FreelancersUseCasePage() {
                 alt="VeraDial AI call transcript and summary"
                 width={390}
                 height={844}
+                sizes="(max-width: 640px) calc(100vw - 3rem), 20rem"
                 className="w-full"
               />
             </div>

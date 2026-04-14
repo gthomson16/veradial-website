@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex items-center gap-2.5">
               <Image
                 src="/icon.png"
-                alt="VeraDial"
+                alt=""
                 width={36}
                 height={36}
                 className="rounded-xl"

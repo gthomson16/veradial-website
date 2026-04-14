@@ -82,10 +82,11 @@ export function Hero() {
             <div className="rounded-[3rem] border-[3px] border-white/10 bg-black p-2 shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
               <div className="overflow-hidden rounded-[2.25rem]">
                 <Image
-                  src="/screenshots/ai-composer.jpg"
+                  src="/screenshots/raw-captures/ai-composer-updated.png"
                   alt="VeraDial AI calling with presets and custom goals"
-                  width={390}
-                  height={844}
+                  width={1320}
+                  height={2868}
+                  sizes="(max-width: 640px) 280px, 300px"
                   priority
                   className="w-full"
                 />

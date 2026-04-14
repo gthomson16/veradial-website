@@ -2,24 +2,24 @@ import Image from "next/image";
 
 const SCREENS = [
   {
-    src: "/screenshots/numbers.jpg",
+    src: "/screenshots/raw-captures/numbers-updated.png",
     alt: "Number management with purchased and verified numbers",
     label: "Number Management",
   },
   {
-    src: "/screenshots/ai-composer.jpg",
+    src: "/screenshots/raw-captures/ai-composer-updated.png",
     alt: "AI calling with presets and custom goals",
     label: "AI Calling",
   },
   {
-    src: "/screenshots/ai-detail.jpg",
+    src: "/screenshots/raw-captures/ai-detail-updated.png",
     alt: "AI call transcript and summary",
     label: "Call Transcripts",
   },
   {
-    src: "/screenshots/history.jpg",
-    alt: "Unified call and message history",
-    label: "Call History",
+    src: "/screenshots/raw-captures/call-map-updated.png",
+    alt: "Call activity mapped across US and Canada",
+    label: "Call Map",
   },
 ];
 
@@ -52,9 +52,17 @@ export function AppPreview() {
           </h2>
         </div>
 
-        <div className="mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 scrollbar-none sm:snap-none sm:items-end sm:justify-center sm:gap-8 sm:overflow-x-visible sm:pb-0 lg:gap-12">
+        <div
+          className="mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 scrollbar-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg sm:snap-none sm:items-end sm:justify-center sm:gap-8 sm:overflow-x-visible sm:pb-0 lg:gap-12"
+          tabIndex={0}
+          role="region"
+          aria-label="App preview carousel"
+        >
           {SCREENS.map((screen, index) => {
             const isCenter = index === 1 || index === 2;
+            const imageSizes = isCenter
+              ? "(max-width: 640px) 200px, (max-width: 1024px) 220px, 260px"
+              : "(max-width: 640px) 200px, (max-width: 1024px) 190px, 230px";
             return (
               <div key={screen.src} className="flex shrink-0 snap-center flex-col items-center gap-4">
                 <PhoneFrame
@@ -67,8 +75,9 @@ export function AppPreview() {
                   <Image
                     src={screen.src}
                     alt={screen.alt}
-                    width={390}
-                    height={844}
+                    width={1320}
+                    height={2868}
+                    sizes={imageSizes}
                     className="w-full"
                   />
                 </PhoneFrame>

@@ -213,7 +213,7 @@ export default function ComparePage() {
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">
-                  Learn More
+                  Explore VeraDial Features
                 </Button>
               </div>
               <StoreBadges className="mt-6 justify-center" />

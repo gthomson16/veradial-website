@@ -5,13 +5,13 @@ import {
   buildComparisonPageJsonLd,
 } from "@/lib/metadata-helpers";
 import Image from "next/image";
-import { Check, X, Minus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { ComparisonTable } from "@/components/compare/ComparisonTable";
 
 const PAGE_TITLE = "VeraDial vs SpoofCard — Comparison";
 const PAGE_DESCRIPTION =
@@ -116,33 +116,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
 ];
 
-function CellIcon({ value }: { value: string }) {
-  if (value === "yes") {
-    return (
-      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent/15">
-        <Check size={14} className="text-accent" />
-      </span>
-    );
-  }
-  if (value === "no") {
-    return (
-      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/5">
-        <X size={14} className="text-text-muted" />
-      </span>
-    );
-  }
-  if (value === "partial") {
-    return (
-      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-accent-secondary)]/15">
-        <Minus size={14} className="text-[var(--color-accent-secondary)]" />
-      </span>
-    );
-  }
-  return (
-    <span className="text-sm text-text-secondary">{value}</span>
-  );
-}
-
 const DIFFERENTIATORS = [
   {
     title: "Verified, not spoofed",
@@ -245,7 +218,7 @@ export default function CompareSpoofCardPage() {
                   <div className="flex items-center gap-3">
                     <Image
                       src="/icon.png"
-                      alt="VeraDial"
+                      alt=""
                       width={36}
                       height={36}
                       className="rounded-xl"
@@ -271,7 +244,7 @@ export default function CompareSpoofCardPage() {
 
                 <div className="p-8">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/8 text-sm font-bold text-text-muted">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/18 text-sm font-bold text-text-primary">
                       SC
                     </div>
                     <span className="font-display text-xl font-semibold text-text-primary">
@@ -285,9 +258,9 @@ export default function CompareSpoofCardPage() {
                     flagging or blocking spoofed calls under STIR/SHAKEN
                     regulations.
                   </p>
-                  <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                    <div className="h-2 w-2 rounded-full bg-text-muted" />
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
+                  <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5">
+                    <div className="h-2 w-2 rounded-full bg-text-secondary" />
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary">
                       No Attestation
                     </span>
                   </div>
@@ -314,42 +287,16 @@ export default function CompareSpoofCardPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={100}>
-            <div className="mt-12 overflow-hidden rounded-2xl border border-border">
-              {/* Table header */}
-              <div className="grid grid-cols-[1fr_100px_100px] items-center border-b border-border bg-card/80 px-5 py-4 sm:grid-cols-[1fr_140px_140px] sm:px-6">
-                <span className="text-xs uppercase tracking-[0.2em] text-text-muted">
-                  Feature
-                </span>
-                <span className="text-center text-xs uppercase tracking-[0.2em] text-accent">
-                  VeraDial
-                </span>
-                <span className="text-center text-xs uppercase tracking-[0.2em] text-text-muted">
-                  SpoofCard
-                </span>
-              </div>
-
-              {/* Table rows */}
-              {COMPARISON_ROWS.map((row, index) => (
-                <div
-                  key={row.feature}
-                  className={`grid grid-cols-[1fr_100px_100px] items-center px-5 py-4 sm:grid-cols-[1fr_140px_140px] sm:px-6 ${
-                    index !== COMPARISON_ROWS.length - 1
-                      ? "border-b border-border"
-                      : ""
-                  } ${index % 2 === 0 ? "bg-card/40" : "bg-transparent"}`}
-                >
-                  <span className="text-sm text-text-secondary pr-4">
-                    {row.feature}
-                  </span>
-                  <span className="flex justify-center">
-                    <CellIcon value={row.veradial} />
-                  </span>
-                  <span className="flex justify-center">
-                    <CellIcon value={row.spoofcard} />
-                  </span>
-                </div>
-              ))}
-            </div>
+            <ComparisonTable
+              caption="Feature comparison between VeraDial and SpoofCard"
+              primaryLabel="VeraDial"
+              secondaryLabel="SpoofCard"
+              rows={COMPARISON_ROWS.map((row) => ({
+                feature: row.feature,
+                primary: row.veradial,
+                secondary: row.spoofcard,
+              }))}
+            />
           </ScrollReveal>
 
           <ScrollReveal delay={160}>
@@ -412,7 +359,7 @@ export default function CompareSpoofCardPage() {
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">
-                  Learn More
+                  Explore VeraDial Features
                 </Button>
               </div>
               <StoreBadges className="mt-6 justify-center" />

@@ -227,6 +227,7 @@ export default function PropertyManagersPage() {
                 alt="VeraDial Call Map showing calls by property location"
                 width={390}
                 height={844}
+                sizes="(max-width: 640px) calc(100vw - 3rem), 20rem"
                 className="w-full"
               />
             </div>

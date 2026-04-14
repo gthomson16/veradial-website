@@ -206,6 +206,7 @@ export const FOOTER_LINKS = {
   product: [
     { label: "Features", href: "/#features" },
     { label: "Pricing", href: "/#pricing" },
+    { label: "Screenshots", href: "/screenshots" },
     { label: "FAQ", href: "/faq" },
     { label: "About", href: "/about" },
     { label: "Access", href: "/#download" },

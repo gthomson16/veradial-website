@@ -281,6 +281,7 @@ export default function RealtorsUseCasePage() {
                 alt="VeraDial Call Map showing calls by neighborhood and listing area"
                 width={390}
                 height={844}
+                sizes="(max-width: 640px) calc(100vw - 3rem), 20rem"
                 className="w-full"
               />
             </div>

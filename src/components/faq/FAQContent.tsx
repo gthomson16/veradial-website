@@ -14,14 +14,24 @@ export type FAQSection = {
   items: FAQItem[];
 };
 
-function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
+function FAQAccordion({
+  item,
+  sectionKey,
+  index,
+}: {
+  item: FAQItem;
+  sectionKey: string;
+  index: number;
+}) {
   const [open, setOpen] = useState(false);
-  const panelId = `faq-panel-${index}`;
+  const panelId = `faq-panel-${sectionKey}-${index}`;
+  const buttonId = `faq-button-${sectionKey}-${index}`;
 
   return (
     <ScrollReveal delay={index * 60}>
       <div className="border-b border-border">
         <button
+          id={buttonId}
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-controls={panelId}
@@ -40,6 +50,7 @@ function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
         <div
           id={panelId}
           role="region"
+          aria-labelledby={buttonId}
           className={`grid transition-all duration-200 ease-out ${
             open ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
           }`}
@@ -58,23 +69,35 @@ function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
 export function FAQContent({ sections }: { sections: FAQSection[] }) {
   return (
     <div>
-      {sections.map((section, sectionIndex) => (
-        <div
-          key={section.title}
-          className={sectionIndex > 0 ? "mt-16" : ""}
-        >
-          <ScrollReveal>
-            <h2 className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
-              {section.title}
-            </h2>
-          </ScrollReveal>
-          <div className="mt-6">
-            {section.items.map((item, index) => (
-              <FAQAccordion key={item.question} item={item} index={index} />
-            ))}
+      {sections.map((section, sectionIndex) => {
+        const sectionKey = section.title
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "");
+
+        return (
+          <div
+            key={section.title}
+            className={sectionIndex > 0 ? "mt-16" : ""}
+          >
+            <ScrollReveal>
+              <h2 className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                {section.title}
+              </h2>
+            </ScrollReveal>
+            <div className="mt-6">
+              {section.items.map((item, index) => (
+                <FAQAccordion
+                  key={item.question}
+                  item={item}
+                  sectionKey={sectionKey}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
