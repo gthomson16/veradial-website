@@ -29,47 +29,47 @@ export const metadata = buildPageMetadata({
 
 const SCREENSHOTS = [
   {
-    src: "/screenshots/VeraDial App Store Screens v1/01 Hero.png",
+    src: "/screenshots/app-store/01-hero.png",
     title: "Your Business Phone",
     alt: "VeraDial overview showing AI calling, number management, and call history",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/02 AI Call.png",
+    src: "/screenshots/app-store/02-ai-call.png",
     title: "AI Calling",
     alt: "Set a goal and let AI make the call for you",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/04 AI Results.png",
+    src: "/screenshots/app-store/04-ai-results.png",
     title: "Call Transcripts",
     alt: "Full transcript and summary after every AI call",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/03 Numbers.png",
+    src: "/screenshots/app-store/03-numbers.png",
     title: "Number Management",
     alt: "Up to 5 business lines with local and toll-free numbers",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/05 Voicemail.png",
+    src: "/screenshots/app-store/05-voicemail.png",
     title: "AI Voicemail",
     alt: "Generate professional voicemail greetings with AI voices",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/06 History.png",
+    src: "/screenshots/app-store/06-history.png",
     title: "Call History",
     alt: "Unified timeline of voice calls, AI calls, and voicemail",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/07 Dialer.png",
+    src: "/screenshots/app-store/07-dialer.png",
     title: "Outbound Calls",
     alt: "Dialer with caller ID selection and call recording",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/08 Call Map.png",
+    src: "/screenshots/app-store/08-call-map.png",
     title: "Call Map",
     alt: "Geographic view of all call activity across US and Canada",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/09 Messages.png",
+    src: "/screenshots/app-store/09-messages.png",
     title: "Business SMS",
     alt: "Send and receive texts from any business number",
   },
