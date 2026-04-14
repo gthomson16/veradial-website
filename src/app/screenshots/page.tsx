@@ -29,47 +29,47 @@ export const metadata = buildPageMetadata({
 
 const SCREENSHOTS = [
   {
-    src: "/screenshots/VeraDial App Store Screens v1/01 Hero.png",
+    src: "/screenshots/raw-captures/sign-in-fixed.png",
     title: "Your Business Phone",
-    alt: "VeraDial overview showing AI calling, number management, and call history",
+    alt: "VeraDial sign-in screen with phone number entry and verification flow",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/02 AI Call.png",
+    src: "/screenshots/raw-captures/ai-composer-updated.png",
     title: "AI Calling",
     alt: "Set a goal and let AI make the call for you",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/04 AI Results.png",
+    src: "/screenshots/raw-captures/ai-detail-updated.png",
     title: "Call Transcripts",
     alt: "Full transcript and summary after every AI call",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/03 Numbers.png",
+    src: "/screenshots/raw-captures/numbers-updated.png",
     title: "Number Management",
-    alt: "Up to 5 business lines with local and toll-free numbers",
+    alt: "Manage purchased and verified business numbers in one view",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/05 Voicemail.png",
+    src: "/screenshots/raw-captures/voicemail-updated.png",
     title: "AI Voicemail",
     alt: "Generate professional voicemail greetings with AI voices",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/06 History.png",
+    src: "/screenshots/raw-captures/history-updated.png",
     title: "Call History",
     alt: "Unified timeline of voice calls, AI calls, and voicemail",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/07 Dialer.png",
+    src: "/screenshots/raw-captures/dialer-updated.png",
     title: "Outbound Calls",
     alt: "Dialer with caller ID selection and call recording",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/08 Call Map.png",
+    src: "/screenshots/raw-captures/call-map-updated.png",
     title: "Call Map",
     alt: "Geographic view of all call activity across US and Canada",
   },
   {
-    src: "/screenshots/VeraDial App Store Screens v1/09 Messages.png",
+    src: "/screenshots/raw-captures/messages-updated.png",
     title: "Business SMS",
     alt: "Send and receive texts from any business number",
   },
