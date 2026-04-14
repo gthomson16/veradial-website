@@ -39,14 +39,14 @@ const SCREENSHOTS = [
     alt: "Set a goal and let AI make the call for you",
   },
   {
-    src: "/screenshots/app-store/04-ai-results.png",
-    title: "Call Transcripts",
-    alt: "Full transcript and summary after every AI call",
-  },
-  {
     src: "/screenshots/app-store/03-numbers.png",
     title: "Number Management",
     alt: "Up to 5 business lines with local and toll-free numbers",
+  },
+  {
+    src: "/screenshots/app-store/04-ai-results.png",
+    title: "Call Transcripts",
+    alt: "Full transcript and summary after every AI call",
   },
   {
     src: "/screenshots/app-store/05-voicemail.png",
@@ -131,14 +131,6 @@ export default function ScreenshotsPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="w-full"
                   />
-                  <div className="px-5 py-4">
-                    <h2 className="font-display text-lg font-semibold text-text-primary">
-                      {screen.title}
-                    </h2>
-                    <p className="mt-1 text-sm text-text-secondary">
-                      {screen.alt}
-                    </p>
-                  </div>
                 </Card>
               </ScrollReveal>
             ))}
