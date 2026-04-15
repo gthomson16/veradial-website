@@ -23,12 +23,22 @@ export const metadata = buildPageMetadata({
 
 const FAQ_SECTIONS: FAQSection[] = [
   {
+    title: "About VeraDial",
+    items: [
+      {
+        question: "What is VeraDial?",
+        answer:
+          "VeraDial is an AI-powered business calling app that gives freelancers, contractors, and small business owners a dedicated phone number with an AI assistant that can make calls on their behalf. You get a real US or Canadian number with STIR/SHAKEN A-level attestation — the highest level of caller identity verification — so your calls show up as verified, not spam. The AI can schedule appointments, confirm bookings, send reminders, and follow up with clients autonomously. You set a goal like \"Confirm my Friday 2:30 PM appointment and ask about parking,\" and the AI handles the conversation and sends you a full transcript and summary when it's done. VeraDial also includes business SMS, call recording with automatic transcription, voicemail transcription, and voice privacy modes. It's available on Android via Google Play, with iOS coming soon.",
+      },
+    ],
+  },
+  {
     title: "AI Calling",
     items: [
       {
         question: "How does AI calling work?",
         answer:
-          "You enter the number you want to call, pick an AI preset (like Scheduler or Reminder), and optionally write a custom goal — for example, \"Confirm my Friday 2:30 PM appointment and ask about parking.\" The AI calls the number, has the conversation, and sends you a full transcript and summary when it's done.",
+          "You enter the number you want to call, pick an AI preset (like Scheduler or Reminder), and optionally write a custom goal — for example, \"Confirm my Friday 2:30 PM appointment and ask about parking.\" The AI calls the number, has the conversation, and sends you a full transcript and summary when it's done. The transcript includes everything that was said, and the summary highlights key outcomes — whether the appointment was confirmed, what the recipient agreed to, and any follow-up actions needed. You can also set up a persistent caller profile with your business name, website, and context so the AI can answer questions about your business naturally during the call.",
       },
       {
         question: "Can people tell they're talking to an AI?",
@@ -63,7 +73,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What is STIR/SHAKEN attestation?",
         answer:
-          "STIR/SHAKEN is a carrier-level framework that verifies the identity behind a phone call. Purchased VeraDial numbers carry A-level attestation — the highest level — which means carriers display your call as verified rather than flagging it as spam or unknown.",
+          "STIR/SHAKEN is a carrier-level framework that verifies the identity behind a phone call. There are three attestation levels: A (full), B (partial), and C (gateway). Purchased VeraDial numbers carry A-level attestation — the highest level — which means the carrier has verified both the caller's identity and their authorization to use that number. In practice, this means your calls display as verified on the recipient's phone rather than being flagged as spam, unknown, or \"Scam Likely.\" This matters because unverified calls see answer rates as low as 11%, while verified calls are significantly more likely to be picked up. If you bring your own number, it receives B-level attestation for outbound voice calls.",
       },
       {
         question: "Can I use a number I already own as caller ID?",
@@ -93,7 +103,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How much do voice-changed calls cost?",
         answer:
-          "Voice privacy calls use 4 credits per minute, compared to 2 credits per minute for standard calls.",
+          "Voice privacy calls cost more credits per minute than standard calls. See exact rates on the pricing section of our homepage or in the app before you place a call.",
       },
     ],
   },
@@ -103,12 +113,12 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How does pricing work?",
         answer:
-          "VeraDial is $9.99/mo per line, which gives you a dedicated phone number with 100 credits every month — enough for calls, SMS, and AI features. Need more? Buy credit packs anytime — they never expire. Your first subscription includes a 3-day free trial with 50 credits to try everything.",
+          "VeraDial uses a monthly subscription plus a credit-based system. Your subscription gives you a dedicated phone number with credits included every month — enough for calls, SMS, and AI features. Need more? Buy credit packs anytime — they never expire. Your first subscription includes a free trial with bonus credits to try everything. See current pricing at veradial.com.",
       },
       {
         question: "How many credits does a call cost?",
         answer:
-          "Standard calls use 2 credits per minute. Recorded calls use 3 credits per minute. Voice privacy calls use 4 credits per minute. AI calls use 10 credits per minute. SMS costs 1 credit per segment. You can see exact credit costs in the app before and after each call.",
+          "Credit costs vary by call type — standard calls cost the least, while recorded calls, voice privacy calls, and AI calls use progressively more credits per minute. SMS is billed per segment. You can see exact credit rates on the pricing section of our homepage and in the app before and after each call.",
       },
       {
         question: "Do credits expire?",
@@ -117,7 +127,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is there a free trial?",
         answer:
-          "Yes. Your first subscription includes a 3-day free trial with 50 credits to try everything. Once the trial converts, you get 100 credits every month.",
+          "Yes. Your first subscription includes a free trial with bonus credits so you can try everything — AI calling, SMS, voice privacy, and more. Once the trial converts, you get credits included every month with your subscription.",
       },
     ],
   },
@@ -127,7 +137,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is my data secure?",
         answer:
-          "All calls route through Twilio's carrier-grade, SOC 2 compliant infrastructure with TLS encryption in transit. Your call data and transcripts are stored securely and only accessible from your account.",
+          "All calls route through Twilio's carrier-grade, SOC 2 Type II compliant infrastructure with TLS encryption in transit. Call audio is processed through Twilio's systems and is not accessible to VeraDial staff. Your call data, recordings, and transcripts are stored securely and only accessible from your authenticated account. VeraDial does not sell or share your personal information with third parties. AI call transcripts are generated automatically and stored in your account — they are not used to train AI models.",
       },
       {
         question: "Can VeraDial employees listen to my calls?",
@@ -147,12 +157,12 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What platforms is VeraDial available on?",
         answer:
-          "VeraDial is coming soon to iOS and Android. Sign up to be notified when the app launches.",
+          "VeraDial is available now on Android via Google Play. An iOS version is coming soon. Download the app from the Google Play Store to get started with a free trial and bonus credits.",
       },
       {
         question: "Do I need a subscription?",
         answer:
-          "Yes — a $9.99/mo subscription is required to hold a phone number. It includes 100 credits every month, inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and 50 bonus credits.",
+          "Yes — a monthly subscription is required to hold a phone number. It includes credits every month, inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a free trial and bonus credits. See current pricing at veradial.com.",
       },
       {
         question: "Can I use VeraDial for personal calls?",

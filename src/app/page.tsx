@@ -1,4 +1,5 @@
 import { buildPageMetadata } from "@/lib/metadata-helpers";
+import { GOOGLE_PLAY_URL } from "@/lib/constants";
 import { Hero } from "@/components/home/Hero";
 import { SocialProof } from "@/components/home/SocialProof";
 import { AppPreview } from "@/components/home/AppPreview";
@@ -86,7 +87,7 @@ function SoftwareApplicationJsonLd() {
     "@id": "https://veradial.com/#app",
     name: "VeraDial",
     applicationCategory: "BusinessApplication",
-    operatingSystem: ["iOS", "Android"],
+    operatingSystem: "Android",
     description:
       "AI-powered business calling app. Schedule appointments, follow up with clients, and handle routine conversations with verified caller ID.",
     image: "https://veradial.com/opengraph-image",
@@ -95,8 +96,8 @@ function SoftwareApplicationJsonLd() {
       "@type": "Offer",
       price: "9.99",
       priceCurrency: "USD",
-      availability: "https://schema.org/PreOrder",
-      url: "https://veradial.com/#pricing",
+      availability: "https://schema.org/InStock",
+      url: GOOGLE_PLAY_URL,
       description: "Subscription includes 100 monthly credits",
     },
   };

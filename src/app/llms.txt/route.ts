@@ -30,7 +30,7 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 - Standard call: 2 credits/min
 - Recorded call: 3 credits/min
 - Voice privacy call: 4 credits/min
-- AI call: 10 credits/min
+- AI call: 5 credits/min
 - SMS: 1 credit/segment
 
 ## Target Users
@@ -44,14 +44,34 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 
 ## Status
 
-Coming soon to iOS and Android. Currently in beta.
+Available on Android (Google Play). iOS coming soon.
+
+## Key Facts
+
+- STIR/SHAKEN A-level attestation on all purchased numbers (highest caller identity verification level)
+- Infrastructure powered by Twilio (SOC 2 Type II compliant)
+- Backed by ElevenLabs Grants
+- Up to 5 numbers per account
+- AI presets: Scheduler, Reminder, Assistant, or fully custom prompts
+- Full transcript and summary after every AI call
+- Credits never expire
 
 ## Links
 
 - Website: https://veradial.com
 - FAQ: https://veradial.com/faq
-- Comparisons: https://veradial.com/compare
 - About: https://veradial.com/about
+- Comparisons: https://veradial.com/compare
+- VeraDial vs Google Voice: https://veradial.com/compare/google-voice
+- VeraDial vs OpenPhone: https://veradial.com/compare/openphone
+- VeraDial vs Grasshopper: https://veradial.com/compare/grasshopper
+- VeraDial vs Dialpad: https://veradial.com/compare/dialpad
+- VeraDial vs RingCentral: https://veradial.com/compare/ringcentral
+- VeraDial vs Vonage: https://veradial.com/compare/vonage
+- VeraDial vs Line2: https://veradial.com/compare/line2
+- VeraDial vs iPlum: https://veradial.com/compare/iplum
+- Alternatives: https://veradial.com/alternatives
+- Phone Numbers: https://veradial.com/numbers
 - Use Cases: https://veradial.com/use-cases
 - For Contractors: https://veradial.com/use-cases/contractors
 - For Realtors: https://veradial.com/use-cases/realtors

@@ -51,3 +51,40 @@ public/screenshots/VeraDial App Store Screens v1/
 
 # claude code skills
 .claude/skills/
+
+# AI coding tool configs
+.adal/
+.agents/
+.augment/
+.claude/
+.codebuddy/
+.commandcode/
+.continue/
+.crush/
+.factory/
+.goose/
+.iflow/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.openhands/
+.pi/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.routines/
+.trae/
+.vibe/
+.windsurf/
+.zencoder/
+skills/
+skills-lock.json
+
+# generated reports
+AI-SEO-AUDIT.md
+GEO-ANALYSIS.md
