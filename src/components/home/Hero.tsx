@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/Button";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GOOGLE_PLAY_URL } from "@/lib/constants";
-import { HeroDemoPlayer } from "./HeroDemoPlayer";
 
 export function Hero() {
   return (
@@ -51,6 +50,17 @@ export function Hero() {
             <p className="mt-3 text-sm text-text-secondary">
               Available now on Google Play. iOS coming soon.
             </p>
+            <a
+              href="#how-it-works"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-accent"
+            >
+              <span
+                aria-hidden="true"
+                className="inline-flex h-1.5 w-1.5 rounded-full bg-accent"
+              />
+              Hear a 31-second demo call
+              <span aria-hidden="true">&rarr;</span>
+            </a>
             <StoreBadges className="mt-6" />
           </div>
 
@@ -93,10 +103,6 @@ export function Hero() {
               <p className="mt-1 font-display text-lg text-text-primary">
                 Schedule · Follow up · Confirm
               </p>
-            </div>
-
-            <div className="mt-12">
-              <HeroDemoPlayer />
             </div>
           </div>
         </div>

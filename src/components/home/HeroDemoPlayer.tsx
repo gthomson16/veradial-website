@@ -99,11 +99,8 @@ export function HeroDemoPlayer() {
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="mt-6 rounded-2xl border border-border bg-card/80 px-4 py-3 backdrop-blur-sm">
+    <div className="rounded-xl border border-border bg-card/80 px-4 py-3 backdrop-blur-sm">
       <audio ref={audioRef} src="/demo-call.mp3" preload="metadata" />
-      <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-text-muted">
-        Hear a demo call
-      </p>
       <div className="flex items-center gap-3">
         <button
           type="button"
