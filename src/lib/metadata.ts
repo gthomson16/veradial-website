@@ -35,6 +35,8 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@VeraDialApp",
+    creator: "@VeraDialApp",
     title: "VeraDial \u2014 AI-Powered Business Calling",
     description: DEFAULT_DESCRIPTION,
     images: [DEFAULT_OG_IMAGE],
