@@ -70,11 +70,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     spoofcard: "yes",
   },
   {
-    feature: "Voice effects",
-    veradial: "yes",
-    spoofcard: "yes",
-  },
-  {
     feature: "Background noise effects",
     veradial: "no",
     spoofcard: "yes",
@@ -136,11 +131,6 @@ const DIFFERENTIATORS = [
     title: "SMS follow-up from the same identity",
     description:
       "After a call, send a text from the same number the recipient just saw. VeraDial keeps voice and messaging on one identity. SpoofCard doesn't support outbound SMS.",
-  },
-  {
-    title: "Natural voice effects, not gimmicks",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. No chipmunk effects. SpoofCard offers voice changing but it's designed more for novelty than professional use.",
   },
   {
     title: "Built for business use",

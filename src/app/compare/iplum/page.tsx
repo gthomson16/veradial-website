@@ -60,11 +60,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     iplum: "no",
   },
   {
-    feature: "Voice effects (Male, Female, Privacy)",
-    veradial: "yes",
-    iplum: "no",
-  },
-  {
     feature: "HIPAA-compliant messaging",
     veradial: "no",
     iplum: "yes",
@@ -138,11 +133,6 @@ const DIFFERENTIATORS = [
       "VeraDial lets you verify existing phone numbers as secondary caller IDs, so you choose your outbound identity. iPlum locks caller ID to your assigned number with no flexibility.",
   },
   {
-    title: "Voice effects for privacy",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes \u2014 Male, Female, and Privacy. iPlum offers no voice modification features.",
-  },
-  {
     title: "Simple pricing, no surprises",
     description:
       "VeraDial is $9.99/mo per line with 100 credits and clear per-minute rates. iPlum\u2019s pricing can be confusing \u2014 the base plan is cheap, but useful features like call recording, HIPAA compliance, and auto-attendant require higher tiers at $25\u201330/mo.",
@@ -201,8 +191,8 @@ export default function CompareIPlumPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             iPlum focuses on HIPAA compliance for regulated industries.
-            VeraDial focuses on AI calling, verified identity, and voice
-            effects for solo professionals. Here&apos;s how they compare.
+            VeraDial focuses on AI calling, verified identity, and call
+            recording for solo professionals. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -235,8 +225,8 @@ export default function CompareIPlumPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     AI-powered business calling with verified identity. AI
                     agents make calls for you, your caller ID is controlled and
-                    verified at the carrier level, and voice effects give you
-                    flexibility &mdash; all for $9.99/mo.
+                    verified at the carrier level, and call recording keeps
+                    everything documented &mdash; all for $9.99/mo.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-accent" />
@@ -258,8 +248,8 @@ export default function CompareIPlumPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     A compliance-focused business phone app with HIPAA-compliant
                     messaging and encrypted texting for regulated industries.
-                    Strong on compliance, but no AI features, no voice effects,
-                    and outbound calls are frequently flagged as spam.
+                    Strong on compliance, but no AI features, limited call
+                    recording, and outbound calls are frequently flagged as spam.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-text-secondary" />
@@ -360,8 +350,8 @@ export default function CompareIPlumPage() {
                 AI calling that builds trust.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get verified caller ID, AI agents, voice effects, and call
-                recording &mdash; with calls that display as verified, not
+                Get verified caller ID, AI agents, call recording, and
+                transcription &mdash; with calls that display as verified, not
                 spam.
               </p>
               <div className="mt-8 flex justify-center gap-4">

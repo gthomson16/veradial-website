@@ -60,11 +60,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     line2: "no",
   },
   {
-    feature: "Voice effects (Male, Female, Privacy)",
-    veradial: "yes",
-    line2: "no",
-  },
-  {
     feature: "Call recording",
     veradial: "yes",
     line2: "partial",
@@ -138,14 +133,9 @@ const DIFFERENTIATORS = [
       "VeraDial lets you verify existing phone numbers as secondary caller IDs, so you choose exactly what the recipient sees. Line2 locks you to your Line2 number with no outbound caller ID flexibility.",
   },
   {
-    title: "Voice effects for privacy",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes \u2014 Male, Female, and Privacy. Line2 offers no voice modification features.",
-  },
-  {
     title: "Lower price, more features",
     description:
-      "VeraDial is $9.99/mo with AI calling, verified identity, voice effects, call recording, and 100 credits. Line2 starts at ~$14.99/mo for basic calling and texting with no AI, no verification, and limited recording.",
+      "VeraDial is $9.99/mo with AI calling, verified identity, call recording, transcription, and 100 credits. Line2 starts at ~$14.99/mo for basic calling and texting with no AI, no verification, and limited recording.",
   },
   {
     title: "Modern, reliable infrastructure",
@@ -202,7 +192,7 @@ export default function CompareLine2Page() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Line2 gives you a second number, but your calls get flagged as spam.
             VeraDial gives you verified business calling with AI agents, caller
-            ID control, and voice effects. Here&apos;s how they compare.
+            ID control, and call recording. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -235,7 +225,7 @@ export default function CompareLine2Page() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     AI-powered business calling with verified identity. Your
                     calls display as verified, AI agents handle outbound calls,
-                    and voice effects give you control &mdash; all for $9.99/mo
+                    and call recording keeps everything documented &mdash; all for $9.99/mo
                     on enterprise-grade infrastructure.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
@@ -259,8 +249,8 @@ export default function CompareLine2Page() {
                     A second phone number app for calling, texting, and
                     voicemail. Available on mobile and desktop, but outbound
                     calls are frequently flagged as &ldquo;Scam Likely&rdquo;
-                    due to lack of carrier-level verification. No AI features,
-                    no voice effects, and limited call recording.
+                    due to lack of carrier-level verification. No AI features
+                    and limited call recording.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-text-secondary" />
@@ -361,8 +351,8 @@ export default function CompareLine2Page() {
                 Calls that get answered. Not flagged.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get verified caller ID, AI agents, voice effects, and call
-                recording &mdash; at a lower price than Line2, with calls that
+                Get verified caller ID, AI agents, call recording, and
+                transcription &mdash; at a lower price than Line2, with calls that
                 actually reach the other person.
               </p>
               <div className="mt-8 flex justify-center gap-4">

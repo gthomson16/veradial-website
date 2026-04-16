@@ -15,7 +15,7 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 
 const PAGE_TITLE = "VeraDial vs Grasshopper — Comparison";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Grasshopper side by side. See how AI calling, verified caller ID, and voice effects compare to a traditional call-forwarding business number.";
+  "Compare VeraDial and Grasshopper side by side. See how AI calling, verified caller ID, and call recording compare to a traditional call-forwarding business number.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -51,11 +51,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "STIR/SHAKEN A-level attestation",
-    veradial: "yes",
-    grasshopper: "no",
-  },
-  {
-    feature: "Voice effects (Male, Female, Privacy)",
     veradial: "yes",
     grasshopper: "no",
   },
@@ -133,14 +128,9 @@ const DIFFERENTIATORS = [
       "VeraDial numbers carry STIR/SHAKEN A-level attestation, so your calls display as verified. Grasshopper routes calls through your personal carrier, which means your verification depends on your personal phone\u2019s carrier \u2014 not your business identity.",
   },
   {
-    title: "Voice effects for privacy",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes \u2014 Male, Female, and Privacy. Grasshopper offers no voice modification \u2014 you sound like yourself on every call.",
-  },
-  {
     title: "Modern platform, modern price",
     description:
-      "VeraDial is $9.99/mo with AI calling, voice effects, call recording, and 100 credits. Grasshopper starts at ~$14/mo for basic call forwarding with no AI, no recording on the base plan, and no voice features.",
+      "VeraDial is $9.99/mo with AI calling, call recording, transcription, and 100 credits. Grasshopper starts at ~$14/mo for basic call forwarding with no AI and no recording on the base plan.",
   },
   {
     title: "Call recording built in",
@@ -196,8 +186,8 @@ export default function CompareGrasshopperPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Grasshopper forwards calls to your personal phone. VeraDial gives
-            you dedicated VoIP with AI agents, verified caller ID, and voice
-            effects. Here&apos;s how they compare.
+            you dedicated VoIP with AI agents, verified caller ID, and call
+            recording. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -230,7 +220,7 @@ export default function CompareGrasshopperPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     A dedicated VoIP calling platform. AI agents make calls for
                     you, your caller ID is verified at the carrier level, and
-                    voice effects let you control your identity. Built on modern
+                    every call can be recorded and transcribed. Built on modern
                     infrastructure, not call forwarding.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
@@ -254,7 +244,7 @@ export default function CompareGrasshopperPage() {
                     A virtual phone system that layers a business number on top
                     of your personal phone through call forwarding. Business
                     texting, voicemail, and custom greetings &mdash; but no AI,
-                    no voice effects, and no call verification. Owned by GoTo.
+                    no call recording on the base plan, and no call verification. Owned by GoTo.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-text-secondary" />
@@ -320,7 +310,7 @@ export default function CompareGrasshopperPage() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
               Grasshopper was built for an era before AI calling, before
-              STIR/SHAKEN verification, and before voice effects. If you&apos;re
+              STIR/SHAKEN verification, and before call transcription. If you&apos;re
               still using a call-forwarding service, you&apos;re paying more for
               less.
             </p>
@@ -355,8 +345,8 @@ export default function CompareGrasshopperPage() {
                 Stop forwarding. Start calling with AI.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get a dedicated number with AI agents, verified caller ID, voice
-                effects, and call recording &mdash; not a forwarding layer on
+                Get a dedicated number with AI agents, verified caller ID,
+                call recording, and transcription &mdash; not a forwarding layer on
                 your personal phone.
               </p>
               <div className="mt-8 flex justify-center gap-4">

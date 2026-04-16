@@ -15,7 +15,7 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 
 const PAGE_TITLE = "VeraDial vs OpenPhone — Comparison";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and OpenPhone side by side. See how AI-powered calling with caller ID control and voice effects compares to a team-focused VoIP platform.";
+  "Compare VeraDial and OpenPhone side by side. See how AI-powered calling with verified caller ID compares to a team-focused VoIP platform.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -51,11 +51,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "STIR/SHAKEN A-level attestation",
-    veradial: "yes",
-    openPhone: "no",
-  },
-  {
-    feature: "Voice effects (Male, Female, Privacy)",
     veradial: "yes",
     openPhone: "no",
   },
@@ -133,11 +128,6 @@ const DIFFERENTIATORS = [
       "VeraDial numbers carry STIR/SHAKEN A-level attestation, so your calls display as verified on the recipient\u2019s device. OpenPhone doesn\u2019t market or guarantee carrier-level identity attestation for outbound calls.",
   },
   {
-    title: "Voice effects for privacy",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes \u2014 Male, Female, and Privacy. Protect your identity on sensitive calls. OpenPhone offers no voice modification features.",
-  },
-  {
     title: "Built for solopreneurs, not seat-count math",
     description:
       "VeraDial is $9.99/mo for one line with 100 credits. No per-seat pricing, no minimum users. OpenPhone starts at $15/user/mo and is designed around team workflows \u2014 shared inboxes, CRM, multi-seat management \u2014 features a solo operator doesn\u2019t need.",
@@ -145,7 +135,7 @@ const DIFFERENTIATORS = [
   {
     title: "No team overhead, maximum capability",
     description:
-      "OpenPhone excels at team collaboration \u2014 shared numbers, internal mentions, CRM integrations. If you\u2019re a solo professional who needs AI calling, voice effects, and verified identity rather than team features, VeraDial delivers more for less.",
+      "OpenPhone excels at team collaboration \u2014 shared numbers, internal mentions, CRM integrations. If you\u2019re a solo professional who needs AI calling, call recording, and verified identity rather than team features, VeraDial delivers more for less.",
   },
 ];
 
@@ -231,8 +221,8 @@ export default function CompareOpenPhonePage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     AI-powered calling for solo professionals. Your calls
                     display as verified, your AI agent handles outbound calls,
-                    and voice effects let you control how you sound &mdash; all
-                    for $9.99/mo with no per-seat pricing.
+                    and call recording keeps every detail on file &mdash; all for
+                    $9.99/mo with no per-seat pricing.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-accent" />
@@ -321,7 +311,7 @@ export default function CompareOpenPhonePage() {
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
               OpenPhone is an excellent team communication platform. But when
               you&apos;re a solo professional who needs caller ID control, AI
-              agents that make calls for you, and voice effects &mdash; VeraDial
+              agents that make calls for you, and call recording &mdash; VeraDial
               is purpose-built for the job, at a lower price.
             </p>
           </ScrollReveal>
@@ -355,8 +345,8 @@ export default function CompareOpenPhonePage() {
                 More than a team phone. A personal AI calling platform.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get verified caller ID, AI agents, voice effects, and call
-                recording &mdash; everything a team VoIP platform wasn&apos;t
+                Get verified caller ID, AI agents, call recording, and
+                transcription &mdash; everything a team VoIP platform wasn&apos;t
                 designed to give you.
               </p>
               <div className="mt-8 flex justify-center gap-4">

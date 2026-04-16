@@ -55,11 +55,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     burner: "no",
   },
   {
-    feature: "Voice effects",
-    veradial: "yes",
-    burner: "no",
-  },
-  {
     feature: "Call recording",
     veradial: "yes",
     burner: "no",
@@ -128,11 +123,6 @@ const DIFFERENTIATORS = [
       "Dispatch an AI agent to handle outbound calls on your behalf. Choose from presets like Scheduler or Reminder, or write a custom prompt. Get a full transcript and summary when it's done. Burner has no AI calling capability.",
   },
   {
-    title: "Voice effects for privacy and flexibility",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Whether you need voice privacy or a different vocal presence, it sounds natural, not robotic. Burner offers no voice effects at all.",
-  },
-  {
     title: "Call recording built in",
     description:
       "Toggle recording on any call — regular or AI — and get both sides captured. Recordings are stored in your call history for easy access. Burner doesn't offer call recording, so you'd need a separate app.",
@@ -196,7 +186,7 @@ export default function CompareBurnerPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Burner gives you disposable phone numbers that expire after use.
-            VeraDial gives you a verified number with AI calling, voice effects,
+            VeraDial gives you a verified number with AI calling, call recording,
             and carrier-level trust. Here&apos;s how they compare.
           </p>
 
@@ -232,7 +222,7 @@ export default function CompareBurnerPage() {
                     calls display as{" "}
                     <strong className="text-accent">verified</strong> on the
                     recipient&apos;s device. Make calls, send texts, record
-                    conversations, apply voice effects, and dispatch AI agents —
+                    conversations, and dispatch AI agents —
                     all from one trusted identity. Pay as you go with credit
                     packs.
                   </p>
@@ -258,7 +248,7 @@ export default function CompareBurnerPage() {
                     temporary lines for calling and texting, then burn them when
                     you&apos;re done. Also offers permanent &ldquo;mini phone&rdquo; lines.
                     Privacy-focused with auto-expiring numbers, but no call
-                    verification, AI calling, or voice effects.
+                    verification, AI calling, or call recording.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-text-secondary" />
@@ -358,7 +348,7 @@ export default function CompareBurnerPage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get a dedicated number with carrier-level verification, AI
-                calling, voice effects, and call recording. Start with a 3-day
+                calling, and call recording. Start with a 3-day
                 free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">

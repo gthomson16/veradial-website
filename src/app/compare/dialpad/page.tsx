@@ -55,11 +55,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     dialpad: "no",
   },
   {
-    feature: "Voice effects (Male, Female, Privacy)",
-    veradial: "yes",
-    dialpad: "no",
-  },
-  {
     feature: "AI transcription & summaries",
     veradial: "yes",
     dialpad: "yes",
@@ -136,11 +131,6 @@ const DIFFERENTIATORS = [
     title: "Built for one person, not a department",
     description:
       "Dialpad is designed for teams and contact centers \u2014 per-seat pricing, admin consoles, department routing, agent coaching. If you\u2019re a solo professional, you\u2019re paying for infrastructure you\u2019ll never use. VeraDial is $9.99/mo with everything a single operator needs.",
-  },
-  {
-    title: "Voice effects for privacy",
-    description:
-      "VeraDial includes FFT-based voice modes \u2014 Male, Female, and Privacy \u2014 so you control how you sound on every call. Dialpad has no voice modification features.",
   },
   {
     title: "Verified, not just connected",
@@ -236,7 +226,7 @@ export default function CompareDialpadPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     Personal AI calling for solo professionals. Your AI agent
                     makes calls for you, your caller ID is verified and
-                    controlled, and voice effects give you flexibility &mdash;
+                    controlled, and call recording gives you flexibility &mdash;
                     all for $9.99/mo with no per-seat pricing or admin setup.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
@@ -361,8 +351,8 @@ export default function CompareDialpadPage() {
                 Enterprise AI calling features. Solo pricing.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get AI agents, verified caller ID, voice effects, and call
-                recording &mdash; without the enterprise complexity or per-seat
+                Get AI agents, verified caller ID, call recording, and
+                transcription &mdash; without the enterprise complexity or per-seat
                 pricing.
               </p>
               <div className="mt-8 flex justify-center gap-4">

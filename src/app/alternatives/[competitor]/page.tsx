@@ -62,7 +62,7 @@ function buildFaqJsonLd(competitorName: string, alternatives: string[]) {
         name: `Is there a cheaper alternative to ${competitorName}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Yes. VeraDial starts at $9.99/mo per line with AI calling, verified caller ID, and voice effects included. Google Voice offers a free personal tier for basic needs.`,
+          text: `Yes. VeraDial starts at $9.99/mo per business line and includes AI calling, verified caller ID, call recording, business SMS, and 100 credits each month. The 3-day free trial includes 50 bonus credits, so you can test everything before you pay.`,
         },
       },
     ],
@@ -354,7 +354,7 @@ export default async function AlternativesPage({
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 VeraDial gives you AI agents that make calls, verified caller
-                ID, voice effects, and call recording &mdash; starting at
+                ID, call recording, and transcription &mdash; starting at
                 $9.99/mo with a 3-day free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">

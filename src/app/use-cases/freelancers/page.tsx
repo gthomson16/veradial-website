@@ -26,7 +26,7 @@ import { Badge } from "@/components/ui/Badge";
 
 const PAGE_TITLE = "VeraDial for Freelancers & Consultants";
 const PAGE_DESCRIPTION =
-  "A business line for freelancers and consultants. Get a dedicated number with AI calling, voicemail transcription, call recording, and voice privacy.";
+  "A business line for freelancers and consultants. Get a dedicated number with AI calling, voicemail transcription, call recording, and verified caller ID.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -92,9 +92,9 @@ const FEATURES = [
   },
   {
     icon: ShieldCheck,
-    title: "Voice privacy for sensitive client discussions",
+    title: "Verified caller ID so clients actually pick up",
     description:
-      "Some client conversations require discretion — especially when you are consulting on confidential projects, handling sensitive business data, or working in industries like finance, legal, or healthcare. VeraDial's voice privacy modes (Male, Female, and Privacy) use FFT-based formant shifting to mask your natural voice in real time. Protect your personal identity on calls where you need an extra layer of separation between you and the work.",
+      "Freelancers lose work when calls go unanswered. VeraDial numbers carry STIR/SHAKEN A-level attestation — the highest level of caller identity verification — so your calls show up as verified on the recipient's phone, not flagged as spam. You can also verify numbers you already own and use them as your outbound caller ID, keeping a consistent identity across every client interaction.",
   },
   {
     icon: MessageSquare,
@@ -463,7 +463,7 @@ export default function FreelancersUseCasePage() {
               {
                 title: "Business & Management Consultants",
                 description:
-                  "Strategy consultants, executive coaches, and fractional executives who handle confidential client discussions and need voice privacy, call recording, and verified caller identity.",
+                  "Strategy consultants, executive coaches, and fractional executives who handle confidential client discussions and need call recording, transcription, and verified caller identity.",
               },
               {
                 title: "Accountants & Financial Advisors",
@@ -500,8 +500,8 @@ export default function FreelancersUseCasePage() {
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 No tiers. No per-minute charges. No hidden fees. One plan that
                 includes your dedicated business number, AI calling, call
-                recording, voicemail transcription, SMS, voice privacy, and Call
-                Map. Cancel anytime.
+                recording, voicemail transcription, SMS, verified caller ID, and
+                Call Map. Cancel anytime.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-text-secondary">
                 {[
@@ -510,7 +510,7 @@ export default function FreelancersUseCasePage() {
                   "Call recording",
                   "Voicemail transcription",
                   "Business SMS",
-                  "Voice privacy",
+                  "Verified caller ID",
                   "Call Map",
                   "STIR/SHAKEN verified",
                 ].map((feature) => (

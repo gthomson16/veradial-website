@@ -1,5 +1,6 @@
 import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
 import { SITE_URL } from "@/lib/metadata";
+import { GOOGLE_PLAY_URL } from "@/lib/constants";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -256,18 +257,19 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="rounded-[32px] border border-white/10 bg-[linear-gradient(155deg,rgba(17,36,58,0.94),rgba(7,17,29,0.98))] p-10 text-center shadow-[0_36px_120px_rgba(0,0,0,0.35)]">
               <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
-                Get In Touch
+                Get Started
               </p>
               <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-                Try VeraDial early.
+                Get VeraDial today.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                VeraDial is launching soon on iOS and Android. Request early
-                access to be among the first to use it.
+                VeraDial is live on Google Play. Get a verified business phone
+                number and AI calling assistant on Android &mdash; iOS coming
+                soon.
               </p>
               <div className="mt-8 flex justify-center gap-4">
-                <Button variant="primary" href="/#download">
-                  Request Early Access
+                <Button variant="primary" href={GOOGLE_PLAY_URL}>
+                  Download for Android
                 </Button>
                 <Button variant="ghost" href="mailto:support@veradial.com">
                   Email Me

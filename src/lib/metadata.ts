@@ -19,7 +19,7 @@ export const siteMetadata: Metadata = {
     "caller ID",
     "AI appointment scheduling",
     "verified calling",
-    "voice effects",
+    "call recording",
     "business SMS",
   ],
   authors: [{ name: SITE_NAME }],

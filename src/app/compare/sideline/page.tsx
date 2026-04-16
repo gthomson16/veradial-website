@@ -15,7 +15,7 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 
 const PAGE_TITLE = "VeraDial vs Sideline — Comparison";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Sideline side by side. See how AI calling, verified caller ID, voice privacy, and recordings compare to a standard second-number app.";
+  "Compare VeraDial and Sideline side by side. See how AI calling, verified caller ID, call recording, and transcription compare to a standard second-number app.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -46,11 +46,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "AI-powered outbound calling",
-    veradial: "yes",
-    sideline: "no",
-  },
-  {
-    feature: "Voice effects (Male, Female, Privacy)",
     veradial: "yes",
     sideline: "no",
   },
@@ -133,11 +128,6 @@ const DIFFERENTIATORS = [
       "VeraDial numbers carry STIR/SHAKEN A-level attestation, so recipients see a verified call — not an unknown number. Sideline provides a second number but without carrier-level identity verification, your calls can still land as unverified.",
   },
   {
-    title: "Voice effects for any situation",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Protect your real voice on sensitive calls or present a different persona. Sideline offers no voice modification at all.",
-  },
-  {
     title: "Call recording built in",
     description:
       "Toggle recording on any call — regular or AI — and get both sides captured. Recordings are stored in your call history for easy playback. Sideline doesn't offer call recording.",
@@ -145,7 +135,7 @@ const DIFFERENTIATORS = [
   {
     title: "Same price, way more features",
     description:
-      "VeraDial is $9.99/mo with a 3-day free trial and 100 credits every month — the same price as Sideline. But you also get AI calling, voicemail transcription, call forwarding, and voice effects that Sideline doesn't offer.",
+      "VeraDial is $9.99/mo with a 3-day free trial and 100 credits every month — the same price as Sideline. But you also get AI calling, voicemail transcription, call recording, and call forwarding that Sideline doesn't offer.",
   },
   {
     title: "Choose which number they see",
@@ -201,8 +191,8 @@ export default function CompareSidelinePage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Sideline gives you a second phone number for business. VeraDial
-            gives you a verified identity with AI calling, voice effects, and
-            call recording. Here&apos;s how they compare.
+            gives you a verified identity with AI calling, call recording,
+            and transcription. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -237,8 +227,8 @@ export default function CompareSidelinePage() {
                     calls display as{" "}
                     <strong className="text-accent">verified</strong> on the
                     recipient&apos;s device. AI agents make calls for you, voice
-                    effects protect your identity, and every call can be
-                    recorded — all from a number you own.
+                    calls can be recorded and transcribed, and every call can be
+                    tracked — all from a number you own.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-accent" />
@@ -327,8 +317,8 @@ export default function CompareSidelinePage() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
               Sideline solves the &ldquo;separate my work calls&rdquo; problem. VeraDial
-              solves that too — then adds AI calling, voice effects, call
-              recording, and STIR/SHAKEN verification so your calls actually
+              solves that too — then adds AI calling, call recording,
+              transcription, and STIR/SHAKEN verification so your calls actually
               get answered.
             </p>
           </ScrollReveal>
@@ -362,8 +352,8 @@ export default function CompareSidelinePage() {
                 More than a second number.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get a verified number with AI calling, voice effects, and call
-                recording, and voicemail transcription. Start with a 3-day free trial.
+                Get a verified number with AI calling, call recording,
+                and voicemail transcription. Start with a 3-day free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">

@@ -55,11 +55,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     googleVoice: "no",
   },
   {
-    feature: "Voice effects (Male, Female, Privacy)",
-    veradial: "yes",
-    googleVoice: "no",
-  },
-  {
     feature: "Call recording",
     veradial: "yes",
     googleVoice: "partial",
@@ -143,11 +138,6 @@ const DIFFERENTIATORS = [
       "Search and purchase numbers by area code, region, or pattern. Present the exact local presence you need. Google Voice assigns you a number from a limited pool — you don't get fine-grained control over what number you get.",
   },
   {
-    title: "Voice effects for privacy",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Protect your identity on sensitive calls without sounding robotic. Google Voice has no voice modification features.",
-  },
-  {
     title: "Record every call",
     description:
       "Toggle call recording on any outbound call — regular or AI. Both sides are captured and stored in your call history. Google Voice's personal plan doesn't support call recording, and the business tier only records inbound calls.",
@@ -207,7 +197,7 @@ export default function CompareGoogleVoicePage() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Google Voice gives you a free second number. VeraDial gives you
             verified business calling with AI agents, caller ID control, and
-            voice effects. Here&apos;s how they compare.
+            call recording. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -366,8 +356,8 @@ export default function CompareGoogleVoicePage() {
                 More than a second number.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get verified caller ID, AI agents, voice effects, and call
-                recording — everything Google Voice doesn&apos;t offer for business
+                Get verified caller ID, AI agents, call recording, and
+                transcription — everything Google Voice doesn&apos;t offer for business
                 calling.
               </p>
               <div className="mt-8 flex justify-center gap-4">

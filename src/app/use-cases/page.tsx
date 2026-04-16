@@ -210,9 +210,9 @@ export default function UseCasesPage() {
                 Your AI-powered business line.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Verified caller ID, AI call agents, voice effects, and call
-                recording — everything you need to work from your phone like a
-                pro.
+                Verified caller ID, AI call agents, call recording, and
+                transcription — everything you need to work from your phone like
+                a pro.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">

@@ -15,7 +15,7 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 
 const PAGE_TITLE = "VeraDial vs Vonage — Comparison";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Vonage side by side. See how modern AI calling with verified caller ID and voice effects compares to a legacy business communications platform.";
+  "Compare VeraDial and Vonage side by side. See how modern AI calling with verified caller ID and call recording compares to a legacy business communications platform.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -51,11 +51,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "STIR/SHAKEN A-level attestation",
-    veradial: "yes",
-    vonage: "no",
-  },
-  {
-    feature: "Voice effects (Male, Female, Privacy)",
     veradial: "yes",
     vonage: "no",
   },
@@ -136,11 +131,6 @@ const DIFFERENTIATORS = [
     title: "Caller ID you control",
     description:
       "VeraDial lets you verify existing numbers as secondary caller IDs. Vonage Business ties caller ID to assigned extensions with no flexibility to present different numbers to different contacts.",
-  },
-  {
-    title: "Voice effects built in",
-    description:
-      "VeraDial includes natural-sounding FFT-based voice modes \u2014 Male, Female, and Privacy. Vonage has no voice modification features on its business phone product.",
   },
   {
     title: "Solo-friendly pricing",
@@ -235,7 +225,7 @@ export default function CompareVonagePage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     Purpose-built AI calling for solo professionals. Your AI
                     agent handles outbound calls, your identity is
-                    carrier-verified, and voice effects give you control. Modern,
+                    carrier-verified, and call recording keeps everything documented. Modern,
                     focused, and $9.99/mo.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
@@ -259,8 +249,8 @@ export default function CompareVonagePage() {
                     A legacy business communications platform now owned by
                     Ericsson. Offers phone, messaging, and video for teams, plus
                     a developer API platform. Minimal AI features on the
-                    business phone side, no caller ID control, and no voice
-                    effects.
+                    business phone side, no caller ID control, and no call
+                    recording included by default.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-text-secondary" />
@@ -327,7 +317,7 @@ export default function CompareVonagePage() {
               Vonage was a pioneer in VoIP, but its focus has shifted to
               developer APIs since the Ericsson acquisition. If you&apos;re a
               solo professional who needs AI calling, verified identity, and
-              voice effects, you need a product built for that &mdash; not a
+              call recording, you need a product built for that &mdash; not a
               legacy platform with divided attention.
             </p>
           </ScrollReveal>
@@ -361,8 +351,8 @@ export default function CompareVonagePage() {
                 Modern calling for modern professionals.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get AI agents, verified caller ID, voice effects, and call
-                recording &mdash; built for individuals, not inherited from a
+                Get AI agents, verified caller ID, call recording, and
+                transcription &mdash; built for individuals, not inherited from a
                 legacy enterprise platform.
               </p>
               <div className="mt-8 flex justify-center gap-4">

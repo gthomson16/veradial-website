@@ -22,7 +22,7 @@ export const metadata = buildPageMetadata({
     "caller ID",
     "AI appointment scheduling",
     "verified calling",
-    "voice effects",
+    "call recording",
     "business SMS",
   ],
 });
@@ -94,11 +94,21 @@ function SoftwareApplicationJsonLd() {
     author: { "@id": "https://veradial.com/#organization" },
     offers: {
       "@type": "Offer",
-      price: "9.99",
-      priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       url: GOOGLE_PLAY_URL,
       description: "Subscription includes 100 monthly credits",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "9.99",
+        priceCurrency: "USD",
+        billingDuration: "P1M",
+        unitCode: "MON",
+        referenceQuantity: {
+          "@type": "QuantitativeValue",
+          value: 1,
+          unitCode: "MON",
+        },
+      },
     },
   };
 

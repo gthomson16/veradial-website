@@ -55,11 +55,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     ringCentral: "partial",
   },
   {
-    feature: "Voice effects (Male, Female, Privacy)",
-    veradial: "yes",
-    ringCentral: "no",
-  },
-  {
     feature: "Call recording",
     veradial: "yes",
     ringCentral: "yes",
@@ -141,11 +136,6 @@ const DIFFERENTIATORS = [
     title: "Control your caller identity",
     description:
       "VeraDial lets you verify existing numbers as secondary caller IDs, giving you full control over your outbound identity. RingCentral ties caller ID to assigned extensions \u2014 no flexibility to present different numbers to different contacts.",
-  },
-  {
-    title: "Voice effects built in",
-    description:
-      "VeraDial includes FFT-based voice modes for privacy and flexibility. Male, Female, and Privacy modes sound natural, not robotic. RingCentral has no voice modification features.",
   },
   {
     title: "Start in minutes, not days",
@@ -240,7 +230,7 @@ export default function CompareRingCentralPage() {
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                     Focused AI calling for solo professionals. Your AI agent
                     handles outbound calls, your identity is verified at the
-                    carrier level, and voice effects give you control &mdash;
+                    carrier level, and call recording gives you control &mdash;
                     all for $9.99/mo. One app, one purpose, done well.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
@@ -331,8 +321,8 @@ export default function CompareRingCentralPage() {
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
               RingCentral is a powerhouse for organizations that need video,
               messaging, fax, and phone in one platform. But if you&apos;re an
-              individual who needs AI calling, verified identity, and voice
-              effects &mdash; you&apos;re paying $20/mo for a dashboard
+              individual who needs AI calling, verified identity, and call
+              recording &mdash; you&apos;re paying $20/mo for a dashboard
               you&apos;ll never fully use.
             </p>
           </ScrollReveal>
@@ -366,8 +356,8 @@ export default function CompareRingCentralPage() {
                 All the AI calling. None of the bloat.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get AI agents, verified caller ID, voice effects, and call
-                recording at half the price &mdash; without the enterprise
+                Get AI agents, verified caller ID, call recording, and
+                transcription at half the price &mdash; without the enterprise
                 complexity.
               </p>
               <div className="mt-8 flex justify-center gap-4">

@@ -22,9 +22,13 @@ Marketing site for VeraDial — AI-powered business calling app.
 - `src/components/` — shared and page-specific components
 - `src/lib/` — constants, metadata, utilities
 
-## Product Reference
+## Product References
 
-- Source of truth for pricing, features, and content: `/Users/gthomson/Development/VeraDial/website.md`
+- Product facts source of truth: `/Users/gthomson/Development/VeraDial/website.md`
+  Use for pricing, feature inventory, platform availability, usage limits, and compliance / infrastructure details.
+- Marketing context source of truth: `/Users/gthomson/Development/veradial-website/.agents/product-marketing-context.md`
+  Use for positioning, ICP, pain points, competitors, objections, switching dynamics, customer language, and brand voice.
+- If they conflict, treat `website.md` as the factual reference and update the marketing context to match.
 
 ## Conventions
 

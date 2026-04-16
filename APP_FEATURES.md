@@ -4,7 +4,7 @@ This document describes all features of the VeraDial mobile app (iOS/Android) fo
 
 ## What is VeraDial?
 
-VeraDial is a verified business calling app that lets users make calls and send texts from purchased phone numbers with caller ID control, voice effects, AI-powered calling, and call recording.
+VeraDial is a verified business calling app that lets users make calls and send texts from purchased phone numbers with caller ID control, AI-powered calling, and call recording.
 
 ## Core Features
 
@@ -19,14 +19,6 @@ VeraDial is a verified business calling app that lets users make calls and send 
 - Make outbound calls via Twilio Voice SDK
 - Calls work over WiFi/data (VoIP) — no carrier minutes used
 - Call history with status, duration, and cost tracking
-
-### Voice Effects (Phase Vocoder)
-- **Normal** — your natural voice
-- **Male** — deeper pitch with male vocal tract formants
-- **Female** — higher pitch with female vocal tract formants
-- **Privacy** — subtle voice disguise, sounds like you but unrecognizable
-- Uses FFT-based phase vocoder for natural-sounding formant shifting (not chipmunk pitch shift)
-- Voice-changed calls cost 4 credits per minute
 
 ### AI Calling (ElevenLabs Agent)
 - Dispatch an AI agent to make phone calls on your behalf
@@ -80,7 +72,6 @@ VeraDial is a verified business calling app that lets users make calls and send 
 |---------|------|
 | Standard call | 2 credits/min |
 | Recorded call | 3 credits/min |
-| Voice privacy call | 4 credits/min |
 | AI call | 10 credits/min |
 | SMS | 1 credit/segment |
 | Number swap | $4.99 |
@@ -88,7 +79,7 @@ VeraDial is a verified business calling app that lets users make calls and send 
 ## App Structure
 
 ### Tabs (scrollable tab bar)
-1. **Call** — Dialer with keypad, caller ID picker, voice effects, record toggle
+1. **Call** — Dialer with keypad, caller ID picker, record toggle
 2. **AI** — AI Call screen with number input, presets, goal, custom prompt, record toggle
 3. **History** — Unified call/AI/SMS history with filter pills (All, Calls, AI Calls, SMS)
 4. **SMS** — Message conversations
@@ -126,5 +117,4 @@ VeraDial is a verified business calling app that lets users make calls and send 
 - Privacy Policy: veradial.com/privacy
 - AI calling terms included in both documents
 - Call recording: user responsible for consent law compliance
-- Voice effects: not for fraudulent impersonation
 - Not a replacement for traditional phone service / no 911 support

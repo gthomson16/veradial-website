@@ -152,7 +152,7 @@ export default function AlternativesHubPage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 VeraDial gives you AI agents that make calls, verified caller
-                ID, voice effects, and call recording &mdash; starting at
+                ID, call recording, and transcription &mdash; starting at
                 $9.99/mo.
               </p>
               <div className="mt-8 flex justify-center gap-4">

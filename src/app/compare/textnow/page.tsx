@@ -54,11 +54,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
     textnow: "no",
   },
   {
-    feature: "Voice effects (Male, Female, Privacy)",
-    veradial: "yes",
-    textnow: "no",
-  },
-  {
     feature: "Call recording",
     veradial: "yes",
     textnow: "no",
@@ -142,11 +137,6 @@ const DIFFERENTIATORS = [
       "VeraDial lets you choose your outbound caller ID, add verified secondary numbers, and pick numbers by area code or pattern. TextNow assigns you one free number with limited area code choice and no ability to change what recipients see.",
   },
   {
-    title: "Professional voice effects",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Whether for anonymity or professional reasons, you sound natural, not robotic. TextNow offers no voice modification.",
-  },
-  {
     title: "Your number stays yours",
     description:
       "VeraDial numbers are dedicated to your account and never reclaimed for inactivity. TextNow recycles inactive numbers after 30 days, which means you could lose the number your contacts know you by.",
@@ -206,7 +196,7 @@ export default function CompareTextNowPage() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             TextNow gives you a free phone number for calling and texting.
             VeraDial gives you a verified business identity with AI agents,
-            voice effects, and caller ID control. Here&apos;s how they compare.
+            call recording, and caller ID control. Here&apos;s how they compare.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -240,7 +230,7 @@ export default function CompareTextNowPage() {
                     Dedicated numbers with carrier-level verification. Your calls
                     display as <strong className="text-accent">verified</strong>{" "}
                     on the recipient&apos;s device. Choose your number, control your
-                    caller ID, record calls, apply voice effects, and dispatch AI
+                    caller ID, record calls, and dispatch AI
                     agents — all from one professional identity.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">

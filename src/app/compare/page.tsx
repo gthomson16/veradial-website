@@ -72,7 +72,7 @@ const COMPARISONS = [
     tagline: "Privacy-focused second number vs. verified AI calling",
     highlights: [
       "STIR/SHAKEN verification",
-      "Voice privacy effects",
+      "Call recording and transcription",
       "AI-powered conversations",
     ],
   },
@@ -82,7 +82,7 @@ const COMPARISONS = [
     tagline: "Traditional second line vs. AI-powered business calling",
     highlights: [
       "AI makes calls for you",
-      "Voice effects and recording",
+      "Call recording and transcription",
       "Verified caller identity",
     ],
   },
@@ -152,7 +152,7 @@ const COMPARISONS = [
     tagline: "Spam-flagged second line vs. verified AI calling",
     highlights: [
       "Calls that get answered, not flagged",
-      "AI agents + voice effects",
+      "AI agents + call recording",
       "Lower price, more features",
     ],
   },
@@ -283,8 +283,8 @@ export default function ComparePage() {
                 More than a second number.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                Get verified caller ID, AI agents, voice effects, and call
-                recording — everything the alternatives don&apos;t offer.
+                Get verified caller ID, AI agents, call recording, and
+                transcription — everything the alternatives don&apos;t offer.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">

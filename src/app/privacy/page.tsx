@@ -35,7 +35,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               <strong className="text-text-primary">Call records:</strong> We maintain call
-              logs including from/to numbers, duration, timestamps, voice effect used, and
+              logs including from/to numbers, duration, timestamps, and
               Twilio call SID for your account history.
             </p>
             <p>

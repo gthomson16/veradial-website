@@ -9,7 +9,7 @@ import { FAQContent, type FAQSection } from "@/components/faq/FAQContent";
 export const metadata = buildPageMetadata({
   title: "Frequently Asked Questions",
   description:
-    "Everything you need to know about VeraDial — AI calling, phone numbers, pricing, voice effects, privacy, and getting started.",
+    "Everything you need to know about VeraDial — AI calling, phone numbers, pricing, privacy, and getting started.",
   path: "/faq",
   keywords: [
     "VeraDial FAQ",
@@ -28,7 +28,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What is VeraDial?",
         answer:
-          "VeraDial is an AI-powered business calling app that gives freelancers, contractors, and small business owners a dedicated phone number with an AI assistant that can make calls on their behalf. You get a real US or Canadian number with STIR/SHAKEN A-level attestation — the highest level of caller identity verification — so your calls show up as verified, not spam. The AI can schedule appointments, confirm bookings, send reminders, and follow up with clients autonomously. You set a goal like \"Confirm my Friday 2:30 PM appointment and ask about parking,\" and the AI handles the conversation and sends you a full transcript and summary when it's done. VeraDial also includes business SMS, call recording with automatic transcription, voicemail transcription, and voice privacy modes. It's available on Android via Google Play, with iOS coming soon.",
+          "VeraDial is an AI-powered business calling app that gives freelancers, contractors, and small business owners a dedicated phone number with an AI assistant that can make calls on their behalf. You get a real US or Canadian number with STIR/SHAKEN A-level attestation — the highest level of caller identity verification — so your calls show up as verified, not spam. The AI can schedule appointments, confirm bookings, send reminders, and follow up with clients autonomously. You set a goal like \"Confirm my Friday 2:30 PM appointment and ask about parking,\" and the AI handles the conversation and sends you a full transcript and summary when it's done. VeraDial also includes business SMS, call recording with automatic transcription, and voicemail transcription. It's available on Android via Google Play and iOS on the App Store.",
       },
     ],
   },
@@ -88,37 +88,17 @@ const FAQ_SECTIONS: FAQSection[] = [
     ],
   },
   {
-    title: "Voice Privacy",
-    items: [
-      {
-        question: "What voice effects are available?",
-        answer:
-          "VeraDial offers three voice modes: Male, Female, and Privacy. Effects use FFT-based formant shifting for natural-sounding results — no chipmunk or novelty voices.",
-      },
-      {
-        question: "Do voice effects work on AI calls?",
-        answer:
-          "Voice effects apply to manual calls where you're speaking. AI calls use the AI's own natural voice.",
-      },
-      {
-        question: "How much do voice-changed calls cost?",
-        answer:
-          "Voice privacy calls cost more credits per minute than standard calls. See exact rates on the pricing section of our homepage or in the app before you place a call.",
-      },
-    ],
-  },
-  {
     title: "Pricing & Credits",
     items: [
       {
         question: "How does pricing work?",
         answer:
-          "VeraDial uses a monthly subscription plus a credit-based system. Your subscription gives you a dedicated phone number with credits included every month — enough for calls, SMS, and AI features. Need more? Buy credit packs anytime — they never expire. Your first subscription includes a free trial with bonus credits to try everything. See current pricing at veradial.com.",
+          "VeraDial costs $9.99 per month per business line. Each subscription includes a dedicated US or Canadian phone number, 100 credits each month, AI calling, call recording, business SMS, voicemail with transcription, and call forwarding. Need more credits? Buy credit packs anytime: 100 credits for $5.99, 300 for $14.99, or 1,000 for $39.99. Credits never expire. Your first subscription includes a 3-day free trial with 50 bonus credits so you can test everything before you pay.",
       },
       {
         question: "How many credits does a call cost?",
         answer:
-          "Credit costs vary by call type — standard calls cost the least, while recorded calls, voice privacy calls, and AI calls use progressively more credits per minute. SMS is billed per segment. You can see exact credit rates on the pricing section of our homepage and in the app before and after each call.",
+          "Credit costs depend on the call type. Standard calls cost 2 credits per minute. Recorded calls cost 3 credits per minute. AI calls cost 5 credits per minute. SMS costs 1 credit per segment (160 characters). The app shows the exact credit cost before and after every call.",
       },
       {
         question: "Do credits expire?",
@@ -127,7 +107,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is there a free trial?",
         answer:
-          "Yes. Your first subscription includes a free trial with bonus credits so you can try everything — AI calling, SMS, voice privacy, and more. Once the trial converts, you get credits included every month with your subscription.",
+          "Yes. Your first subscription includes a free trial with bonus credits so you can try everything — AI calling, SMS, call recording, and more. Once the trial converts, you get credits included every month with your subscription.",
       },
     ],
   },
@@ -162,7 +142,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Do I need a subscription?",
         answer:
-          "Yes — a monthly subscription is required to hold a phone number. It includes credits every month, inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a free trial and bonus credits. See current pricing at veradial.com.",
+          "Yes. A $9.99/month subscription per business line is required to hold a phone number. It includes 100 credits every month, inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and 50 bonus credits.",
       },
       {
         question: "Can I use VeraDial for personal calls?",

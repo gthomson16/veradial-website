@@ -38,14 +38,13 @@ export type AlternativesPageData = {
 const VERADIAL: Alternative = {
   name: "VeraDial",
   slug: "veradial",
-  tagline: "AI-powered business calling with verified caller ID and voice effects.",
+  tagline: "AI-powered business calling with verified caller ID and call recording.",
   pricing: "$9.99/mo per line (100 credits included)",
   bestFor: "Solopreneurs, freelancers, and small business owners who need AI to make calls on their behalf with a verified business identity.",
   pros: [
     "AI agent makes outbound calls for you with full transcripts",
     "Caller ID control \u2014 verify existing numbers as secondary IDs",
     "STIR/SHAKEN A-level attestation on every call",
-    "Voice effects (Male, Female, Privacy) for identity control",
     "Call recording on any call, plus voicemail transcription",
   ],
   cons: [
@@ -69,7 +68,7 @@ const OPENPHONE: Alternative = {
   cons: [
     "Per-seat pricing adds up quickly for teams",
     "No AI agent calling \u2014 AI only summarises, doesn\u2019t make calls",
-    "No caller ID control or voice effects",
+    "No caller ID control",
   ],
   vsPageSlug: "openphone",
 };
@@ -109,7 +108,7 @@ const GOOGLE_VOICE: Alternative = {
   ],
   cons: [
     "No caller ID control \u2014 locked to assigned number",
-    "No AI calling, no voice effects, no call recording on personal plan",
+    "No AI calling, no call recording on personal plan",
     "Requires a Google account",
     "Limited number selection",
   ],
@@ -131,7 +130,7 @@ const DIALPAD: Alternative = {
   cons: [
     "Overkill for solopreneurs \u2014 enterprise-focused features",
     "Per-seat pricing with admin setup required",
-    "No caller ID control or voice effects",
+    "No caller ID control",
     "AI listens and coaches but doesn\u2019t make calls for you",
   ],
   vsPageSlug: "dialpad",
@@ -153,7 +152,7 @@ const RINGCENTRAL: Alternative = {
     "Most expensive option at $20/user/mo",
     "Complex admin portal \u2014 designed for IT departments",
     "Far too much for individual users or small teams",
-    "No caller ID control or voice effects",
+    "No caller ID control",
   ],
   vsPageSlug: "ringcentral",
 };
@@ -174,7 +173,7 @@ const VONAGE: Alternative = {
     "Product focus shifting to APIs post-Ericsson acquisition",
     "Minimal AI features on the business phone side",
     "Call recording is a paid add-on",
-    "No caller ID control or voice effects",
+    "No caller ID control",
   ],
   vsPageSlug: "vonage",
 };
@@ -212,7 +211,7 @@ const SIDELINE: Alternative = {
   ],
   cons: [
     "No AI features or call recording",
-    "No caller ID control or voice effects",
+    "No caller ID control",
     "Limited feature set compared to modern alternatives",
     "No STIR/SHAKEN attestation marketing",
   ],
@@ -327,7 +326,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       "Google Voice competitor",
     ],
     intro:
-      "Google Voice is a solid free second number \u2014 but it lacks caller ID control, AI calling, voice effects, and call recording. If you\u2019ve outgrown a free personal number and need professional business calling, here are the best alternatives.",
+      "Google Voice is a solid free second number \u2014 but it lacks caller ID control, AI calling, and call recording. If you\u2019ve outgrown a free personal number and need professional business calling, here are the best alternatives.",
     painPoints: [
       {
         title: "No caller ID control",
@@ -363,7 +362,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         useCase: "Solo professional who needs AI calling and verified identity",
         pick: "VeraDial",
-        why: "AI agents make calls for you, STIR/SHAKEN verified, caller ID control, and voice effects \u2014 all for $9.99/mo.",
+        why: "AI agents make calls for you, STIR/SHAKEN verified, and caller ID control \u2014 all for $9.99/mo.",
       },
       {
         useCase: "Small team sharing a business number",
@@ -397,7 +396,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       "cheaper than OpenPhone",
     ],
     intro:
-      "OpenPhone is a great team phone system, but per-seat pricing adds up, and it lacks AI agent calling, caller ID control, and voice effects. If you\u2019re a solo professional or need features OpenPhone doesn\u2019t offer, here are the best alternatives.",
+      "OpenPhone is a great team phone system, but per-seat pricing adds up, and it lacks AI agent calling and caller ID control. If you\u2019re a solo professional or need features OpenPhone doesn\u2019t offer, here are the best alternatives.",
     painPoints: [
       {
         title: "Per-seat pricing adds up",
@@ -433,7 +432,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         useCase: "Solo professional who needs AI calling",
         pick: "VeraDial",
-        why: "AI agents, verified caller ID, voice effects, and no per-seat pricing at $9.99/mo.",
+        why: "AI agents, verified caller ID, call recording, and no per-seat pricing at $9.99/mo.",
       },
       {
         useCase: "Free or very low budget",
@@ -503,7 +502,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         useCase: "Solo professional who wants AI + verified calling",
         pick: "VeraDial",
-        why: "Dedicated VoIP with AI agents, caller ID control, and voice effects \u2014 everything Grasshopper lacks, at a lower price.",
+        why: "Dedicated VoIP with AI agents, caller ID control, and call recording \u2014 everything Grasshopper lacks, at a lower price.",
       },
       {
         useCase: "Small team needing shared numbers",
@@ -557,7 +556,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         title: "No caller ID control or voice features",
         description:
-          "Caller ID is locked to assigned numbers. No voice effects or identity management for outbound calls.",
+          "Caller ID is locked to assigned numbers. No identity management for outbound calls.",
       },
     ],
     criteria: SHARED_CRITERIA,
@@ -573,7 +572,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         useCase: "Solo professional who needs AI that makes calls",
         pick: "VeraDial",
-        why: "AI agents handle outbound calls autonomously, with caller ID control and voice effects at $9.99/mo.",
+        why: "AI agents handle outbound calls autonomously, with caller ID control and call recording at $9.99/mo.",
       },
       {
         useCase: "Full UCaaS for a large team",
@@ -627,7 +626,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         title: "No AI agent calling",
         description:
-          "RingCentral added AI notes and summaries, but it can\u2019t make calls on your behalf. No caller ID control or voice effects either.",
+          "RingCentral added AI notes and summaries, but it can\u2019t make calls on your behalf. No caller ID control either.",
       },
     ],
     criteria: SHARED_CRITERIA,
@@ -697,7 +696,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         title: "No caller ID control or voice features",
         description:
-          "Caller ID is tied to assigned extensions. No voice effects or ability to present different numbers to different contacts.",
+          "Caller ID is tied to assigned extensions. No ability to present different numbers to different contacts.",
       },
     ],
     criteria: SHARED_CRITERIA,
@@ -713,7 +712,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         useCase: "Solo professional who needs AI calling",
         pick: "VeraDial",
-        why: "Modern, purpose-built AI calling with verified identity and voice effects at $9.99/mo.",
+        why: "Modern, purpose-built AI calling with verified identity and call recording at $9.99/mo.",
       },
       {
         useCase: "Enterprise team needing a full platform",
@@ -783,7 +782,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         useCase: "Solo professional who needs calls that get answered",
         pick: "VeraDial",
-        why: "STIR/SHAKEN verified calls, AI agents, voice effects, and caller ID control at $9.99/mo \u2014 solves Line2\u2019s biggest problem.",
+        why: "STIR/SHAKEN verified calls, AI agents, and caller ID control at $9.99/mo \u2014 solves Line2\u2019s biggest problem.",
       },
       {
         useCase: "Small team with shared number needs",
@@ -853,7 +852,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         useCase: "Solo professional who needs AI calling and verified identity",
         pick: "VeraDial",
-        why: "AI agents, STIR/SHAKEN verified calls, voice effects, and caller ID control at $9.99/mo \u2014 modern features iPlum doesn\u2019t offer.",
+        why: "AI agents, STIR/SHAKEN verified calls, and caller ID control at $9.99/mo \u2014 modern features iPlum doesn\u2019t offer.",
       },
       {
         useCase: "Small team with CRM needs",

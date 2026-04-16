@@ -5,7 +5,6 @@ import {
   Headphones,
   Phone,
   UserCheck,
-  AudioLines,
   MessageSquare,
   Lock,
   Shield,
@@ -95,12 +94,6 @@ export const FEATURES = [
     title: "AI Calling",
     description:
       "Your AI assistant handles calls for you. Describe a goal, set up a caller profile, and get a full transcript and summary when it\u2019s done.",
-  },
-  {
-    icon: AudioLines,
-    title: "Voice Privacy",
-    description:
-      "Real-time voice effects on any call. Three modes: Male, Female, and Privacy \u2014 natural-sounding formant shifting, not novelty filters.",
   },
   {
     icon: UserCheck,

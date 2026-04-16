@@ -14,7 +14,6 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 - **AI Calling**: Set a goal, pick a preset (Scheduler, Reminder, Assistant), and the AI calls, has the conversation, and sends you a transcript.
 - **Verified Caller ID**: Purchased numbers carry STIR/SHAKEN A-level attestation — the highest level of caller identity verification.
 - **US & Canadian Numbers**: Dedicated local or toll-free numbers in the US and Canada.
-- **Voice Privacy**: FFT-based formant shifting with Male, Female, and Privacy voice modes.
 - **Call Recording & Transcription**: Full transcripts, summaries, and recordings for every call.
 - **Business SMS**: Send and receive SMS from your VeraDial number.
 
@@ -29,7 +28,6 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 
 - Standard call: 2 credits/min
 - Recorded call: 3 credits/min
-- Voice privacy call: 4 credits/min
 - AI call: 5 credits/min
 - SMS: 1 credit/segment
 

@@ -15,7 +15,7 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 
 const PAGE_TITLE = "VeraDial vs Hushed — Comparison";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Hushed side by side. See how verified business calling, AI calling, and voice privacy compare to a privacy-focused second-number app.";
+  "Compare VeraDial and Hushed side by side. See how verified business calling, AI calling, and call recording compare to a privacy-focused second-number app.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -51,11 +51,6 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "AI-powered outbound calling",
-    veradial: "yes",
-    hushed: "no",
-  },
-  {
-    feature: "Voice effects (Male, Female, Privacy)",
     veradial: "yes",
     hushed: "no",
   },
@@ -121,11 +116,6 @@ const DIFFERENTIATORS = [
     title: "AI makes calls for you",
     description:
       "Dispatch an AI agent to handle outbound calls on your behalf. Choose from presets like Scheduler or Reminder, or write a custom prompt. Get a full transcript and summary when it's done. Hushed has no AI calling capability.",
-  },
-  {
-    title: "Voice effects for every situation",
-    description:
-      "VeraDial uses FFT-based formant shifting for natural-sounding voice modes — Male, Female, and Privacy. Whether you need voice privacy for safety or a professional presentation, the technology sounds natural. Hushed offers no voice effects.",
   },
   {
     title: "Record every call",
@@ -227,7 +217,7 @@ export default function CompareHushedPage() {
                     Your calls display as{" "}
                     <strong className="text-accent">verified</strong> on the
                     recipient&apos;s device. Make calls, send texts, record
-                    conversations, apply voice effects, and dispatch AI agents
+                    conversations, and dispatch AI agents
                     to call on your behalf -- all from one professional
                     identity.
                   </p>
@@ -352,7 +342,7 @@ export default function CompareHushedPage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get a dedicated number with carrier-level verification, AI
-                calling, and voice effects. Your calls land as trusted from
+                calling, and call recording. Your calls land as trusted from
                 the first ring.
               </p>
               <div className="mt-8 flex justify-center gap-4">
