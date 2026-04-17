@@ -1,4 +1,4 @@
-import { Phone, Building2, ShieldCheck, Clock } from "lucide-react";
+import { Phone, Lock, ShieldCheck, Clock } from "lucide-react";
 
 const PROOF_POINTS = [
   {
@@ -7,9 +7,9 @@ const PROOF_POINTS = [
     label: "Beta calls completed",
   },
   {
-    icon: Building2,
-    value: "3",
-    label: "Industries in beta",
+    icon: Lock,
+    value: "SOC 2",
+    label: "Routed through Twilio",
   },
   {
     icon: ShieldCheck,

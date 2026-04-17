@@ -84,15 +84,12 @@ export function CTA() {
               VeraDial confirmed 12 appointments last week while I was
               elbow-deep in a water heater install.
             </p>
-            <figcaption className="mt-6 flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/12 text-xs font-semibold text-accent">
-                MR
+            <figcaption className="mt-6 text-sm">
+              <span className="block text-text-primary">
+                Solo plumber, Austin TX
               </span>
-              <span className="text-sm">
-                <span className="block text-text-primary">Mike R.</span>
-                <span className="block text-xs text-text-muted">
-                  Independent plumber
-                </span>
+              <span className="mt-1 block text-xs uppercase tracking-[0.2em] text-text-muted">
+                Beta user
               </span>
             </figcaption>
           </blockquote>

@@ -30,7 +30,13 @@ export function Hero() {
 
           <h1 className="mt-6 font-display text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.03em] min-[420px]:text-4xl sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
             Your AI assistant calls
-            <span className="block text-accent">so you don&apos;t have to.</span>
+            <span className="block text-text-primary">
+              so you{" "}
+              <span className="text-accent underline decoration-accent/60 decoration-[0.08em] underline-offset-[0.12em]">
+                don&rsquo;t
+              </span>{" "}
+              have to.
+            </span>
           </h1>
 
           <p className="mt-6 text-base leading-relaxed text-text-secondary sm:text-lg lg:max-w-xl lg:text-xl">
@@ -64,21 +70,6 @@ export function Hero() {
               <span aria-hidden="true" className="text-accent">&rarr;</span>
             </a>
             <StoreBadges className="mt-6" />
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
-            <div className="flex items-center gap-2 text-sm text-text-muted">
-              <span className="text-accent">&#10003;</span>
-              STIR/SHAKEN A-level attestation
-            </div>
-            <div className="flex items-center gap-2 text-sm text-text-muted">
-              <span className="text-accent">&#128274;</span>
-              Twilio SOC 2 infrastructure
-            </div>
-            <div className="flex items-center gap-2 text-sm text-text-muted">
-              <span className="text-accent">&#127758;</span>
-              US + Canada coverage
-            </div>
           </div>
         </div>
 

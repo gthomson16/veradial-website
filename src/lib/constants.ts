@@ -151,26 +151,26 @@ export const CREDIT_PACKS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "I run a one-man plumbing operation. VeraDial confirmed 12 appointments last week while I was elbow-deep in a water heater install. Game changer.",
-    name: "Mike R.",
-    role: "Independent Plumber",
-    initials: "MR",
+      "Our no-show rate dropped from 18% to 3% once we started using AI confirmation calls. The ROI was immediate.",
+    tag: "Dental office manager, 4-op practice",
+    outcome: "18% \u2192 3%",
+    outcomeLabel: "No-show rate",
     stars: 5,
   },
   {
     quote:
-      "Our no-show rate dropped from 18% to 3% once we started using AI confirmation calls. The ROI was immediate.",
-    name: "Sarah P.",
-    role: "Dental Office Manager",
-    initials: "SP",
+      "I run a one-man plumbing operation. VeraDial confirmed 12 appointments last week while I was elbow-deep in a water heater install.",
+    tag: "Solo plumber, Austin TX",
+    outcome: "12",
+    outcomeLabel: "Appointments / week",
     stars: 5,
   },
   {
     quote:
       "I was skeptical about AI making sales calls, but the transcripts are impressive. It handles objections better than some of my junior reps.",
-    name: "David L.",
-    role: "Sales Director, SaaS",
-    initials: "DL",
+    tag: "SaaS sales director",
+    outcome: "~60",
+    outcomeLabel: "Outbound / day",
     stars: 4,
   },
 ] as const;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, Minus } from "lucide-react";
 import {
   buildPageMetadata,
   buildBreadcrumbJsonLd,
@@ -168,6 +168,187 @@ const COMPARISONS = [
   },
 ];
 
+const MATRIX_COMPETITORS = [
+  { key: "veradial", name: "VeraDial", href: null },
+  { key: "google-voice", name: "Google Voice", href: "/compare/google-voice" },
+  { key: "openphone", name: "OpenPhone (now Quo)", href: "/compare/openphone" },
+  { key: "grasshopper", name: "Grasshopper", href: "/compare/grasshopper" },
+  { key: "ringcentral", name: "RingCentral", href: "/compare/ringcentral" },
+  { key: "dialpad", name: "Dialpad", href: "/compare/dialpad" },
+] as const;
+
+type CellValue = { text: string; strong?: boolean; icon?: "check" | "dash" };
+
+const MATRIX_ROWS: { label: string; cells: Record<string, CellValue> }[] = [
+  {
+    label: "Autonomous outbound agent",
+    cells: {
+      veradial: { text: "Yes", icon: "check", strong: true },
+      "google-voice": { text: "No", icon: "dash" },
+      openphone: { text: "No", icon: "dash" },
+      grasshopper: { text: "No", icon: "dash" },
+      ringcentral: { text: "No", icon: "dash" },
+      dialpad: { text: "Roadmap" },
+    },
+  },
+  {
+    label: "STIR/SHAKEN attestation",
+    cells: {
+      veradial: { text: "A-level", strong: true },
+      "google-voice": { text: "Not published" },
+      openphone: { text: "A-level" },
+      grasshopper: { text: "Not published" },
+      ringcentral: { text: "A-level" },
+      dialpad: { text: "A-level" },
+    },
+  },
+  {
+    label: "Starting price / month",
+    cells: {
+      veradial: { text: "$9.99", strong: true },
+      "google-voice": { text: "$10 / user" },
+      openphone: { text: "$15 / user" },
+      grasshopper: { text: "$14" },
+      ringcentral: { text: "$20 / user" },
+      dialpad: { text: "$15 / user" },
+    },
+  },
+  {
+    label: "Free trial",
+    cells: {
+      veradial: { text: "3 days", strong: true },
+      "google-voice": { text: "No trial", icon: "dash" },
+      openphone: { text: "7 days" },
+      grasshopper: { text: "7 days" },
+      ringcentral: { text: "14 days" },
+      dialpad: { text: "14 days" },
+    },
+  },
+  {
+    label: "Call recording",
+    cells: {
+      veradial: { text: "Included", icon: "check", strong: true },
+      "google-voice": { text: "Paid tier" },
+      openphone: { text: "Paid tier" },
+      grasshopper: { text: "Included", icon: "check" },
+      ringcentral: { text: "Paid tier" },
+      dialpad: { text: "Included", icon: "check" },
+    },
+  },
+  {
+    label: "Setup",
+    cells: {
+      veradial: { text: "Install app", strong: true },
+      "google-voice": { text: "Google account" },
+      openphone: { text: "Self-serve" },
+      grasshopper: { text: "Self-serve" },
+      ringcentral: { text: "Self-serve / sales" },
+      dialpad: { text: "Self-serve" },
+    },
+  },
+];
+
+function CellIcon({ icon }: { icon?: "check" | "dash" }) {
+  if (icon === "check") {
+    return <Check size={14} className="inline text-accent" strokeWidth={2.5} aria-hidden="true" />;
+  }
+  if (icon === "dash") {
+    return <Minus size={14} className="inline text-text-muted" strokeWidth={2.5} aria-hidden="true" />;
+  }
+  return null;
+}
+
+function FeatureMatrix() {
+  return (
+    <section className="relative py-16 sm:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-8 flex items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              At a glance
+            </p>
+            <h2 className="mt-4 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl">
+              How VeraDial compares on the things that matter.
+            </h2>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto rounded-2xl border border-border bg-card/40 [-webkit-overflow-scrolling:touch]">
+          <table className="w-full min-w-[720px] text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th
+                  scope="col"
+                  className="sticky left-0 z-10 bg-card/90 px-5 py-4 text-left text-xs font-medium uppercase tracking-[0.18em] text-text-muted backdrop-blur"
+                >
+                  Feature
+                </th>
+                {MATRIX_COMPETITORS.map((c) => (
+                  <th
+                    key={c.key}
+                    scope="col"
+                    className={`px-5 py-4 text-left font-display text-[15px] font-semibold ${
+                      c.key === "veradial"
+                        ? "bg-accent/[0.06] text-accent"
+                        : "text-text-primary"
+                    }`}
+                  >
+                    {c.href ? (
+                      <Link
+                        href={c.href}
+                        className="underline decoration-border decoration-[1px] underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                      >
+                        {c.name}
+                      </Link>
+                    ) : (
+                      c.name
+                    )}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {MATRIX_ROWS.map((row) => (
+                <tr key={row.label} className="border-b border-border/60 last:border-b-0">
+                  <th
+                    scope="row"
+                    className="sticky left-0 z-10 bg-card/90 px-5 py-4 text-left text-sm font-medium text-text-secondary backdrop-blur"
+                  >
+                    {row.label}
+                  </th>
+                  {MATRIX_COMPETITORS.map((c) => {
+                    const cell = row.cells[c.key];
+                    const isVera = c.key === "veradial";
+                    return (
+                      <td
+                        key={c.key}
+                        className={`px-5 py-4 ${
+                          isVera ? "bg-accent/[0.06]" : ""
+                        } ${cell.strong ? "text-text-primary" : "text-text-secondary"}`}
+                      >
+                        <span className="inline-flex items-center gap-1.5">
+                          <CellIcon icon={cell.icon} />
+                          {cell.text}
+                        </span>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-4 text-xs text-text-muted">
+          Competitor values drawn from each provider&rsquo;s public pricing and
+          feature pages. Accurate as of publish. Click a competitor name above
+          for the full VeraDial-vs breakdown.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function BreadcrumbJsonLd() {
   const jsonLd = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -231,6 +412,8 @@ export default function ComparePage() {
           </p>
         </div>
       </section>
+
+      <FeatureMatrix />
 
       {/* Comparison grid */}
       <section className="relative py-20">

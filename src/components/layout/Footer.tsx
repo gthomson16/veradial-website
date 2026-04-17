@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-7">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5">
@@ -83,69 +83,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Compare */}
-          <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
-              <Link href="/compare" className="transition-colors hover:text-text-primary">
-                Compare
-              </Link>
-            </h3>
-            <ul className="space-y-2.5">
-              {FOOTER_LINKS.compare.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Use Cases */}
-          <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
-              <Link href="/use-cases" className="transition-colors hover:text-text-primary">
-                Use Cases
-              </Link>
-            </h3>
-            <ul className="space-y-2.5">
-              {FOOTER_LINKS.useCases.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Numbers */}
-          <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
-              <Link href="/numbers" className="transition-colors hover:text-text-primary">
-                Numbers
-              </Link>
-            </h3>
-            <ul className="space-y-2.5">
-              {FOOTER_LINKS.numbers.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Legal */}
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
@@ -172,6 +109,69 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.contact.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Deep content row — Compare / Use Cases / Numbers */}
+        <div className="mt-12 grid grid-cols-1 gap-10 border-t border-border pt-10 sm:grid-cols-3">
+          <div>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
+              <Link href="/compare" className="transition-colors hover:text-text-primary">
+                Compare
+              </Link>
+            </h3>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.compare.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
+              <Link href="/use-cases" className="transition-colors hover:text-text-primary">
+                Use Cases
+              </Link>
+            </h3>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.useCases.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-text-muted">
+              <Link href="/numbers" className="transition-colors hover:text-text-primary">
+                Numbers
+              </Link>
+            </h3>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.numbers.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
