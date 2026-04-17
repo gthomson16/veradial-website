@@ -151,10 +151,10 @@ export const CREDIT_PACKS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "Our no-show rate dropped from 18% to 3% once we started using AI confirmation calls. The ROI was immediate.",
-    tag: "Dental office manager, 4-op practice",
-    outcome: "18% \u2192 3%",
-    outcomeLabel: "No-show rate",
+      "I was stuck in a showing when a new lead came in. VeraDial called them back within 5 minutes \u2014 booked a tour for Saturday without me lifting a finger.",
+    tag: "Real estate agent, Phoenix AZ",
+    outcome: "< 5 min",
+    outcomeLabel: "Lead response time",
     stars: 5,
   },
   {
