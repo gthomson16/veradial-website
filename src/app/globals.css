@@ -63,6 +63,28 @@ html {
   90% { transform: translate(-10%, 10%); }
 }
 
+/* Live call pulse — used on audio player while playing */
+@keyframes call-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--color-accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(115, 242, 195, 0);
+  }
+}
+
+@keyframes call-bar {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-call-pulse,
+  .animate-call-bar {
+    animation: none !important;
+  }
+}
+
 /* Gradient mesh drift */
 @keyframes drift-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }

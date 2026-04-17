@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GOOGLE_PLAY_URL } from "@/lib/constants";
+import { HeroPhone } from "./HeroPhone";
 
 export function Hero() {
   return (
@@ -52,14 +53,15 @@ export function Hero() {
             </p>
             <a
               href="#how-it-works"
-              className="mt-4 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-accent"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/[0.06] px-4 py-2 text-base text-text-primary transition-colors hover:border-accent/45 hover:bg-accent/10"
             >
               <span
                 aria-hidden="true"
-                className="inline-flex h-1.5 w-1.5 rounded-full bg-accent"
+                className="inline-flex h-2 w-2 rounded-full bg-accent"
+                style={{ animation: "call-pulse 1.8s ease-out infinite" }}
               />
               Hear a 31-second demo call
-              <span aria-hidden="true">&rarr;</span>
+              <span aria-hidden="true" className="text-accent">&rarr;</span>
             </a>
             <StoreBadges className="mt-6" />
           </div>
@@ -80,32 +82,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative flex justify-center">
-          <div className="relative mx-auto w-[280px] sm:w-[300px]">
-            <div className="rounded-[3rem] border-[3px] border-white/10 bg-black p-2 shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
-              <div className="overflow-hidden rounded-[2.25rem]">
-                <Image
-                  src="/screenshots/raw-captures/ai-composer-updated.png"
-                  alt="VeraDial AI calling with presets and custom goals"
-                  width={1320}
-                  height={2868}
-                  sizes="(max-width: 640px) 280px, 300px"
-                  priority
-                  className="w-full"
-                />
-              </div>
-            </div>
-
-            <div className="absolute -left-4 bottom-24 hidden rounded-2xl border border-accent/20 bg-card/90 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:block sm:-left-16">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-text-muted">
-                AI Calling
-              </p>
-              <p className="mt-1 font-display text-lg text-text-primary">
-                Schedule · Follow up · Confirm
-              </p>
-            </div>
-          </div>
-        </div>
+        <HeroPhone />
       </div>
     </section>
   );

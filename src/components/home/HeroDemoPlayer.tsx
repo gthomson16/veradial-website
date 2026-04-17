@@ -106,6 +106,7 @@ export function HeroDemoPlayer() {
           type="button"
           onClick={togglePlay}
           aria-label={playing ? "Pause demo call" : "Play demo call"}
+          style={playing ? { animation: "call-pulse 1.6s ease-out infinite" } : undefined}
           className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-accent text-bg transition-transform hover:scale-105"
         >
           {playing ? (
@@ -114,6 +115,23 @@ export function HeroDemoPlayer() {
             <Play size={16} fill="currentColor" className="ml-0.5" />
           )}
         </button>
+        {playing && (
+          <div
+            aria-hidden="true"
+            className="flex shrink-0 items-end gap-[3px]"
+          >
+            {[0, 1, 2, 3].map((i) => (
+              <span
+                key={i}
+                className="inline-block w-[3px] origin-bottom rounded-full bg-accent/70"
+                style={{
+                  height: "14px",
+                  animation: `call-bar 900ms ease-in-out ${i * 120}ms infinite`,
+                }}
+              />
+            ))}
+          </div>
+        )}
         <div className="flex-1">
           <div
             ref={progressRef}
