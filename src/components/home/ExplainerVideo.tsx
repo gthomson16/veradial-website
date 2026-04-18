@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
 
-const VIDEO_ID = "N_xQhNfiR4w";
+const VIDEO_ID = "dYBuhscT7TM";
 const POSTER_URL = `https://i.ytimg.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
 const POSTER_FALLBACK = `https://i.ytimg.com/vi/${VIDEO_ID}/hqdefault.jpg`;
 
