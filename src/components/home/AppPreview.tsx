@@ -48,7 +48,7 @@ export function AppPreview() {
             Inside the App
           </p>
           <h2 className="mx-auto mt-5 max-w-xl font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-            See what you&apos;re working with.
+            The app, at a glance.
           </h2>
         </div>
 

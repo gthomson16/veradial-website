@@ -2,6 +2,7 @@ import { buildPageMetadata } from "@/lib/metadata-helpers";
 import { GOOGLE_PLAY_URL } from "@/lib/constants";
 import { Hero } from "@/components/home/Hero";
 import { SocialProof } from "@/components/home/SocialProof";
+import { ExplainerVideo } from "@/components/home/ExplainerVideo";
 import { AppPreview } from "@/components/home/AppPreview";
 import { Features } from "@/components/home/Features";
 import { HowItWorks } from "@/components/home/HowItWorks";
@@ -128,6 +129,7 @@ export default function Home() {
       <SoftwareApplicationJsonLd />
       <Hero />
       <SocialProof />
+      <ExplainerVideo />
       <AppPreview />
       <Features />
       <HowItWorks />
