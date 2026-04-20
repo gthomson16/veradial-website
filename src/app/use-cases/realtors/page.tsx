@@ -537,7 +537,7 @@ export default function RealtorsUseCasePage() {
                 that one converted lead more than covers a year of VeraDial.
               </p>
               <div className="mt-8 flex justify-center gap-4">
-                <Button variant="ghost" href="/#pricing">
+                <Button variant="ghost" href="/pricing">
                   View Full Pricing
                 </Button>
               </div>

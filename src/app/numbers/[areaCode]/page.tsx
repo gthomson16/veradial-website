@@ -185,7 +185,7 @@ export default async function AreaCodePage({
                 <Button variant="primary" href={EARLY_ACCESS_URL}>
                   Get a ({ac.code}) Number
                 </Button>
-                <Button variant="ghost" href="/#pricing">
+                <Button variant="ghost" href="/pricing">
                   See Pricing
                 </Button>
               </div>

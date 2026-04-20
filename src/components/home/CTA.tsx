@@ -57,7 +57,7 @@ export function CTA() {
           <p className="mt-6 text-xs text-text-muted">
             Not ready?{" "}
             <Link
-              href="/#pricing"
+              href="/pricing"
               className="underline decoration-text-muted/40 underline-offset-4 transition-colors hover:text-text-secondary hover:decoration-accent"
             >
               See pricing
