@@ -1,13 +1,11 @@
 # VeraDial robots.txt
-# AI crawler policy expressed via per-bot directives below and Content-Signal header.
-# Default: allow all indexing and AI-input uses; training-use opt-out signaled.
+# Policy: allow all search, AI retrieval, and training crawlers.
+# Public marketing content — citation and model-awareness are upside.
 
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 # Named AI / LLM crawlers — explicitly allowed so they can cite us.
-# Content-Signal (ai-train=no) still applies as the training opt-out signal.
 
 User-agent: GPTBot
 Allow: /
