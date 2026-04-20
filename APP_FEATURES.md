@@ -30,7 +30,7 @@ VeraDial is a verified business calling app that lets users make calls and send 
 - Post-call transcript and AI-generated summary stored in your account
 - Call success/failure analysis
 - Chat-bubble style transcript viewer
-- AI calls cost 10 credits per minute
+- AI calls cost 5 credits per minute (pro-rated per second)
 - Powered by ElevenLabs Conversational AI
 - One-time consent screen before first use
 
@@ -72,7 +72,7 @@ VeraDial is a verified business calling app that lets users make calls and send 
 |---------|------|
 | Standard call | 2 credits/min |
 | Recorded call | 3 credits/min |
-| AI call | 10 credits/min |
+| AI call | 5 credits/min |
 | SMS | 1 credit/segment |
 | Number swap | $4.99 |
 

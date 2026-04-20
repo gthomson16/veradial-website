@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: April 11, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: April 19, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -103,6 +103,18 @@ export default function PrivacyPage() {
               Google, or xAI) and is not stored by VeraDial.
             </p>
             <p>
+              <strong className="text-text-primary">Contact memory:</strong> If enabled
+              (on by default, toggleable in Profile &gt; Contact Memory), we generate a
+              rolling AI summary for each phone number you interact with, using your call
+              transcripts, voicemail transcriptions, AI call transcripts and summaries, and
+              SMS message content from your own account. Summaries, a suggested next-call
+              goal, and the phone number are stored in your account. Summarization is
+              performed by a third-party AI provider (Google Gemini). When Contact Memory
+              is disabled, existing summaries are not read and new summaries are not
+              generated; summaries are deleted if you disable the feature permanently or
+              delete your account.
+            </p>
+            <p>
               <strong className="text-text-primary">Push notification tokens:</strong> We
               store device push tokens to deliver notifications to your device. Tokens are
               automatically deleted when you sign out or your session expires.
@@ -138,6 +150,10 @@ export default function PrivacyPage() {
             <li>Store transcripts and summaries of AI calls for your review</li>
             <li>Screen inbound calls and report caller identity to you</li>
             <li>Generate custom voicemail greetings from your text input or recordings</li>
+            <li>
+              Generate per-contact AI summaries across your calls, AI calls, voicemails,
+              and SMS to help you recall prior context and suggest next-call goals
+            </li>
             <li>
               Send push notifications for incoming messages, voicemails, missed calls, AI
               call completions, and low balance alerts
@@ -227,11 +243,14 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">Google (Gemini):</strong> AI voice
-              processing for AI Call. When Gemini is selected as the AI provider, call audio
-              and your instructions are processed in real-time by Google&apos;s Gemini Live
-              API to generate the AI agent&apos;s responses. Google receives call audio
-              during the conversation.{" "}
+              <strong className="text-text-primary">Google (Gemini):</strong> AI
+              processing for two features: (1) AI Call — when Gemini is selected as the AI
+              provider, call audio and your instructions are processed in real-time by
+              Google&apos;s Gemini Live API to generate the AI agent&apos;s responses;
+              (2) Contact Memory — text from your call transcripts, voicemail
+              transcriptions, AI call summaries, and SMS messages is sent to Google&apos;s
+              Gemini API to generate per-contact summaries. Google receives this content
+              only when the corresponding feature is used.{" "}
               <a
                 href="https://policies.google.com/privacy"
                 className="text-accent hover:underline"
@@ -434,6 +453,13 @@ export default function PrivacyPage() {
               <strong className="text-text-primary">AI Call transcripts:</strong>{" "}
               Transcripts and summaries are retained for the lifetime of your account.
               Call goals and notes are stored with each AI call record.
+            </li>
+            <li>
+              <strong className="text-text-primary">Contact memory summaries:</strong>{" "}
+              Per-contact summaries are retained for the lifetime of your account while
+              Contact Memory is enabled. If you disable Contact Memory, existing summaries
+              are no longer read or updated; delete the feature data by disabling the
+              toggle or deleting your account.
             </li>
             <li>
               <strong className="text-text-primary">Push tokens:</strong>{" "}
