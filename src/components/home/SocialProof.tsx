@@ -4,7 +4,7 @@ const PROOF_POINTS = [
   {
     icon: Phone,
     value: "500+",
-    label: "Beta calls completed",
+    label: "AI calls completed",
   },
   {
     icon: Lock,

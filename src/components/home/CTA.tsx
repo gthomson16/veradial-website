@@ -89,7 +89,7 @@ export function CTA() {
                 Solo plumber, Austin TX
               </span>
               <span className="mt-1 block text-xs uppercase tracking-[0.2em] text-text-muted">
-                Beta user
+                Illustrative scenario
               </span>
             </figcaption>
           </blockquote>
