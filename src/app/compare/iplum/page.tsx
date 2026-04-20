@@ -12,10 +12,12 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { ComparisonTable } from "@/components/compare/ComparisonTable";
+import { BottomLine } from "@/components/compare/BottomLine";
+import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
 const PAGE_TITLE = "VeraDial vs iPlum — Comparison";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and iPlum side by side. See how AI-powered calling with verified caller ID compares to a compliance-focused business phone app.";
+  "Compare VeraDial and iPlum side by side. See how AI-powered business calling with verified caller ID compares to a compliance-focused business phone app.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -337,6 +339,8 @@ export default function CompareIPlumPage() {
           </div>
         </div>
       </section>
+
+      <BottomLine verdict={COMPARE_VERDICTS.iplum} />
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

@@ -12,6 +12,8 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { ComparisonTable } from "@/components/compare/ComparisonTable";
+import { BottomLine } from "@/components/compare/BottomLine";
+import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
 const PAGE_TITLE = "VeraDial vs Vonage — Comparison";
 const PAGE_DESCRIPTION =
@@ -125,7 +127,7 @@ const DIFFERENTIATORS = [
   {
     title: "Modern product, active development",
     description:
-      "Vonage was acquired by Ericsson in 2022 and has shifted focus toward its API platform. The business phone product receives less attention. VeraDial is actively developed and purpose-built for AI-powered calling.",
+      "Vonage was acquired by Ericsson in 2022 and has shifted focus toward its API platform. The business phone product receives less attention. VeraDial is actively developed and purpose-built for AI-powered business calling.",
   },
   {
     title: "Caller ID you control",
@@ -338,6 +340,8 @@ export default function CompareVonagePage() {
           </div>
         </div>
       </section>
+
+      <BottomLine verdict={COMPARE_VERDICTS.vonage} />
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

@@ -25,6 +25,8 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { UseCaseFAQ } from "@/components/use-cases/UseCaseFAQ";
+import { RECRUITER_FAQS } from "@/lib/use-case-faqs";
 
 const PAGE_TITLE = "VeraDial for Recruiters";
 const PAGE_DESCRIPTION =
@@ -531,6 +533,9 @@ export default function RecruitersPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Use-case FAQ */}
+      <UseCaseFAQ items={RECRUITER_FAQS} heading="Recruiter FAQ" />
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

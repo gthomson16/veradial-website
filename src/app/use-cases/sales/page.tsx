@@ -30,6 +30,8 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { UseCaseFAQ } from "@/components/use-cases/UseCaseFAQ";
+import { SALES_FAQS } from "@/lib/use-case-faqs";
 
 /* ------------------------------------------------------------------ */
 /*  Metadata                                                          */
@@ -479,6 +481,9 @@ export default function SalesUseCasePage() {
           </div>
         </div>
       </section>
+
+      {/* Use-case FAQ */}
+      <UseCaseFAQ items={SALES_FAQS} heading="Sales FAQ" />
 
       {/* ---------------------------------------------------------- */}
       {/*  Bottom CTA                                                */}

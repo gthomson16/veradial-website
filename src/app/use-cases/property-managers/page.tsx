@@ -25,6 +25,8 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { UseCaseFAQ } from "@/components/use-cases/UseCaseFAQ";
+import { PROPERTY_MANAGER_FAQS } from "@/lib/use-case-faqs";
 
 const PAGE_TITLE = "VeraDial for Property Managers";
 const PAGE_DESCRIPTION =
@@ -524,6 +526,9 @@ export default function PropertyManagersPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Use-case FAQ */}
+      <UseCaseFAQ items={PROPERTY_MANAGER_FAQS} heading="Property Manager FAQ" />
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

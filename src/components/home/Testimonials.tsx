@@ -19,11 +19,17 @@ export function Testimonials() {
     <section className="relative overflow-hidden py-24 sm:py-28">
       <div className="relative mx-auto max-w-7xl px-6">
         <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
-          What Beta Users Say
+          Illustrative Scenarios
         </p>
         <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-          Don&apos;t take our word for it.
+          What a day with VeraDial looks like.
         </h2>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-muted">
+          Composite scenarios representative of VeraDial usage patterns. The
+          product is newly launched (Android live, iOS coming soon), so these
+          aren&apos;t yet verified customer reviews &mdash; we&apos;ll replace
+          them with real attributed testimonials as our user base grows.
+        </p>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
           {/* Featured pull-quote */}
@@ -43,7 +49,7 @@ export function Testimonials() {
                 <figcaption className="text-sm text-text-secondary">
                   <span className="block text-text-primary">{featured.tag}</span>
                   <span className="mt-1 block text-xs uppercase tracking-[0.2em] text-text-muted">
-                    Beta user
+                    Illustrative scenario
                   </span>
                 </figcaption>
                 <div className="text-left sm:text-right">

@@ -12,6 +12,8 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { ComparisonTable } from "@/components/compare/ComparisonTable";
+import { BottomLine } from "@/components/compare/BottomLine";
+import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
 const PAGE_TITLE = "VeraDial vs Hushed — Comparison";
 const PAGE_DESCRIPTION =
@@ -328,6 +330,8 @@ export default function CompareHushedPage() {
           </div>
         </div>
       </section>
+
+      <BottomLine verdict={COMPARE_VERDICTS.hushed} />
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

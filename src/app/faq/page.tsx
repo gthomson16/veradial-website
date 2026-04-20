@@ -73,7 +73,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What is STIR/SHAKEN attestation?",
         answer:
-          "STIR/SHAKEN is a carrier-level framework that verifies the identity behind a phone call. There are three attestation levels: A (full), B (partial), and C (gateway). Purchased VeraDial numbers carry A-level attestation — the highest level — which means the carrier has verified both the caller's identity and their authorization to use that number. In practice, this means your calls display as verified on the recipient's phone rather than being flagged as spam, unknown, or \"Scam Likely.\" This matters because unverified calls see answer rates as low as 11%, while verified calls are significantly more likely to be picked up. If you bring your own number, it receives B-level attestation for outbound voice calls.",
+          "STIR/SHAKEN is a carrier-level framework that verifies the identity behind a phone call. There are three attestation levels: A (full), B (partial), and C (gateway). Purchased VeraDial numbers carry A-level attestation — the highest level — which means the carrier has verified both the caller's identity and their authorization to use that number. In practice, this means your calls display as verified on the recipient's phone rather than being flagged as spam, unknown, or \"Scam Likely.\" This matters because industry studies consistently put answer rates for calls displayed as \"Unknown\" or \"Scam Likely\" in the 11–25% range, versus 50%+ for verified business calls. If you bring your own number, it receives B-level attestation for outbound voice calls.",
       },
       {
         question: "Can I use a number I already own as caller ID?",

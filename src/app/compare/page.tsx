@@ -159,7 +159,7 @@ const COMPARISONS = [
   {
     name: "iPlum",
     href: "/compare/iplum",
-    tagline: "Compliance-focused phone vs. AI-powered calling",
+    tagline: "Compliance-focused phone vs. AI-powered business calling",
     highlights: [
       "Verified caller identity",
       "AI-powered outbound calls",

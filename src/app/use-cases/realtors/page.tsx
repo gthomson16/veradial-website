@@ -27,6 +27,8 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
+import { UseCaseFAQ } from "@/components/use-cases/UseCaseFAQ";
+import { REALTOR_FAQS } from "@/lib/use-case-faqs";
 import { Badge } from "@/components/ui/Badge";
 
 /* ------------------------------------------------------------------ */
@@ -163,6 +165,7 @@ export default function RealtorsUseCasePage() {
     description: PAGE_DESCRIPTION,
     path: "/use-cases/realtors",
     audienceType: "Real Estate Agents",
+    audienceKind: "PeopleAudience",
   });
 
   return (
@@ -598,6 +601,9 @@ export default function RealtorsUseCasePage() {
           </div>
         </div>
       </section>
+
+      {/* Use-case FAQ */}
+      <UseCaseFAQ items={REALTOR_FAQS} heading="Realtor FAQ" />
 
       {/* ---------------------------------------------------------- */}
       {/*  Bottom CTA                                                 */}

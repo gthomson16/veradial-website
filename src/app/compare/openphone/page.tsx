@@ -12,10 +12,12 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { ComparisonTable } from "@/components/compare/ComparisonTable";
+import { BottomLine } from "@/components/compare/BottomLine";
+import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
 const PAGE_TITLE = "VeraDial vs OpenPhone — Comparison";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and OpenPhone side by side. See how AI-powered calling with verified caller ID compares to a team-focused VoIP platform.";
+  "Compare VeraDial and OpenPhone side by side. See how AI-powered business calling with verified caller ID compares to a team-focused VoIP platform.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -219,10 +221,10 @@ export default function CompareOpenPhonePage() {
                     </span>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-                    AI-powered calling for solo professionals. Your calls
-                    display as verified, your AI agent handles outbound calls,
-                    and call recording keeps every detail on file &mdash; all for
-                    $9.99/mo with no per-seat pricing.
+                    AI-powered business calling for solo professionals. Your
+                    calls display as verified, your AI agent handles outbound
+                    calls, and call recording keeps every detail on file &mdash;
+                    all for $9.99/mo with no per-seat pricing.
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5">
                     <div className="h-2 w-2 rounded-full bg-accent" />
@@ -332,6 +334,8 @@ export default function CompareOpenPhonePage() {
           </div>
         </div>
       </section>
+
+      <BottomLine verdict={COMPARE_VERDICTS.openphone} />
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

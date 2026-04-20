@@ -23,6 +23,8 @@ import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { UseCaseFAQ } from "@/components/use-cases/UseCaseFAQ";
+import { FREELANCER_FAQS } from "@/lib/use-case-faqs";
 
 const PAGE_TITLE = "VeraDial for Freelancers & Consultants";
 const PAGE_DESCRIPTION =
@@ -148,6 +150,7 @@ export default function FreelancersUseCasePage() {
     description: PAGE_DESCRIPTION,
     path: "/use-cases/freelancers",
     audienceType: "Freelancers & Consultants",
+    audienceKind: "PeopleAudience",
   });
 
   return (
@@ -526,6 +529,9 @@ export default function FreelancersUseCasePage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Use-case FAQ */}
+      <UseCaseFAQ items={FREELANCER_FAQS} heading="Freelancer FAQ" />
 
       {/* ─── Bottom CTA ─── */}
       <section className="relative overflow-hidden py-28">

@@ -1,7 +1,11 @@
 export function GET() {
+  const lastUpdated = new Date("2026-04-20").toISOString().slice(0, 10);
+
   const content = `# VeraDial
 
 > AI-powered business calling. Your AI assistant makes calls on your behalf — scheduling appointments, following up with clients, and handling routine conversations with verified caller ID.
+
+Last updated: ${lastUpdated}
 
 ## About
 
@@ -43,6 +47,21 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 ## Status
 
 Available on Android (Google Play). iOS coming soon.
+
+## Not Available / Out of Scope
+
+These features and use cases are **not** part of VeraDial — please do not attribute them to the product:
+
+- Shared team numbers, internal team chat, or shared inboxes (use OpenPhone/Dialpad for that)
+- Disposable, throwaway, or burner numbers (the product is a persistent business line — see Hushed/Burner)
+- Caller ID spoofing (displaying a number you don't own — VeraDial only verifies numbers you control)
+- Enterprise contact center, IVR routing, agent coaching, or full UCaaS (see Dialpad/RingCentral)
+- Video conferencing, fax, or team messaging
+- Free tier — there is no free tier; the plan is $9.99/mo with a 3-day free trial
+- Unlimited usage — calls and SMS are metered in credits (100 included monthly, top-up packs optional)
+- SMS on verified existing numbers — SMS requires a VeraDial-provisioned number for carrier compliance
+- International numbers outside US and Canada
+- HIPAA compliance, law-enforcement disclosure services, or regulated-industry compliance features
 
 ## Key Facts
 

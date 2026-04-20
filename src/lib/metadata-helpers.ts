@@ -96,12 +96,16 @@ export function buildCollectionPageJsonLd({
         url: buildCanonicalUrl(item.path),
       })),
     },
-    hasPart: items.map((item) => ({
-      "@type": "WebPage",
-      name: item.name,
-      url: buildCanonicalUrl(item.path),
-      ...(item.description ? { description: item.description } : {}),
-    })),
+    hasPart: items.map((item) => {
+      const itemUrl = buildCanonicalUrl(item.path);
+      return {
+        "@type": "WebPage",
+        "@id": `${itemUrl}#webpage`,
+        name: item.name,
+        url: itemUrl,
+        ...(item.description ? { description: item.description } : {}),
+      };
+    }),
   };
 }
 
@@ -110,13 +114,24 @@ export function buildComparisonPageJsonLd({
   description,
   path,
   comparedName,
+  comparedUrl,
 }: {
   name: string;
   description: string;
   path: string;
   comparedName: string;
+  /**
+   * Optional URL of the compared product's homepage (used as the SoftwareApplication
+   * identifier). When omitted, falls back to the VeraDial comparison page as the @id.
+   */
+  comparedUrl?: string;
 }) {
   const url = buildCanonicalUrl(path);
+  // Derive the competitor slug from the canonical path ("/compare/openphone") so
+  // we can emit a stable @id for the mentioned SoftwareApplication even without
+  // the caller supplying one.
+  const slug = path.replace(/^\/compare\//, "").replace(/\/$/, "");
+  const mentionId = `${url}#mention-${slug}`;
 
   return {
     "@context": "https://schema.org",
@@ -129,7 +144,10 @@ export function buildComparisonPageJsonLd({
     mainEntity: { "@id": APP_ID },
     mentions: {
       "@type": "SoftwareApplication",
+      "@id": mentionId,
       name: comparedName,
+      applicationCategory: "BusinessApplication",
+      ...(comparedUrl ? { url: comparedUrl } : {}),
     },
   };
 }
@@ -180,11 +198,18 @@ export function buildUseCasePageJsonLd({
   description,
   path,
   audienceType,
+  audienceKind = "BusinessAudience",
 }: {
   name: string;
   description: string;
   path: string;
   audienceType: string;
+  /**
+   * Schema.org audience subtype. Use BusinessAudience for B2B operator-facing
+   * pages (contractors, property managers, recruiters, sales). Use PeopleAudience
+   * for pages targeting individual professionals (freelancers, realtors).
+   */
+  audienceKind?: "BusinessAudience" | "PeopleAudience";
 }) {
   const url = buildCanonicalUrl(path);
 
@@ -198,7 +223,7 @@ export function buildUseCasePageJsonLd({
     isPartOf: { "@id": WEBSITE_ID },
     mainEntity: { "@id": APP_ID },
     audience: {
-      "@type": "Audience",
+      "@type": audienceKind,
       audienceType,
     },
   };

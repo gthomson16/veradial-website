@@ -12,6 +12,8 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { ComparisonTable } from "@/components/compare/ComparisonTable";
+import { BottomLine } from "@/components/compare/BottomLine";
+import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
 const PAGE_TITLE = "VeraDial vs Google Voice — Comparison";
 const PAGE_DESCRIPTION =
@@ -343,6 +345,8 @@ export default function CompareGoogleVoicePage() {
           </div>
         </div>
       </section>
+
+      <BottomLine verdict={COMPARE_VERDICTS["google-voice"]} />
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">
