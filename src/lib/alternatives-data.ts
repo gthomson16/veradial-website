@@ -279,6 +279,27 @@ const IPLUM: Alternative = {
   vsPageSlug: "iplum",
 };
 
+const BURNER: Alternative = {
+  name: "Burner",
+  slug: "burner",
+  tagline: "Disposable phone numbers you can throw away when you're done.",
+  pricing: "From $4.99/mo (single line)",
+  bestFor: "Users who need short-term, disposable numbers for privacy or one-off projects.",
+  pros: [
+    "Short-term disposable numbers designed to be thrown away",
+    "Multiple active numbers with simple switching",
+    "Affordable starting tier",
+    "iOS and Android apps with clean UX",
+  ],
+  cons: [
+    "No STIR/SHAKEN \u2014 outbound calls often flagged as spam",
+    "No AI calling, no smart transcription",
+    "Not intended for long-term business use",
+    "Numbers can be recycled after expiry",
+  ],
+  vsPageSlug: "burner",
+};
+
 /* ------------------------------------------------------------------ */
 /*  Shared criteria (what to look for in an alternative)               */
 /* ------------------------------------------------------------------ */
@@ -868,6 +889,361 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
         useCase: "Desktop + mobile second line",
         pick: "Line2",
         why: "If you need desktop apps alongside mobile, Line2 offers Mac, Windows, and web clients.",
+      },
+    ],
+  },
+  {
+    slug: "textnow",
+    name: "TextNow",
+    pageTitle: "Best TextNow Alternatives in 2026",
+    pageDescription:
+      "Looking for a TextNow alternative? Compare ad-free business calling options with verified caller ID, AI features, and calls that don\u2019t get flagged as spam.",
+    keywords: [
+      "TextNow alternatives",
+      "best TextNow alternative",
+      "TextNow replacement",
+      "apps like TextNow",
+      "TextNow competitor",
+      "ad-free second number app",
+      "TextNow vs",
+    ],
+    intro:
+      "TextNow gives you a free phone number, but the ads, limited features, and lack of STIR/SHAKEN make it a non-starter for anyone using the number for work. If you\u2019ve outgrown TextNow or need calls that actually get picked up, here are the best alternatives.",
+    painPoints: [
+      {
+        title: "Ads everywhere in the free tier",
+        description:
+          "TextNow\u2019s free plan is ad-supported, which means banner ads, interstitials, and delayed call setup. Paying $4.99+/mo removes the ads but loses the only reason most people chose TextNow in the first place.",
+      },
+      {
+        title: "Calls flagged as \u201CScam Likely\u201D",
+        description:
+          "TextNow numbers have a reputation for spam association and lack STIR/SHAKEN attestation. If you\u2019re calling a business or a new contact, your call often won\u2019t be answered.",
+      },
+      {
+        title: "Numbers can be recycled",
+        description:
+          "If you stop using your TextNow number for a while, it may be reassigned to another user. That\u2019s fine for throwaway use, but unusable for any situation where the number represents you.",
+      },
+      {
+        title: "No business features",
+        description:
+          "No AI calling, no call recording, no caller ID control, no integration with business workflows. TextNow is a consumer second-line tool, not a business phone.",
+      },
+    ],
+    criteria: SHARED_CRITERIA,
+    alternatives: [
+      VERADIAL,
+      GOOGLE_VOICE,
+      SIDELINE,
+      HUSHED,
+      BURNER,
+      OPENPHONE,
+    ],
+    recommendations: [
+      {
+        useCase: "Upgrading from TextNow to real business calling",
+        pick: "VeraDial",
+        why: "Dedicated number with STIR/SHAKEN verification, AI calling, and call recording \u2014 the jump from TextNow to real business infrastructure at $9.99/mo.",
+      },
+      {
+        useCase: "Genuinely free second number",
+        pick: "Google Voice",
+        why: "Google Voice\u2019s free personal tier is the best free option if you\u2019re in the Google ecosystem.",
+      },
+      {
+        useCase: "Privacy-focused disposable number",
+        pick: "Hushed",
+        why: "If you really want a throwaway number for short-term privacy, Hushed is purpose-built for it.",
+      },
+      {
+        useCase: "Growing to a team with shared numbers",
+        pick: "OpenPhone",
+        why: "Modern team phone system with shared inboxes, CRM, and clean UX \u2014 a big step up from TextNow for collaborative calling.",
+      },
+    ],
+  },
+  {
+    slug: "sideline",
+    name: "Sideline",
+    pageTitle: "Best Sideline Alternatives in 2026",
+    pageDescription:
+      "Looking for a Sideline alternative? Compare second-line apps with AI calling, verified caller ID, call recording, and richer business features.",
+    keywords: [
+      "Sideline alternatives",
+      "best Sideline alternative",
+      "Sideline replacement",
+      "apps like Sideline",
+      "Sideline competitor",
+      "second phone number app",
+      "Sideline vs",
+    ],
+    intro:
+      "Sideline is a straightforward second phone number app at $9.99/mo, but it hasn\u2019t kept up. No AI calling, no caller ID verification, and no call recording mean you\u2019re paying the same price as modern alternatives for a fraction of the features. Here are the best Sideline alternatives.",
+    painPoints: [
+      {
+        title: "No AI features",
+        description:
+          "Sideline is a basic second-line app. There\u2019s no AI that makes calls for you, no smart transcription, and no automation \u2014 just a number, calling, and texting.",
+      },
+      {
+        title: "No STIR/SHAKEN verification",
+        description:
+          "Sideline doesn\u2019t market STIR/SHAKEN attestation on its outbound calls. If answer rates matter to you (and they should for business), this is a significant gap.",
+      },
+      {
+        title: "No call recording",
+        description:
+          "Documenting customer conversations, verbal agreements, or training calls \u2014 Sideline doesn\u2019t offer recording. Modern alternatives include it as standard.",
+      },
+      {
+        title: "Same price, less value",
+        description:
+          "At $9.99/mo, Sideline costs exactly what VeraDial does \u2014 but VeraDial includes AI calling, verified identity, call recording, and voicemail transcription. You\u2019re paying a Sideline price for a Sideline product when better exists.",
+      },
+    ],
+    criteria: SHARED_CRITERIA,
+    alternatives: [
+      VERADIAL,
+      GOOGLE_VOICE,
+      OPENPHONE,
+      LINE2,
+      TEXTNOW,
+      BURNER,
+    ],
+    recommendations: [
+      {
+        useCase: "Upgrading from Sideline at the same price",
+        pick: "VeraDial",
+        why: "Same $9.99/mo, but with AI calling, STIR/SHAKEN verification, call recording, and voicemail transcription. The obvious same-price upgrade.",
+      },
+      {
+        useCase: "Free second personal number",
+        pick: "Google Voice",
+        why: "Free personal tier is the best option if you\u2019re in the Google ecosystem and don\u2019t need business features.",
+      },
+      {
+        useCase: "Small team with shared numbers",
+        pick: "OpenPhone",
+        why: "Built for small teams with shared inboxes, CRM, and collaborative workflows \u2014 a natural step up from a solo second-line app.",
+      },
+      {
+        useCase: "Desktop + mobile sync needed",
+        pick: "Line2",
+        why: "If you need a desktop client alongside mobile, Line2 has Mac, Windows, and web apps.",
+      },
+    ],
+  },
+  {
+    slug: "burner",
+    name: "Burner",
+    pageTitle: "Best Burner Alternatives in 2026",
+    pageDescription:
+      "Looking for a Burner alternative? Compare persistent business phone numbers with AI calling, verified caller ID, and real business features \u2014 not disposable numbers.",
+    keywords: [
+      "Burner alternatives",
+      "best Burner alternative",
+      "Burner app replacement",
+      "apps like Burner",
+      "Burner competitor",
+      "disposable phone number alternative",
+      "business phone instead of Burner",
+    ],
+    intro:
+      "Burner is great for throwaway numbers, but the same features that make it disposable \u2014 short validity, no verification, limited business functionality \u2014 become liabilities if you\u2019re trying to run a business. Here are the best alternatives for when you need a number that actually represents you.",
+    painPoints: [
+      {
+        title: "Disposable by design",
+        description:
+          "Burner numbers are meant to be thrown away. That\u2019s the entire product. For long-term business use, customers and contacts need a number that doesn\u2019t expire or get reassigned.",
+      },
+      {
+        title: "No STIR/SHAKEN \u2014 calls flagged as spam",
+        description:
+          "Burner numbers lack carrier-level identity verification. Outbound calls are frequently flagged as spam or unknown \u2014 the opposite of what a business number should do.",
+      },
+      {
+        title: "No AI calling",
+        description:
+          "Burner is a privacy app, not a business platform. There\u2019s no AI agent that makes calls for you, no smart transcription, and no workflow automation.",
+      },
+      {
+        title: "No verified caller ID or business branding",
+        description:
+          "You can\u2019t set a business caller name, verify a number you already own, or present different numbers to different contacts. Your call just shows up as another Burner number.",
+      },
+    ],
+    criteria: SHARED_CRITERIA,
+    alternatives: [
+      VERADIAL,
+      HUSHED,
+      GOOGLE_VOICE,
+      SIDELINE,
+      OPENPHONE,
+      TEXTNOW,
+    ],
+    recommendations: [
+      {
+        useCase: "Switching from disposable to real business calling",
+        pick: "VeraDial",
+        why: "Dedicated business number with STIR/SHAKEN verification, AI calling, and caller ID control \u2014 a legitimate business identity, not a burner.",
+      },
+      {
+        useCase: "Still want privacy-focused disposable numbers",
+        pick: "Hushed",
+        why: "If you genuinely need temporary privacy numbers, Hushed is cheaper and purpose-built for that use case.",
+      },
+      {
+        useCase: "Free personal second number",
+        pick: "Google Voice",
+        why: "Free tier for personal or light business use within the Google ecosystem.",
+      },
+      {
+        useCase: "Growing into a small team",
+        pick: "OpenPhone",
+        why: "When you\u2019re ready to share numbers with collaborators, OpenPhone\u2019s team features are a clean fit.",
+      },
+    ],
+  },
+  {
+    slug: "hushed",
+    name: "Hushed",
+    pageTitle: "Best Hushed Alternatives in 2026",
+    pageDescription:
+      "Looking for a Hushed alternative? Compare options with AI calling, verified caller ID, persistent business numbers, and calls that don\u2019t get flagged as spam.",
+    keywords: [
+      "Hushed alternatives",
+      "best Hushed alternative",
+      "Hushed replacement",
+      "apps like Hushed",
+      "Hushed competitor",
+      "private phone number alternative",
+      "business phone instead of Hushed",
+    ],
+    intro:
+      "Hushed is a privacy-first disposable-number app. That\u2019s perfect for short-term anonymous use \u2014 and a problem for anyone who needs professional, persistent business calling. Here are the best alternatives when you\u2019re ready to upgrade.",
+    painPoints: [
+      {
+        title: "Privacy product, not a business product",
+        description:
+          "Hushed is designed for anonymity and disposable use. There\u2019s no intent to support a business identity \u2014 no verified caller ID, no business branding, no AI.",
+      },
+      {
+        title: "Calls flagged as spam",
+        description:
+          "Hushed numbers lack STIR/SHAKEN attestation. Recipients often see calls as \u201CUnknown\u201D or \u201CScam Likely,\u201D which kills answer rates for any kind of business outreach.",
+      },
+      {
+        title: "Limited minutes and data on cheaper plans",
+        description:
+          "Hushed\u2019s lower tiers restrict talk minutes and SMS volume. For regular business use, costs climb quickly as you stack minute packs.",
+      },
+      {
+        title: "No AI features or call recording",
+        description:
+          "No AI calling, no smart transcription, no call recording. Hushed adds no intelligence to your calls \u2014 it just routes them.",
+      },
+    ],
+    criteria: SHARED_CRITERIA,
+    alternatives: [
+      VERADIAL,
+      BURNER,
+      GOOGLE_VOICE,
+      SIDELINE,
+      TEXTNOW,
+      OPENPHONE,
+    ],
+    recommendations: [
+      {
+        useCase: "Moving from privacy number to real business calling",
+        pick: "VeraDial",
+        why: "Verified business identity with STIR/SHAKEN, AI calling, and caller ID control \u2014 a professional replacement for a privacy number.",
+      },
+      {
+        useCase: "Still need disposable numbers",
+        pick: "Burner",
+        why: "Burner is a cleaner UX than Hushed for short-term disposable use if that\u2019s actually what you need.",
+      },
+      {
+        useCase: "Free second number for personal use",
+        pick: "Google Voice",
+        why: "Free personal tier covers basic calling and texting within the Google ecosystem.",
+      },
+      {
+        useCase: "Single-line solo business",
+        pick: "Sideline",
+        why: "If you only need a basic second line without AI or verification, Sideline is a simpler option at a similar price.",
+      },
+    ],
+  },
+  {
+    slug: "spoofcard",
+    name: "SpoofCard",
+    pageTitle: "Best SpoofCard Alternatives in 2026",
+    pageDescription:
+      "Looking for a SpoofCard alternative? Compare legitimate caller ID control options using STIR/SHAKEN-verified numbers you actually own.",
+    keywords: [
+      "SpoofCard alternatives",
+      "best SpoofCard alternative",
+      "SpoofCard replacement",
+      "apps like SpoofCard",
+      "legal caller ID change",
+      "legitimate caller ID app",
+      "caller ID control",
+    ],
+    intro:
+      "SpoofCard lets you display a different number as your caller ID \u2014 but carrier enforcement of the TRACED Act and STIR/SHAKEN has narrowed its usefulness. For most real use cases (displaying a business number you own, looking professional on outbound calls), a verified business phone is a better, legal fit. Here are the best alternatives.",
+    painPoints: [
+      {
+        title: "Carrier blocking under STIR/SHAKEN",
+        description:
+          "Modern carriers filter unverified outbound calls. SpoofCard calls frequently fail to display your chosen ID, get flagged, or get blocked outright \u2014 which defeats the point of spoofing.",
+      },
+      {
+        title: "Legal gray areas",
+        description:
+          "The TRACED Act and similar regulations restrict caller ID manipulation. Using SpoofCard for anything that could be construed as misleading the recipient is a legal risk. Legitimate business needs are better served by a verified number you actually own.",
+      },
+      {
+        title: "You don\u2019t own a persistent number",
+        description:
+          "SpoofCard doesn\u2019t give you a dedicated number. It\u2019s a per-call ID change \u2014 no receiving calls, no SMS, no voicemail on \u201Cthe number you spoofed.\u201D",
+      },
+      {
+        title: "No AI, no call recording integration, no business features",
+        description:
+          "SpoofCard is a single-feature service. There\u2019s no AI agent, no business workflow, no transcription, no integration with the way real businesses run calls.",
+      },
+    ],
+    criteria: SHARED_CRITERIA,
+    alternatives: [
+      VERADIAL,
+      OPENPHONE,
+      GRASSHOPPER,
+      GOOGLE_VOICE,
+      DIALPAD,
+      SIDELINE,
+    ],
+    recommendations: [
+      {
+        useCase: "Legitimately displaying a business number you own",
+        pick: "VeraDial",
+        why: "Verify an existing number as your outbound caller ID (B-level attestation) or use a VeraDial number with A-level attestation. Legal, verified, and included in the $9.99/mo plan.",
+      },
+      {
+        useCase: "Team phone with shared numbers",
+        pick: "OpenPhone",
+        why: "Modern team phone system with shared inboxes, CRM, and dedicated numbers for collaborative calling.",
+      },
+      {
+        useCase: "Simple virtual number forwarded to your cell",
+        pick: "Grasshopper",
+        why: "If you just need a virtual business line routing to your personal phone, Grasshopper is straightforward and well-known.",
+      },
+      {
+        useCase: "Enterprise team with contact center needs",
+        pick: "Dialpad",
+        why: "Full enterprise UCaaS with AI transcription, coaching, and contact center features when you need them.",
       },
     ],
   },

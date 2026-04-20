@@ -13,6 +13,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${baseUrl}/pricing`,
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/stir-shaken-for-small-business`,
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/faq`,
       lastModified: new Date("2026-04-13"),
       changeFrequency: "monthly",

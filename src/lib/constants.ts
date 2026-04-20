@@ -19,7 +19,7 @@ export const EARLY_ACCESS_URL =
 
 export const NAV_LINKS = [
   { label: "Features", href: "/#features" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Use Cases", href: "/use-cases" },
   { label: "Compare", href: "/compare" },
   { label: "FAQ", href: "/faq" },
@@ -201,7 +201,7 @@ export const FAQ_PREVIEW = [
 export const FOOTER_LINKS = {
   product: [
     { label: "Features", href: "/#features" },
-    { label: "Pricing", href: "/#pricing" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Screenshots", href: "/screenshots" },
     { label: "FAQ", href: "/faq" },
     { label: "About", href: "/about" },
