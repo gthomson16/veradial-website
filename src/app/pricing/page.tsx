@@ -23,6 +23,7 @@ import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
@@ -332,16 +333,13 @@ export default function PricingPage() {
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-5xl px-6 pb-16 pt-12 text-center sm:pb-20 sm:pt-16">
-          <nav className="mb-6 text-sm text-text-muted">
-            <Link
-              href="/"
-              className="transition-colors hover:text-text-secondary"
-            >
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-text-secondary">Pricing</span>
-          </nav>
+          <Breadcrumb
+            className="mb-6"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Pricing" },
+            ]}
+          />
 
           <Badge
             variant="hero"

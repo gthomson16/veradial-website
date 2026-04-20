@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   buildPageMetadata,
   buildBreadcrumbJsonLd,
@@ -11,6 +10,7 @@ import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ComparisonTable } from "@/components/compare/ComparisonTable";
 import { BottomLine } from "@/components/compare/BottomLine";
 import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
@@ -177,13 +177,13 @@ export default function CompareTextNowPage() {
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
-          <nav className="mb-4 text-sm text-text-muted">
-            <Link href="/" className="hover:text-text-secondary transition-colors">Home</Link>
-            <span className="mx-2">/</span>
-            <Link href="/compare" className="hover:text-text-secondary transition-colors">Compare</Link>
-            <span className="mx-2">/</span>
-            <span className="text-text-secondary">TextNow</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Compare", href: "/compare" },
+              { label: "TextNow" },
+            ]}
+          />
           <Badge
             variant="hero"
           >

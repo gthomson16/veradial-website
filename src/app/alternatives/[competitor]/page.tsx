@@ -10,6 +10,7 @@ import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import {
   getAlternativesPage,
   getAllAlternativesSlugs,
@@ -111,23 +112,13 @@ export default async function AlternativesPage({
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
-          <nav className="mb-4 text-sm text-text-muted">
-            <Link
-              href="/"
-              className="transition-colors hover:text-text-secondary"
-            >
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link
-              href="/alternatives"
-              className="transition-colors hover:text-text-secondary"
-            >
-              Alternatives
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-text-secondary">{page.name}</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Alternatives", href: "/alternatives" },
+              { label: page.name },
+            ]}
+          />
 
           <Badge
             variant="hero"

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   Building2,
   Clock,
@@ -30,6 +29,7 @@ import { Card } from "@/components/ui/Card";
 import { UseCaseFAQ } from "@/components/use-cases/UseCaseFAQ";
 import { REALTOR_FAQS } from "@/lib/use-case-faqs";
 import { Badge } from "@/components/ui/Badge";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 /* ------------------------------------------------------------------ */
 /*  Metadata                                                          */
@@ -185,23 +185,13 @@ export default function RealtorsUseCasePage() {
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
-          <nav className="mb-4 text-sm text-text-muted">
-            <Link
-              href="/"
-              className="hover:text-text-secondary transition-colors"
-            >
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link
-              href="/use-cases"
-              className="hover:text-text-secondary transition-colors"
-            >
-              Use Cases
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-text-secondary">Real Estate</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Use Cases", href: "/use-cases" },
+              { label: "Real Estate" },
+            ]}
+          />
 
           <Badge
             variant="hero"

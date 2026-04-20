@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   buildPageMetadata,
   buildBreadcrumbJsonLd,
@@ -23,6 +22,7 @@ import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { UseCaseFAQ } from "@/components/use-cases/UseCaseFAQ";
 import { FREELANCER_FAQS } from "@/lib/use-case-faqs";
 
@@ -168,20 +168,13 @@ export default function FreelancersUseCasePage() {
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
-          <nav className="mb-4 text-sm text-text-muted">
-            <Link href="/" className="hover:text-text-secondary transition-colors">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link
-              href="/use-cases"
-              className="hover:text-text-secondary transition-colors"
-            >
-              Use Cases
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-text-secondary">Freelancers</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Use Cases", href: "/use-cases" },
+              { label: "Freelancers" },
+            ]}
+          />
 
           <Badge
             variant="hero"
