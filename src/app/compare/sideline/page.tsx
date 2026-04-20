@@ -299,7 +299,7 @@ export default function CompareSidelinePage() {
 
           <ScrollReveal delay={160}>
             <p className="mt-6 text-center text-xs text-text-muted">
-              Information based on publicly available data as of March 2026.
+              Information based on publicly available data as of April 2026.
               Features may change.
             </p>
           </ScrollReveal>
