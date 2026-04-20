@@ -1,6 +1,6 @@
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "outline" | "filled";
+  variant?: "outline" | "filled" | "hero";
   className?: string;
 }
 
@@ -14,6 +14,8 @@ export function Badge({
       "border border-accent/30 text-accent bg-accent/5",
     filled:
       "bg-accent text-bg",
+    hero:
+      "border border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm",
   };
 
   return (

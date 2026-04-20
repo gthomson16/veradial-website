@@ -344,8 +344,7 @@ export default function PricingPage() {
           </nav>
 
           <Badge
-            variant="outline"
-            className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
+            variant="hero"
           >
             <Tag size={14} className="mr-1.5" />
             One price. One plan.

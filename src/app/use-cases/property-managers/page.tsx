@@ -152,8 +152,7 @@ export default function PropertyManagersPage() {
           </nav>
 
           <Badge
-            variant="outline"
-            className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
+            variant="hero"
           >
             Property Management
           </Badge>

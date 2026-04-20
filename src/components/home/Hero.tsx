@@ -22,8 +22,8 @@ export function Hero() {
           />
 
           <Badge
-            variant="outline"
-            className="mt-5 border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
+            variant="hero"
+            className="mt-5"
           >
             AI-powered business calling
           </Badge>

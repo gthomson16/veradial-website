@@ -208,8 +208,7 @@ export default function ContractorsUseCasePage() {
           </nav>
 
           <Badge
-            variant="outline"
-            className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
+            variant="hero"
           >
             <Wrench size={14} className="mr-1.5" />
             Contractors &amp; Home Services

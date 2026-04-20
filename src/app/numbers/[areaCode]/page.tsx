@@ -164,8 +164,7 @@ export default async function AreaCodePage({
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
             <div>
               <Badge
-                variant="outline"
-                className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
+                variant="hero"
               >
                 ({ac.code}) {ac.marketName}
               </Badge>

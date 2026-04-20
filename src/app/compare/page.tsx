@@ -395,8 +395,7 @@ export default function ComparePage() {
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
           <Badge
-            variant="outline"
-            className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
+            variant="hero"
           >
             Comparisons
           </Badge>

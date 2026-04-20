@@ -181,8 +181,7 @@ export default function CompareDialpadPage() {
             <span className="text-text-secondary">Dialpad</span>
           </nav>
           <Badge
-            variant="outline"
-            className="border-accent/20 bg-card/70 text-text-primary backdrop-blur-sm"
+            variant="hero"
           >
             Comparison
           </Badge>
