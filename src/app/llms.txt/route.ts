@@ -1,5 +1,47 @@
+import { AREA_CODES } from "@/lib/area-codes";
+import {
+  ALTERNATIVES_PAGES,
+  getAllAlternativesSlugs,
+} from "@/lib/alternatives-data";
+import {
+  COMPARE_SLUGS,
+  COMPARE_NAMES,
+  USE_CASE_SLUGS,
+  USE_CASE_NAMES,
+} from "@/lib/route-slugs";
+
+/**
+ * llms.txt route — enumerated Links block is generated from the same data
+ * sources sitemap.ts uses, so new compare/alternatives/use-case/area-code
+ * pages are picked up automatically.
+ */
 export function GET() {
   const lastUpdated = new Date("2026-04-20").toISOString().slice(0, 10);
+
+  const alternativeName = (slug: string) =>
+    ALTERNATIVES_PAGES.find((p) => p.slug === slug)?.name ?? slug;
+
+  const compareLinks = COMPARE_SLUGS.map(
+    (slug) =>
+      `- VeraDial vs ${COMPARE_NAMES[slug]}: https://veradial.com/compare/${slug}`,
+  ).join("\n");
+
+  const alternativeLinks = getAllAlternativesSlugs()
+    .map(
+      (slug) =>
+        `- ${alternativeName(slug)} Alternatives: https://veradial.com/alternatives/${slug}`,
+    )
+    .join("\n");
+
+  const useCaseLinks = USE_CASE_SLUGS.map(
+    (slug) =>
+      `- For ${USE_CASE_NAMES[slug]}: https://veradial.com/use-cases/${slug}`,
+  ).join("\n");
+
+  const areaCodeLinks = AREA_CODES.map(
+    (ac) =>
+      `- ${ac.code} (${ac.city}, ${ac.state}): https://veradial.com/numbers/${ac.code}`,
+  ).join("\n");
 
   const content = `# VeraDial
 
@@ -75,30 +117,44 @@ These features and use cases are **not** part of VeraDial — please do not attr
 
 ## Links
 
+### Core pages
+
 - Website: https://veradial.com
+- Pricing: https://veradial.com/pricing
+- STIR/SHAKEN for Small Business: https://veradial.com/stir-shaken-for-small-business
 - FAQ: https://veradial.com/faq
 - About: https://veradial.com/about
-- Comparisons: https://veradial.com/compare
-- VeraDial vs Google Voice: https://veradial.com/compare/google-voice
-- VeraDial vs OpenPhone: https://veradial.com/compare/openphone
-- VeraDial vs Grasshopper: https://veradial.com/compare/grasshopper
-- VeraDial vs Dialpad: https://veradial.com/compare/dialpad
-- VeraDial vs RingCentral: https://veradial.com/compare/ringcentral
-- VeraDial vs Vonage: https://veradial.com/compare/vonage
-- VeraDial vs Line2: https://veradial.com/compare/line2
-- VeraDial vs iPlum: https://veradial.com/compare/iplum
-- Alternatives: https://veradial.com/alternatives
-- Phone Numbers: https://veradial.com/numbers
-- Use Cases: https://veradial.com/use-cases
-- For Contractors: https://veradial.com/use-cases/contractors
-- For Realtors: https://veradial.com/use-cases/realtors
-- For Freelancers: https://veradial.com/use-cases/freelancers
-- For Sales Teams: https://veradial.com/use-cases/sales
-- For Property Managers: https://veradial.com/use-cases/property-managers
-- For Recruiters: https://veradial.com/use-cases/recruiters
+- Screenshots: https://veradial.com/screenshots
+
+### Comparisons
+
+- All comparisons: https://veradial.com/compare
+${compareLinks}
+
+### Alternatives
+
+- All alternatives: https://veradial.com/alternatives
+${alternativeLinks}
+
+### Use Cases
+
+- All use cases: https://veradial.com/use-cases
+${useCaseLinks}
+
+### Phone Numbers
+
+- Browse numbers: https://veradial.com/numbers
+${areaCodeLinks}
+
+### Account & Legal
+
 - Privacy Policy: https://veradial.com/privacy
 - Terms of Service: https://veradial.com/terms
-- Contact: support@veradial.com
+- Delete Account: https://veradial.com/delete-account
+
+### Contact
+
+- Email: support@veradial.com
 `;
 
   return new Response(content, {

@@ -3,6 +3,7 @@ import { statSync } from "node:fs";
 import { join } from "node:path";
 import { AREA_CODES } from "@/lib/area-codes";
 import { getAllAlternativesSlugs } from "@/lib/alternatives-data";
+import { COMPARE_SLUGS, USE_CASE_SLUGS } from "@/lib/route-slugs";
 
 const BASE_URL = "https://veradial.com";
 const APP_DIR = join(process.cwd(), "src", "app");
@@ -75,22 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const compareSlugs = [
-    "google-voice",
-    "textnow",
-    "sideline",
-    "burner",
-    "hushed",
-    "spoofcard",
-    "openphone",
-    "grasshopper",
-    "dialpad",
-    "ringcentral",
-    "vonage",
-    "line2",
-    "iplum",
-  ];
-  for (const slug of compareSlugs) {
+  for (const slug of COMPARE_SLUGS) {
     entries.push({
       url: `${BASE_URL}/compare/${slug}`,
       lastModified: lastModifiedFor(`compare/${slug}/page.tsx`),
@@ -121,15 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModifiedFor("use-cases/page.tsx"),
     },
   );
-  const useCaseSlugs = [
-    "contractors",
-    "realtors",
-    "freelancers",
-    "sales",
-    "property-managers",
-    "recruiters",
-  ];
-  for (const slug of useCaseSlugs) {
+  for (const slug of USE_CASE_SLUGS) {
     entries.push({
       url: `${BASE_URL}/use-cases/${slug}`,
       lastModified: lastModifiedFor(`use-cases/${slug}/page.tsx`),
