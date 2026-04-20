@@ -100,7 +100,8 @@ export function HeroDemoPlayer() {
 
   return (
     <div className="rounded-xl border border-border bg-card/80 px-4 py-3 backdrop-blur-sm">
-      <audio ref={audioRef} src="/demo-call.mp3" preload="metadata" />
+      {/* preload="none" so the audio file only fetches when the user clicks play */}
+      <audio ref={audioRef} src="/demo-call.mp3" preload="none" />
       <div className="flex items-center gap-3">
         <button
           type="button"
