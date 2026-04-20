@@ -47,6 +47,13 @@ review/
 ACTION-PLAN.md
 FULL-AUDIT-REPORT.md
 
+# root-level dev screenshots (playwright/MCP browser tools default here)
+/*.png
+/*.jpg
+/*.jpeg
+/*.gif
+/*.webp
+
 # app store marketing assets
 public/screenshots/VeraDial App Store Screens v1/
 
