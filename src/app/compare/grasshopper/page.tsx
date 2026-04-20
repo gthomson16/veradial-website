@@ -132,7 +132,7 @@ const DIFFERENTIATORS = [
   {
     title: "Modern platform, modern price",
     description:
-      "VeraDial is $9.99/mo with AI calling, call recording, transcription, and 100 credits. Grasshopper starts at ~$14/mo for basic call forwarding with no AI and no recording on the base plan.",
+      "VeraDial is $9.99/mo with AI calling, call recording, transcription, and 100 credits. Grasshopper Solo starts at $29/mo for basic call forwarding with no AI and no recording on the base plan.",
   },
   {
     title: "Call recording built in",

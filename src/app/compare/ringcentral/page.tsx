@@ -99,7 +99,7 @@ const COMPARISON_ROWS: FeatureRow[] = [
   {
     feature: "Pricing",
     veradial: "$9.99/mo per line",
-    ringCentral: "$20/user/mo",
+    ringCentral: "$30/user/mo",
   },
   {
     feature: "Setup complexity",
@@ -132,7 +132,7 @@ const DIFFERENTIATORS = [
   {
     title: "Pay for what you use",
     description:
-      "RingCentral starts at $20/user/mo for a full UCaaS suite \u2014 video, messaging, fax, integrations. VeraDial is $9.99/mo for focused AI calling with verified identity. If you don\u2019t need video conferencing and team messaging, you\u2019re paying double for features you\u2019ll never touch.",
+      "RingCentral Core starts at $30/user/mo for a full UCaaS suite \u2014 video, messaging, fax, integrations. VeraDial is $9.99/mo for focused AI calling with verified identity. If you don\u2019t need video conferencing and team messaging, you\u2019re paying roughly triple for features you\u2019ll never touch.",
   },
   {
     title: "Control your caller identity",
@@ -324,7 +324,7 @@ export default function CompareRingCentralPage() {
               RingCentral is a powerhouse for organizations that need video,
               messaging, fax, and phone in one platform. But if you&apos;re an
               individual who needs AI calling, verified identity, and call
-              recording &mdash; you&apos;re paying $20/mo for a dashboard
+              recording &mdash; you&apos;re paying $30/user/mo for a dashboard
               you&apos;ll never fully use.
             </p>
           </ScrollReveal>

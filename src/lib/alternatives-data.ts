@@ -77,7 +77,7 @@ const GRASSHOPPER: Alternative = {
   name: "Grasshopper",
   slug: "grasshopper",
   tagline: "Virtual phone system that forwards calls to your personal phone.",
-  pricing: "From ~$14/mo (Solo plan)",
+  pricing: "From $29/mo (Solo plan)",
   bestFor: "Solopreneurs who want a basic business number layered on top of their personal phone.",
   pros: [
     "Simple setup \u2014 runs on your existing phone",
@@ -140,7 +140,7 @@ const RINGCENTRAL: Alternative = {
   name: "RingCentral",
   slug: "ringcentral",
   tagline: "Full unified communications suite with phone, video, messaging, and fax.",
-  pricing: "From $20/user/mo",
+  pricing: "From $30/user/mo (Core plan)",
   bestFor: "Mid-market and enterprise organisations that need an all-in-one UCaaS platform with extensive integrations.",
   pros: [
     "Comprehensive \u2014 phone, video, messaging, fax in one platform",
@@ -149,7 +149,7 @@ const RINGCENTRAL: Alternative = {
     "Established market leader with reliability track record",
   ],
   cons: [
-    "Most expensive option at $20/user/mo",
+    "Most expensive option at $30/user/mo",
     "Complex admin portal \u2014 designed for IT departments",
     "Far too much for individual users or small teams",
     "No caller ID control",
@@ -502,7 +502,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       {
         title: "Expensive for what you get",
         description:
-          "Starting at ~$14/mo for basic call forwarding, with useful features like recording locked to higher tiers at $28+/mo.",
+          "Starting at $29/mo (Solo) for basic call forwarding, with useful features like call recording locked to higher tiers.",
       },
       {
         title: "Dated user experience",
@@ -627,12 +627,12 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
       "apps like RingCentral",
     ],
     intro:
-      "RingCentral is the market leader in unified communications \u2014 phone, video, messaging, fax, and hundreds of integrations. But at $20/user/mo with complex admin setup, it\u2019s overkill for many businesses. Here are alternatives that deliver what you actually need.",
+      "RingCentral is the market leader in unified communications \u2014 phone, video, messaging, fax, and hundreds of integrations. But at $30/user/mo with complex admin setup, it\u2019s overkill for many businesses. Here are alternatives that deliver what you actually need.",
     painPoints: [
       {
         title: "Expensive for small businesses",
         description:
-          "Starting at $20/user/mo, RingCentral is one of the priciest options. A 5-person team pays $100/mo for features most of them won\u2019t use.",
+          "Starting at $30/user/mo, RingCentral is one of the priciest options. A 5-person team pays $150/mo for features most of them won\u2019t use.",
       },
       {
         title: "Complex setup and administration",
