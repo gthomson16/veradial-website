@@ -9,6 +9,9 @@ import {
   Lock,
   Shield,
   Smartphone,
+  Home,
+  Wrench,
+  LineChart,
 } from "lucide-react";
 
 export const GOOGLE_PLAY_URL =
@@ -148,30 +151,30 @@ export const CREDIT_PACKS = [
   },
 ] as const;
 
-export const TESTIMONIALS = [
+export const USE_CASE_SCENARIOS = [
   {
-    quote:
-      "I was stuck in a showing when a new lead came in. VeraDial called them back within 5 minutes \u2014 booked a tour for Saturday without me lifting a finger.",
-    tag: "Real estate agent, Phoenix AZ",
-    outcome: "< 5 min",
-    outcomeLabel: "Lead response time",
-    stars: 5,
+    icon: Home,
+    role: "The real estate agent",
+    scenario:
+      "Stuck in a back-to-back showing schedule. A new lead lands at 11:04. By the time the walkthrough ends the callback has already happened \u2014 basics answered, Saturday tour on the calendar.",
+    metric: "< 5 min",
+    metricLabel: "Lead response",
   },
   {
-    quote:
-      "I run a one-man plumbing operation. VeraDial confirmed 12 appointments last week while I was elbow-deep in a water heater install.",
-    tag: "Solo plumber, Austin TX",
-    outcome: "12",
-    outcomeLabel: "Appointments / week",
-    stars: 5,
+    icon: Wrench,
+    role: "The solo tradesperson",
+    scenario:
+      "Elbow-deep in a water heater install while a full week of appointments still needs confirming. VeraDial works the list in the background so the truck rolls on schedule tomorrow.",
+    metric: "12",
+    metricLabel: "Confirmed / week",
   },
   {
-    quote:
-      "I was skeptical about AI making sales calls, but the transcripts are impressive. It handles objections better than some of my junior reps.",
-    tag: "SaaS sales director",
-    outcome: "~60",
-    outcomeLabel: "Outbound / day",
-    stars: 4,
+    icon: LineChart,
+    role: "The sales professional",
+    scenario:
+      "A stale list needs qualifying before Monday. The AI handles the routine objections, flags the warm ones, and hands back a callback stack with full transcripts for every conversation.",
+    metric: "~60",
+    metricLabel: "Outbound / day",
   },
 ] as const;
 

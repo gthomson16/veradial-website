@@ -1,95 +1,66 @@
-import { TESTIMONIALS } from "@/lib/constants";
-
-function StarRating({ count }: { count: number }) {
-  return (
-    <div className="flex gap-0.5 text-amber-400" aria-label={`${count} out of 5 stars`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i} className={i < count ? "" : "opacity-30"} aria-hidden="true">
-          &#9733;
-        </span>
-      ))}
-    </div>
-  );
-}
+import { USE_CASE_SCENARIOS } from "@/lib/constants";
 
 export function Testimonials() {
-  const [featured, ...rest] = TESTIMONIALS;
-
   return (
     <section className="relative overflow-hidden py-24 sm:py-28">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
+      />
+
       <div className="relative mx-auto max-w-7xl px-6">
-        <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
-          Illustrative Scenarios
-        </p>
-        <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-          What a day with VeraDial looks like.
-        </h2>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-muted">
-          Composite scenarios representative of VeraDial usage patterns. The
-          product is newly launched (Android live, iOS coming soon), so these
-          aren&apos;t yet verified customer reviews &mdash; we&apos;ll replace
-          them with real attributed testimonials as our user base grows.
-        </p>
-
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
-          {/* Featured pull-quote */}
-          <figure className="relative">
-            <span
-              aria-hidden="true"
-              className="absolute -left-2 -top-10 font-display text-[8rem] font-extralight leading-none text-accent/20 sm:-left-4 sm:-top-16 sm:text-[11rem]"
-            >
-              &ldquo;
-            </span>
-            <blockquote className="relative pl-6 sm:pl-10">
-              <StarRating count={featured.stars} />
-              <p className="mt-5 font-display text-2xl font-medium leading-[1.25] text-text-primary sm:text-3xl lg:text-[2.25rem] lg:leading-[1.15]">
-                {featured.quote}
-              </p>
-              <div className="mt-10 flex flex-col gap-6 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <figcaption className="text-sm text-text-secondary">
-                  <span className="block text-text-primary">{featured.tag}</span>
-                  <span className="mt-1 block text-xs uppercase tracking-[0.2em] text-text-muted">
-                    Illustrative scenario
-                  </span>
-                </figcaption>
-                <div className="text-left sm:text-right">
-                  <p className="font-display text-3xl font-semibold tracking-tight text-accent sm:text-4xl">
-                    {featured.outcome}
-                  </p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-text-muted">
-                    {featured.outcomeLabel}
-                  </p>
-                </div>
-              </div>
-            </blockquote>
-          </figure>
-
-          {/* Side notes */}
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-            {rest.map((t) => (
-              <figure
-                key={t.tag}
-                className="rounded-2xl border border-border bg-card/60 p-6"
-              >
-                <StarRating count={t.stars} />
-                <blockquote className="mt-4 text-sm leading-relaxed text-text-secondary">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-5 flex items-end justify-between gap-4 border-t border-border pt-4">
-                  <span className="text-xs text-text-muted">{t.tag}</span>
-                  <span className="text-right">
-                    <span className="block font-display text-lg font-semibold tracking-tight text-accent">
-                      {t.outcome}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-text-muted">
-                      {t.outcomeLabel}
-                    </span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-20">
+          <div>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              Who it&rsquo;s for
+            </p>
+            <h2 className="mt-5 font-display text-2xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-5xl">
+              Three kinds of busy.
+              <span className="block text-text-muted">One app picks up.</span>
+            </h2>
           </div>
+          <p className="max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
+            Real estate, home services, sales &mdash; VeraDial fits wherever
+            the phone gets in the way. Below are illustrative scenarios that
+            show the shape of the work, not attributed testimonials.
+          </p>
         </div>
+
+        <ul className="mt-16 grid list-none gap-px overflow-hidden rounded-2xl border border-border bg-border sm:mt-20 lg:grid-cols-3">
+          {USE_CASE_SCENARIOS.map((item) => (
+            <li
+              key={item.role}
+              className="group relative flex flex-col bg-bg p-8 sm:p-10"
+            >
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-accent/0 transition-colors duration-300 group-hover:bg-accent/40"
+              />
+
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-card/60 text-accent">
+                  <item.icon size={17} strokeWidth={1.7} aria-hidden="true" />
+                </span>
+                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-text-muted">
+                  {item.role}
+                </p>
+              </div>
+
+              <div className="mt-10 flex items-baseline gap-3">
+                <span className="font-display text-5xl font-semibold tracking-[-0.03em] text-accent sm:text-[3.5rem]">
+                  {item.metric}
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.24em] text-text-muted">
+                  {item.metricLabel}
+                </span>
+              </div>
+
+              <p className="mt-6 text-[0.95rem] leading-relaxed text-text-secondary">
+                {item.scenario}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
