@@ -57,6 +57,9 @@ FULL-AUDIT-REPORT.md
 # app store marketing assets
 public/screenshots/VeraDial App Store Screens v1/
 
+# video explainers hosted on YouTube — don't ship mp4 files
+public/veradial-explainer*.mp4
+
 # claude code skills
 .claude/skills/
 
