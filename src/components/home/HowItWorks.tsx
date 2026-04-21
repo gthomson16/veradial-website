@@ -41,14 +41,14 @@ function BriefArtifact() {
         Goal
       </p>
       <p className="mt-2 text-sm leading-relaxed text-text-primary">
-        Confirm Thursday&rsquo;s 2 PM estimate at 225 Elm St.
+        Follow up on the quote request that just came in from the website.
       </p>
       <p className="mt-4 text-[10px] uppercase tracking-[0.24em] text-text-muted">
         Notes for the AI
       </p>
       <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-        Follow-up on yesterday&rsquo;s quote. Flexible on time. If no answer,
-        leave a voicemail.
+        Ask what the job involves and the best callback time. Tell them John
+        will send a quote today. If no answer, leave a voicemail.
       </p>
     </div>
   );
@@ -68,20 +68,23 @@ function HandoffArtifact() {
           <span className="mr-2 inline-block min-w-[3.25rem] text-[10px] uppercase tracking-[0.22em] text-accent">
             AI
           </span>
-          &ldquo;Hi, this is Graham&rsquo;s assistant calling to confirm our 2
-          PM estimate at 225 Elm on Thursday.&rdquo;
+          &ldquo;Hi, this is the AI assistant for John&rsquo;s Electrical. We
+          just received your quote request &mdash; can you tell me a bit more
+          about the job?&rdquo;
         </p>
         <p className="text-text-secondary">
           <span className="mr-2 inline-block min-w-[3.25rem] text-[10px] uppercase tracking-[0.22em] text-[var(--color-accent-secondary)]">
             Client
           </span>
-          &ldquo;Yeah, 2 PM works. See you then.&rdquo;
+          &ldquo;Yeah, I need some outlets added in my garage, probably four or
+          five.&rdquo;
         </p>
         <p className="text-text-secondary">
           <span className="mr-2 inline-block min-w-[3.25rem] text-[10px] uppercase tracking-[0.22em] text-accent">
             AI
           </span>
-          &ldquo;Great &mdash; I&rsquo;ll let Graham know.&rdquo;
+          &ldquo;Got it. I&rsquo;ll pass this along to John and he&rsquo;ll get
+          you a quote today.&rdquo;
         </p>
       </div>
       <div className="flex items-center gap-2 border-t border-border px-4 py-3 text-xs text-text-muted">
