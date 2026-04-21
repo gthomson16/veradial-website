@@ -43,6 +43,7 @@ Secrets aren't stored in this repo. The mobile repo's `AGENTS.md` has the full c
 ## SEO / AIO Workstream
 
 - **Progress tracker:** `.agents/seo-progress.md` — read this first before starting any SEO/AIO work. Lists what's been completed, what's pending, and what's deferred. Update it when work is shipped (mark items ✅ with date + commit ref).
+- **GSC / Indexing API CLI:** OAuth token at `~/.config/claude-seo/oauth-token.json` has siteOwner on `sc-domain:veradial.com`. Scripts under `~/.claude/skills/seo/scripts/`: `gsc_query.py` (search analytics, sitemaps), `gsc_inspect.py` (URL indexation status, `--batch` supported), `indexing_notify.py` (Web Indexing API pings, 200/day quota), `pagespeed_check.py` (PSI lab + CrUX). GCP project: `canscanapp`. OAuth app is published (refresh token is permanent).
 - **Latest audit:** `.agents/seo-audit-2026-04-20/` — `ACTION-PLAN.md` (prioritized fix list) + `FULL-AUDIT-REPORT.md` (consolidated report) + per-specialist deep-dives (`backlinks`, `content`, `geo`, `google`, `performance`, `schema`, `sitemap`, `technical`).
 - **Previous audit:** `.agents/seo-audit-2026-04-16.md` + `.agents/seo-audit-{content,schema,geo,sitemap}.md` — kept for historical context.
 
