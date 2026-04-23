@@ -14,11 +14,13 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-10 lg:min-h-[calc(100vh-88px)] lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
         <div className="min-w-0 max-w-2xl">
           <Image
-            src="/icon.png"
+            src="/icon-216.webp"
             alt="VeraDial"
             width={72}
             height={72}
             className="rounded-2xl"
+            priority
+            unoptimized
           />
 
           <Badge

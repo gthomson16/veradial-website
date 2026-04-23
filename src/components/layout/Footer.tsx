@@ -11,7 +11,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5">
               <Image
-                src="/icon.png"
+                src="/icon-216.webp"
                 alt=""
                 width={36}
                 height={36}

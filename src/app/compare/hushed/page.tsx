@@ -203,7 +203,7 @@ export default function CompareHushedPage() {
                 <div className="border-b border-border p-8 md:border-b-0 md:border-r">
                   <div className="flex items-center gap-3">
                     <Image
-                      src="/icon.png"
+                      src="/icon-216.webp"
                       alt=""
                       width={36}
                       height={36}

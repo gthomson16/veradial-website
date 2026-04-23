@@ -56,8 +56,8 @@ function OrganizationJsonLd() {
     logo: {
       "@type": "ImageObject",
       url: "https://veradial.com/icon.png",
-      width: 890,
-      height: 890,
+      width: 512,
+      height: 509,
     },
     description:
       "AI-powered business calling. Your AI assistant schedules, follows up, and handles the conversations you don't have time for.",
