@@ -8,6 +8,10 @@
     "postbuild": "node scripts/indexnow-ping.mjs",
     "start": "next start",
     "lint": "eslint",
+    "video:frame": "python3 marketing/demo-video/generate-phone-frame.py",
+    "video:render": "bash marketing/demo-video/render.sh",
+    "video:mix": "bash marketing/demo-video/mix-music.sh",
+    "video:sync-public": "node scripts/sync-marketing-video.mjs",
     "design:sync": "node scripts/design-sync.mjs",
     "design:lint": "npx --yes @google/design.md@0.1.1 lint DESIGN.md"
   },
