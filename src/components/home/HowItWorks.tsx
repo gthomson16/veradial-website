@@ -227,7 +227,7 @@ export function HowItWorks() {
                   <div className="min-w-0 pt-1">
                     <span
                       aria-hidden="true"
-                      className="block font-display text-[3.75rem] font-extralight leading-[0.85] tracking-[-0.05em] text-white/[0.07] sm:text-[6rem]"
+                      className="block font-display text-[3.75rem] font-extralight leading-[0.85] tracking-[-0.05em] text-white/35 sm:text-[6rem]"
                     >
                       {step.number}
                     </span>

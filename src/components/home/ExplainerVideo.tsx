@@ -37,7 +37,6 @@ export function ExplainerVideo() {
               <button
                 type="button"
                 onClick={() => setPlaying(true)}
-                aria-label="Play the VeraDial explainer video"
                 className="group relative block h-full w-full cursor-pointer"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

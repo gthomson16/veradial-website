@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: April 19, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: April 23, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -110,8 +110,8 @@ export default function PrivacyPage() {
               SMS message content from your own account. Summaries, a suggested next-call
               goal, and the phone number are stored in your account. Summarization is
               performed by a third-party AI provider (Google Gemini). When Contact Memory
-              is disabled, existing summaries are not read and new summaries are not
-              generated; summaries are deleted if you disable the feature permanently or
+              is disabled, existing summaries are not read through the feature and new
+              summaries are not generated; existing summaries remain stored unless you
               delete your account.
             </p>
             <p>
@@ -121,9 +121,9 @@ export default function PrivacyPage() {
             </p>
             <p>
               <strong className="text-text-primary">Billing:</strong> Purchase and
-              subscription history is managed through RevenueCat and the App Store. We
-              store your subscription status, billing period, and credit balance. We do not
-              store payment card details directly.
+              subscription history is managed through RevenueCat and the Apple App Store /
+              Google Play Store. We store your subscription status, billing period, and
+              credit balance. We do not store payment card details directly.
             </p>
             <p>
               <strong className="text-text-primary">Error and crash data:</strong> We
@@ -140,7 +140,7 @@ export default function PrivacyPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>Provide calling, messaging, voicemail, and call screening services</li>
-            <li>Forward unanswered calls to your configured forwarding number</li>
+            <li>Forward inbound calls to your configured forwarding number when forwarding is enabled</li>
             <li>Display your call activity on an interactive map using location data</li>
             <li>Enforce acceptable use policies and detect abuse</li>
             <li>Process STOP/HELP opt-out requests (TCPA compliance)</li>
@@ -456,10 +456,9 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong className="text-text-primary">Contact memory summaries:</strong>{" "}
-              Per-contact summaries are retained for the lifetime of your account while
-              Contact Memory is enabled. If you disable Contact Memory, existing summaries
-              are no longer read or updated; delete the feature data by disabling the
-              toggle or deleting your account.
+              Per-contact summaries are retained for the lifetime of your account unless
+              you delete your account. If you disable Contact Memory, existing summaries
+              are no longer read through the feature or updated.
             </li>
             <li>
               <strong className="text-text-primary">Push tokens:</strong>{" "}
@@ -540,10 +539,9 @@ export default function PrivacyPage() {
             10. Children&apos;s Privacy
           </h2>
           <p className="mt-4">
-            VeraDial is not intended for use by anyone under the age of 13 (or 16 in
-            jurisdictions where a higher age of consent applies). We do not knowingly
-            collect personal information from children. If you believe a child has provided
-            us with personal data, please contact us at{" "}
+            VeraDial is not intended for use by anyone under the age of 18. We do not
+            knowingly collect personal information from children. If you believe a child
+            has provided us with personal data, please contact us at{" "}
             <a
               href="mailto:support@veradial.com"
               className="text-accent hover:underline"

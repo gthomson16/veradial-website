@@ -10,7 +10,7 @@ export default function TermsPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Terms of Service</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: April 19, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: April 23, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -122,8 +122,9 @@ export default function TermsPage() {
               prohibited.
             </li>
             <li>
-              AI calls are recorded. Full transcripts and AI-generated summaries are
-              stored in your account and may be reviewed for abuse prevention.
+              AI calls may be recorded if you enable call recording. Full transcripts and
+              AI-generated summaries are stored in your account and may be reviewed for
+              abuse prevention.
             </li>
             <li>
               Call audio is processed in real-time by third-party AI providers,
@@ -238,8 +239,7 @@ export default function TermsPage() {
             9. Call Forwarding
           </h2>
           <p className="mt-4">
-            VeraDial allows you to forward unanswered inbound calls to another phone
-            number.
+            VeraDial allows you to forward inbound calls to another phone number.
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
@@ -247,12 +247,16 @@ export default function TermsPage() {
               settings.
             </li>
             <li>
-              When enabled, unanswered calls are forwarded to your configured number
-              after a 30-second timeout.
+              When enabled, inbound calls are forwarded immediately to your configured
+              number.
             </li>
             <li>
-              Call forwarding and call screening are mutually exclusive — only one can
-              be active at a time.
+              If the forwarded call is not answered and voicemail is enabled, the call
+              may fall through to voicemail.
+            </li>
+            <li>
+              If call screening is also enabled, forwarding takes precedence over app
+              ringing and screening.
             </li>
             <li>
               You are responsible for ensuring you have the right to use the forwarding
@@ -270,8 +274,9 @@ export default function TermsPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              When an inbound call to your VeraDial number is not answered and no call
-              forwarding is configured, the call is directed to voicemail.
+              When an inbound call to your VeraDial number is not answered by the app or
+              your configured forward target, and voicemail is enabled, the call is
+              directed to voicemail.
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5">
               <li>

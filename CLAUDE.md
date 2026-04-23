@@ -18,17 +18,21 @@ Marketing site for VeraDial — AI-powered business calling app.
 
 ## Structure
 
-- `src/app/` — pages (home, about, alternatives, compare, delete-account, faq, numbers, pricing, privacy, stir-shaken-for-small-business, terms, use-cases)
+- `src/app/` — pages (home, about, alternatives, compare, delete-account, faq, numbers, pricing, privacy, screenshots, stir-shaken-for-small-business, terms, use-cases)
 - `src/components/` — shared and page-specific components
-- `src/lib/` — constants, metadata, utilities
+- `src/lib/` — constants, metadata, route slugs, area-code data, alternatives data, compare verdicts, use-case FAQs
 - `src/fonts/` — self-hosted font files
 
 ## Product References
 
 - Product facts source of truth: `/Users/gthomson/Development/VeraDial/website.md`
   Use for pricing, feature inventory, platform availability, usage limits, and compliance / infrastructure details.
+- Legal copy source of truth: `/Users/gthomson/Development/VeraDial/PRIVACY.md` and `/Users/gthomson/Development/VeraDial/TERMS.md`
+  Drive `src/app/privacy/page.tsx` and `src/app/terms/page.tsx`. When the mds change, diff and hand-port the changes into the TSX (including the "Last updated" date). The pages are not auto-generated — the TSX is the rendered copy.
 - Marketing context source of truth: `.agents/product-marketing-context.md`
   Use for positioning, ICP, pain points, competitors, objections, switching dynamics, customer language, and brand voice.
+- Directory / listings source of truth: `.agents/directory-profile.md`
+  Use for third-party directory submissions, review-site listings, and editorial pitches. Contains public-safe product facts, company details, and category tagging.
 - If they conflict, treat `website.md` as the factual reference and update the marketing context to match.
 
 ## Credentials
