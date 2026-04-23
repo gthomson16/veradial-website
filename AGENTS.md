@@ -58,7 +58,14 @@ App-store optimization artifacts live in this repo (not the mobile repo) because
 - **ASC API access:** the mobile repo's `packages/mobile/fastlane/Fastfile` has working ASC API credentials. Key at `~/Downloads/_Dev/AuthKey_HV5JTY9FUB.p8`, key ID `HV5JTY9FUB`, issuer `ff967157-296d-4789-a217-e176f68cd3e4`, app ID `6760608537`. Used directly for metadata PATCHes without going through the ASC UI.
 - **Fastlane sync watch-out:** the mobile repo's `fastlane/metadata/ios/*.txt` files can silently overwrite the live ASC listing if `fastlane deliver` runs against stale copies. See the "Mobile-repo sync" section of `aso-appstore-listing.md` for the decision that needs to be made on this.
 
+## Design System
+
+- **Canonical design spec: `DESIGN.md`** (root). Follows the Google Labs `@google/design.md` format — colors, typography, rounded, spacing, and components are machine-readable tokens; brand voice, AI generation prompts, and contrast rules live in prose below the front matter.
+- **Source of truth for color tokens is `src/app/globals.css`** (`@theme inline` block). `DESIGN.md`'s `colors:` and `effects:` blocks are generated — run `npm run design:sync` after editing `@theme`. Never hand-edit those blocks.
+- **Validate tokens:** `npm run design:lint` (runs `@google/design.md@0.1.1 lint`, pinned). Should be 0 errors. Warnings about unreferenced palette tokens are expected and informational — don't try to silence them by adding components you don't actually need.
+- Read `DESIGN.md` before making visual decisions — accent rules, contrast floors, AI image/video prompt boilerplate, and the no-spoofing language guardrail all live there.
+
 ## Conventions
 
-- Use Tailwind utility classes for styling
+- Use Tailwind utility classes for styling (tokens defined in `src/app/globals.css`, mirrored in `DESIGN.md`)
 - Site domain: veradial.com

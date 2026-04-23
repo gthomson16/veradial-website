@@ -6,12 +6,19 @@
   --color-card: #11243a;
   --color-card-hover: #17314f;
   --color-accent: #73f2c3;
-  --color-accent-glow: rgba(115, 242, 195, 0.28);
+  --color-accent-glow: #73f2c347;
   --color-accent-secondary: #ffbf69;
   --color-text-primary: #f5f7fb;
   --color-text-secondary: #97abc1;
   --color-text-muted: #7b92a9;
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border: #ffffff14;
+
+  /* Semantic pairing tokens — synced into DESIGN.md by scripts/design-sync.mjs.
+     `primary` is an alias for `accent` kept for @google/design.md tooling
+     compatibility; `on-*` tokens are the foreground color for that surface. */
+  --color-primary: #73f2c3;
+  --color-on-accent: #07111d;
+  --color-on-bg: #f5f7fb;
 
   --font-display: var(--font-clash-display);
   --font-body: var(--font-satoshi);
