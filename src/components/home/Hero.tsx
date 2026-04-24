@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GOOGLE_PLAY_URL } from "@/lib/constants";
+import { isDemoFunnelEnabled } from "@/lib/demo-flags";
 import { HeroPhone } from "./HeroPhone";
 
 export function Hero() {
@@ -52,6 +53,11 @@ export function Hero() {
               <Button variant="primary" href={GOOGLE_PLAY_URL}>
                 Download for Android
               </Button>
+              {isDemoFunnelEnabled ? (
+                <Button variant="ghost" href="/try">
+                  Try a free AI call
+                </Button>
+              ) : null}
               <Button variant="ghost" href="/#pricing">
                 See Pricing
               </Button>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GOOGLE_PLAY_URL } from "@/lib/constants";
+import { isDemoFunnelEnabled } from "@/lib/demo-flags";
 
 export function CTA() {
   return (
@@ -27,6 +28,15 @@ export function CTA() {
               Download for Android
             </Button>
           </div>
+
+          {isDemoFunnelEnabled ? (
+            <Link
+              href="/try"
+              className="mt-5 inline-flex text-sm font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-text-primary hover:decoration-accent"
+            >
+              Try it live first
+            </Link>
+          ) : null}
 
           <StoreBadges className="mt-6 [&_.mx-auto]:mx-0" />
 
