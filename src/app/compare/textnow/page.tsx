@@ -112,7 +112,7 @@ const COMPARISON_ROWS: FeatureRow[] = [
   },
   {
     feature: "iOS app",
-    veradial: "coming soon",
+    veradial: "yes",
     textnow: "yes",
   },
   {

@@ -1,6 +1,6 @@
 import { buildPageMetadata, buildBreadcrumbJsonLd } from "@/lib/metadata-helpers";
 import { SITE_URL } from "@/lib/metadata";
-import { GOOGLE_PLAY_URL } from "@/lib/constants";
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/constants";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { Badge } from "@/components/ui/Badge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -262,11 +262,14 @@ export default function AboutPage() {
                 Get VeraDial today.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
-                VeraDial is live on Google Play. Get a verified business phone
-                number and AI calling assistant on Android &mdash; iOS coming
-                soon.
+                VeraDial is live on the App Store and Google Play. Get a
+                verified business phone number and AI calling assistant on
+                iOS or Android.
               </p>
-              <div className="mt-8 flex justify-center gap-4">
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <Button variant="primary" href={APP_STORE_URL}>
+                  Download for iOS
+                </Button>
                 <Button variant="primary" href={GOOGLE_PLAY_URL}>
                   Download for Android
                 </Button>

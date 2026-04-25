@@ -88,7 +88,7 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 
 ## Status
 
-Available on Android (Google Play). iOS coming soon.
+Available on iOS (App Store) and Android (Google Play).
 
 ## Not Available / Out of Scope
 

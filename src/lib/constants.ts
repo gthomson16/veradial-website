@@ -17,6 +17,9 @@ import {
 export const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.veradial.app";
 
+export const APP_STORE_URL =
+  "https://apps.apple.com/us/app/veradial/id6760608537";
+
 export const EARLY_ACCESS_URL =
   "mailto:support@veradial.com?subject=VeraDial%20Early%20Access&body=Hi%20VeraDial%2C%0A%0AI%27d%20like%20early%20access%20to%20the%20app.%0A";
 

@@ -63,7 +63,7 @@ export function Hero() {
               </Button>
             </div>
             <p className="mt-3 text-sm text-text-secondary">
-              Available now on Google Play. iOS coming soon.
+              Available now on the App Store and Google Play.
             </p>
             <a
               href="#how-it-works"

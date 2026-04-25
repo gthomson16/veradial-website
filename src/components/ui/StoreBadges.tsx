@@ -1,23 +1,27 @@
 import Image from "next/image";
-import { GOOGLE_PLAY_URL } from "@/lib/constants";
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/constants";
 
 export function StoreBadges({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
       <div className="mx-auto w-fit">
         <div className="flex flex-wrap items-center gap-3">
-          {/* Apple — still coming soon */}
-          <div className="pointer-events-none select-none" aria-hidden="true">
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download VeraDial on the App Store"
+            className="transition-opacity hover:opacity-85"
+          >
             <Image
               src="/app-store-badge.svg"
-              alt=""
+              alt="Download on the App Store"
               width={135}
               height={40}
-              className="w-[122px] opacity-50 grayscale"
+              className="w-[122px]"
             />
-          </div>
+          </a>
 
-          {/* Google Play — live */}
           <a
             href={GOOGLE_PLAY_URL}
             target="_blank"
@@ -34,9 +38,6 @@ export function StoreBadges({ className = "" }: { className?: string }) {
             />
           </a>
         </div>
-        <p className="mt-2 text-center text-[11px] font-medium uppercase tracking-[0.15em] text-text-muted">
-          iOS coming soon
-        </p>
       </div>
     </div>
   );
