@@ -5,6 +5,7 @@ This repo now owns the local marketing video workflow.
 - `explainer/` holds the editable 16:9 60-second explainer render source.
 - `explainer-vertical/` holds the editable 9:16 60-second explainer render source.
 - `demo-video/` holds the editable ffmpeg/Pillow pipeline and source inputs for shorter product demo and app-preview cuts.
+- `tiktok-post/` holds the local draft-upload helper for @veradialapp.
 
 Notes:
 

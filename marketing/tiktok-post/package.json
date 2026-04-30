@@ -1,0 +1,12 @@
+{
+  "name": "veradial-tiktok-post",
+  "version": "0.1.0",
+  "description": "Post VeraDial marketing videos to @veradialapp on TikTok as drafts (sandbox mode)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "auth": "node --env-file=.env auth.mjs",
+    "post": "node --env-file=.env post.mjs",
+    "refresh": "node --env-file=.env refresh.mjs"
+  }
+}
