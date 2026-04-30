@@ -228,7 +228,7 @@ export const HELP_PAGES: HelpPage[] = [
       {
         heading: "Basic confirmation script",
         body:
-          "Hi, this is VeraDial calling on behalf of [business name]. We are confirming your appointment for [date] at [time] at [address]. Please reply yes to confirm, or let us know if you need to reschedule.",
+          "Hi, this is [assistant or business name] calling on behalf of [business name]. We are confirming your appointment for [date] at [time] at [address]. Please reply yes to confirm, or let us know if you need to reschedule.",
         bullets: [
           "Confirm the date and time.",
           "Confirm the address or job location.",
@@ -239,7 +239,7 @@ export const HELP_PAGES: HelpPage[] = [
       {
         heading: "Contractor and home-services version",
         body:
-          "Hi, this is VeraDial calling on behalf of [company]. We have you scheduled for [service] on [date] between [arrival window]. Please confirm that someone will be available and that we can access [gate/parking/equipment/location detail].",
+          "Hi, this is [assistant or business name] calling on behalf of [company]. We have you scheduled for [service] on [date] between [arrival window]. Please confirm that someone will be available and that we can access [gate/parking/equipment/location detail].",
         bullets: [
           "Ask about access before the technician arrives.",
           "Mention arrival windows instead of exact times when needed.",
