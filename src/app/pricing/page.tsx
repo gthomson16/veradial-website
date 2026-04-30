@@ -26,6 +26,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { StoreButton } from "@/components/ui/StoreButton";
 
 const PAGE_TITLE = "VeraDial Pricing — $9.99/mo flat, credits never expire";
 const PAGE_DESCRIPTION =
@@ -550,7 +551,13 @@ export default function PricingPage() {
                 id="download-options"
                 className="relative mt-8 flex flex-wrap items-center gap-4 scroll-mt-24"
               >
-                <Button href={GOOGLE_PLAY_URL}>Start free trial</Button>
+                <StoreButton
+                  analyticsLocation="pricing_download_options"
+                  href={GOOGLE_PLAY_URL}
+                  platform="google_play"
+                >
+                  Start free trial
+                </StoreButton>
                 <StoreBadges />
               </div>
             </Card>
@@ -895,7 +902,13 @@ export default function PricingPage() {
                 trial at no charge.
               </p>
               <div className="mt-8 flex justify-center">
-                <Button href={GOOGLE_PLAY_URL}>Download VeraDial</Button>
+                <StoreButton
+                  analyticsLocation="pricing_final_cta"
+                  href={GOOGLE_PLAY_URL}
+                  platform="google_play"
+                >
+                  Download VeraDial
+                </StoreButton>
               </div>
               <StoreBadges className="mt-6 justify-center" />
             </div>

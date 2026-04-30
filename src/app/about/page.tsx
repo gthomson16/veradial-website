@@ -7,6 +7,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { StoreButton } from "@/components/ui/StoreButton";
 import { FounderPhoto } from "@/components/about/FounderPhoto";
 import { Award, Shield, BadgeCheck, Linkedin, MapPin, ExternalLink } from "lucide-react";
 
@@ -267,12 +268,20 @@ export default function AboutPage() {
                 iOS or Android.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <Button variant="primary" href={APP_STORE_URL}>
+                <StoreButton
+                  analyticsLocation="about_final_cta"
+                  href={APP_STORE_URL}
+                  platform="app_store"
+                >
                   Download for iOS
-                </Button>
-                <Button variant="primary" href={GOOGLE_PLAY_URL}>
+                </StoreButton>
+                <StoreButton
+                  analyticsLocation="about_final_cta"
+                  href={GOOGLE_PLAY_URL}
+                  platform="google_play"
+                >
                   Download for Android
-                </Button>
+                </StoreButton>
                 <Button variant="ghost" href="mailto:support@veradial.com">
                   Email Me
                 </Button>

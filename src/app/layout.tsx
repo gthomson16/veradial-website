@@ -1,11 +1,9 @@
 import localFont from "next/font/local";
-import Script from "next/script";
 import { siteMetadata } from "@/lib/metadata";
+import { ProductionAnalytics } from "@/components/analytics/ProductionAnalytics";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const clashDisplay = localFont({
@@ -25,7 +23,7 @@ const satoshi = localFont({
 export const metadata = siteMetadata;
 
 const GA_ID = "G-TFH4BRGT13";
-const IS_VERCEL_DEPLOYMENT = process.env.VERCEL === "1";
+const IS_PRODUCTION_DEPLOYMENT = process.env.VERCEL_ENV === "production";
 
 export default function RootLayout({
   children,
@@ -45,19 +43,10 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
-        {IS_VERCEL_DEPLOYMENT ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="lazyOnload"
-            />
-            <Script id="ga-init" strategy="lazyOnload">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
-            </Script>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        ) : null}
+        <ProductionAnalytics
+          gaId={GA_ID}
+          enabled={IS_PRODUCTION_DEPLOYMENT}
+        />
       </body>
     </html>
   );

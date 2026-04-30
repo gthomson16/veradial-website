@@ -25,6 +25,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { StoreButton } from "@/components/ui/StoreButton";
 
 const PAGE_TITLE =
   "Why Your Business Number Shows as Spam Likely — STIR/SHAKEN Guide";
@@ -859,10 +860,14 @@ export default function StirShakenForSmallBusinessPage() {
                 for $9.99/mo with a 3-day free trial.
               </p>
               <div className="mt-8 flex justify-center gap-3">
-                <Button href={GOOGLE_PLAY_URL}>
+                <StoreButton
+                  analyticsLocation="stir_shaken_final_cta"
+                  href={GOOGLE_PLAY_URL}
+                  platform="google_play"
+                >
                   <PhoneCall size={16} />
                   Start free trial
-                </Button>
+                </StoreButton>
                 <Button variant="ghost" href="/pricing">
                   <Sparkles size={16} />
                   See pricing

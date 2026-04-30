@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { PhoneOutgoing, Target, FileText } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { StoreButton } from "@/components/ui/StoreButton";
 import { GOOGLE_PLAY_URL } from "@/lib/constants";
 import { HeroDemoPlayer } from "./HeroDemoPlayer";
 
@@ -252,9 +252,13 @@ export function HowItWorks() {
               Verified caller ID. The AI always identifies itself as your
               assistant. Stop the call from the app anytime.
             </p>
-            <Button variant="primary" href={GOOGLE_PLAY_URL}>
+            <StoreButton
+              analyticsLocation="home_how_it_works"
+              href={GOOGLE_PLAY_URL}
+              platform="google_play"
+            >
               Start 3-day trial &rarr;
-            </Button>
+            </StoreButton>
           </div>
         </div>
       </div>
