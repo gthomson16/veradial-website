@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
-import { GOOGLE_PLAY_URL } from "@/lib/constants";
 import { isDemoFunnelEnabled } from "@/lib/demo-flags";
 
 export function CTA() {
@@ -23,11 +21,7 @@ export function CTA() {
             <span className="block text-accent">Start calling back.</span>
           </h2>
 
-          <div className="mt-10">
-            <Button variant="primary" href={GOOGLE_PLAY_URL}>
-              Download for Android
-            </Button>
-          </div>
+          <StoreBadges className="mt-10 [&_.mx-auto]:mx-0" />
 
           {isDemoFunnelEnabled ? (
             <Link
@@ -37,8 +31,6 @@ export function CTA() {
               Try it live first
             </Link>
           ) : null}
-
-          <StoreBadges className="mt-6 [&_.mx-auto]:mx-0" />
 
           <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-text-muted">
             <span className="flex items-center gap-2">

@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { StoreBadges } from "@/components/ui/StoreBadges";
-import { GOOGLE_PLAY_URL } from "@/lib/constants";
 import { isDemoFunnelEnabled } from "@/lib/demo-flags";
 import { HeroPhone } from "./HeroPhone";
 
@@ -50,8 +49,8 @@ export function Hero() {
 
           <div className="mt-8">
             <div className="flex flex-wrap items-center gap-3">
-              <Button variant="primary" href={GOOGLE_PLAY_URL}>
-                Download for Android
+              <Button variant="primary" href="#download">
+                Download the app
               </Button>
               {isDemoFunnelEnabled ? (
                 <Button variant="ghost" href="/try">
