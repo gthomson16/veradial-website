@@ -1,0 +1,118 @@
+/* ======================================================================
+   VeraDial — Colors & Type
+   Source: veradial-website (globals.css) + VeraDial/packages/mobile/theme
+   Marketing surfaces: deep navy palette + teal accent (web)
+   Product surfaces : near-black palette + teal accent (mobile, dark)
+   ====================================================================== */
+
+:root {
+  /* -------------------------------------------------- WEB / MARKETING */
+  /* These are the authoritative marketing-surface colors from the
+     Next.js site. Use these for landing pages, decks, social content. */
+  --vd-bg:              #07111d;      /* page background, deep navy */
+  --vd-surface:         #0d1b2e;      /* section / footer bg       */
+  --vd-card:            #11243a;      /* card bg                    */
+  --vd-card-hover:      #17314f;      /* card hover                 */
+  --vd-accent:          #73f2c3;      /* mint-teal accent          */
+  --vd-accent-glow:     rgba(115,242,195,0.28);
+  --vd-accent-secondary:#ffbf69;      /* warm peach (eyebrows/tags) */
+  --vd-text-primary:    #f5f7fb;
+  --vd-text-secondary:  #97abc1;
+  --vd-text-muted:      #7b92a9;
+  --vd-border:          rgba(255,255,255,0.08);
+
+  /* -------------------------------------------------- APP (DARK) */
+  /* From /packages/mobile/src/theme/colors.ts — darkColors.         */
+  --vd-app-bg:              #0A0A0F;
+  --vd-app-surface:         #1C1C2E;
+  --vd-app-surface-2:       #141420;
+  --vd-app-surface-press:   #252538;
+  --vd-app-text-primary:    #FFFFFF;
+  --vd-app-text-secondary:  #8E8E9B;
+  --vd-app-text-tertiary:   #555566;
+  --vd-app-accent:          #00D4AA;  /* slightly more saturated teal */
+  --vd-app-accent-pressed:  #00B38A;
+  --vd-app-accent-on-fill:  #0A0A0F;
+  --vd-app-accent-muted:    rgba(0,212,170,0.15);
+  --vd-app-error:           #FF453A;
+  --vd-app-error-muted:     rgba(255,69,58,0.10);
+  --vd-app-warning:         #FF9500;
+  --vd-app-success:         #00D4AA;
+  --vd-app-border:          rgba(255,255,255,0.08);
+  --vd-app-border-strong:   rgba(255,255,255,0.15);
+  --vd-app-divider:         #2A2A3E;
+
+  /* -------------------------------------------------- APP (LIGHT) */
+  --vd-app-light-bg:            #F2F2F7;
+  --vd-app-light-surface:       #FFFFFF;
+  --vd-app-light-surface-2:     #F2F2F7;
+  --vd-app-light-text-primary:  #000000;
+  --vd-app-light-text-secondary:#6C6C70;
+  --vd-app-light-text-tertiary: #8E8E93;
+  --vd-app-light-accent-text:   #00856A;
+  --vd-app-light-divider:       #D1D1D6;
+
+  /* -------------------------------------------------- FIGMA APP-STORE ACCENTS */
+  /* App-store screens use these jewel-tone eyebrows (one per screen). */
+  --vd-accent-mint:     rgb(18,223,192);   /* #12DFC0 — hero, voicemail, messages */
+  --vd-accent-violet:   rgb(141,121,255);  /* #8D79FF — AI call           */
+  --vd-accent-coral:    rgb(255,107,93);   /* #FF6B5D — numbers / history */
+
+  /* -------------------------------------------------- TYPE SCALE */
+  --vd-font-display: "Clash Display", "Space Grotesk", "Inter", system-ui, sans-serif;
+  --vd-font-body:    "Satoshi", "Inter", system-ui, -apple-system, sans-serif;
+  --vd-font-app:     "Poppins", "Inter", system-ui, -apple-system, sans-serif;
+  --vd-font-mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  /* Display (marketing). Track tighter as size grows. */
+  --vd-display-xl:   clamp(3rem, 6vw, 5rem);    /* 80px — hero headline  */
+  --vd-display-lg:   clamp(2.25rem, 4vw, 3.25rem); /* 52px — H1          */
+  --vd-display-md:   2.25rem;                    /* 36px — H2             */
+  --vd-display-sm:   1.5rem;                     /* 24px — H3             */
+
+  /* Body */
+  --vd-body-lg:      1.125rem;  /* 18px */
+  --vd-body:         1rem;      /* 16px */
+  --vd-body-sm:      0.875rem;  /* 14px */
+  --vd-caption:      0.75rem;   /* 12px */
+
+  /* Eyebrow = uppercase, letter-spaced, small */
+  --vd-eyebrow-size: 0.75rem;
+  --vd-eyebrow-tracking: 0.32em;
+
+  /* -------------------------------------------------- SPACING, RADII, SHADOWS */
+  --vd-radius-sm:  8px;
+  --vd-radius-md:  12px;   /* inputs, small buttons    */
+  --vd-radius-lg:  16px;   /* cards                    */
+  --vd-radius-xl:  24px;   /* large cards / panels     */
+  --vd-radius-2xl: 32px;   /* hero phone mock          */
+  --vd-radius-pill: 999px;
+
+  --vd-shadow-card:  0 10px 30px rgba(0,0,0,0.30);
+  --vd-shadow-float: 0 20px 60px rgba(0,0,0,0.45);
+  --vd-shadow-glow:  0 0 32px var(--vd-accent-glow);
+  --vd-shadow-inset-btn: inset 0 -1px 0 rgba(0,0,0,0.15);
+}
+
+/* ======================================================================
+   Semantic type helpers — class-based so they work in any HTML artifact
+   ====================================================================== */
+.vd-display-xl { font-family: var(--vd-font-display); font-weight: 600; font-size: var(--vd-display-xl); line-height: 0.98;  letter-spacing: -0.04em; color: var(--vd-text-primary); }
+.vd-display-lg { font-family: var(--vd-font-display); font-weight: 600; font-size: var(--vd-display-lg); line-height: 1.05;  letter-spacing: -0.03em; color: var(--vd-text-primary); }
+.vd-h1         { font-family: var(--vd-font-display); font-weight: 600; font-size: var(--vd-display-lg); line-height: 1.05;  letter-spacing: -0.02em; color: var(--vd-text-primary); }
+.vd-h2         { font-family: var(--vd-font-display); font-weight: 600; font-size: var(--vd-display-md); line-height: 1.15;  letter-spacing: -0.02em; color: var(--vd-text-primary); }
+.vd-h3         { font-family: var(--vd-font-display); font-weight: 500; font-size: var(--vd-display-sm); line-height: 1.25;  color: var(--vd-text-primary); }
+.vd-lead       { font-family: var(--vd-font-body);    font-weight: 400; font-size: var(--vd-body-lg);    line-height: 1.55;  color: var(--vd-text-secondary); }
+.vd-p          { font-family: var(--vd-font-body);    font-weight: 400; font-size: var(--vd-body);       line-height: 1.6;   color: var(--vd-text-secondary); }
+.vd-small      { font-family: var(--vd-font-body);    font-weight: 400; font-size: var(--vd-body-sm);    line-height: 1.5;   color: var(--vd-text-secondary); }
+.vd-caption    { font-family: var(--vd-font-body);    font-weight: 400; font-size: var(--vd-caption);    line-height: 1.4;   color: var(--vd-text-muted); }
+.vd-eyebrow    { font-family: var(--vd-font-body);    font-weight: 600; font-size: var(--vd-eyebrow-size); line-height: 1; letter-spacing: var(--vd-eyebrow-tracking); text-transform: uppercase; color: var(--vd-accent-secondary); }
+.vd-eyebrow-teal { font-family: var(--vd-font-body);  font-weight: 700; font-size: var(--vd-eyebrow-size); line-height: 1; letter-spacing: 0.22em; text-transform: uppercase; color: var(--vd-accent); }
+
+/* Wordmark — used everywhere: "Vera" white + "Dial" teal */
+.vd-wordmark       { font-family: var(--vd-font-display); font-weight: 600; letter-spacing: -0.01em; }
+.vd-wordmark .vera { color: var(--vd-text-primary); }
+.vd-wordmark .dial { color: var(--vd-accent); }
+
+/* Mono for phone numbers (tabular-nums) */
+.vd-tabular { font-variant-numeric: tabular-nums; }

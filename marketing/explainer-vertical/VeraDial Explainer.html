@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VeraDial — 60s explainer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Fontshare: Clash Display + Satoshi -->
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/colors_and_type.css">
+
+<style>
+  html, body {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: #000;
+    color: #f5f7fb;
+    font-family: "Satoshi", system-ui, sans-serif;
+    overflow: hidden;
+  }
+  #root { position: absolute; inset: 0; }
+</style>
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="scenes.jsx"></script>
+<script type="text/babel" src="scenes-steps.jsx"></script>
+<script type="text/babel" src="scenes-call.jsx"></script>
+<script type="text/babel" src="scenes-map.jsx"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+// Scene timing (absolute seconds, total 60)
+const T = {
+  open:   { s: 0,    e: 6.0  },
+  step1:  { s: 6.0,  e: 19.0 },
+  step2:  { s: 19.0, e: 32.0 },
+  step3:  { s: 32.0, e: 44.0 },
+  map:    { s: 44.0, e: 49.2 },
+  proof:  { s: 48.6, e: 55.0 },
+  end:    { s: 55.0, e: 60.0 },
+};
+
+function App() {
+  return (
+    <Stage width={1080} height={1920} duration={60} background={VD.bg} persistKey="veradial-explainer-vertical">
+      <Backdrop/>
+      <Watermark/>
+      <SceneClock/>
+
+      <SceneOpen      start={T.open.s}  end={T.open.e}/>
+      <ScenePickNumber start={T.step1.s} end={T.step1.e}/>
+      <SceneBriefAI   start={T.step2.s} end={T.step2.e}/>
+      <SceneListen    start={T.step3.s} end={T.step3.e}/>
+      <SceneMap       start={T.map.s}   end={T.map.e}/>
+      <SceneProof     start={T.proof.s} end={T.proof.e}/>
+      <SceneEndCard   start={T.end.s}   end={T.end.e}/>
+
+      {/* Recurring teal sweep at every scene boundary — motion signature */}
+      <SceneSweep joins={[T.step1.s, T.step2.s, T.step3.s, T.map.s, T.proof.s, { at: T.end.s, emphatic: true }]}/>
+
+      <Captions/>
+      {!/[?&]render=1\b/.test(window.location.search) && <AudioTrack src="assets/glass-interface.mp3"/>}
+    </Stage>
+  );
+}
+
+// ── Audio sync ────────────────────────────────────────────────────────
+// Keeps an <audio> element locked to the Stage playhead + play state.
+// Tolerates small drift; re-seeks only when the delta exceeds a threshold.
+function AudioTrack({ src, volume = 1 }) {
+  const { time, playing } = useTimeline();
+  const audioRef = React.useRef(null);
+  const [muted, setMuted] = React.useState(false);
+  const [ready, setReady] = React.useState(false);
+
+  // Create the audio element once
+  React.useEffect(() => {
+    const a = new Audio(src);
+    a.preload = 'auto';
+    a.volume = volume;
+    a.addEventListener('canplaythrough', () => setReady(true), { once: true });
+    audioRef.current = a;
+    return () => { a.pause(); audioRef.current = null; };
+  }, [src]);
+
+  // Sync mute
+  React.useEffect(() => {
+    if (audioRef.current) audioRef.current.muted = muted;
+  }, [muted]);
+
+  // Sync play/pause
+  React.useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    if (playing) {
+      // Browsers block autoplay without user gesture; ignore the rejection.
+      a.play().catch(() => {});
+    } else {
+      a.pause();
+    }
+  }, [playing]);
+
+  // Sync time (re-seek if drift > 0.25s)
+  React.useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    const drift = Math.abs(a.currentTime - time);
+    if (drift > 0.25) {
+      try { a.currentTime = time; } catch (e) {}
+    }
+  }, [time]);
+
+  return (
+    <div style={{
+      position: 'absolute', top: 48, right: 48, zIndex: 30,
+      display: 'flex', alignItems: 'center', gap: 10,
+      fontFamily: 'ui-monospace, "SF Mono", Menlo, Consolas, monospace',
+      fontSize: 13, letterSpacing: '0.2em', textTransform: 'uppercase',
+      color: 'rgba(151,171,193,0.75)',
+      cursor: 'pointer',
+      userSelect: 'none',
+    }} onClick={() => setMuted(m => !m)}>
+      <span style={{
+        display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
+        background: ready ? (muted ? 'rgba(151,171,193,0.35)' : '#2ce8c8') : 'rgba(151,171,193,0.35)',
+        boxShadow: muted || !ready ? 'none' : '0 0 8px rgba(44, 232, 200, 0.65)',
+      }}/>
+      {muted ? 'audio · off' : (ready ? 'audio · on' : 'loading…')}
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+</script>
+</body>
+</html>

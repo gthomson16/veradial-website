@@ -61,6 +61,7 @@ public/screenshots/VeraDial App Store Screens v1/
 public/veradial-explainer*.mp4
 marketing/explainer/*.mp4
 marketing/explainer-vertical/*.mp4
+marketing/explainer*/package-lock.json
 marketing/demo-video/build/
 marketing/demo-video/input/clips/
 marketing/demo-video/input/Glass_Interface.mp3

@@ -1,0 +1,12 @@
+{
+  "name": "veradial-explainer-renderer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Headless render pipeline for the VeraDial 60s explainer (HTML/React → MP4).",
+  "scripts": {
+    "render": "./render.sh"
+  },
+  "dependencies": {
+    "puppeteer": "^23.11.1"
+  }
+}

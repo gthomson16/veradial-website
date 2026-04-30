@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 54" width="180" height="54">
+  <rect width="180" height="54" rx="8" fill="#000"></rect>
+  <rect x=".6" y=".6" width="178.8" height="52.8" rx="7.4" fill="none" stroke="#a6a6a6" stroke-width=".6"></rect>
+  
+  <g transform="translate(12, 12)">
+    <defs>
+      <linearGradient id="gpBlue" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#00A0FF"></stop>
+        <stop offset="1" stop-color="#00E1FF"></stop>
+      </linearGradient>
+      <linearGradient id="gpGreen" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#00A95A"></stop>
+        <stop offset="1" stop-color="#00F076"></stop>
+      </linearGradient>
+      <linearGradient id="gpRed" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#FFC800"></stop>
+        <stop offset="1" stop-color="#FF3A44"></stop>
+      </linearGradient>
+      <linearGradient id="gpYellow" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#FFE000"></stop>
+        <stop offset="1" stop-color="#FFBD00"></stop>
+      </linearGradient>
+    </defs>
+    
+    <path d="M0.4 0.4 C0.15 0.65 0 1.05 0 1.6 L0 28.4 C0 28.95 0.15 29.35 0.4 29.6 L14.9 15.1 L14.9 14.9 L0.4 0.4 Z" fill="url(#gpBlue)"></path>
+    
+    <path d="M19.7 19.9 L14.9 15.1 L14.9 14.9 L19.7 10.1 L19.8 10.15 L25.55 13.4 C27.2 14.3 27.2 15.7 25.55 16.6 L19.8 19.85 L19.7 19.9 Z" fill="url(#gpRed)"></path>
+    
+    <path d="M19.8 19.85 L14.9 15 L0.4 29.6 C0.95 30.2 1.85 30.3 2.85 29.7 L19.8 19.85" fill="url(#gpYellow)"></path>
+    
+    <path d="M19.8 10.15 L2.85 0.3 C1.85 -0.3 0.95 -0.2 0.4 0.4 L14.9 15 L19.8 10.15 Z" fill="url(#gpGreen)"></path>
+  </g>
+  <text x="48" y="22" fill="#fff" font-family="&#39;Roboto&#39;, &#39;Helvetica Neue&#39;, system-ui, sans-serif" font-size="8" letter-spacing="0.6">GET IT ON</text>
+  <text x="48" y="40" fill="#fff" font-family="&#39;Roboto&#39;, &#39;Helvetica Neue&#39;, system-ui, sans-serif" font-size="16" font-weight="500">Google Play</text>
+</svg>
