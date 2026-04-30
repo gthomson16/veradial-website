@@ -327,6 +327,98 @@ const SHARED_CRITERIA: Criterion[] = [
   },
 ];
 
+const TEXTNOW_CRITERIA: Criterion[] = [
+  {
+    title: "Ad-free professional experience",
+    description:
+      "A free, ad-supported number can work for personal use, but business calls need a clean app experience, reliable call setup, and no consumer-ad tradeoff in the workflow.",
+  },
+  {
+    title: "Number persistence",
+    description:
+      "If customers save the number, print it on a card, or use it for callbacks, make sure the provider is built around keeping a stable number rather than recycling inactive lines.",
+  },
+  {
+    title: "Verified caller identity",
+    description:
+      "Look for STIR/SHAKEN attestation and clear caller identity controls. Cheap second-line numbers often inherit spam reputation problems that hurt answer rates.",
+  },
+  {
+    title: "Business workflow support",
+    description:
+      "TextNow gives you calling and texting. A business replacement should add the missing layer: recordings, transcripts, AI calling, voicemail handling, and practical follow-up workflows.",
+  },
+];
+
+const SIDELINE_CRITERIA: Criterion[] = [
+  {
+    title: "Same-price feature depth",
+    description:
+      "Sideline sits at the same $9.99/mo price as VeraDial, so compare what is included at that price: AI calling, verification, recording, voicemail transcription, and SMS.",
+  },
+  {
+    title: "AI outbound calling",
+    description:
+      "A modern second line should do more than separate calls. Check whether the product can actually make routine calls on your behalf or only gives you another number to manage.",
+  },
+  {
+    title: "Verified caller ID",
+    description:
+      "Business answer rates depend on trust. Prioritize providers that explain their STIR/SHAKEN posture and let you present a verified number when calling customers.",
+  },
+  {
+    title: "Call records and transcripts",
+    description:
+      "If calls affect appointments, estimates, or follow-ups, call recording and transcripts matter. A basic second-line app leaves that documentation work on you.",
+  },
+];
+
+const BURNER_CRITERIA: Criterion[] = [
+  {
+    title: "Persistent identity vs. disposable use",
+    description:
+      "Burner is designed around throwaway numbers. For business, evaluate whether you need a long-term number customers can save, trust, and call back.",
+  },
+  {
+    title: "Number ownership and reputation",
+    description:
+      "Disposable and recycled numbers can carry past reputation problems. A business alternative should make the number feel owned, stable, and suitable for repeated customer contact.",
+  },
+  {
+    title: "Verified caller ID",
+    description:
+      "If outbound calls show as unknown or spam, the privacy benefit becomes a business liability. Look for STIR/SHAKEN verification and legitimate caller ID controls.",
+  },
+  {
+    title: "Business-ready automation",
+    description:
+      "Privacy apps stop at calling and texting. A business phone replacement should add AI calling, transcripts, voicemail, recordings, and follow-up context.",
+  },
+];
+
+const SPOOFCARD_CRITERIA: Criterion[] = [
+  {
+    title: "Legitimate caller ID control",
+    description:
+      "Avoid tools built around masking or impersonating caller ID. A business-safe alternative should display numbers you own or have verified, not arbitrary spoofed IDs.",
+  },
+  {
+    title: "STIR/SHAKEN attestation",
+    description:
+      "Carrier networks increasingly filter unverified caller ID. Look for clear A-level or B-level attestation language instead of claims about bypassing caller ID rules.",
+  },
+  {
+    title: "A real return channel",
+    description:
+      "Spoofing a number does not give you inbound calls, SMS, voicemail, or a persistent customer callback path. A business number should work both ways.",
+  },
+  {
+    title: "Compliance and transparency",
+    description:
+      "Business caller ID should be truthful and documented. Choose a provider that supports transparent AI calls, verified numbers, call records, and practical compliance defaults.",
+  },
+];
+
 /* ------------------------------------------------------------------ */
 /*  Page definitions                                                   */
 /* ------------------------------------------------------------------ */
@@ -931,7 +1023,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
           "No AI calling, no call recording, no caller ID control, no integration with business workflows. TextNow is a consumer second-line tool, not a business phone.",
       },
     ],
-    criteria: SHARED_CRITERIA,
+    criteria: TEXTNOW_CRITERIA,
     alternatives: [
       VERADIAL,
       GOOGLE_VOICE,
@@ -1002,7 +1094,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
           "At $9.99/mo, Sideline costs exactly what VeraDial does \u2014 but VeraDial includes AI calling, verified identity, call recording, and voicemail transcription. You\u2019re paying a Sideline price for a Sideline product when better exists.",
       },
     ],
-    criteria: SHARED_CRITERIA,
+    criteria: SIDELINE_CRITERIA,
     alternatives: [
       VERADIAL,
       GOOGLE_VOICE,
@@ -1073,7 +1165,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
           "You can\u2019t set a business caller name, verify a number you already own, or present different numbers to different contacts. Your call just shows up as another Burner number.",
       },
     ],
-    criteria: SHARED_CRITERIA,
+    criteria: BURNER_CRITERIA,
     alternatives: [
       VERADIAL,
       HUSHED,
@@ -1215,7 +1307,7 @@ export const ALTERNATIVES_PAGES: AlternativesPageData[] = [
           "SpoofCard is a single-feature service. There\u2019s no AI agent, no business workflow, no transcription, no integration with the way real businesses run calls.",
       },
     ],
-    criteria: SHARED_CRITERIA,
+    criteria: SPOOFCARD_CRITERIA,
     alternatives: [
       VERADIAL,
       OPENPHONE,

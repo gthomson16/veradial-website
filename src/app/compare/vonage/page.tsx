@@ -4,6 +4,7 @@ import {
   buildComparisonPageJsonLd,
 } from "@/lib/metadata-helpers";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GradientMesh } from "@/components/ui/GradientMesh";
@@ -15,9 +16,9 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 import { BottomLine } from "@/components/compare/BottomLine";
 import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
-const PAGE_TITLE = "VeraDial vs Vonage — Comparison";
+const PAGE_TITLE = "VeraDial vs Vonage — AI Business Phone Alternative";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Vonage side by side. See how modern AI calling with verified caller ID and call recording compares to a legacy business communications platform.";
+  "Compare VeraDial and Vonage: VeraDial is a $9.99/mo AI business phone app with verified caller ID, while Vonage is a broader legacy communications platform.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -146,6 +147,21 @@ const DIFFERENTIATORS = [
   },
 ];
 
+const RELATED_GUIDES = [
+  {
+    title: "AI calling for small business",
+    href: "/help/ai-calling-for-small-business",
+    description:
+      "What an out-of-the-box AI calling workflow looks like without building on APIs.",
+  },
+  {
+    title: "Why business numbers get marked spam",
+    href: "/help/why-business-number-marked-spam",
+    description:
+      "The caller trust problem behind verified business phone numbers.",
+  },
+] as const;
+
 export default function CompareVonagePage() {
   const breadcrumb = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -192,8 +208,9 @@ export default function CompareVonagePage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Vonage is a legacy communications platform shifting toward developer
-            APIs. VeraDial is a modern AI calling app with verified identity and
-            voice control built for individuals. Here&apos;s how they compare.
+            APIs. VeraDial is a focused AI business phone app for operators who
+            want verified caller ID, AI outbound calling, transcripts, and a
+            simple $9.99/mo line.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -341,6 +358,41 @@ export default function CompareVonagePage() {
       </section>
 
       <BottomLine verdict={COMPARE_VERDICTS.vonage} />
+
+      <section className="relative py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                Helpful guides
+              </p>
+              <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl">
+                Learn what matters before switching
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {RELATED_GUIDES.map((guide, index) => (
+              <ScrollReveal key={guide.href} delay={index * 80}>
+                <Link href={guide.href} className="block h-full">
+                  <Card className="h-full p-6">
+                    <h3 className="font-display text-lg font-semibold text-text-primary">
+                      {guide.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                      {guide.description}
+                    </p>
+                    <p className="mt-5 text-sm font-medium text-accent">
+                      Read guide →
+                    </p>
+                  </Card>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

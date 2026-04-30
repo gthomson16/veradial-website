@@ -29,7 +29,7 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 
 const PAGE_TITLE = "VeraDial Pricing — $9.99/mo flat, credits never expire";
 const PAGE_DESCRIPTION =
-  "One price, one plan: $9.99/mo per business line with 100 credits included monthly, a 3-day free trial, and optional top-up packs. No tiers, no seat fees, no expiring credits.";
+  "VeraDial is a $9.99/mo AI business phone app for iOS and Android. Get one business line, 100 monthly credits, a 3-day free trial, and credits that never expire.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -148,6 +148,27 @@ const CREDIT_EXAMPLES = [
     headline: "~100",
     label: "SMS messages",
     math: "100 × 1 credit",
+  },
+] as const;
+
+const PRICING_GUIDES = [
+  {
+    title: "AI calling for small business",
+    href: "/help/ai-calling-for-small-business",
+    description:
+      "See which calls are a good fit for AI and when a human should stay involved.",
+  },
+  {
+    title: "Appointment confirmation scripts",
+    href: "/help/appointment-confirmation-scripts",
+    description:
+      "Use the included credits for practical confirmation calls and reminders.",
+  },
+  {
+    title: "Why numbers show as Spam Likely",
+    href: "/help/why-business-number-marked-spam",
+    description:
+      "Understand verified caller ID before you pick a business phone provider.",
   },
 ] as const;
 
@@ -345,7 +366,7 @@ export default function PricingPage() {
             variant="hero"
           >
             <Tag size={14} className="mr-1.5" />
-            One price. One plan.
+            $9.99/mo AI business phone app
           </Badge>
 
           {/* Editorial price display */}
@@ -364,14 +385,14 @@ export default function PricingPage() {
           </p>
 
           <h1 className="mx-auto mt-10 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-            One price. No tiers.{" "}
-            <span className="text-accent">Credits that don&apos;t expire.</span>
+            AI calling, business SMS, and a verified number for{" "}
+            <span className="text-accent">$9.99/mo.</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
-            Everything VeraDial does — verified business calling, AI agent,
-            SMS, voicemail, recording — for less than most competitors charge
-            for a barebones second number.
+            Every VeraDial line includes a US or Canadian business number, 100
+            monthly credits, AI calling, SMS, voicemail transcription, call
+            recording, and verified caller ID. Available on iOS and Android.
           </p>
 
           {/* Hero proof chips */}
@@ -392,14 +413,19 @@ export default function PricingPage() {
               <CheckCircle2 size={14} />
               No seat fees · no contracts
             </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/3 px-3 py-1.5 text-text-secondary">
+              <Phone size={14} />
+              iOS + Android
+            </span>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button href={GOOGLE_PLAY_URL}>Start 3-day free trial</Button>
+            <Button href="#download-options">Start 3-day free trial</Button>
             <Button variant="ghost" href="#whats-included">
               See what&apos;s included
             </Button>
           </div>
+          <StoreBadges className="mt-6 justify-center" />
         </div>
       </section>
 
@@ -520,7 +546,10 @@ export default function PricingPage() {
                 </p>
               </div>
 
-              <div className="relative mt-8 flex flex-wrap items-center gap-4">
+              <div
+                id="download-options"
+                className="relative mt-8 flex flex-wrap items-center gap-4 scroll-mt-24"
+              >
                 <Button href={GOOGLE_PLAY_URL}>Start free trial</Button>
                 <StoreBadges />
               </div>
@@ -759,6 +788,47 @@ export default function PricingPage() {
               </Link>
             </p>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Helpful guides */}
+      <section className="relative py-20 sm:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                Helpful guides
+              </p>
+              <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
+                Before you choose a business phone app
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-text-secondary sm:text-lg">
+                Pricing only matters if the number gets answered and the call
+                workflow saves time. These guides explain the pieces behind the
+                plan.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {PRICING_GUIDES.map((guide, index) => (
+              <ScrollReveal key={guide.href} delay={index * 70}>
+                <Link href={guide.href} className="block h-full">
+                  <Card className="h-full p-6">
+                    <h3 className="font-display text-lg font-semibold text-text-primary">
+                      {guide.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                      {guide.description}
+                    </p>
+                    <p className="mt-5 text-sm font-medium text-accent">
+                      Read guide →
+                    </p>
+                  </Card>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 

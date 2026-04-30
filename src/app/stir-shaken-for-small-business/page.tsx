@@ -27,9 +27,9 @@ import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
 const PAGE_TITLE =
-  "STIR/SHAKEN for Small Business — Why Your Calls Get Flagged as Spam";
+  "Why Your Business Number Shows as Spam Likely — STIR/SHAKEN Guide";
 const PAGE_DESCRIPTION =
-  "STIR/SHAKEN is why your outbound business calls get labeled \"Scam Likely.\" A plain-English guide to A/B/C attestation, the TRACED Act, and how small businesses can get verified outbound calling.";
+  "Why business numbers get labeled Spam Likely, how STIR/SHAKEN A/B/C attestation works, and how small businesses can get verified outbound calling.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -296,8 +296,8 @@ export default function StirShakenForSmallBusinessPage() {
           </Badge>
 
           <h1 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-            STIR/SHAKEN{" "}
-            <span className="text-accent">for small business</span>
+            Why your business number shows as{" "}
+            <span className="text-accent">Spam Likely</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
@@ -309,6 +309,9 @@ export default function StirShakenForSmallBusinessPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Button variant="ghost" href="/help/why-business-number-marked-spam">
+              Practical fix checklist
+            </Button>
             <Button variant="ghost" href="#attestation-levels">
               Jump to attestation levels
             </Button>

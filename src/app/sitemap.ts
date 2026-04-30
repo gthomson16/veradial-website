@@ -3,6 +3,7 @@ import { statSync } from "node:fs";
 import { join } from "node:path";
 import { AREA_CODES } from "@/lib/area-codes";
 import { getAllAlternativesSlugs } from "@/lib/alternatives-data";
+import { getAllHelpSlugs } from "@/lib/help-content";
 import { COMPARE_SLUGS, USE_CASE_SLUGS } from "@/lib/route-slugs";
 
 const BASE_URL = "https://veradial.com";
@@ -51,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "lib",
     "area-codes.ts",
   );
+  const helpDataPath = join(process.cwd(), "src", "lib", "help-content.ts");
 
   const entries: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: lastModifiedFor("page.tsx") },
@@ -103,10 +105,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModifiedFor("screenshots/page.tsx"),
     },
     {
+      url: `${BASE_URL}/help`,
+      lastModified: lastModifiedFor("help/page.tsx"),
+    },
+    {
       url: `${BASE_URL}/use-cases`,
       lastModified: lastModifiedFor("use-cases/page.tsx"),
     },
   );
+
+  for (const slug of getAllHelpSlugs()) {
+    entries.push({
+      url: `${BASE_URL}/help/${slug}`,
+      lastModified: lastModifiedForAbs(helpDataPath),
+    });
+  }
+
   for (const slug of USE_CASE_SLUGS) {
     entries.push({
       url: `${BASE_URL}/use-cases/${slug}`,

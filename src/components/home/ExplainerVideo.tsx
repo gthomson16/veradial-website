@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { Play } from "lucide-react";
 
@@ -9,6 +10,7 @@ const POSTER_FALLBACK = `https://i.ytimg.com/vi/${VIDEO_ID}/hqdefault.jpg`;
 
 export function ExplainerVideo() {
   const [playing, setPlaying] = useState(false);
+  const [posterSrc, setPosterSrc] = useState(POSTER_URL);
 
   return (
     <section className="relative overflow-hidden py-24">
@@ -39,14 +41,17 @@ export function ExplainerVideo() {
                 onClick={() => setPlaying(true)}
                 className="group relative block h-full w-full cursor-pointer"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={POSTER_URL}
+                <Image
+                  src={posterSrc}
                   alt="VeraDial explainer video thumbnail"
+                  fill
                   loading="lazy"
-                  onError={(e) => {
-                    const img = e.currentTarget;
-                    if (img.src !== POSTER_FALLBACK) img.src = POSTER_FALLBACK;
+                  sizes="(max-width: 768px) 100vw, 1152px"
+                  quality={70}
+                  onError={() => {
+                    if (posterSrc !== POSTER_FALLBACK) {
+                      setPosterSrc(POSTER_FALLBACK);
+                    }
                   }}
                   className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
                 />

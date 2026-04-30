@@ -4,6 +4,7 @@ import {
   buildComparisonPageJsonLd,
 } from "@/lib/metadata-helpers";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GradientMesh } from "@/components/ui/GradientMesh";
@@ -15,9 +16,9 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 import { BottomLine } from "@/components/compare/BottomLine";
 import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
-const PAGE_TITLE = "VeraDial vs Dialpad — Comparison";
+const PAGE_TITLE = "VeraDial vs Dialpad — AI Calling vs Enterprise AI";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Dialpad side by side. See how personal AI calling with caller ID control compares to an enterprise-grade contact center platform.";
+  "Compare VeraDial and Dialpad: VeraDial makes AI outbound calls for solo operators, while Dialpad focuses on enterprise transcription, coaching, and contact center workflows.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -146,6 +147,21 @@ const DIFFERENTIATORS = [
   },
 ];
 
+const RELATED_GUIDES = [
+  {
+    title: "AI calling for small business",
+    href: "/help/ai-calling-for-small-business",
+    description:
+      "See the difference between AI that makes calls and AI that summarizes calls.",
+  },
+  {
+    title: "Appointment confirmation scripts",
+    href: "/help/appointment-confirmation-scripts",
+    description:
+      "A practical example of the small-business call workflows VeraDial is built for.",
+  },
+] as const;
+
 export default function CompareDialpadPage() {
   const breadcrumb = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -192,9 +208,9 @@ export default function CompareDialpadPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
             Dialpad is an enterprise communication platform built for scaling
-            teams and contact centers. VeraDial is built for solo professionals
-            who need AI to make calls, control their identity, and get more
-            done. Here&apos;s how they compare.
+            teams and contact centers. VeraDial is built for solo operators who
+            need AI to make outbound calls, use a verified business number, and
+            get transcripts without deploying an enterprise phone system.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -341,6 +357,41 @@ export default function CompareDialpadPage() {
       </section>
 
       <BottomLine verdict={COMPARE_VERDICTS.dialpad} />
+
+      <section className="relative py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                Helpful guides
+              </p>
+              <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl">
+                Understand the AI calling use case
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {RELATED_GUIDES.map((guide, index) => (
+              <ScrollReveal key={guide.href} delay={index * 80}>
+                <Link href={guide.href} className="block h-full">
+                  <Card className="h-full p-6">
+                    <h3 className="font-display text-lg font-semibold text-text-primary">
+                      {guide.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                      {guide.description}
+                    </p>
+                    <p className="mt-5 text-sm font-medium text-accent">
+                      Read guide →
+                    </p>
+                  </Card>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">

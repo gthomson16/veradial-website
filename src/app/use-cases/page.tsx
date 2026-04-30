@@ -12,9 +12,9 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 
-const PAGE_TITLE = "VeraDial Use Cases for Small Businesses";
+const PAGE_TITLE = "VeraDial Use Cases — AI Calling for Small Businesses";
 const PAGE_DESCRIPTION =
-  "See how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI calling and verified business numbers.";
+  "See how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI calling, appointment follow-ups, and verified business numbers.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -95,6 +95,27 @@ const USE_CASES = [
   },
 ];
 
+const GUIDE_LINKS = [
+  {
+    title: "AI calling for small business",
+    href: "/help/ai-calling-for-small-business",
+    description:
+      "What AI calling can handle, where it works best, and when to keep a human involved.",
+  },
+  {
+    title: "Appointment confirmation scripts",
+    href: "/help/appointment-confirmation-scripts",
+    description:
+      "Script examples for contractors, service teams, and any business trying to reduce no-shows.",
+  },
+  {
+    title: "Why business numbers get marked spam",
+    href: "/help/why-business-number-marked-spam",
+    description:
+      "A practical explanation of caller trust, STIR/SHAKEN, and number reputation.",
+  },
+] as const;
+
 function BreadcrumbJsonLd() {
   const jsonLd = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -158,6 +179,48 @@ export default function UseCasesPage() {
         </div>
       </section>
 
+      {/* Editorial intro */}
+      <section className="relative py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <ScrollReveal>
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+              <div>
+                <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                  How to use it
+                </p>
+                <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl">
+                  Pick the call workflow that saves the most time first
+                </h2>
+                <div className="mt-5 space-y-4 text-base leading-relaxed text-text-secondary">
+                  <p>
+                    VeraDial works best when the call has a clear job:
+                    confirming appointments, following up with leads, screening
+                    callers, or collecting a simple answer before you step in.
+                  </p>
+                  <p>
+                    The pages below show the same product from different
+                    operator workflows. A contractor cares about no-shows and
+                    access notes. A realtor cares about fast lead response. A
+                    recruiter cares about screening and scheduling without phone
+                    tag.
+                  </p>
+                </div>
+              </div>
+              <Card hover={false} className="p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted">
+                  Start with one repeatable call
+                </p>
+                <ul className="mt-5 space-y-3 text-sm leading-relaxed text-text-secondary">
+                  <li>1. Choose one high-volume call type.</li>
+                  <li>2. Give the AI a narrow goal and fallback path.</li>
+                  <li>3. Review transcripts before expanding the workflow.</li>
+                </ul>
+              </Card>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Use case grid */}
       <section className="relative py-20">
         <div className="mx-auto max-w-5xl px-6">
@@ -189,6 +252,43 @@ export default function UseCasesPage() {
                         </li>
                       ))}
                     </ul>
+                  </Card>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related guides */}
+      <section className="relative py-20">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,27,46,0.28),transparent_28%,rgba(11,27,46,0.18))]" />
+        <div className="relative mx-auto max-w-6xl px-6">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                Helpful guides
+              </p>
+              <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
+                Learn the workflows behind the use cases
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {GUIDE_LINKS.map((guide, index) => (
+              <ScrollReveal key={guide.href} delay={index * 70}>
+                <Link href={guide.href} className="block h-full">
+                  <Card className="h-full p-6">
+                    <h3 className="font-display text-lg font-semibold text-text-primary">
+                      {guide.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                      {guide.description}
+                    </p>
+                    <p className="mt-5 text-sm font-medium text-accent">
+                      Read guide →
+                    </p>
                   </Card>
                 </Link>
               </ScrollReveal>

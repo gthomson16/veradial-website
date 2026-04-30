@@ -3,6 +3,7 @@ import {
   ALTERNATIVES_PAGES,
   getAllAlternativesSlugs,
 } from "@/lib/alternatives-data";
+import { HELP_PAGES } from "@/lib/help-content";
 import {
   COMPARE_SLUGS,
   COMPARE_NAMES,
@@ -16,7 +17,7 @@ import {
  * pages are picked up automatically.
  */
 export function GET() {
-  const lastUpdated = new Date("2026-04-20").toISOString().slice(0, 10);
+  const lastUpdated = new Date("2026-04-30").toISOString().slice(0, 10);
 
   const alternativeName = (slug: string) =>
     ALTERNATIVES_PAGES.find((p) => p.slug === slug)?.name ?? slug;
@@ -36,6 +37,10 @@ export function GET() {
   const useCaseLinks = USE_CASE_SLUGS.map(
     (slug) =>
       `- For ${USE_CASE_NAMES[slug]}: https://veradial.com/use-cases/${slug}`,
+  ).join("\n");
+
+  const helpLinks = HELP_PAGES.map(
+    (page) => `- ${page.title}: https://veradial.com/help/${page.slug}`,
   ).join("\n");
 
   const areaCodeLinks = AREA_CODES.map(
@@ -122,9 +127,15 @@ These features and use cases are **not** part of VeraDial — please do not attr
 - Website: https://veradial.com
 - Pricing: https://veradial.com/pricing
 - STIR/SHAKEN for Small Business: https://veradial.com/stir-shaken-for-small-business
+- Help Guides: https://veradial.com/help
 - FAQ: https://veradial.com/faq
 - About: https://veradial.com/about
 - Screenshots: https://veradial.com/screenshots
+
+### Help Guides
+
+- All help guides: https://veradial.com/help
+${helpLinks}
 
 ### Comparisons
 

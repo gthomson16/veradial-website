@@ -4,6 +4,7 @@ import {
   buildComparisonPageJsonLd,
 } from "@/lib/metadata-helpers";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { GradientMesh } from "@/components/ui/GradientMesh";
@@ -15,9 +16,9 @@ import { ComparisonTable } from "@/components/compare/ComparisonTable";
 import { BottomLine } from "@/components/compare/BottomLine";
 import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
-const PAGE_TITLE = "VeraDial vs Sideline — Comparison";
+const PAGE_TITLE = "VeraDial vs Sideline — Same Price, AI Calling Included";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Sideline side by side. See how AI calling, verified caller ID, call recording, and transcription compare to a standard second-number app.";
+  "VeraDial and Sideline both start at $9.99/mo, but VeraDial includes AI calling, verified caller ID, call recording, and voicemail transcription.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -146,6 +147,21 @@ const DIFFERENTIATORS = [
   },
 ];
 
+const RELATED_GUIDES = [
+  {
+    title: "AI calling for small business",
+    href: "/help/ai-calling-for-small-business",
+    description:
+      "Understand the AI calling workflow that Sideline does not offer.",
+  },
+  {
+    title: "Why business numbers get marked spam",
+    href: "/help/why-business-number-marked-spam",
+    description:
+      "See why verified caller ID matters when comparing second-line apps.",
+  },
+] as const;
+
 export default function CompareSidelinePage() {
   const breadcrumb = buildBreadcrumbJsonLd([
     { name: "Home", path: "/" },
@@ -191,9 +207,9 @@ export default function CompareSidelinePage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
-            Sideline gives you a second phone number for business. VeraDial
-            gives you a verified identity with AI calling, call recording,
-            and transcription. Here&apos;s how they compare.
+            Sideline gives you a second phone number for business. VeraDial is
+            the same $9.99/mo price, but adds AI calling, verified caller ID,
+            call recording, voicemail transcription, and 100 monthly credits.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -342,6 +358,41 @@ export default function CompareSidelinePage() {
       </section>
 
       <BottomLine verdict={COMPARE_VERDICTS.sideline} />
+
+      <section className="relative py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                Helpful guides
+              </p>
+              <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl">
+                Compare the workflows behind the features
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {RELATED_GUIDES.map((guide, index) => (
+              <ScrollReveal key={guide.href} delay={index * 80}>
+                <Link href={guide.href} className="block h-full">
+                  <Card className="h-full p-6">
+                    <h3 className="font-display text-lg font-semibold text-text-primary">
+                      {guide.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                      {guide.description}
+                    </p>
+                    <p className="mt-5 text-sm font-medium text-accent">
+                      Read guide →
+                    </p>
+                  </Card>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <section className="relative overflow-hidden py-28">
