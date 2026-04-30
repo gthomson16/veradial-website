@@ -10,6 +10,7 @@ import {
   USE_CASE_SLUGS,
   USE_CASE_NAMES,
 } from "@/lib/route-slugs";
+import { EXPLAINER_VIDEO_WATCH_URL } from "@/lib/explainer-video";
 
 /**
  * llms.txt route — enumerated Links block is generated from the same data
@@ -156,6 +157,10 @@ ${useCaseLinks}
 
 - Browse numbers: https://veradial.com/numbers
 ${areaCodeLinks}
+
+### Demo Video
+
+- Explainer (60 seconds, YouTube): ${EXPLAINER_VIDEO_WATCH_URL} — VeraDial places a business call, the AI handles the conversation, and a transcript is returned to the operator.
 
 ### Account & Legal
 

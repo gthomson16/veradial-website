@@ -25,6 +25,7 @@ export type HelpPage = {
   sections: HelpSection[];
   faqs: HelpFaq[];
   relatedLinks: HelpLink[];
+  embedExplainerVideo?: boolean;
 };
 
 export const HELP_PAGES: HelpPage[] = [
@@ -135,6 +136,7 @@ export const HELP_PAGES: HelpPage[] = [
       "small business phone AI",
     ],
     eyebrow: "AI Calling",
+    embedExplainerVideo: true,
     intro:
       "AI calling works best when the call has a clear goal: confirm an appointment, follow up on a lead, collect basic information, or leave a concise message. It is not a replacement for judgment-heavy conversations, but it can remove a lot of routine phone work.",
     sections: [

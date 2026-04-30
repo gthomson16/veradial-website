@@ -1,5 +1,7 @@
 import { buildPageMetadata } from "@/lib/metadata-helpers";
 import { GOOGLE_PLAY_URL } from "@/lib/constants";
+import { buildExplainerVideoJsonLd } from "@/lib/explainer-video";
+import { SITE_URL } from "@/lib/metadata";
 import { Hero } from "@/components/home/Hero";
 import { SocialProof } from "@/components/home/SocialProof";
 import { ExplainerVideo } from "@/components/home/ExplainerVideo";
@@ -81,6 +83,17 @@ function OrganizationJsonLd() {
   );
 }
 
+function ExplainerVideoJsonLd() {
+  const jsonLd = buildExplainerVideoJsonLd(SITE_URL);
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 function SoftwareApplicationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -127,6 +140,7 @@ export default function Home() {
       <WebSiteJsonLd />
       <OrganizationJsonLd />
       <SoftwareApplicationJsonLd />
+      <ExplainerVideoJsonLd />
       <Hero />
       <SocialProof />
       <ExplainerVideo />

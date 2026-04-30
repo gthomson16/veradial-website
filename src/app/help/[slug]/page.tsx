@@ -7,12 +7,14 @@ import {
   buildPageMetadata,
 } from "@/lib/metadata-helpers";
 import { getAllHelpSlugs, getHelpPage } from "@/lib/help-content";
+import { buildExplainerVideoJsonLd } from "@/lib/explainer-video";
 import { GradientMesh } from "@/components/ui/GradientMesh";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { StoreBadges } from "@/components/ui/StoreBadges";
+import { ExplainerVideoPlayer } from "@/components/home/ExplainerVideo";
 
 export function generateStaticParams() {
   return getAllHelpSlugs().map((slug) => ({ slug }));
@@ -51,6 +53,19 @@ function HelpPageJsonLd({
     about: { "@id": "https://veradial.com/#app" },
     inLanguage: "en-US",
   };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+function HelpVideoJsonLd({ slug }: { slug: string }) {
+  const jsonLd = buildExplainerVideoJsonLd(
+    `https://veradial.com/help/${slug}`,
+  );
 
   return (
     <script
@@ -105,6 +120,9 @@ export default async function HelpArticlePage({
     <>
       <HelpPageJsonLd page={page} />
       <HelpFaqJsonLd page={page} />
+      {page.embedExplainerVideo ? (
+        <HelpVideoJsonLd slug={page.slug} />
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
@@ -131,6 +149,19 @@ export default async function HelpArticlePage({
               {page.intro}
             </p>
           </div>
+
+          {page.embedExplainerVideo ? (
+            <div className="relative mt-14">
+              <p className="mb-5 text-center text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                60-second walkthrough
+              </p>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-accent/8 blur-2xl"
+              />
+              <ExplainerVideoPlayer variant="compact" />
+            </div>
+          ) : null}
         </div>
       </section>
 

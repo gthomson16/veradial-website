@@ -3,15 +3,148 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Play } from "lucide-react";
+import {
+  EXPLAINER_VIDEO,
+  EXPLAINER_VIDEO_THUMBNAIL,
+  EXPLAINER_VIDEO_THUMBNAIL_FALLBACK,
+} from "@/lib/explainer-video";
 
-const VIDEO_ID = "dYBuhscT7TM";
-const POSTER_URL = `https://i.ytimg.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
-const POSTER_FALLBACK = `https://i.ytimg.com/vi/${VIDEO_ID}/hqdefault.jpg`;
+const VIDEO_ID = EXPLAINER_VIDEO.id;
+
+type PlayerVariant = "default" | "compact";
+
+type VariantStyle = {
+  frame: string;
+  playButton: string;
+  playIconMobile: number;
+  playIconDesktop: number;
+  showBadge: boolean;
+  showCaption: boolean;
+};
+
+const VARIANT_STYLES: Record<PlayerVariant, VariantStyle> = {
+  default: {
+    frame:
+      "rounded-[1.75rem] border-[3px] border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.45)]",
+    playButton: "h-[68px] w-[68px] sm:h-24 sm:w-24",
+    playIconMobile: 28,
+    playIconDesktop: 36,
+    showBadge: true,
+    showCaption: true,
+  },
+  compact: {
+    frame:
+      "rounded-2xl border border-border shadow-[0_20px_60px_rgba(0,0,0,0.35)]",
+    playButton: "h-14 w-14 sm:h-16 sm:w-16",
+    playIconMobile: 22,
+    playIconDesktop: 26,
+    showBadge: false,
+    showCaption: false,
+  },
+};
+
+export function ExplainerVideoPlayer({
+  variant = "default",
+}: {
+  variant?: PlayerVariant;
+}) {
+  const [playing, setPlaying] = useState(false);
+  const [posterSrc, setPosterSrc] = useState(EXPLAINER_VIDEO_THUMBNAIL);
+  const styles = VARIANT_STYLES[variant];
+
+  return (
+    <div
+      className={`relative aspect-video overflow-hidden bg-black ${styles.frame}`}
+    >
+      {!playing ? (
+        <button
+          type="button"
+          onClick={() => setPlaying(true)}
+          className="group relative block h-full w-full cursor-pointer"
+          aria-label="Play VeraDial explainer video"
+        >
+          <Image
+            src={posterSrc}
+            alt="VeraDial explainer video thumbnail"
+            fill
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 1152px"
+            quality={70}
+            onError={() => {
+              if (posterSrc !== EXPLAINER_VIDEO_THUMBNAIL_FALLBACK) {
+                setPosterSrc(EXPLAINER_VIDEO_THUMBNAIL_FALLBACK);
+              }
+            }}
+            className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
+          />
+
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30"
+          />
+
+          {styles.showBadge ? (
+            <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.2em] text-white/90 backdrop-blur-sm sm:left-6 sm:top-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent-secondary)]" />
+              1 min explainer
+            </div>
+          ) : null}
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative">
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full"
+                style={{ animation: "call-pulse 2.4s ease-out infinite" }}
+              />
+              <div
+                className={`relative flex items-center justify-center rounded-full bg-accent text-[var(--color-bg)] shadow-[0_20px_60px_rgba(115,242,195,0.4)] transition-transform duration-300 ease-out group-hover:scale-105 ${styles.playButton}`}
+              >
+                <Play
+                  size={styles.playIconMobile}
+                  strokeWidth={2}
+                  fill="currentColor"
+                  className="ml-[3px] sm:hidden"
+                />
+                <Play
+                  size={styles.playIconDesktop}
+                  strokeWidth={2}
+                  fill="currentColor"
+                  className="ml-[4px] hidden sm:block"
+                />
+              </div>
+            </div>
+          </div>
+
+          {styles.showCaption ? (
+            <div
+              aria-hidden="true"
+              className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[0.75rem] uppercase tracking-[0.22em] text-white/70 sm:bottom-7 sm:left-7 sm:right-7"
+            >
+              <span className="hidden sm:inline">
+                VeraDial &mdash; AI that makes your calls
+              </span>
+              <span className="ml-auto flex items-center gap-1.5 text-white/60">
+                <span className="h-px w-6 bg-white/40" />
+                Press play
+              </span>
+            </div>
+          ) : null}
+        </button>
+      ) : (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&playsinline=1&vq=hd1080&hd=1`}
+          title="VeraDial explainer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="h-full w-full"
+        />
+      )}
+    </div>
+  );
+}
 
 export function ExplainerVideo() {
-  const [playing, setPlaying] = useState(false);
-  const [posterSrc, setPosterSrc] = useState(POSTER_URL);
-
   return (
     <section className="relative overflow-hidden py-24">
       <div className="relative mx-auto max-w-7xl px-6">
@@ -34,83 +167,7 @@ export function ExplainerVideo() {
             className="pointer-events-none absolute -inset-10 -z-10 rounded-[2.5rem] bg-accent/10 blur-3xl"
           />
 
-          <div className="relative aspect-video overflow-hidden rounded-[1.75rem] border-[3px] border-white/10 bg-black shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
-            {!playing ? (
-              <button
-                type="button"
-                onClick={() => setPlaying(true)}
-                className="group relative block h-full w-full cursor-pointer"
-              >
-                <Image
-                  src={posterSrc}
-                  alt="VeraDial explainer video thumbnail"
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 1152px"
-                  quality={70}
-                  onError={() => {
-                    if (posterSrc !== POSTER_FALLBACK) {
-                      setPosterSrc(POSTER_FALLBACK);
-                    }
-                  }}
-                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
-                />
-
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30"
-                />
-
-                <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.2em] text-white/90 backdrop-blur-sm sm:left-6 sm:top-6">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent-secondary)]" />
-                  1 min explainer
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 rounded-full"
-                      style={{ animation: "call-pulse 2.4s ease-out infinite" }}
-                    />
-                    <div className="relative flex h-[68px] w-[68px] items-center justify-center rounded-full bg-accent text-[var(--color-bg)] shadow-[0_20px_60px_rgba(115,242,195,0.4)] transition-transform duration-300 ease-out group-hover:scale-105 sm:h-24 sm:w-24">
-                      <Play
-                        size={28}
-                        strokeWidth={2}
-                        fill="currentColor"
-                        className="ml-[3px] sm:hidden"
-                      />
-                      <Play
-                        size={36}
-                        strokeWidth={2}
-                        fill="currentColor"
-                        className="ml-[4px] hidden sm:block"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  aria-hidden="true"
-                  className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[0.75rem] uppercase tracking-[0.22em] text-white/70 sm:bottom-7 sm:left-7 sm:right-7"
-                >
-                  <span className="hidden sm:inline">VeraDial &mdash; AI that makes your calls</span>
-                  <span className="ml-auto flex items-center gap-1.5 text-white/60">
-                    <span className="h-px w-6 bg-white/40" />
-                    Press play
-                  </span>
-                </div>
-              </button>
-            ) : (
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&playsinline=1&vq=hd1080&hd=1`}
-                title="VeraDial explainer"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="h-full w-full"
-              />
-            )}
-          </div>
+          <ExplainerVideoPlayer variant="default" />
         </div>
       </div>
     </section>
