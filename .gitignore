@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -60,6 +60,7 @@ public/screenshots/VeraDial App Store Screens v1/
 # video explainers hosted on YouTube — don't ship mp4 files
 public/veradial-explainer*.mp4
 marketing/explainer/*.mp4
+marketing/explainer-vertical/*.mp4
 marketing/demo-video/build/
 marketing/demo-video/input/clips/
 marketing/demo-video/input/Glass_Interface.mp3
