@@ -13,7 +13,8 @@
     "video:mix": "bash marketing/demo-video/mix-music.sh",
     "video:sync-public": "node scripts/sync-marketing-video.mjs",
     "design:sync": "node scripts/design-sync.mjs",
-    "design:lint": "npx --yes @google/design.md@0.1.1 lint DESIGN.md"
+    "design:lint": "npx --yes @google/design.md@0.1.1 lint DESIGN.md",
+    "seo:validate": "tsx scripts/seo-validate.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -32,6 +33,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

@@ -5,6 +5,11 @@ import { AREA_CODES } from "@/lib/area-codes";
 import { getAllAlternativesSlugs } from "@/lib/alternatives-data";
 import { getAllHelpSlugs } from "@/lib/help-content";
 import { COMPARE_SLUGS, USE_CASE_SLUGS } from "@/lib/route-slugs";
+import {
+  getSitemapEligiblePages,
+  getCanonicalPath,
+} from "@/lib/seo/pageRegistry";
+import { assertRegistryValid } from "@/lib/seo/validatePages";
 
 const BASE_URL = "https://veradial.com";
 const APP_DIR = join(process.cwd(), "src", "app");
@@ -40,6 +45,10 @@ function lastModifiedForAbs(absolutePath: string): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Build-time gate: a violating page in the SEO registry fails the build
+  // here with a precise error rather than shipping a broken page.
+  assertRegistryValid();
+
   const alternativesDataPath = join(
     process.cwd(),
     "src",
@@ -53,6 +62,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "area-codes.ts",
   );
   const helpDataPath = join(process.cwd(), "src", "lib", "help-content.ts");
+  const seoFeaturesDataPath = join(
+    process.cwd(),
+    "src",
+    "lib",
+    "seo",
+    "data",
+    "features.ts",
+  );
 
   const entries: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: lastModifiedFor("page.tsx") },
@@ -125,6 +142,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({
       url: `${BASE_URL}/use-cases/${slug}`,
       lastModified: lastModifiedFor(`use-cases/${slug}/page.tsx`),
+    });
+  }
+
+  // SEO registry pages. Only `published` pages are included; `draft` and
+  // `noindex` entries are excluded by design.
+  for (const page of getSitemapEligiblePages()) {
+    entries.push({
+      url: `${BASE_URL}${getCanonicalPath(page)}`,
+      lastModified: lastModifiedForAbs(seoFeaturesDataPath),
     });
   }
 
