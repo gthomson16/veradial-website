@@ -4,24 +4,32 @@ Marketing site for VeraDial — AI-powered business calling app.
 
 ## Stack
 
-- Next.js 16 (App Router) with TypeScript
+- Next.js 16.1.x (App Router) with TypeScript
 - Tailwind CSS v4
 - Lucide React for icons
-- React 19
+- React 19.2.x
 - Vercel Analytics + Speed Insights
 
 ## Commands
 
 - `npm run dev` — local dev server
-- `npm run build` — production build
+- `npm run build` — production build; runs `postbuild` IndexNow ping afterward
+- `npm run start` — run the production build locally
 - `npm run lint` — ESLint
+- `npm run seo:validate` — validate SEO page registry / claim rules
+- `npm run design:sync` — regenerate `DESIGN.md` generated token blocks after editing `src/app/globals.css`
+- `npm run design:lint` — validate `DESIGN.md`
+- `ANALYZE=true npm run build -- --webpack` — bundle analyzer build when investigating client JS
+- `npm run video:frame`, `npm run video:render`, `npm run video:mix`, `npm run video:sync-public` — marketing/demo video asset workflow
 
 ## Structure
 
-- `src/app/` — pages (home, about, alternatives, compare, delete-account, faq, numbers, pricing, privacy, screenshots, stir-shaken-for-small-business, terms, use-cases)
-- `src/components/` — shared and page-specific components
-- `src/lib/` — constants, metadata, route slugs, area-code data, alternatives data, compare verdicts, use-case FAQs
+- `src/app/` — App Router pages/routes: home, about, alternatives, compare, delete-account, faq, features, help, numbers, pricing, privacy, screenshots, stir-shaken-for-small-business, terms, try demo, use-cases, `llms.txt`, sitemap, Open Graph image, `/api/demo-call`, and TikTok callback routes
+- `src/components/` — shared UI plus page/domain components (`home`, `compare`, `calls`, `faq`, `layout`, `use-cases`)
+- `src/lib/` — constants, metadata helpers, route slugs, area-code data, alternatives data, compare verdicts, demo copy/flags/presets, help content, explainer-video metadata, use-case FAQs, and SEO registry/fact/quality-rule modules
 - `src/fonts/` — self-hosted font files
+- `scripts/` — design token sync, sitemap/indexing helpers, marketing video sync, and SEO validation scripts
+- `marketing/` — generated and source assets for explainer/demo/TikTok marketing videos
 
 ## Product References
 
@@ -49,7 +57,7 @@ Secrets aren't stored in this repo. The mobile repo's `CLAUDE.md` has the full c
 - **Progress tracker:** `.agents/seo-progress.md` — read this first before starting any SEO/AIO work. Lists what's been completed, what's pending, and what's deferred. Update it when work is shipped (mark items ✅ with date + commit ref).
 - **GSC / Indexing / GA4 CLI:** scripts under `~/.claude/skills/seo/scripts/`: `gsc_query.py` (search analytics, sitemaps), `gsc_inspect.py` (URL indexation status, `--batch` supported), `indexing_notify.py` (Web Indexing API pings, 200/day quota), `ga4_report.py` (GA4 organic traffic), `pagespeed_check.py` (PSI lab + CrUX). GCP project: `canscanapp`; GA4 property: `properties/532843651`; GSC property: `sc-domain:veradial.com`. Auth is intentionally split: GSC/Indexing use the site-owner OAuth token at `~/.config/claude-seo/oauth-token.json`; GA4 uses keyless service-account impersonation via `veradial-seo-audit@canscanapp.iam.gserviceaccount.com`, with `~/.config/claude-seo/google-api.json` setting `impersonate_services` to `["ga4"]`. Org policy blocks long-lived service-account JSON keys, so keep using impersonation for GA4. GA4 Viewer access was granted via Analytics Admin API on 2026-04-30 and verified with `ga4_report.py`. Search Console rejects service accounts in the regular "Add user" / Full-user path because they are not Google Accounts; do not retry that path.
 - **Latest GSC/GA4 baseline:** `.agents/seo-baseline-2026-04-30.md` — April-to-date baseline plus the first `/help` or `/guides` hub picks. GSC page-level data shows 1,404 impressions / 23 clicks; GA4 organic shows 70 sessions / 41 users / 102 pageviews.
-- **Current SEO sprint plan:** `.agents/seo-sprint-plan-2026-04-30.md` — 4-week execution plan: Week 1 existing-page CTR, Week 2 `/help` MVP + `llms.txt`, Week 3 alternatives criteria differentiation (#19) + clean performance fix if identified, Week 4 one authority anchor, recheck around 2026-05-30.
+- **Current SEO sprint plan:** `.agents/seo-sprint-plan-2026-04-30.md` — original 4-week execution plan. Most Week 1-4 site changes were compressed and shipped on 2026-04-30; use `.agents/seo-progress.md` for current status before starting follow-on work. Recheck around 2026-05-30.
 - **Latest audit:** `.agents/seo-audit-2026-04-20/` — `ACTION-PLAN.md` (prioritized fix list) + `FULL-AUDIT-REPORT.md` (consolidated report) + per-specialist deep-dives (`backlinks`, `content`, `geo`, `google`, `performance`, `schema`, `sitemap`, `technical`).
 - **Previous audit:** `.agents/seo-audit-2026-04-16.md` + `.agents/seo-audit-{content,schema,geo,sitemap}.md` — kept for historical context.
 
