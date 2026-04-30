@@ -10,6 +10,7 @@ import {
   getCanonicalPath,
 } from "@/lib/seo/pageRegistry";
 import { assertRegistryValid } from "@/lib/seo/validatePages";
+import { STATIC_SITEMAP_PATHS } from "@/lib/seo/routes";
 
 const BASE_URL = "https://veradial.com";
 const APP_DIR = join(process.cwd(), "src", "app");
@@ -67,29 +68,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "area-codes.ts",
   );
   const helpDataPath = join(process.cwd(), "src", "lib", "help-content.ts");
-  const entries: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: lastModifiedFor("page.tsx") },
-    {
-      url: `${BASE_URL}/pricing`,
-      lastModified: lastModifiedFor("pricing/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/stir-shaken-for-small-business`,
-      lastModified: lastModifiedFor("stir-shaken-for-small-business/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/faq`,
-      lastModified: lastModifiedFor("faq/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/about`,
-      lastModified: lastModifiedFor("about/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/compare`,
-      lastModified: lastModifiedFor("compare/page.tsx"),
-    },
-  ];
+  const entries: MetadataRoute.Sitemap = STATIC_SITEMAP_PATHS.map(
+    ({ path, sourcePaths }) => ({
+      url: `${BASE_URL}${path === "/" ? "" : path}`,
+      lastModified: lastModifiedFor(...sourcePaths),
+    }),
+  );
 
   for (const slug of COMPARE_SLUGS) {
     entries.push({
@@ -98,34 +82,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  entries.push({
-    url: `${BASE_URL}/alternatives`,
-    lastModified: lastModifiedFor(
-      "alternatives/page.tsx",
-      "alternatives/[competitor]/page.tsx",
-    ),
-  });
   for (const slug of getAllAlternativesSlugs()) {
     entries.push({
       url: `${BASE_URL}/alternatives/${slug}`,
       lastModified: lastModifiedForAbs(alternativesDataPath),
     });
   }
-
-  entries.push(
-    {
-      url: `${BASE_URL}/screenshots`,
-      lastModified: lastModifiedFor("screenshots/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/help`,
-      lastModified: lastModifiedFor("help/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/use-cases`,
-      lastModified: lastModifiedFor("use-cases/page.tsx"),
-    },
-  );
 
   for (const slug of getAllHelpSlugs()) {
     entries.push({
@@ -150,31 +112,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  entries.push({
-    url: `${BASE_URL}/numbers`,
-    lastModified: lastModifiedFor("numbers/page.tsx"),
-  });
   for (const ac of AREA_CODES) {
     entries.push({
       url: `${BASE_URL}/numbers/${ac.code}`,
       lastModified: lastModifiedForAbs(areaCodesDataPath),
     });
   }
-
-  entries.push(
-    {
-      url: `${BASE_URL}/privacy`,
-      lastModified: lastModifiedFor("privacy/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/terms`,
-      lastModified: lastModifiedFor("terms/page.tsx"),
-    },
-    {
-      url: `${BASE_URL}/delete-account`,
-      lastModified: lastModifiedFor("delete-account/page.tsx"),
-    },
-  );
 
   return entries;
 }

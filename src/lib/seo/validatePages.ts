@@ -42,6 +42,7 @@ import { AREA_CODES } from "../area-codes";
 import { getAllAlternativesSlugs } from "../alternatives-data";
 import { getAllHelpSlugs } from "../help-content";
 import { COMPARE_SLUGS, USE_CASE_SLUGS } from "../route-slugs";
+import { STATIC_INTERNAL_PATHS } from "./routes";
 
 export type ValidationIssue = {
   level: "error" | "warning";
@@ -83,24 +84,6 @@ function getManualLinks(p: SeoPage): ManualLink[] {
   const ml = (payload as { manualLinks?: unknown }).manualLinks;
   return Array.isArray(ml) ? (ml as ManualLink[]) : [];
 }
-
-const STATIC_INTERNAL_PATHS = [
-  "/",
-  "/about",
-  "/alternatives",
-  "/compare",
-  "/delete-account",
-  "/faq",
-  "/help",
-  "/numbers",
-  "/pricing",
-  "/privacy",
-  "/screenshots",
-  "/stir-shaken-for-small-business",
-  "/terms",
-  "/try",
-  "/use-cases",
-] as const;
 
 function normalizeInternalHref(href: string): string | null {
   if (!href.startsWith("/") || href.startsWith("//")) return null;
