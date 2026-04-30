@@ -21,10 +21,9 @@ export type InternalLink = {
 
 /**
  * Manual links a page can declare in its payload. Both registry-internal
- * (`href: "/features/foo"`) and external-but-on-site links (`/pricing`,
- * `/help/...`) are valid — the engine does not gate by registry membership
- * for manual links because the existing site has many curated routes outside
- * the SEO engine.
+ * (`href: "/features/foo"`) and curated site routes (`/pricing`, `/help/...`)
+ * are valid. Route existence is enforced by the registry validator; this module
+ * only merges and orders the links.
  */
 export type ManualLink = {
   label: string;
@@ -65,21 +64,30 @@ export function scoreLinkRelevance(a: LinkablePage, b: LinkablePage): number {
   if (a.slug === b.slug && a.type === b.type) return 0;
 
   let score = 0;
+  let sharedSignals = 0;
 
   const aTags = a.tags ?? [];
   const bTags = b.tags ?? [];
   for (const tag of aTags) {
-    if (bTags.includes(tag)) score += 3;
+    if (bTags.includes(tag)) {
+      score += 3;
+      sharedSignals += 1;
+    }
   }
 
   for (const f of a.requiresFeatures) {
-    if (b.requiresFeatures.includes(f)) score += 2;
+    if (b.requiresFeatures.includes(f)) {
+      score += 2;
+      sharedSignals += 1;
+    }
   }
+
+  if (sharedSignals === 0) return 0;
 
   if (a.type === b.type) {
     score += 1;
   } else {
-    // Cross-cluster discovery — small bonus when both are content pages.
+    // Cross-cluster discovery, only after a real shared signal exists.
     score += 0.5;
   }
 

@@ -44,6 +44,11 @@ function lastModifiedForAbs(absolutePath: string): Date {
   }
 }
 
+function dateFromSeoPageDate(value: string): Date {
+  const date = new Date(`${value}T00:00:00Z`);
+  return Number.isNaN(date.getTime()) ? FALLBACK_DATE : date;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   // Build-time gate: a violating page in the SEO registry fails the build
   // here with a precise error rather than shipping a broken page.
@@ -62,15 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "area-codes.ts",
   );
   const helpDataPath = join(process.cwd(), "src", "lib", "help-content.ts");
-  const seoFeaturesDataPath = join(
-    process.cwd(),
-    "src",
-    "lib",
-    "seo",
-    "data",
-    "features.ts",
-  );
-
   const entries: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: lastModifiedFor("page.tsx") },
     {
@@ -150,7 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const page of getSitemapEligiblePages()) {
     entries.push({
       url: `${BASE_URL}${getCanonicalPath(page)}`,
-      lastModified: lastModifiedForAbs(seoFeaturesDataPath),
+      lastModified: dateFromSeoPageDate(page.updatedAt),
     });
   }
 

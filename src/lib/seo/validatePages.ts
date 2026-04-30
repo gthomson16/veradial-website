@@ -26,13 +26,22 @@ import {
   isFeaturePublishable,
   type FeatureKey,
 } from "./featureAvailability";
+import { collectFeatureClaimMatches } from "./claimRules";
 import {
   QUALITY_RULES,
   QUALITY_THRESHOLD,
   scorePageQuality,
 } from "./qualityRules";
 import { SEO_PAGES, type SeoPage } from "./pageRegistry";
-import { getInternalLinks, type ManualLink } from "./internalLinks";
+import {
+  getCanonicalPath,
+  getInternalLinks,
+  type ManualLink,
+} from "./internalLinks";
+import { AREA_CODES } from "../area-codes";
+import { getAllAlternativesSlugs } from "../alternatives-data";
+import { getAllHelpSlugs } from "../help-content";
+import { COMPARE_SLUGS, USE_CASE_SLUGS } from "../route-slugs";
 
 export type ValidationIssue = {
   level: "error" | "warning";
@@ -75,6 +84,52 @@ function getManualLinks(p: SeoPage): ManualLink[] {
   return Array.isArray(ml) ? (ml as ManualLink[]) : [];
 }
 
+const STATIC_INTERNAL_PATHS = [
+  "/",
+  "/about",
+  "/alternatives",
+  "/compare",
+  "/delete-account",
+  "/faq",
+  "/help",
+  "/numbers",
+  "/pricing",
+  "/privacy",
+  "/screenshots",
+  "/stir-shaken-for-small-business",
+  "/terms",
+  "/try",
+  "/use-cases",
+] as const;
+
+function normalizeInternalHref(href: string): string | null {
+  if (!href.startsWith("/") || href.startsWith("//")) return null;
+  const [withoutHash] = href.split("#");
+  const [path] = withoutHash.split("?");
+  if (!path) return "/";
+  return path.length > 1 ? path.replace(/\/+$/, "") : path;
+}
+
+function getKnownInternalPaths(): Set<string> {
+  const paths = new Set<string>(STATIC_INTERNAL_PATHS);
+
+  for (const slug of getAllHelpSlugs()) paths.add(`/help/${slug}`);
+  for (const slug of getAllAlternativesSlugs()) {
+    paths.add(`/alternatives/${slug}`);
+  }
+  for (const slug of COMPARE_SLUGS) paths.add(`/compare/${slug}`);
+  for (const slug of USE_CASE_SLUGS) paths.add(`/use-cases/${slug}`);
+  for (const areaCode of AREA_CODES) paths.add(`/numbers/${areaCode.code}`);
+
+  for (const page of SEO_PAGES) {
+    if (page.status === "published" || page.status === "noindex") {
+      paths.add(getCanonicalPath(page));
+    }
+  }
+
+  return paths;
+}
+
 function collectSourceIds(payload: Record<string, unknown>): string[] {
   const ids: string[] = [];
   function walk(v: unknown): void {
@@ -98,6 +153,7 @@ export function validateRegistry(): ValidationResult {
   const errors: ValidationIssue[] = [];
   const warnings: ValidationIssue[] = [];
   const scoresByPage: Record<string, number> = {};
+  const knownInternalPaths = getKnownInternalPaths();
 
   // Slug uniqueness within type.
   const seen = new Map<string, SeoPage>();
@@ -141,6 +197,35 @@ export function validateRegistry(): ValidationResult {
             message: `Unresolved claim source: "${referenced}"`,
           });
         }
+      }
+    }
+
+    for (const claim of collectFeatureClaimMatches(p)) {
+      if (!p.requiresFeatures.includes(claim.feature)) {
+        errors.push({
+          level: "error",
+          pageKey: key,
+          message: `Copy references ${claim.label} via "${claim.matchedText}" but requiresFeatures does not include "${claim.feature}". Add the feature key or remove the claim.`,
+        });
+      }
+    }
+
+    for (const link of getManualLinks(p)) {
+      const normalized = normalizeInternalHref(link.href);
+      if (!normalized) {
+        errors.push({
+          level: "error",
+          pageKey: key,
+          message: `Manual link "${link.href}" must be a site-relative internal URL so the validator can verify it.`,
+        });
+        continue;
+      }
+      if (!knownInternalPaths.has(normalized)) {
+        errors.push({
+          level: "error",
+          pageKey: key,
+          message: `Manual link "${link.href}" points to an unknown or non-routable internal URL.`,
+        });
       }
     }
 

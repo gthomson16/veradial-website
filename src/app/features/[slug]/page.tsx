@@ -22,6 +22,7 @@ import {
 import { SEO_PAGES, getCanonicalPath } from "@/lib/seo/pageRegistry";
 import { getInternalLinks } from "@/lib/seo/internalLinks";
 import { CLAIM_SOURCES } from "@/lib/seo/claimSources";
+import { assertRegistryValid } from "@/lib/seo/validatePages";
 import type { ClaimSourceId } from "@/lib/seo/types";
 
 const AUTHOR = {
@@ -42,7 +43,10 @@ function getPublishedFeature(slug: string): FeaturePage | undefined {
   return FEATURE_PAGES.find((p) => p.slug === slug && p.status === "published");
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
+  assertRegistryValid();
   return FEATURE_PAGES.filter((p) => p.status === "published").map((p) => ({
     slug: p.slug,
   }));

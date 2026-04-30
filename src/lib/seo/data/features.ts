@@ -13,6 +13,7 @@
 import type { SeoPageCore, ClaimSourceId } from "../types";
 import type { FeatureKey } from "../featureAvailability";
 import type { ManualLink } from "../internalLinks";
+import { PRODUCT_FACT_COPY } from "../productFacts";
 
 export type FeaturePagePayload = {
   featureKey: FeatureKey;
@@ -83,7 +84,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
           "Confirms, follows up, qualifies, and reminds — autonomously",
           "Identifies as AI on every call. No spoofing. No deception.",
           "Full transcript and summary delivered after every call",
-          "5 AI calls per hour, billed at 5 credits per minute",
+          `${PRODUCT_FACT_COPY.aiCallsPerHour}, billed at ${PRODUCT_FACT_COPY.aiCallRate}`,
         ],
       },
       capabilities: [
@@ -141,7 +142,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         {
           question: "How much does an AI call cost?",
           answer:
-            "AI calls bill at 5 credits per minute. The $9.99/mo line includes 100 credits, and credit packs run from $5.99 (100 credits) to $39.99 (1,000 credits). Credits never expire.",
+            `AI calls bill at ${PRODUCT_FACT_COPY.aiCallRate}. The ${PRODUCT_FACT_COPY.monthlyLine} line includes ${PRODUCT_FACT_COPY.monthlyIncludedCreditsShort}, and ${PRODUCT_FACT_COPY.creditPackRange}. ${PRODUCT_FACT_COPY.creditsNeverExpire}.`,
         },
         {
           question: "Are AI calls recorded?",
@@ -160,7 +161,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
           label: "Pricing",
           href: "/pricing",
           description:
-            "$9.99/mo per line, 100 included credits, and credit packs from $5.99.",
+            `${PRODUCT_FACT_COPY.monthlyLine}, ${PRODUCT_FACT_COPY.monthlyIncludedCredits}, and ${PRODUCT_FACT_COPY.creditPacksFrom}.`,
         },
         {
           label: "AI calling for small business",
@@ -206,7 +207,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
           "When someone calls your VeraDial number, the AI answers first, finds out who they are and why they're calling, and tells you. You decide whether to pick up — without saying a word.",
         bullets: [
           "Spam and unrelated calls go straight to voicemail",
-          "Real callers get a quick AI receptionist conversation",
+          "Real callers answer a brief AI screening question",
           "You see a one-line summary before deciding to pick up",
           "Voicemail transcripts arrive in seconds for the ones you skip",
         ],
@@ -259,7 +260,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         {
           question: "What does screening cost per call?",
           answer:
-            "Screening conversations are short — typically 15–45 seconds — and bill against AI call credits at 5 credits per minute. Most screened calls cost 1–4 credits.",
+            `Screening is designed to stay brief: VeraDial enforces a ${PRODUCT_FACT_COPY.aiScreeningMaxDuration} and ${PRODUCT_FACT_COPY.aiScreeningDailyCap}. Connected call time still bills like a normal inbound call.`,
         },
         {
           question: "Can I jump into the call live?",
@@ -267,9 +268,9 @@ export const FEATURE_PAGES: FeaturePage[] = [
             "Yes. When the AI tells you who's calling, you can pick up immediately and the AI hands you the call mid-stream.",
         },
         {
-          question: "Does this replace a full receptionist?",
+          question: "Does this replace a full answering service?",
           answer:
-            "Screening is a triage layer that filters spam and surfaces real callers. A full AI receptionist that takes detailed messages and books on a calendar is on the way — see the help center for current capabilities.",
+            "No. Screening is a triage layer that filters spam and surfaces real callers. Detailed intake, booking, and custom after-hours workflows are separate receptionist-style features that should stay human-reviewed until they ship.",
         },
         {
           question: "Will my real callers find this annoying?",
@@ -423,7 +424,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
     status: "published",
     title: "Business Phone Number: Real US & Canadian Numbers",
     description:
-      "Get a dedicated US or Canadian business phone number. Search by area code, region, or pattern. Local or toll-free. Up to 5 numbers per account, swap any time for $4.99.",
+      `Get a dedicated US or Canadian business phone number. Search by area code, region, or pattern. Local or toll-free. Up to ${PRODUCT_FACT_COPY.numbersPerAccount}, swap any time for ${PRODUCT_FACT_COPY.numberSwap}.`,
     keywords: [
       "business phone number",
       "second phone number for business",
@@ -447,8 +448,8 @@ export const FEATURE_PAGES: FeaturePage[] = [
         bullets: [
           "Local numbers in any US or Canadian area code",
           "Toll-free options when you want one number that works everywhere",
-          "Up to 5 lines per account, each with its own caller ID",
-          "Swap a number for $4.99 if you change markets or rebrand",
+          `Up to ${PRODUCT_FACT_COPY.numbersPerAccount}, each with its own caller ID`,
+          `Swap a number for ${PRODUCT_FACT_COPY.numberSwap} if you change markets or rebrand`,
         ],
       },
       capabilities: [
@@ -466,7 +467,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         },
         {
           title: "Number swap when needed",
-          body: "Markets change. Brands change. Swap your VeraDial number for $4.99 and the new line inherits the same plan and credits.",
+          body: `Markets change. Brands change. Swap your VeraDial number for ${PRODUCT_FACT_COPY.numberSwap} and the new line inherits the same plan and credits.`,
         },
         {
           title: "US and Canadian SMS",
@@ -509,7 +510,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         {
           question: "What does swapping a number cost?",
           answer:
-            "$4.99 per swap. The new number inherits your plan and credit balance — you don't lose anything by changing markets.",
+            `${PRODUCT_FACT_COPY.numberSwap} per swap. The new number inherits your plan and credit balance — you don't lose anything by changing markets.`,
         },
         {
           question: "Can I get an international number?",
@@ -527,7 +528,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         {
           label: "Pricing",
           href: "/pricing",
-          description: "Line subscription, included credits, and credit packs.",
+          description: `${PRODUCT_FACT_COPY.monthlyLine}, ${PRODUCT_FACT_COPY.monthlyIncludedCredits}, and top-ups.`,
         },
       ],
     },
@@ -561,8 +562,8 @@ export const FEATURE_PAGES: FeaturePage[] = [
           "Every voicemail on your VeraDial line is transcribed automatically. Decide whether to call back without playing the message.",
         bullets: [
           "Transcripts arrive seconds after the message lands",
-          "Custom greetings — record your own or pick from 6 AI voices",
-          "Up to 2-minute messages",
+          `Custom greetings — record your own or pick from ${PRODUCT_FACT_COPY.aiVoiceOptionsForGreetings}`,
+          `Up to ${PRODUCT_FACT_COPY.voicemailMaxMinutes}`,
           "Privacy-first push notifications — no message body on lock screen",
         ],
       },
@@ -573,11 +574,11 @@ export const FEATURE_PAGES: FeaturePage[] = [
         },
         {
           title: "Custom greetings",
-          body: "Pick from 6 AI voices for your greeting and have VeraDial generate it from a script, or record your own. You can change the greeting per line.",
+          body: `Pick from ${PRODUCT_FACT_COPY.aiVoiceOptionsForGreetings} for your greeting and have VeraDial generate it from a script, or record your own. You can change the greeting per line.`,
         },
         {
           title: "Two-minute message cap",
-          body: "Voicemails cap at 2 minutes. Long enough for real context — short enough to keep transcripts fast and storage manageable.",
+          body: `Voicemails cap at ${PRODUCT_FACT_COPY.voicemailMaxMinutes}. Long enough for real context — short enough to keep transcripts fast and storage manageable.`,
         },
         {
           title: "Privacy-first notifications",
@@ -648,7 +649,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
     status: "published",
     title: "Call Recording: One-Tap Recordings with Auto Transcripts",
     description:
-      "Tap once to record any call. Get the audio, the full transcript, and a searchable history. 3 credits per minute. Disclose recording in two-party-consent jurisdictions.",
+      `Tap once to record any call. Get the audio, the full transcript, and a searchable history. ${PRODUCT_FACT_COPY.recordedCallRateShort}. Disclose recording in two-party-consent jurisdictions.`,
     keywords: [
       "call recording",
       "record business calls",
@@ -673,7 +674,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
           "One-tap recording on any outbound call",
           "Automatic transcripts on every recorded call",
           "Searchable history across the entire account",
-          "3 credits per minute, vs 2 for unrecorded calls",
+          `${PRODUCT_FACT_COPY.recordedCallRateShort}, vs ${PRODUCT_FACT_COPY.standardCallRateShort} for unrecorded calls`,
         ],
       },
       capabilities: [
@@ -696,7 +697,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         },
         {
           title: "Costs visible up front",
-          body: "Recording adds 1 credit per minute on top of the standard rate. The cost is visible before you press record so there are no surprises.",
+          body: `Recording adds ${PRODUCT_FACT_COPY.recordingSurcharge} on top of the standard rate. The cost is visible before you press record so there are no surprises.`,
         },
       ],
       scenarios: [
@@ -726,7 +727,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         {
           question: "How much does call recording cost?",
           answer:
-            "Recording adds 1 credit per minute to the standard call rate (2 credits/min unrecorded → 3 credits/min recorded). AI calls bill at 5 credits/min and recordings of those bill the same way.",
+            `Recording adds ${PRODUCT_FACT_COPY.recordingSurcharge} to the standard call rate (${PRODUCT_FACT_COPY.standardCallRateShort} unrecorded → ${PRODUCT_FACT_COPY.recordedCallRateShort} recorded). AI calls bill at ${PRODUCT_FACT_COPY.aiCallRateShort}; recording those calls does not add a separate recording surcharge.`,
         },
         {
           question: "Can the AI disclose recording for me?",
@@ -759,7 +760,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
     status: "published",
     title: "Business SMS: Text from Your VeraDial Number",
     description:
-      "Send and receive SMS from your business number. Conversation threading, delivery tracking, and STOP/HELP compliance built in. Costs 1 credit per 160-character segment.",
+      `Send and receive SMS from your business number. Conversation threading, delivery tracking, and STOP/HELP compliance built in. Costs ${PRODUCT_FACT_COPY.smsSegmentRate}.`,
     keywords: [
       "business SMS",
       "business text messaging",
@@ -781,7 +782,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         subhead:
           "Send and receive SMS from the same number you call from. Threaded conversations, delivery tracking, and STOP/HELP handled.",
         bullets: [
-          "1 credit per 160-character segment",
+          PRODUCT_FACT_COPY.smsSegmentRate,
           "Conversation threading per contact",
           "Delivery status reporting",
           "Auto-handles STOP/HELP for compliance",
@@ -806,7 +807,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         },
         {
           title: "Per-segment pricing",
-          body: "1 credit per 160-character segment. Long messages split into segments — the cost is visible before you send.",
+          body: `${PRODUCT_FACT_COPY.smsSegmentRate}. Long messages split into segments — the cost is visible before you send.`,
         },
       ],
       scenarios: [
@@ -858,7 +859,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
           label: "Pricing",
           href: "/pricing",
           description:
-            "SMS billing per 160-character segment and credit pack pricing.",
+            `SMS billing at ${PRODUCT_FACT_COPY.smsSegmentRate} and credit pack pricing.`,
         },
       ],
     },
@@ -949,7 +950,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         {
           question: "Does forwarding cost extra?",
           answer:
-            "Forwarded calls bill at the standard call rate while connected to the target. AI screening runs against your AI call credits at 5 credits/min — most screened calls cost a few credits.",
+            `Forwarded calls bill at the standard call rate while connected to the target. AI screening is capped at a ${PRODUCT_FACT_COPY.aiScreeningMaxDuration} and ${PRODUCT_FACT_COPY.aiScreeningDailyCap}; connected call time still uses normal call billing.`,
         },
         {
           question: "Can I forward to multiple numbers in sequence?",
@@ -971,7 +972,7 @@ export const FEATURE_PAGES: FeaturePage[] = [
         {
           label: "Pricing",
           href: "/pricing",
-          description: "Forwarding billing and AI call rates.",
+          description: "Forwarding billing, call rates, and screening limits.",
         },
       ],
     },
