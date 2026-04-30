@@ -69,6 +69,15 @@ App-store optimization artifacts live in this repo (not the mobile repo) because
 - **Validate tokens:** `npm run design:lint` (runs `@google/design.md@0.1.1 lint`, pinned). Should be 0 errors. Warnings about unreferenced palette tokens are expected and informational — don't try to silence them by adding components you don't actually need.
 - Read `DESIGN.md` before making visual decisions — it has the accent rules, contrast floors, AI image/video prompt boilerplate, and the no-spoofing language guardrail.
 
+## Git Commit Policy
+
+- After the user approves an implementation or docs change, automatically stage only the files related to that task and create a focused commit once validation passes.
+- Do not ask "should I commit?" for normal completed work.
+- Do not push unless explicitly requested.
+- Do not commit unrelated dirty or untracked files.
+- Ask before committing if tests fail, the change includes secrets/credentials, destructive migrations, production configuration changes, store submission metadata, or the intended scope is unclear.
+- Prefer separate commits for unrelated scopes, e.g. website copy, SEO metadata, design assets, legal copy.
+
 ## Conventions
 
 - Use Tailwind utility classes for styling (tokens defined in `src/app/globals.css`, mirrored in `DESIGN.md`)
