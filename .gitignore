@@ -47,6 +47,8 @@ next-env.d.ts
 review/
 ACTION-PLAN.md
 FULL-AUDIT-REPORT.md
+!docs/agent/**/ACTION-PLAN.md
+!docs/agent/**/FULL-AUDIT-REPORT.md
 
 # root-level dev screenshots (playwright/MCP browser tools default here)
 /*.png

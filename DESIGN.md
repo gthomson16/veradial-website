@@ -140,7 +140,7 @@ brand:
 source_of_truth:
   tokens: src/app/globals.css
   copy_facts: ../VeraDial/website.md
-  marketing_context: .agents/product-marketing-context.md
+  marketing_context: docs/agent/product-marketing-context.md
   sync_command: npm run design:sync
 
 ai_generation:
@@ -252,6 +252,6 @@ For app UI shots, use real captures from
 
 - **Source of truth is `src/app/globals.css`** for colors. `DESIGN.md`'s `colors:` block is generated.
 - After editing the `@theme` block: run `npm run design:sync`, commit both files together.
-- When the brand voice shifts: update this file and `.agents/product-marketing-context.md` in the same commit.
+- When the brand voice shifts: update this file and `docs/agent/product-marketing-context.md` in the same commit.
 - When adding a new AI asset class (OG images, social clips, etc.): add a prompt template under `ai_generation:`.
 - Validate with `npx @google/design.md lint DESIGN.md` before committing significant token changes.
