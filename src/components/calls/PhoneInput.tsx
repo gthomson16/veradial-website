@@ -1,14 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-
-type CountryCode = "US" | "CA";
+import { useEffect, useMemo } from "react";
 
 type PhoneInputProps = {
   value: string;
   onChange: (value: string) => void;
   onValid?: (e164: string | null) => void;
-  allowedCountries?: CountryCode[];
   autoFocus?: boolean;
   disabled?: boolean;
 };
@@ -39,11 +36,9 @@ export function PhoneInput({
   value,
   onChange,
   onValid,
-  allowedCountries = ["US", "CA"],
   autoFocus = false,
   disabled = false,
 }: PhoneInputProps) {
-  const [country, setCountry] = useState<CountryCode>(allowedCountries[0] ?? "US");
   const formattedValue = useMemo(() => formatNanp(value), [value]);
   const e164 = useMemo(() => toE164(value), [value]);
 
@@ -53,24 +48,6 @@ export function PhoneInput({
 
   return (
     <div className="space-y-3">
-      <div className="flex w-fit rounded-full border border-border bg-surface p-1">
-        {allowedCountries.map((option) => (
-          <button
-            key={option}
-            type="button"
-            disabled={disabled}
-            onClick={() => setCountry(option)}
-            className={`h-9 rounded-full px-4 text-sm font-semibold transition-colors ${
-              country === option
-                ? "bg-accent text-bg"
-                : "text-text-secondary hover:bg-white/5 hover:text-text-primary"
-            }`}
-          >
-            {option}
-          </button>
-        ))}
-      </div>
-
       <label className="block">
         <span className="mb-2 block text-sm font-medium text-text-secondary">Phone number</span>
         <input
