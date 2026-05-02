@@ -68,9 +68,6 @@ export function Hero() {
                   </Button>
                 </>
               )}
-              <Button variant="ghost" href="/#pricing">
-                See Pricing
-              </Button>
             </div>
             <p className="mt-3 text-sm text-text-secondary">
               {isDemoFunnelEnabled
@@ -80,7 +77,7 @@ export function Hero() {
             {isDemoFunnelEnabled ? (
               <Link
                 href="/try"
-                className="mt-4 inline-flex max-w-xl items-start gap-3 rounded-2xl border border-accent/25 bg-accent/[0.06] px-4 py-3 text-left transition-colors hover:border-accent/45 hover:bg-accent/10"
+                className="mt-4 hidden max-w-xl items-start gap-3 rounded-2xl border border-accent/25 bg-accent/[0.06] px-4 py-3 text-left transition-colors hover:border-accent/45 hover:bg-accent/10 sm:inline-flex"
               >
                 <span
                   aria-hidden="true"
@@ -97,11 +94,17 @@ export function Hero() {
                 </span>
               </Link>
             ) : null}
-            <StoreBadges className="mt-6" />
+            <StoreBadges className="mt-6 hidden sm:block" />
           </div>
         </div>
 
-        <HeroPhone />
+        <div className="flex flex-col items-center gap-6">
+          <HeroPhone />
+          <StoreBadges
+            analyticsLocation="hero_mobile_store_badges"
+            className="sm:hidden"
+          />
+        </div>
       </div>
     </section>
   );
