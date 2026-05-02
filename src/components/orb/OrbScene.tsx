@@ -25,6 +25,8 @@ const AMP_BRIGHTNESS_GAIN = 0.25;
 const SCALE_SMOOTHING = 0.18;
 const BRIGHTNESS_SMOOTHING = 0.18;
 const STATE_COLOR_SMOOTHING = 0.06;
+const ROTATION_SMOOTHING = 0.1;
+const AMP_SCALE_SMOOTHING = 0.12;
 
 const SPHERE_POSITIONS = (() => {
   const points = generateFibonacciSphere(POINT_COUNT);
@@ -106,6 +108,8 @@ function ParticleSphere({
 }) {
   const config = ORB_STATE_CONFIG[state];
   const pointsRef = useRef<Points>(null);
+  const rotationSpeedRef = useRef(config.rotationSpeedRadPerSec);
+  const amplitudeScaleRef = useRef(config.amplitudeScale);
   const targetColor = useMemo(
     () => new THREE.Color(config.color),
     [config.color],
@@ -135,11 +139,18 @@ function ParticleSphere({
 
     u.uColor.value.lerp(targetColor, STATE_COLOR_SMOOTHING);
 
+    rotationSpeedRef.current +=
+      (config.rotationSpeedRadPerSec - rotationSpeedRef.current) *
+      ROTATION_SMOOTHING;
+    amplitudeScaleRef.current +=
+      (config.amplitudeScale - amplitudeScaleRef.current) *
+      AMP_SCALE_SMOOTHING;
+
     u.uRotationY.value =
-      (u.uRotationY.value + config.rotationSpeedRadPerSec * delta) %
+      (u.uRotationY.value + rotationSpeedRef.current * delta) %
       (Math.PI * 2);
 
-    const ampScaled = amp * config.amplitudeScale;
+    const ampScaled = amp * amplitudeScaleRef.current;
 
     const targetScale = config.baseScale + ampScaled * AMP_SCALE_GAIN;
     u.uScale.value =
