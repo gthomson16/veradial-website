@@ -61,7 +61,7 @@ function ModePill({ text, tone }: { text: string; tone: ModeTone }) {
   return (
     <div
       key={tone}
-      className={`hero-mockup-pill inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] ${
+      className={`hero-mockup-pill inline-flex max-w-full items-center gap-1.5 rounded-full px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] ${
         isInbound
           ? "border border-accent/30 bg-accent/10 text-accent"
           : "border border-accent-secondary/35 bg-accent-secondary/12 text-accent-secondary"
@@ -73,7 +73,7 @@ function ModePill({ text, tone }: { text: string; tone: ModeTone }) {
           isInbound ? "bg-accent" : "bg-accent-secondary"
         }`}
       />
-      {text}
+      <span className="min-w-0 truncate">{text}</span>
     </div>
   );
 }

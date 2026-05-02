@@ -36,12 +36,12 @@ export const MOCKUP_CONTACT = {
 } as const;
 
 const PILL_INBOUND = {
-  text: "AI screening · incoming",
+  text: "AI screening",
   tone: "screening",
 } as const;
 
 const PILL_OUTBOUND = {
-  text: "AI calling · follow-up",
+  text: "AI follow-up",
   tone: "follow-up",
 } as const;
 
