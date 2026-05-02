@@ -79,6 +79,14 @@ App-store optimization artifacts live in this repo (not the mobile repo) because
 - **Validate tokens:** `npm run design:lint` (runs `@google/design.md@0.1.1 lint`, pinned). Should be 0 errors. Warnings about unreferenced palette tokens are expected and informational — don't try to silence them by adding components you don't actually need.
 - Read `DESIGN.md` before making visual decisions — it has the accent rules, contrast floors, AI image/video prompt boilerplate, and the no-spoofing language guardrail.
 
+## Planning & Approval Guardrail
+
+- For substantial changes, stop after a written plan and wait for explicit user approval before editing files, installing packages, running deploy/config commands, or changing environment variables.
+- Treat these as substantial by default: adding/removing dependencies, replacing the homepage hero or primary conversion flow, adding WebGL/Three.js/canvas-heavy animation, changing design tokens, changing the public demo funnel, touching production config, deployments, migrations, or store metadata.
+- The plan must list intended files, dependencies or commands, user-facing behavior, risks/tradeoffs, and validation steps.
+- High-level product direction such as "I want this to be the centerpiece" is not implementation approval. Wait for a clear instruction like "implement this plan" or "go ahead."
+- Small copy, styling, or single-component edits can proceed directly when they do not add dependencies, alter launch/demo behavior, or materially change the primary conversion path.
+
 ## Git Commit Policy
 
 - After the user approves an implementation or docs change, automatically stage only the files related to that task and create a focused commit once validation passes.
