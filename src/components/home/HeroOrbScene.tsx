@@ -1,56 +1,148 @@
+/* eslint-disable react-hooks/immutability --
+ * three.js ShaderMaterial.uniforms is the documented mutation surface for
+ * per-frame animation. R3F's render loop reads these mutations directly; the
+ * React purity rules don't apply to GPU uniform state. */
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { MeshDistortMaterial } from "@react-three/drei";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { type ComponentRef, useEffect, useRef, useState } from "react";
-import type { Mesh } from "three";
+import { useEffect, useMemo, useRef, useState } from "react";
+import * as THREE from "three";
+import type { Points } from "three";
+import { generateFibonacciSphere } from "./heroOrbGeometry";
 import { type OrbCurve, getAmplitude, pickCurve } from "./heroOrbMotion";
 
 type HeroOrbSceneProps = {
   accent: string;
-  accentSecondary: string;
 };
 
+const POINT_COUNT = 800;
 const FRAME_INTERVAL_MS = 33;
+const AMP_SCALE_GAIN = 0.18;
+const AMP_BRIGHTNESS_GAIN = 0.25;
+const ROTATION_SPEED_RAD_PER_SEC = 0.6;
+const SCALE_SMOOTHING = 0.18;
+const BRIGHTNESS_SMOOTHING = 0.18;
+const BASE_BRIGHTNESS = 0.92;
 
-function Orb({
+const SPHERE_POSITIONS = (() => {
+  const points = generateFibonacciSphere(POINT_COUNT);
+  const arr = new Float32Array(POINT_COUNT * 3);
+  for (let i = 0; i < POINT_COUNT; i++) {
+    arr[i * 3] = points[i].x;
+    arr[i * 3 + 1] = points[i].y;
+    arr[i * 3 + 2] = points[i].z;
+  }
+  return arr;
+})();
+
+const vertexShader = /* glsl */ `
+  uniform float uRotationY;
+  uniform float uScale;
+  uniform float uPointSize;
+  uniform float uPixelRatio;
+  varying float vDepth;
+
+  void main() {
+    float c = cos(uRotationY);
+    float s = sin(uRotationY);
+    vec3 rotated = vec3(
+      position.x * c + position.z * s,
+      position.y,
+      -position.x * s + position.z * c
+    );
+    vDepth = (rotated.z + 1.0) * 0.5;
+
+    vec3 scaled = rotated * uScale;
+    vec4 mvPosition = modelViewMatrix * vec4(scaled, 1.0);
+    gl_Position = projectionMatrix * mvPosition;
+
+    float sizeMult = 0.85 + (1.0 - vDepth) * 0.55;
+    gl_PointSize = uPointSize * sizeMult * uPixelRatio;
+  }
+`;
+
+const fragmentShader = /* glsl */ `
+  uniform vec3 uColor;
+  uniform float uBrightness;
+  varying float vDepth;
+
+  void main() {
+    vec2 cuv = gl_PointCoord - vec2(0.5);
+    float dist = length(cuv);
+    float circular = smoothstep(0.5, 0.0, dist);
+    float depthAlpha = mix(1.0, 0.32, vDepth);
+    float alpha = circular * depthAlpha * uBrightness;
+    if (alpha < 0.01) discard;
+    gl_FragColor = vec4(uColor, alpha);
+  }
+`;
+
+function createParticleMaterial(color: string): THREE.ShaderMaterial {
+  return new THREE.ShaderMaterial({
+    uniforms: {
+      uRotationY: { value: 0 },
+      uScale: { value: 1.0 },
+      uPointSize: { value: 5.5 },
+      uPixelRatio: { value: 1.0 },
+      uColor: { value: new THREE.Color(color) },
+      uBrightness: { value: BASE_BRIGHTNESS },
+    },
+    vertexShader,
+    fragmentShader,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+}
+
+function ParticleSphere({
   amplitudeRef,
-  accent,
+  color,
 }: {
   amplitudeRef: React.MutableRefObject<number>;
-  accent: string;
+  color: string;
 }) {
-  const meshRef = useRef<Mesh>(null);
-  const materialRef = useRef<ComponentRef<typeof MeshDistortMaterial>>(null);
+  const pointsRef = useRef<Points>(null);
+  const material = useMemo(() => createParticleMaterial(color), [color]);
+  const { gl } = useThree();
 
-  useFrame(() => {
+  useEffect(() => {
+    material.uniforms.uPixelRatio.value = Math.min(gl.getPixelRatio(), 1.5);
+  }, [gl, material]);
+
+  useEffect(() => {
+    return () => {
+      material.dispose();
+    };
+  }, [material]);
+
+  useFrame((_, delta) => {
     const amp = amplitudeRef.current;
-    if (materialRef.current) {
-      materialRef.current.distort = 0.28 + amp * 0.32;
-    }
-    if (meshRef.current) {
-      meshRef.current.rotation.y += 0.0014;
-      meshRef.current.rotation.x = Math.sin(performance.now() * 0.0002) * 0.08;
-      const scale = 1 + amp * 0.05;
-      meshRef.current.scale.set(scale, scale, scale);
-    }
+    const u = material.uniforms;
+
+    u.uRotationY.value =
+      (u.uRotationY.value + ROTATION_SPEED_RAD_PER_SEC * delta) %
+      (Math.PI * 2);
+
+    const targetScale = 1.0 + amp * AMP_SCALE_GAIN;
+    u.uScale.value =
+      u.uScale.value + (targetScale - u.uScale.value) * SCALE_SMOOTHING;
+
+    const targetBrightness = BASE_BRIGHTNESS + amp * AMP_BRIGHTNESS_GAIN;
+    u.uBrightness.value =
+      u.uBrightness.value +
+      (targetBrightness - u.uBrightness.value) * BRIGHTNESS_SMOOTHING;
   });
 
   return (
-    <mesh ref={meshRef}>
-      <icosahedronGeometry args={[1, 32]} />
-      <MeshDistortMaterial
-        ref={materialRef}
-        color={accent}
-        emissive={accent}
-        emissiveIntensity={0.4}
-        roughness={0.35}
-        metalness={0.1}
-        distort={0.3}
-        speed={1.1}
-      />
-    </mesh>
+    <points ref={pointsRef} material={material}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          args={[SPHERE_POSITIONS, 3]}
+        />
+      </bufferGeometry>
+    </points>
   );
 }
 
@@ -86,7 +178,7 @@ function AmplitudeDriver({
   return null;
 }
 
-export function HeroOrbScene({ accent, accentSecondary }: HeroOrbSceneProps) {
+export function HeroOrbScene({ accent }: HeroOrbSceneProps) {
   const amplitudeRef = useRef(0);
   const [curve] = useState<OrbCurve>(() => pickCurve());
   const [startOffsetMs] = useState<number>(() => Math.random() * 1500);
@@ -101,20 +193,9 @@ export function HeroOrbScene({ accent, accentSecondary }: HeroOrbSceneProps) {
         powerPreference: "low-power",
         preserveDrawingBuffer: false,
       }}
-      camera={{ position: [0, 0, 2.6], fov: 45 }}
+      camera={{ position: [0, 0, 3.2], fov: 45 }}
     >
-      <ambientLight intensity={0.25} />
-      <pointLight position={[2, 2, 2.4]} intensity={1.1} color={accent} />
-      <pointLight position={[-2, -1.5, 1.6]} intensity={0.6} color={accentSecondary} />
-      <Orb amplitudeRef={amplitudeRef} accent={accent} />
-      <EffectComposer multisampling={0}>
-        <Bloom
-          intensity={0.9}
-          luminanceThreshold={0.18}
-          luminanceSmoothing={0.65}
-          mipmapBlur
-        />
-      </EffectComposer>
+      <ParticleSphere amplitudeRef={amplitudeRef} color={accent} />
       <AmplitudeDriver
         amplitudeRef={amplitudeRef}
         curve={curve}

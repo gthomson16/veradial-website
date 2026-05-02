@@ -10,7 +10,6 @@ const HeroOrbScene = dynamic(
 
 type HeroOrbCanvasProps = {
   accent: string;
-  accentSecondary: string;
 };
 
 function probeWebGL(): boolean {
@@ -53,7 +52,7 @@ const INTERSECTION_ROOT_MARGIN = "200px";
 const IDLE_DEADLINE_MS = 3000;
 const IDLE_FALLBACK_MS = 1500;
 
-export function HeroOrbCanvas({ accent, accentSecondary }: HeroOrbCanvasProps) {
+export function HeroOrbCanvas({ accent }: HeroOrbCanvasProps) {
   const capable = useSyncExternalStore(
     subscribeCapable,
     getCapableClientSnapshot,
@@ -130,9 +129,7 @@ export function HeroOrbCanvas({ accent, accentSecondary }: HeroOrbCanvasProps) {
 
   return (
     <div ref={wrapperRef} aria-hidden="true" className="absolute inset-0">
-      {ready ? (
-        <HeroOrbScene accent={accent} accentSecondary={accentSecondary} />
-      ) : null}
+      {ready ? <HeroOrbScene accent={accent} /> : null}
     </div>
   );
 }
