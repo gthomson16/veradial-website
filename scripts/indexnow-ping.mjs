@@ -11,8 +11,10 @@ const RECENT_DAYS = 7;
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
 
 async function main() {
-  if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production") {
-    console.log(`[indexnow] skipping (VERCEL_ENV=${process.env.VERCEL_ENV})`);
+  if (process.env.VERCEL_ENV !== "production") {
+    console.log(
+      `[indexnow] skipping (VERCEL_ENV=${process.env.VERCEL_ENV ?? "unset"})`,
+    );
     return;
   }
 
