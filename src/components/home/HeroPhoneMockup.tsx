@@ -36,6 +36,26 @@ function useReducedMotion(): boolean {
   );
 }
 
+const MOBILE_QUERY = "(max-width: 639.98px)";
+
+const subscribeMobile = (cb: () => void) => {
+  const mq = window.matchMedia(MOBILE_QUERY);
+  mq.addEventListener("change", cb);
+  return () => mq.removeEventListener("change", cb);
+};
+
+const getMobileSnapshot = () => window.matchMedia(MOBILE_QUERY).matches;
+
+const getMobileServerSnapshot = () => false;
+
+function useIsMobile(): boolean {
+  return useSyncExternalStore(
+    subscribeMobile,
+    getMobileSnapshot,
+    getMobileServerSnapshot,
+  );
+}
+
 function ModePill({ text, tone }: { text: string; tone: ModeTone }) {
   const isInbound = tone === "screening";
   return (
@@ -120,7 +140,7 @@ function BubbleNode({ bubble }: { bubble: Bubble }) {
       className={`hero-mockup-bubble flex ${isAi ? "justify-start" : "justify-end"}`}
     >
       <div
-        className={`max-w-[88%] rounded-2xl px-3 py-1.5 text-[10.5px] leading-snug ${
+        className={`max-w-[88%] rounded-2xl px-3 py-1.5 text-[11.5px] leading-snug ${
           isAi
             ? "rounded-bl-sm border border-accent/25 bg-accent/[0.08] text-text-primary"
             : "rounded-br-sm border border-white/8 bg-card text-text-secondary"
@@ -185,18 +205,18 @@ function ResultCard({
   return (
     <div
       key={contentKey}
-      className="hero-mockup-result rounded-xl border border-accent/22 bg-card-hover/85 px-3 py-2"
+      className="hero-mockup-result rounded-xl border border-accent/30 bg-card-hover/90 px-3.5 py-2.5 shadow-[0_8px_24px_rgba(115,242,195,0.10)]"
     >
       <div className="flex items-start gap-2">
         <span className="mt-0.5">
           <CheckIcon key={`${contentKey}-check`} />
         </span>
         <div className="min-w-0">
-          <p className="text-[10.5px] font-semibold leading-tight text-text-primary">
+          <p className="text-[12px] font-semibold leading-tight text-text-primary">
             {headline}
           </p>
           {sub ? (
-            <p className="mt-0.5 text-[9.5px] leading-snug text-text-muted">
+            <p className="mt-1 text-[10.5px] leading-snug text-text-muted">
               {sub}
             </p>
           ) : null}
@@ -209,11 +229,11 @@ function ResultCard({
 function ActionChip({ text }: { text: string }) {
   return (
     <div
-      className="hero-mockup-chip relative overflow-hidden rounded-xl border border-accent/35 bg-surface/80 px-3 py-2"
+      className="hero-mockup-chip relative overflow-hidden rounded-xl border border-accent/35 bg-surface/80 px-3.5 py-2.5"
       role="presentation"
     >
       <div className="flex items-center justify-between gap-2">
-        <span className="text-[10.5px] font-semibold text-text-primary">
+        <span className="text-[11.5px] font-semibold text-text-primary">
           {text}
         </span>
         <ArrowRight
@@ -263,12 +283,17 @@ function PhaseScreen({ frame }: { frame: MockupFrame }) {
   );
 }
 
-const FIRST_TICK_MS = 60;
+const FIRST_TICK_MS = 1700;
+const RINGING_INDEX = HERO_MOCKUP_FRAMES.findIndex(
+  (f) => f.phase === "inbound:ringing",
+);
+const POST_RINGING_INDEX = RINGING_INDEX + 1;
 
 export function HeroPhoneMockup() {
   const containerRef = useRef<HTMLDivElement>(null);
   const hasStartedRef = useRef(false);
   const reducedMotion = useReducedMotion();
+  const isMobile = useIsMobile();
   const [inView, setInView] = useState(true);
   const [hovered, setHovered] = useState(false);
   const [frameIndex, setFrameIndex] = useState(HERO_MOCKUP_FINAL_INDEX);
@@ -293,18 +318,27 @@ export function HeroPhoneMockup() {
     if (reducedMotion) return;
     if (!inView || hovered) return;
 
+    const startIndex = isMobile ? POST_RINGING_INDEX : RINGING_INDEX;
+
     if (!hasStartedRef.current) {
       hasStartedRef.current = true;
-      const startTimer = window.setTimeout(() => setFrameIndex(0), FIRST_TICK_MS);
+      const startTimer = window.setTimeout(
+        () => setFrameIndex(startIndex),
+        FIRST_TICK_MS,
+      );
       return () => window.clearTimeout(startTimer);
     }
 
     const frame = HERO_MOCKUP_FRAMES[frameIndex];
     const timer = window.setTimeout(() => {
-      setFrameIndex((i) => (i + 1) % HERO_MOCKUP_FRAMES.length);
+      setFrameIndex((i) => {
+        const next = (i + 1) % HERO_MOCKUP_FRAMES.length;
+        if (isMobile && next === RINGING_INDEX) return POST_RINGING_INDEX;
+        return next;
+      });
     }, frame.durationMs);
     return () => window.clearTimeout(timer);
-  }, [frameIndex, reducedMotion, inView, hovered]);
+  }, [frameIndex, reducedMotion, inView, hovered, isMobile]);
 
   const frame = HERO_MOCKUP_FRAMES[frameIndex];
 
