@@ -3,7 +3,7 @@ import { buildPageMetadata } from "@/lib/metadata-helpers";
 export const metadata = buildPageMetadata({
   title: "Delete Your Account",
   description:
-    "How to delete your VeraDial account and what happens to your data.",
+    "Learn how to delete your VeraDial account, what data is removed, what may be retained for compliance, and how to cancel subscriptions first.",
   path: "/delete-account",
 });
 
@@ -11,7 +11,9 @@ export default function DeleteAccountPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Delete Your Account</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: April 11, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">
+        Last updated: April 11, 2026
+      </p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -25,10 +27,16 @@ export default function DeleteAccountPage() {
             </p>
             <ol className="list-decimal space-y-1 pl-5">
               <li>
-                Open the <strong className="text-text-primary">VeraDial</strong> app
+                Open the <strong className="text-text-primary">VeraDial</strong>{" "}
+                app
               </li>
-              <li>Go to <strong className="text-text-primary">Settings</strong></li>
-              <li>Tap <strong className="text-text-primary">Delete Account</strong></li>
+              <li>
+                Go to <strong className="text-text-primary">Settings</strong>
+              </li>
+              <li>
+                Tap{" "}
+                <strong className="text-text-primary">Delete Account</strong>
+              </li>
               <li>
                 Type <strong className="text-text-primary">DELETE</strong> to
                 confirm
@@ -63,13 +71,21 @@ export default function DeleteAccountPage() {
               erased:
             </p>
             <ul className="list-disc space-y-1 pl-5">
-              <li>Profile information, caller identity, and verified caller IDs</li>
-              <li>Purchased VeraDial phone numbers, which are released back to the carrier</li>
+              <li>
+                Profile information, caller identity, and verified caller IDs
+              </li>
+              <li>
+                Purchased VeraDial phone numbers, which are released back to the
+                carrier
+              </li>
               <li>Call history, voicemail, and related transcripts</li>
               <li>Text messages and SMS consent records</li>
               <li>AI call history, notes, transcripts, and summaries</li>
               <li>Voicemail greetings and uploaded greeting audio</li>
-              <li>Support tickets, push tokens, account balance, credits, and subscriptions</li>
+              <li>
+                Support tickets, push tokens, account balance, credits, and
+                subscriptions
+              </li>
             </ul>
           </div>
         </section>

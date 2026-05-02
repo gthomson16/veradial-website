@@ -2,7 +2,8 @@ import { buildPageMetadata } from "@/lib/metadata-helpers";
 
 export const metadata = buildPageMetadata({
   title: "Privacy Policy",
-  description: "VeraDial Privacy Policy — how we collect, use, and protect your data.",
+  description:
+    "Read VeraDial's Privacy Policy for details on account data, phone numbers, calls, SMS, recordings, transcripts, location, and third-party services.",
   path: "/privacy",
 });
 
@@ -10,7 +11,9 @@ export default function PrivacyPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: April 23, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">
+        Last updated: April 23, 2026
+      </p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -19,117 +22,136 @@ export default function PrivacyPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              <strong className="text-text-primary">Account data:</strong> When you create
-              an account, we collect your email address and profile information through
-              Supabase Auth.
+              <strong className="text-text-primary">Account data:</strong> When
+              you create an account, we collect your email address and profile
+              information through Supabase Auth.
             </p>
             <p>
-              <strong className="text-text-primary">Caller profile:</strong> If you use AI
-              Calling, we store your display name, website, and caller context that you
-              provide. These are used to identify you on AI calls and voicemail greetings.
+              <strong className="text-text-primary">Caller profile:</strong> If
+              you use AI Calling, we store your display name, website, and
+              caller context that you provide. These are used to identify you on
+              AI calls and voicemail greetings.
             </p>
             <p>
-              <strong className="text-text-primary">Phone numbers:</strong> We store
-              information about your purchased phone numbers (including Twilio SID,
-              capabilities, region, and country) and any verified caller IDs you add.
+              <strong className="text-text-primary">Phone numbers:</strong> We
+              store information about your purchased phone numbers (including
+              Twilio SID, capabilities, region, and country) and any verified
+              caller IDs you add.
             </p>
             <p>
-              <strong className="text-text-primary">Call records:</strong> We maintain call
-              logs including from/to numbers, duration, timestamps, and
-              Twilio call SID for your account history.
+              <strong className="text-text-primary">Call records:</strong> We
+              maintain call logs including from/to numbers, duration,
+              timestamps, and Twilio call SID for your account history.
             </p>
             <p>
-              <strong className="text-text-primary">Call recordings:</strong> When you
-              enable call recording on outbound calls or AI calls, dual-channel audio is
-              recorded by Twilio and stored on their servers. We store a reference to the
-              recording and provide playback through our app.
+              <strong className="text-text-primary">Call recordings:</strong>{" "}
+              When you enable call recording on outbound calls or AI calls,
+              dual-channel audio is recorded by Twilio and stored on their
+              servers. We store a reference to the recording and provide
+              playback through our app.
             </p>
             <p>
-              <strong className="text-text-primary">Call transcripts:</strong> When you
-              record a call, the audio is automatically sent to a third-party speech
-              recognition service (Deepgram) for transcription. We store structured
-              transcripts including speaker identification, text, and timestamps alongside
-              the call record.
+              <strong className="text-text-primary">Call transcripts:</strong>{" "}
+              When you record a call, the audio is automatically sent to a
+              third-party speech recognition service (Deepgram) for
+              transcription. We store structured transcripts including speaker
+              identification, text, and timestamps alongside the call record.
             </p>
             <p>
-              <strong className="text-text-primary">Call screening data:</strong> When call
-              screening is enabled, we store the screening interaction data including the
-              caller&apos;s stated identity and intent, a conversation identifier, and
-              timestamp.
+              <strong className="text-text-primary">
+                Call screening data:
+              </strong>{" "}
+              When call screening is enabled, we store the screening interaction
+              data including the caller&apos;s stated identity and intent, a
+              conversation identifier, and timestamp.
             </p>
             <p>
-              <strong className="text-text-primary">Call forwarding:</strong> If you
-              configure call forwarding, we store your forwarding phone number and
-              enabled/disabled preference on your profile.
+              <strong className="text-text-primary">Call forwarding:</strong> If
+              you configure call forwarding, we store your forwarding phone
+              number and enabled/disabled preference on your profile.
             </p>
             <p>
-              <strong className="text-text-primary">Location data:</strong> When you make
-              or receive calls, we may collect your device&apos;s GPS coordinates to
-              associate a location with the call record. Location data is used to display
-              your calls on the Call Map feature. Location collection requires your
-              permission and can be disabled through your device&apos;s system settings.
+              <strong className="text-text-primary">Location data:</strong> When
+              you make or receive calls, we may collect your device&apos;s GPS
+              coordinates to associate a location with the call record. Location
+              data is used to display your calls on the Call Map feature.
+              Location collection requires your permission and can be disabled
+              through your device&apos;s system settings.
             </p>
             <p>
-              <strong className="text-text-primary">SMS content:</strong> We store message
-              bodies, sender/recipient numbers, timestamps, and delivery status for
-              messages sent and received through the service.
+              <strong className="text-text-primary">SMS content:</strong> We
+              store message bodies, sender/recipient numbers, timestamps, and
+              delivery status for messages sent and received through the
+              service.
             </p>
             <p>
-              <strong className="text-text-primary">Consent records:</strong> We maintain
-              SMS consent status and timestamps to comply with telecommunications
-              regulations.
+              <strong className="text-text-primary">Consent records:</strong> We
+              maintain SMS consent status and timestamps to comply with
+              telecommunications regulations.
             </p>
             <p>
-              <strong className="text-text-primary">Voicemail:</strong> We store voicemail
-              recordings, transcriptions, duration, and caller information for voicemails
-              left on your VeraDial number. Voicemail audio is recorded and transcribed by
-              Twilio.
+              <strong className="text-text-primary">Voicemail:</strong> We store
+              voicemail recordings, transcriptions, duration, and caller
+              information for voicemails left on your VeraDial number. Voicemail
+              audio is recorded and transcribed by Twilio.
             </p>
             <p>
-              <strong className="text-text-primary">Voicemail greetings:</strong> If you
-              create a custom voicemail greeting, we store the greeting audio file. For
-              AI-generated greetings, we also store the text you write and the voice you
-              select; audio is generated by a third-party AI provider (ElevenLabs). For
-              recorded greetings, your uploaded audio is converted to MP3 format on our
-              server. All greeting audio is stored in cloud storage (Supabase Storage).
+              <strong className="text-text-primary">
+                Voicemail greetings:
+              </strong>{" "}
+              If you create a custom voicemail greeting, we store the greeting
+              audio file. For AI-generated greetings, we also store the text you
+              write and the voice you select; audio is generated by a
+              third-party AI provider (ElevenLabs). For recorded greetings, your
+              uploaded audio is converted to MP3 format on our server. All
+              greeting audio is stored in cloud storage (Supabase Storage).
             </p>
             <p>
-              <strong className="text-text-primary">AI Call data:</strong> When you use AI
-              Call, we store the phone number called, your call goal and notes, call
-              duration, the AI provider used, and the full conversation transcript and
-              summary generated by the AI agent. If you enable recording on an AI call, the
-              recording is stored by Twilio and referenced in your account. Call audio is
-              processed in real-time by the selected AI provider (ElevenLabs, OpenAI,
-              Google, or xAI) and is not stored by VeraDial.
+              <strong className="text-text-primary">AI Call data:</strong> When
+              you use AI Call, we store the phone number called, your call goal
+              and notes, call duration, the AI provider used, and the full
+              conversation transcript and summary generated by the AI agent. If
+              you enable recording on an AI call, the recording is stored by
+              Twilio and referenced in your account. Call audio is processed in
+              real-time by the selected AI provider (ElevenLabs, OpenAI, Google,
+              or xAI) and is not stored by VeraDial.
             </p>
             <p>
-              <strong className="text-text-primary">Contact memory:</strong> If enabled
-              (on by default, toggleable in Profile &gt; Contact Memory), we generate a
-              rolling AI summary for each phone number you interact with, using your call
-              transcripts, voicemail transcriptions, AI call transcripts and summaries, and
-              SMS message content from your own account. Summaries, a suggested next-call
-              goal, and the phone number are stored in your account. Summarization is
-              performed by a third-party AI provider (Google Gemini). When Contact Memory
-              is disabled, existing summaries are not read through the feature and new
-              summaries are not generated; existing summaries remain stored unless you
-              delete your account.
+              <strong className="text-text-primary">Contact memory:</strong> If
+              enabled (on by default, toggleable in Profile &gt; Contact
+              Memory), we generate a rolling AI summary for each phone number
+              you interact with, using your call transcripts, voicemail
+              transcriptions, AI call transcripts and summaries, and SMS message
+              content from your own account. Summaries, a suggested next-call
+              goal, and the phone number are stored in your account.
+              Summarization is performed by a third-party AI provider (Google
+              Gemini). When Contact Memory is disabled, existing summaries are
+              not read through the feature and new summaries are not generated;
+              existing summaries remain stored unless you delete your account.
             </p>
             <p>
-              <strong className="text-text-primary">Push notification tokens:</strong> We
-              store device push tokens to deliver notifications to your device. Tokens are
-              automatically deleted when you sign out or your session expires.
+              <strong className="text-text-primary">
+                Push notification tokens:
+              </strong>{" "}
+              We store device push tokens to deliver notifications to your
+              device. Tokens are automatically deleted when you sign out or your
+              session expires.
             </p>
             <p>
-              <strong className="text-text-primary">Billing:</strong> Purchase and
-              subscription history is managed through RevenueCat and the Apple App Store /
-              Google Play Store. We store your subscription status, billing period, and
-              credit balance. We do not store payment card details directly.
+              <strong className="text-text-primary">Billing:</strong> Purchase
+              and subscription history is managed through RevenueCat and the
+              Apple App Store / Google Play Store. We store your subscription
+              status, billing period, and credit balance. We do not store
+              payment card details directly.
             </p>
             <p>
-              <strong className="text-text-primary">Error and crash data:</strong> We
-              collect error reports and crash data through Sentry to diagnose and fix issues
-              with the app. This may include device information, OS version, and stack
-              traces. No message content or call audio is included in error reports.
+              <strong className="text-text-primary">
+                Error and crash data:
+              </strong>{" "}
+              We collect error reports and crash data through Sentry to diagnose
+              and fix issues with the app. This may include device information,
+              OS version, and stack traces. No message content or call audio is
+              included in error reports.
             </p>
           </div>
         </section>
@@ -139,24 +161,41 @@ export default function PrivacyPage() {
             2. How We Use Your Information
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
-            <li>Provide calling, messaging, voicemail, and call screening services</li>
-            <li>Forward inbound calls to your configured forwarding number when forwarding is enabled</li>
-            <li>Display your call activity on an interactive map using location data</li>
-            <li>Enforce acceptable use policies and detect abuse</li>
-            <li>Process STOP/HELP opt-out requests (TCPA compliance)</li>
-            <li>Maintain call, message, and voicemail history for your account</li>
-            <li>Transcribe recorded calls for your review</li>
-            <li>Generate AI-powered phone calls on your behalf using your instructions</li>
-            <li>Store transcripts and summaries of AI calls for your review</li>
-            <li>Screen inbound calls and report caller identity to you</li>
-            <li>Generate custom voicemail greetings from your text input or recordings</li>
             <li>
-              Generate per-contact AI summaries across your calls, AI calls, voicemails,
-              and SMS to help you recall prior context and suggest next-call goals
+              Provide calling, messaging, voicemail, and call screening services
             </li>
             <li>
-              Send push notifications for incoming messages, voicemails, missed calls, AI
-              call completions, and low balance alerts
+              Forward inbound calls to your configured forwarding number when
+              forwarding is enabled
+            </li>
+            <li>
+              Display your call activity on an interactive map using location
+              data
+            </li>
+            <li>Enforce acceptable use policies and detect abuse</li>
+            <li>Process STOP/HELP opt-out requests (TCPA compliance)</li>
+            <li>
+              Maintain call, message, and voicemail history for your account
+            </li>
+            <li>Transcribe recorded calls for your review</li>
+            <li>
+              Generate AI-powered phone calls on your behalf using your
+              instructions
+            </li>
+            <li>Store transcripts and summaries of AI calls for your review</li>
+            <li>Screen inbound calls and report caller identity to you</li>
+            <li>
+              Generate custom voicemail greetings from your text input or
+              recordings
+            </li>
+            <li>
+              Generate per-contact AI summaries across your calls, AI calls,
+              voicemails, and SMS to help you recall prior context and suggest
+              next-call goals
+            </li>
+            <li>
+              Send push notifications for incoming messages, voicemails, missed
+              calls, AI call completions, and low balance alerts
             </li>
             <li>Manage your subscription and credit balance</li>
             <li>Diagnose and fix technical issues using error reports</li>
@@ -169,14 +208,15 @@ export default function PrivacyPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              We share data with the following third-party services as necessary to provide
-              VeraDial&apos;s features. Each service processes only the data required for
-              its specific function.
+              We share data with the following third-party services as necessary
+              to provide VeraDial&apos;s features. Each service processes only
+              the data required for its specific function.
             </p>
             <p>
-              <strong className="text-text-primary">Twilio:</strong> Voice calls, SMS
-              delivery, phone number provisioning, call recording, and voicemail recording
-              and transcription. Twilio processes call audio and message content.{" "}
+              <strong className="text-text-primary">Twilio:</strong> Voice
+              calls, SMS delivery, phone number provisioning, call recording,
+              and voicemail recording and transcription. Twilio processes call
+              audio and message content.{" "}
               <a
                 href="https://www.twilio.com/en-us/legal/privacy"
                 className="text-accent hover:underline"
@@ -187,9 +227,9 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">Supabase:</strong> Authentication,
-              database hosting (US-West-2 region), and file storage for voicemail greeting
-              audio.{" "}
+              <strong className="text-text-primary">Supabase:</strong>{" "}
+              Authentication, database hosting (US-West-2 region), and file
+              storage for voicemail greeting audio.{" "}
               <a
                 href="https://supabase.com/privacy"
                 className="text-accent hover:underline"
@@ -200,8 +240,8 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">RevenueCat:</strong> In-app purchase
-              management and subscription tracking.{" "}
+              <strong className="text-text-primary">RevenueCat:</strong> In-app
+              purchase management and subscription tracking.{" "}
               <a
                 href="https://www.revenuecat.com/privacy/"
                 className="text-accent hover:underline"
@@ -212,12 +252,13 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">ElevenLabs:</strong> AI voice
-              processing for three features: (1) AI Call — call audio and your instructions
-              are processed to generate the AI agent&apos;s responses; (2) Call
-              Screening — inbound call audio is processed to identify the caller; (3)
-              Voicemail Greetings — your greeting text is converted to speech audio.
-              ElevenLabs receives call audio during AI calls and screening interactions.{" "}
+              <strong className="text-text-primary">ElevenLabs:</strong> AI
+              voice processing for three features: (1) AI Call — call audio and
+              your instructions are processed to generate the AI agent&apos;s
+              responses; (2) Call Screening — inbound call audio is processed to
+              identify the caller; (3) Voicemail Greetings — your greeting text
+              is converted to speech audio. ElevenLabs receives call audio
+              during AI calls and screening interactions.{" "}
               <a
                 href="https://elevenlabs.io/privacy-policy"
                 className="text-accent hover:underline"
@@ -228,10 +269,11 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">OpenAI:</strong> AI voice processing
-              for AI Call. When OpenAI is selected as the AI provider, call audio and your
-              instructions are processed in real-time by OpenAI&apos;s Realtime API to
-              generate the AI agent&apos;s responses. OpenAI receives call audio during the
+              <strong className="text-text-primary">OpenAI:</strong> AI voice
+              processing for AI Call. When OpenAI is selected as the AI
+              provider, call audio and your instructions are processed in
+              real-time by OpenAI&apos;s Realtime API to generate the AI
+              agent&apos;s responses. OpenAI receives call audio during the
               conversation.{" "}
               <a
                 href="https://openai.com/policies/privacy-policy"
@@ -244,13 +286,14 @@ export default function PrivacyPage() {
             </p>
             <p>
               <strong className="text-text-primary">Google (Gemini):</strong> AI
-              processing for two features: (1) AI Call — when Gemini is selected as the AI
-              provider, call audio and your instructions are processed in real-time by
-              Google&apos;s Gemini Live API to generate the AI agent&apos;s responses;
-              (2) Contact Memory — text from your call transcripts, voicemail
-              transcriptions, AI call summaries, and SMS messages is sent to Google&apos;s
-              Gemini API to generate per-contact summaries. Google receives this content
-              only when the corresponding feature is used.{" "}
+              processing for two features: (1) AI Call — when Gemini is selected
+              as the AI provider, call audio and your instructions are processed
+              in real-time by Google&apos;s Gemini Live API to generate the AI
+              agent&apos;s responses; (2) Contact Memory — text from your call
+              transcripts, voicemail transcriptions, AI call summaries, and SMS
+              messages is sent to Google&apos;s Gemini API to generate
+              per-contact summaries. Google receives this content only when the
+              corresponding feature is used.{" "}
               <a
                 href="https://policies.google.com/privacy"
                 className="text-accent hover:underline"
@@ -261,11 +304,11 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">xAI (Grok):</strong> AI voice
-              processing for AI Call. When xAI is selected as the AI provider, call audio
-              and your instructions are processed in real-time by xAI&apos;s Grok API to
-              generate the AI agent&apos;s responses. xAI receives call audio during the
-              conversation.{" "}
+              <strong className="text-text-primary">xAI (Grok):</strong> AI
+              voice processing for AI Call. When xAI is selected as the AI
+              provider, call audio and your instructions are processed in
+              real-time by xAI&apos;s Grok API to generate the AI agent&apos;s
+              responses. xAI receives call audio during the conversation.{" "}
               <a
                 href="https://x.ai/legal/privacy-policy"
                 className="text-accent hover:underline"
@@ -276,11 +319,11 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">LiveKit:</strong> Real-time audio
-              routing and SIP connectivity for AI calls. When LiveKit transport is used,
-              call audio is routed through LiveKit&apos;s infrastructure to connect the AI
-              agent with the phone call. LiveKit processes call audio in transit but does
-              not store it.{" "}
+              <strong className="text-text-primary">LiveKit:</strong> Real-time
+              audio routing and SIP connectivity for AI calls. When LiveKit
+              transport is used, call audio is routed through LiveKit&apos;s
+              infrastructure to connect the AI agent with the phone call.
+              LiveKit processes call audio in transit but does not store it.{" "}
               <a
                 href="https://livekit.io/privacy"
                 className="text-accent hover:underline"
@@ -291,10 +334,10 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">Google Maps:</strong> The Call Map
-              feature uses Google Maps to display your call locations. When you use Call
-              Map, Google receives map tile requests and your viewport region. Google Maps
-              is subject to{" "}
+              <strong className="text-text-primary">Google Maps:</strong> The
+              Call Map feature uses Google Maps to display your call locations.
+              When you use Call Map, Google receives map tile requests and your
+              viewport region. Google Maps is subject to{" "}
               <a
                 href="https://policies.google.com/privacy"
                 className="text-accent hover:underline"
@@ -306,9 +349,9 @@ export default function PrivacyPage() {
               .
             </p>
             <p>
-              <strong className="text-text-primary">Deepgram:</strong> Speech-to-text
-              transcription for recorded calls. When you record a call, the audio is sent
-              to Deepgram for automatic transcription.{" "}
+              <strong className="text-text-primary">Deepgram:</strong>{" "}
+              Speech-to-text transcription for recorded calls. When you record a
+              call, the audio is sent to Deepgram for automatic transcription.{" "}
               <a
                 href="https://deepgram.com/privacy"
                 className="text-accent hover:underline"
@@ -319,10 +362,10 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">Sentry:</strong> Error tracking and
-              crash reporting. We send error reports and diagnostic data to Sentry to
-              identify and fix technical issues. Sentry does not receive message content or
-              call audio.{" "}
+              <strong className="text-text-primary">Sentry:</strong> Error
+              tracking and crash reporting. We send error reports and diagnostic
+              data to Sentry to identify and fix technical issues. Sentry does
+              not receive message content or call audio.{" "}
               <a
                 href="https://sentry.io/privacy/"
                 className="text-accent hover:underline"
@@ -333,10 +376,11 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">Expo:</strong> Push notification
-              delivery. Device push tokens are sent through Expo&apos;s push notification
-              service, which routes them to Apple Push Notification service (APNs) or
-              Firebase Cloud Messaging (FCM) for delivery to your device.{" "}
+              <strong className="text-text-primary">Expo:</strong> Push
+              notification delivery. Device push tokens are sent through
+              Expo&apos;s push notification service, which routes them to Apple
+              Push Notification service (APNs) or Firebase Cloud Messaging (FCM)
+              for delivery to your device.{" "}
               <a
                 href="https://expo.dev/privacy"
                 className="text-accent hover:underline"
@@ -347,10 +391,10 @@ export default function PrivacyPage() {
               </a>
             </p>
             <p>
-              <strong className="text-text-primary">Vercel:</strong> Website hosting and
-              analytics. We use Vercel Analytics and Speed Insights to understand website
-              performance. These tools collect anonymous usage data and do not use cookies
-              for tracking.{" "}
+              <strong className="text-text-primary">Vercel:</strong> Website
+              hosting and analytics. We use Vercel Analytics and Speed Insights
+              to understand website performance. These tools collect anonymous
+              usage data and do not use cookies for tracking.{" "}
               <a
                 href="https://vercel.com/legal/privacy-policy"
                 className="text-accent hover:underline"
@@ -362,7 +406,8 @@ export default function PrivacyPage() {
             </p>
             <p>
               <strong className="text-text-primary">Apple / Google:</strong> App
-              distribution and payment processing via the App Store and Google Play Store.
+              distribution and payment processing via the App Store and Google
+              Play Store.
             </p>
           </div>
         </section>
@@ -373,12 +418,13 @@ export default function PrivacyPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              Recipients can text <strong className="text-text-primary">STOP</strong> to
-              opt out of messages from any VeraDial number.
+              Recipients can text{" "}
+              <strong className="text-text-primary">STOP</strong> to opt out of
+              messages from any VeraDial number.
             </li>
             <li>
-              We honor <strong className="text-text-primary">HELP</strong> requests with
-              support contact information.
+              We honor <strong className="text-text-primary">HELP</strong>{" "}
+              requests with support contact information.
             </li>
             <li>Opt-out records are maintained per sender/recipient pair.</li>
             <li>Consent status is checked before every outbound message.</li>
@@ -391,18 +437,20 @@ export default function PrivacyPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              VeraDial sends push notifications for incoming messages, new voicemails,
-              missed calls, AI call completions, and low credit balance alerts.
+              VeraDial sends push notifications for incoming messages, new
+              voicemails, missed calls, AI call completions, and low credit
+              balance alerts.
             </p>
             <p>
               For your privacy, notifications display only the sender or caller
-              number — no message content, voicemail transcriptions, or AI summaries
-              appear on your lock screen.
+              number — no message content, voicemail transcriptions, or AI
+              summaries appear on your lock screen.
             </p>
             <p>
-              You can disable notifications at any time through your device&apos;s system
-              settings. Push tokens are stored on our server and are automatically deleted
-              when you sign out or your session expires.
+              You can disable notifications at any time through your
+              device&apos;s system settings. Push tokens are stored on our
+              server and are automatically deleted when you sign out or your
+              session expires.
             </p>
           </div>
         </section>
@@ -413,62 +461,80 @@ export default function PrivacyPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              <strong className="text-text-primary">Call logs and SMS history:</strong>{" "}
+              <strong className="text-text-primary">
+                Call logs and SMS history:
+              </strong>{" "}
               Retained for the lifetime of your account.
             </li>
             <li>
               <strong className="text-text-primary">Call recordings:</strong>{" "}
-              Retained on Twilio&apos;s servers for the lifetime of your account.
+              Retained on Twilio&apos;s servers for the lifetime of your
+              account.
             </li>
             <li>
               <strong className="text-text-primary">Call transcripts:</strong>{" "}
               Retained alongside call records for the lifetime of your account.
             </li>
             <li>
-              <strong className="text-text-primary">Call screening data:</strong>{" "}
+              <strong className="text-text-primary">
+                Call screening data:
+              </strong>{" "}
               Retained with call logs for the lifetime of your account.
             </li>
             <li>
-              <strong className="text-text-primary">Location data:</strong>{" "}
-              GPS coordinates are stored with call records for the lifetime of your
+              <strong className="text-text-primary">Location data:</strong> GPS
+              coordinates are stored with call records for the lifetime of your
               account.
             </li>
             <li>
-              <strong className="text-text-primary">Voicemail recordings:</strong>{" "}
+              <strong className="text-text-primary">
+                Voicemail recordings:
+              </strong>{" "}
               Retained for the lifetime of your account.
             </li>
             <li>
-              <strong className="text-text-primary">Voicemail greetings:</strong>{" "}
+              <strong className="text-text-primary">
+                Voicemail greetings:
+              </strong>{" "}
               Retained until you delete them or your account is deleted.
             </li>
             <li>
-              <strong className="text-text-primary">Call forwarding settings:</strong>{" "}
+              <strong className="text-text-primary">
+                Call forwarding settings:
+              </strong>{" "}
               Retained until you change them or your account is deleted.
             </li>
             <li>
-              <strong className="text-text-primary">Opt-out records:</strong> Retained
-              indefinitely as required for TCPA compliance.
+              <strong className="text-text-primary">Opt-out records:</strong>{" "}
+              Retained indefinitely as required for TCPA compliance.
             </li>
             <li>
-              <strong className="text-text-primary">AI Call transcripts:</strong>{" "}
-              Transcripts and summaries are retained for the lifetime of your account.
-              Call goals and notes are stored with each AI call record.
+              <strong className="text-text-primary">
+                AI Call transcripts:
+              </strong>{" "}
+              Transcripts and summaries are retained for the lifetime of your
+              account. Call goals and notes are stored with each AI call record.
             </li>
             <li>
-              <strong className="text-text-primary">Contact memory summaries:</strong>{" "}
-              Per-contact summaries are retained for the lifetime of your account unless
-              you delete your account. If you disable Contact Memory, existing summaries
-              are no longer read through the feature or updated.
+              <strong className="text-text-primary">
+                Contact memory summaries:
+              </strong>{" "}
+              Per-contact summaries are retained for the lifetime of your
+              account unless you delete your account. If you disable Contact
+              Memory, existing summaries are no longer read through the feature
+              or updated.
             </li>
             <li>
               <strong className="text-text-primary">Push tokens:</strong>{" "}
-              Deleted when you sign out, your session expires, or your device is no
-              longer registered.
+              Deleted when you sign out, your session expires, or your device is
+              no longer registered.
             </li>
             <li>
-              <strong className="text-text-primary">Released/swapped numbers:</strong>{" "}
-              Records retained with &ldquo;swapped&rdquo; or &ldquo;released&rdquo;
-              status.
+              <strong className="text-text-primary">
+                Released/swapped numbers:
+              </strong>{" "}
+              Records retained with &ldquo;swapped&rdquo; or
+              &ldquo;released&rdquo; status.
             </li>
             <li>
               <strong className="text-text-primary">Error reports:</strong>{" "}
@@ -491,15 +557,15 @@ export default function PrivacyPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              We use industry-standard measures to protect your data, including encryption
-              in transit (TLS/HTTPS), authenticated API access, and secure credential
-              storage. Authentication tokens are validated using public-key cryptography
-              (ES256 via JWKS).
+              We use industry-standard measures to protect your data, including
+              encryption in transit (TLS/HTTPS), authenticated API access, and
+              secure credential storage. Authentication tokens are validated
+              using public-key cryptography (ES256 via JWKS).
             </p>
             <p>
-              While we take reasonable steps to protect your information, no method of
-              electronic transmission or storage is 100% secure. We cannot guarantee
-              absolute security.
+              While we take reasonable steps to protect your information, no
+              method of electronic transmission or storage is 100% secure. We
+              cannot guarantee absolute security.
             </p>
           </div>
         </section>
@@ -510,15 +576,15 @@ export default function PrivacyPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              Your data is stored and processed in the United States (US-West-2 region,
-              Oregon). If you are located outside the United States, your data will be
-              transferred to and processed in the United States. By using VeraDial, you
-              consent to this transfer.
+              Your data is stored and processed in the United States (US-West-2
+              region, Oregon). If you are located outside the United States,
+              your data will be transferred to and processed in the United
+              States. By using VeraDial, you consent to this transfer.
             </p>
             <p>
-              Our third-party service providers may process data in their own data centers,
-              which may be located in different regions. See Section 3 for details on each
-              provider.
+              Our third-party service providers may process data in their own
+              data centers, which may be located in different regions. See
+              Section 3 for details on each provider.
             </p>
           </div>
         </section>
@@ -528,9 +594,9 @@ export default function PrivacyPage() {
             9. Abuse Prevention &amp; Account Suspension
           </h2>
           <p className="mt-4">
-            We monitor for patterns consistent with harassment, fraud, or illegal use.
-            Accounts may be suspended or terminated for policy violations. Abuse cases are
-            logged and retained.
+            We monitor for patterns consistent with harassment, fraud, or
+            illegal use. Accounts may be suspended or terminated for policy
+            violations. Abuse cases are logged and retained.
           </p>
         </section>
 
@@ -539,9 +605,10 @@ export default function PrivacyPage() {
             10. Children&apos;s Privacy
           </h2>
           <p className="mt-4">
-            VeraDial is not intended for use by anyone under the age of 18. We do not
-            knowingly collect personal information from children. If you believe a child
-            has provided us with personal data, please contact us at{" "}
+            VeraDial is not intended for use by anyone under the age of 18. We
+            do not knowingly collect personal information from children. If you
+            believe a child has provided us with personal data, please contact
+            us at{" "}
             <a
               href="mailto:support@veradial.com"
               className="text-accent hover:underline"
@@ -558,21 +625,28 @@ export default function PrivacyPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              <strong className="text-text-primary">California residents (CCPA):</strong>{" "}
-              You have the right to know what data we collect, request deletion, and
-              opt-out of the sale of personal information. We do not sell your personal
-              data.
+              <strong className="text-text-primary">
+                California residents (CCPA):
+              </strong>{" "}
+              You have the right to know what data we collect, request deletion,
+              and opt-out of the sale of personal information. We do not sell
+              your personal data.
             </p>
             <p>
-              <strong className="text-text-primary">Canadian residents (PIPEDA):</strong>{" "}
-              You have the right to access your personal information held by VeraDial,
-              challenge its accuracy, and withdraw consent for its collection, use, or
-              disclosure. We collect and use personal information only for purposes that a
-              reasonable person would consider appropriate.
+              <strong className="text-text-primary">
+                Canadian residents (PIPEDA):
+              </strong>{" "}
+              You have the right to access your personal information held by
+              VeraDial, challenge its accuracy, and withdraw consent for its
+              collection, use, or disclosure. We collect and use personal
+              information only for purposes that a reasonable person would
+              consider appropriate.
             </p>
             <p>
-              <strong className="text-text-primary">EU/EEA residents (GDPR):</strong> You
-              have the right to access, rectify, erase, and port your data.
+              <strong className="text-text-primary">
+                EU/EEA residents (GDPR):
+              </strong>{" "}
+              You have the right to access, rectify, erase, and port your data.
             </p>
             <p>
               To exercise your rights, email{" "}
@@ -593,9 +667,10 @@ export default function PrivacyPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              VeraDial is <strong className="text-text-primary">NOT</strong> a replacement
-              for traditional phone service. 911 and emergency calling is not supported. Do
-              not rely on VeraDial for emergency communications.
+              VeraDial is <strong className="text-text-primary">NOT</strong> a
+              replacement for traditional phone service. 911 and emergency
+              calling is not supported. Do not rely on VeraDial for emergency
+              communications.
             </p>
           </div>
         </section>
@@ -605,11 +680,11 @@ export default function PrivacyPage() {
             13. Changes to This Policy
           </h2>
           <p className="mt-4">
-            We may update this Privacy Policy from time to time. When we make changes, we
-            will update the &ldquo;Last updated&rdquo; date at the top of this page. For
-            material changes, we will notify you through the app or by email. Your
-            continued use of VeraDial after changes are posted constitutes your acceptance
-            of the updated policy.
+            We may update this Privacy Policy from time to time. When we make
+            changes, we will update the &ldquo;Last updated&rdquo; date at the
+            top of this page. For material changes, we will notify you through
+            the app or by email. Your continued use of VeraDial after changes
+            are posted constitutes your acceptance of the updated policy.
           </p>
         </section>
 

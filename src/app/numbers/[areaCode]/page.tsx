@@ -163,14 +163,12 @@ export default async function AreaCodePage({
         <div className="relative mx-auto max-w-5xl px-6 pb-20 pt-16">
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
             <div>
-              <Badge
-                variant="hero"
-              >
+              <Badge variant="hero">
                 ({ac.code}) {ac.marketName}
               </Badge>
 
               <h1 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-                Get a ({ac.code}) {ac.city}
+                Get a ({ac.code}) {ac.city}{" "}
                 <span className="block text-accent">business number.</span>
               </h1>
 
@@ -334,7 +332,10 @@ export default async function AreaCodePage({
         <section className="relative py-10">
           <div className="mx-auto max-w-4xl px-6">
             <ScrollReveal>
-              <Card hover={false} className="border-amber-500/20 bg-amber-500/5 p-6">
+              <Card
+                hover={false}
+                className="border-amber-500/20 bg-amber-500/5 p-6"
+              >
                 <p className="text-sm font-semibold text-amber-400">
                   Note for Canadian numbers
                 </p>

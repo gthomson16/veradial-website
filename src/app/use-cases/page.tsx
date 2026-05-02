@@ -14,7 +14,7 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 
 const PAGE_TITLE = "VeraDial Use Cases — AI Calling for Small Businesses";
 const PAGE_DESCRIPTION =
-  "See how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI calling, appointment follow-ups, and verified business numbers.";
+  "See how contractors, realtors, freelancers, sales teams, property managers, and recruiters use VeraDial for AI calls, follow-ups, and verified business numbers.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -161,11 +161,7 @@ export default function UseCasesPage() {
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
-          <Badge
-            variant="hero"
-          >
-            Use Cases
-          </Badge>
+          <Badge variant="hero">Use Cases</Badge>
 
           <h1 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
             Built for people who work from their phone

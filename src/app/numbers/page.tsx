@@ -77,11 +77,7 @@ export default function NumbersPage() {
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
-          <Badge
-            variant="hero"
-          >
-            Local Numbers
-          </Badge>
+          <Badge variant="hero">Local Numbers</Badge>
 
           <h1 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
             A local number for your market.
@@ -92,6 +88,35 @@ export default function NumbersPage() {
             Every number includes AI calling, verified caller ID, SMS, and call
             recording.
           </p>
+        </div>
+      </section>
+
+      <section className="relative py-16">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              Local presence
+            </p>
+            <h2 className="mt-4 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] text-text-primary sm:text-4xl">
+              Pick the number your customers expect to see
+            </h2>
+          </div>
+          <div className="space-y-4 text-base leading-relaxed text-text-secondary">
+            <p>
+              A local area code still matters for service businesses, real
+              estate agents, recruiters, and sales teams. It gives prospects a
+              recognizable callback number, keeps your personal cell private,
+              and creates a stable identity for outbound calls, texts,
+              voicemail, and AI follow-ups.
+            </p>
+            <p>
+              Every VeraDial number is a persistent US or Canadian business
+              line. Purchased numbers include verified outbound caller ID,
+              business SMS, call recording, voicemail transcription, and AI
+              calling from the same mobile app. Start with a city below, then
+              choose the exact number that fits your market.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -129,7 +154,8 @@ export default function NumbersPage() {
                         />
                       </div>
                       <p className="mt-2 text-sm text-text-secondary">
-                        {ac.marketName} &middot; {ac.country === "CA" ? "Canada" : "United States"}
+                        {ac.marketName} &middot;{" "}
+                        {ac.country === "CA" ? "Canada" : "United States"}
                       </p>
                     </div>
                   </Card>

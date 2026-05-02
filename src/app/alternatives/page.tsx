@@ -78,11 +78,7 @@ export default function AlternativesHubPage() {
       <section className="relative overflow-hidden pt-[88px]">
         <GradientMesh />
         <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-16 text-center">
-          <Badge
-            variant="hero"
-          >
-            Alternatives
-          </Badge>
+          <Badge variant="hero">Alternatives</Badge>
 
           <h1 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
             Find the right business calling app
@@ -93,6 +89,36 @@ export default function AlternativesHubPage() {
             business phone apps so you can find the best fit for your workflow
             and budget.
           </p>
+        </div>
+      </section>
+
+      <section className="relative py-16">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              How to compare
+            </p>
+            <h2 className="mt-4 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] text-text-primary sm:text-4xl">
+              Match the phone app to the job you actually need done
+            </h2>
+          </div>
+          <div className="space-y-4 text-base leading-relaxed text-text-secondary">
+            <p>
+              Most business phone tools solve one of three problems: separating
+              personal and business calls, coordinating a team inbox, or running
+              an enterprise contact center. VeraDial is focused on a different
+              job: giving solo operators and small teams a verified business
+              number plus an AI assistant that can make routine outbound calls.
+            </p>
+            <p>
+              Use these alternative guides to compare pricing, call recording,
+              voicemail transcription, SMS, caller ID control, AI calling, and
+              STIR/SHAKEN trust signals. If you need shared team chat or a full
+              UCaaS suite, a team phone system may be a better fit. If you need
+              a mobile-first business line that can place AI follow-up calls,
+              VeraDial is built for that workflow.
+            </p>
+          </div>
         </div>
       </section>
 

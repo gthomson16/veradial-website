@@ -18,7 +18,7 @@ import { COMPARE_VERDICTS } from "@/lib/compare-verdicts";
 
 const PAGE_TITLE = "VeraDial vs Dialpad — AI Calling vs Enterprise AI";
 const PAGE_DESCRIPTION =
-  "Compare VeraDial and Dialpad: VeraDial makes AI outbound calls for solo operators, while Dialpad focuses on enterprise transcription, coaching, and contact center workflows.";
+  "Compare VeraDial and Dialpad: VeraDial makes AI outbound calls for small teams, while Dialpad focuses on enterprise transcription, coaching, and contact centers.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -196,11 +196,7 @@ export default function CompareDialpadPage() {
               { label: "Dialpad" },
             ]}
           />
-          <Badge
-            variant="hero"
-          >
-            Comparison
-          </Badge>
+          <Badge variant="hero">Comparison</Badge>
 
           <h1 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
             VeraDial vs Dialpad
@@ -406,8 +402,8 @@ export default function CompareDialpadPage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get AI agents, verified caller ID, call recording, and
-                transcription &mdash; without the enterprise complexity or per-seat
-                pricing.
+                transcription &mdash; without the enterprise complexity or
+                per-seat pricing.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">
