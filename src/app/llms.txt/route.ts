@@ -162,6 +162,13 @@ ${areaCodeLinks}
 
 - Explainer (60 seconds, YouTube): ${EXPLAINER_VIDEO_WATCH_URL} — VeraDial places a business call, the AI handles the conversation, and a transcript is returned to the operator.
 
+### Official References Cited by Guides
+
+- FCC call authentication: https://www.fcc.gov/call-authentication
+- FCC TRACED Act implementation: https://www.fcc.gov/TRACEDAct
+- CRTC caller ID spoofing and STIR/SHAKEN: https://crtc.gc.ca/eng/phone/telemarketing/identit.htm
+- Twilio STIR/SHAKEN trust authentication: https://www.twilio.com/en-us/trust/shaken-stir
+
 ### Account & Legal
 
 - Privacy Policy: https://veradial.com/privacy

@@ -32,6 +32,22 @@ const PAGE_TITLE =
 const PAGE_DESCRIPTION =
   "Why business numbers get labeled Spam Likely, how STIR/SHAKEN A/B/C attestation works, and how small businesses can get verified outbound calling.";
 
+const PUBLISHED_AT = "2026-04-30";
+const UPDATED_AT = "2026-04-30";
+const AUTHOR = {
+  name: "Graham Thomson",
+  url: "https://veradial.com/about#founder",
+};
+
+function formatDisplayDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
+
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
@@ -78,7 +94,7 @@ const ATTESTATION_LEVELS = [
     label: "Gateway attestation",
     who: "Carrier passed the call through but can't verify identity or authorization (typically international or older infrastructure).",
     display:
-      "Carriers and phone OS's may flag the call as \"Scam Likely,\" \"Spam Risk,\" or simply \"Unknown.\"",
+      'Carriers and phone OS\'s may flag the call as "Scam Likely," "Spam Risk," or simply "Unknown."',
     example:
       "A generic VoIP service that routes through a gateway without signing, or international calls that enter through a legacy provider.",
     tone: "negative",
@@ -90,7 +106,7 @@ const BUSINESS_IMPACTS = [
     icon: PhoneOff,
     title: "Answer rates collapse when calls look suspicious",
     description:
-      "Industry research consistently shows answer rates of 11–25% for calls displayed as \"Unknown\" or \"Scam Likely,\" vs. 50%+ for verified business calls. If you're an owner-operator trying to reach new customers, this is the difference between a full week of appointments and a week of voicemails.",
+      'Industry research consistently shows answer rates of 11–25% for calls displayed as "Unknown" or "Scam Likely," vs. 50%+ for verified business calls. If you\'re an owner-operator trying to reach new customers, this is the difference between a full week of appointments and a week of voicemails.',
   },
   {
     icon: ShieldAlert,
@@ -117,7 +133,7 @@ const CHECK_METHODS = [
     step: "1",
     title: "Call a colleague on a different carrier",
     description:
-      "Dial someone you know on a different carrier from yours. Ask what the display shows: your business name, \"Unknown,\" \"Scam Likely,\" or a clean phone number with no label. If it's anything other than a clean name-and-number display, your calls aren't being trusted.",
+      'Dial someone you know on a different carrier from yours. Ask what the display shows: your business name, "Unknown," "Scam Likely," or a clean phone number with no label. If it\'s anything other than a clean name-and-number display, your calls aren\'t being trusted.',
   },
   {
     step: "2",
@@ -164,6 +180,33 @@ const COMMON_GAPS = [
   },
 ] as const;
 
+const OFFICIAL_SOURCES = [
+  {
+    label: "FCC call authentication",
+    href: "https://www.fcc.gov/call-authentication",
+    description:
+      "US regulator overview of caller ID authentication and STIR/SHAKEN.",
+  },
+  {
+    label: "FCC TRACED Act implementation",
+    href: "https://www.fcc.gov/TRACEDAct",
+    description:
+      "FCC implementation materials for the TRACED Act and robocall mitigation.",
+  },
+  {
+    label: "CRTC caller ID spoofing",
+    href: "https://crtc.gc.ca/eng/phone/telemarketing/identit.htm",
+    description:
+      "Canadian regulator explanation of caller ID spoofing, traceback, and STIR/SHAKEN authentication.",
+  },
+  {
+    label: "Twilio STIR/SHAKEN trust authentication",
+    href: "https://www.twilio.com/en-us/trust/shaken-stir",
+    description:
+      "Twilio reference for trusted calling and STIR/SHAKEN signing.",
+  },
+] as const;
+
 const FAQ = [
   {
     question: "What is STIR/SHAKEN?",
@@ -178,7 +221,7 @@ const FAQ = [
   {
     question: "What are the A, B, and C attestation levels?",
     answer:
-      "A (full attestation) means the originating carrier verified both the caller's identity and their authorization to use the specific phone number. B (partial attestation) means the carrier verified the caller but not their authorization for that exact number. C (gateway attestation) means the call was passed through without identity verification — typically international calls or traffic routed from legacy networks. Carriers and mobile OSs treat A-level as verified, B-level as mostly trusted, and C-level as suspicious (often leading to \"Scam Likely\" labels).",
+      'A (full attestation) means the originating carrier verified both the caller\'s identity and their authorization to use the specific phone number. B (partial attestation) means the carrier verified the caller but not their authorization for that exact number. C (gateway attestation) means the call was passed through without identity verification — typically international calls or traffic routed from legacy networks. Carriers and mobile OSs treat A-level as verified, B-level as mostly trusted, and C-level as suspicious (often leading to "Scam Likely" labels).',
   },
   {
     question: "Does STIR/SHAKEN stop robocalls?",
@@ -188,10 +231,11 @@ const FAQ = [
   {
     question: "Can I get STIR/SHAKEN attestation on my existing number?",
     answer:
-      "It depends on your provider. Your regular mobile carrier (Verizon, AT&T, T-Mobile, Rogers, Bell, Telus) will sign your outbound calls automatically at A-level because they provisioned your number. If you use a VoIP or business phone service that lets you \"bring your own number,\" most will only sign those calls at B-level at best — because they can verify you as a customer but can't verify your authorization for a number issued by a different provider. VeraDial offers B-level attestation on verified existing numbers for voice only.",
+      'It depends on your provider. Your regular mobile carrier (Verizon, AT&T, T-Mobile, Rogers, Bell, Telus) will sign your outbound calls automatically at A-level because they provisioned your number. If you use a VoIP or business phone service that lets you "bring your own number," most will only sign those calls at B-level at best — because they can verify you as a customer but can\'t verify your authorization for a number issued by a different provider. VeraDial offers B-level attestation on verified existing numbers for voice only.',
   },
   {
-    question: "Why do my calls still show as \"Scam Likely\" even if my provider supports STIR/SHAKEN?",
+    question:
+      'Why do my calls still show as "Scam Likely" even if my provider supports STIR/SHAKEN?',
     answer:
       "STIR/SHAKEN is a strong signal but not the only one carriers use. Reputation scoring based on call volume, contact diversity, spam complaints, and behavioral patterns also feeds into labeling decisions. A new business number calling many unfamiliar contacts can get temporarily flagged even with A-level attestation. If you're seeing persistent \"Scam Likely\" labels, check (a) your attestation level, (b) your number's age and history, (c) whether a prior owner had reputation issues, and (d) whether you can register your business with carrier reputation portals like Free Caller Registry.",
   },
@@ -215,17 +259,27 @@ const FAQ = [
 function StirShakenPageJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://veradial.com/stir-shaken-for-small-business#webpage",
+    "@type": "Article",
+    "@id": "https://veradial.com/stir-shaken-for-small-business#article",
+    headline: PAGE_TITLE,
     name: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
     url: "https://veradial.com/stir-shaken-for-small-business",
-    isPartOf: { "@id": "https://veradial.com/#website" },
-    about: { "@id": "https://veradial.com/#app" },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: "https://veradial.com/opengraph-image",
+    datePublished: PUBLISHED_AT,
+    dateModified: UPDATED_AT,
+    author: {
+      "@type": "Person",
+      name: AUTHOR.name,
+      url: AUTHOR.url,
     },
+    publisher: { "@id": "https://veradial.com/#organization" },
+    image: "https://veradial.com/opengraph-image",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://veradial.com/stir-shaken-for-small-business#webpage",
+    },
+    about: { "@id": "https://veradial.com/#app" },
+    citation: OFFICIAL_SOURCES.map((source) => source.href),
     inLanguage: "en-US",
   };
 
@@ -289,9 +343,7 @@ export default function StirShakenForSmallBusinessPage() {
             ]}
           />
 
-          <Badge
-            variant="hero"
-          >
+          <Badge variant="hero">
             <ShieldCheck size={14} className="mr-1.5" />
             Verified Calling, Explained
           </Badge>
@@ -308,9 +360,15 @@ export default function StirShakenForSmallBusinessPage() {
             ID works, what the A/B/C attestation levels mean, and how to make
             sure your small business calls actually get answered.
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-text-muted">
+            By {AUTHOR.name} · Updated {formatDisplayDate(UPDATED_AT)}
+          </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button variant="ghost" href="/help/why-business-number-marked-spam">
+            <Button
+              variant="ghost"
+              href="/help/why-business-number-marked-spam"
+            >
               Practical fix checklist
             </Button>
             <Button variant="ghost" href="#attestation-levels">
@@ -404,10 +462,7 @@ export default function StirShakenForSmallBusinessPage() {
                       Incoming call
                     </p>
                     <p className="mt-4 flex items-center justify-center gap-1.5 text-center font-display text-2xl font-bold text-text-primary">
-                      <ShieldCheck
-                        size={20}
-                        className="shrink-0 text-accent"
-                      />
+                      <ShieldCheck size={20} className="shrink-0 text-accent" />
                       Austin Plumbing Co.
                     </p>
                     <p className="mt-1 text-center text-sm text-text-secondary">
@@ -609,8 +664,8 @@ export default function StirShakenForSmallBusinessPage() {
                 What STIR/SHAKEN means for your business
               </h2>
               <p className="mt-5 text-base leading-relaxed text-text-secondary">
-                For a solo operator or a small team, attestation level is one
-                of the highest-leverage things you can influence about your
+                For a solo operator or a small team, attestation level is one of
+                the highest-leverage things you can influence about your
                 outbound calling. It determines whether your calls feel like
                 business-as-usual or feel like spam.
               </p>
@@ -651,8 +706,7 @@ export default function StirShakenForSmallBusinessPage() {
               </h2>
               <p className="mt-5 text-base leading-relaxed text-text-secondary">
                 Three quick ways to figure out whether your current business
-                number is getting A, B, or C attestation — or no signing at
-                all.
+                number is getting A, B, or C attestation — or no signing at all.
               </p>
             </div>
           </ScrollReveal>
@@ -760,9 +814,9 @@ export default function StirShakenForSmallBusinessPage() {
                   </p>
                   <p className="mt-4 text-sm leading-relaxed text-text-secondary sm:text-base">
                     If you already have an existing number (your cell number, a
-                    Google Voice number, a toll-free you own), you can verify
-                    it in VeraDial and use it as a secondary outbound caller
-                    ID. Verified numbers receive{" "}
+                    Google Voice number, a toll-free you own), you can verify it
+                    in VeraDial and use it as a secondary outbound caller ID.
+                    Verified numbers receive{" "}
                     <strong className="text-text-primary">
                       B-level attestation
                     </strong>{" "}
@@ -796,11 +850,50 @@ export default function StirShakenForSmallBusinessPage() {
         </div>
       </section>
 
+      {/* Official references */}
+      <section className="relative py-20 sm:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <ScrollReveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                Official references
+              </p>
+              <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-4xl">
+                Source material behind this guide
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-text-secondary">
+                This page summarizes public regulator and carrier documentation.
+                For policy details, implementation requirements, or
+                carrier-specific signing behavior, start with the official
+                references below.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {OFFICIAL_SOURCES.map((source, index) => (
+              <ScrollReveal key={source.href} delay={index * 70}>
+                <Card hover={false} className="h-full p-6">
+                  <a
+                    href={source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display text-lg font-semibold text-text-primary underline-offset-4 transition-colors hover:text-accent hover:underline"
+                  >
+                    {source.label}
+                  </a>
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                    {source.description}
+                  </p>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section
-        id="faq"
-        className="relative scroll-mt-20 py-20 sm:py-24"
-      >
+      <section id="faq" className="relative scroll-mt-20 py-20 sm:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">

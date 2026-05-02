@@ -96,6 +96,36 @@ export default function HelpPage() {
         </div>
       </section>
 
+      <section className="relative py-16">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+              Start here
+            </p>
+            <h2 className="mt-4 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] text-text-primary sm:text-4xl">
+              Practical answers before you place the next call
+            </h2>
+          </div>
+          <div className="space-y-4 text-base leading-relaxed text-text-secondary">
+            <p>
+              VeraDial is built for small businesses that need a verified
+              number, AI-assisted outbound calls, and a complete record of what
+              happened after each conversation. These guides explain the
+              operational details behind that workflow: why calls get marked as
+              spam, what AI calling is good at, and how to structure repeatable
+              appointment confirmation scripts.
+            </p>
+            <p>
+              If you are diagnosing answer-rate problems, start with the caller
+              trust guide. If you are deciding whether to let an AI assistant
+              call customers, start with the AI calling guide. If you already
+              know the call you want to automate, use the scripts guide to turn
+              the job into a narrow, reviewable prompt.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-5 md:grid-cols-3">

@@ -16,6 +16,20 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { StoreBadges } from "@/components/ui/StoreBadges";
 import { ExplainerVideoPlayer } from "@/components/home/ExplainerVideo";
 
+const AUTHOR = {
+  name: "Graham Thomson",
+  url: "https://veradial.com/about#founder",
+};
+
+function formatDisplayDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
+
 export function generateStaticParams() {
   return getAllHelpSlugs().map((slug) => ({ slug }));
 }
@@ -42,15 +56,32 @@ function HelpPageJsonLd({
 }: {
   page: NonNullable<ReturnType<typeof getHelpPage>>;
 }) {
+  const url = `https://veradial.com/help/${page.slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `https://veradial.com/help/${page.slug}#webpage`,
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline: page.title,
     name: page.title,
     description: page.description,
-    url: `https://veradial.com/help/${page.slug}`,
-    isPartOf: { "@id": "https://veradial.com/#website" },
+    url,
+    datePublished: page.publishedAt,
+    dateModified: page.updatedAt,
+    author: {
+      "@type": "Person",
+      name: AUTHOR.name,
+      url: AUTHOR.url,
+    },
+    publisher: { "@id": "https://veradial.com/#organization" },
+    image: "https://veradial.com/opengraph-image",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+    },
     about: { "@id": "https://veradial.com/#app" },
+    ...(page.sources?.length
+      ? { citation: page.sources.map((source) => source.href) }
+      : {}),
     inLanguage: "en-US",
   };
 
@@ -63,9 +94,7 @@ function HelpPageJsonLd({
 }
 
 function HelpVideoJsonLd({ slug }: { slug: string }) {
-  const jsonLd = buildExplainerVideoJsonLd(
-    `https://veradial.com/help/${slug}`,
-  );
+  const jsonLd = buildExplainerVideoJsonLd(`https://veradial.com/help/${slug}`);
 
   return (
     <script
@@ -120,9 +149,7 @@ export default async function HelpArticlePage({
     <>
       <HelpPageJsonLd page={page} />
       <HelpFaqJsonLd page={page} />
-      {page.embedExplainerVideo ? (
-        <HelpVideoJsonLd slug={page.slug} />
-      ) : null}
+      {page.embedExplainerVideo ? <HelpVideoJsonLd slug={page.slug} /> : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
@@ -147,6 +174,9 @@ export default async function HelpArticlePage({
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
               {page.intro}
+            </p>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-text-muted">
+              By {AUTHOR.name} · Updated {formatDisplayDate(page.updatedAt)}
             </p>
           </div>
 
@@ -196,6 +226,36 @@ export default async function HelpArticlePage({
                 </Card>
               </ScrollReveal>
             ))}
+
+            {page.sources?.length ? (
+              <ScrollReveal>
+                <Card hover={false} className="p-6 sm:p-8">
+                  <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
+                    Sources
+                  </p>
+                  <h2 className="mt-3 font-display text-2xl font-semibold leading-tight text-text-primary">
+                    References used for this guide
+                  </h2>
+                  <ul className="mt-5 space-y-4">
+                    {page.sources.map((source) => (
+                      <li key={source.href}>
+                        <a
+                          href={source.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-text-primary underline-offset-4 transition-colors hover:text-accent hover:underline"
+                        >
+                          {source.label}
+                        </a>
+                        <p className="mt-1 text-sm leading-relaxed text-text-secondary">
+                          {source.description}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </ScrollReveal>
+            ) : null}
 
             <ScrollReveal>
               <div id="faq" className="scroll-mt-24">

@@ -15,18 +15,48 @@ export type HelpLink = {
   description: string;
 };
 
+export type SourceLink = {
+  label: string;
+  href: string;
+  description: string;
+};
+
 export type HelpPage = {
   slug: string;
   title: string;
   description: string;
   keywords: string[];
   eyebrow: string;
+  publishedAt: string;
+  updatedAt: string;
   intro: string;
   sections: HelpSection[];
   faqs: HelpFaq[];
   relatedLinks: HelpLink[];
+  sources?: SourceLink[];
   embedExplainerVideo?: boolean;
 };
+
+const STIR_SHAKEN_SOURCES: SourceLink[] = [
+  {
+    label: "FCC call authentication",
+    href: "https://www.fcc.gov/call-authentication",
+    description:
+      "US regulator overview of caller ID authentication and STIR/SHAKEN policy.",
+  },
+  {
+    label: "CRTC caller ID spoofing",
+    href: "https://crtc.gc.ca/eng/phone/telemarketing/identit.htm",
+    description:
+      "Canadian regulator explanation of spoofing, traceback, and STIR/SHAKEN caller ID authentication.",
+  },
+  {
+    label: "Twilio trusted calling",
+    href: "https://www.twilio.com/en-us/trust/shaken-stir",
+    description:
+      "Carrier infrastructure reference for STIR/SHAKEN trust authentication.",
+  },
+];
 
 export const HELP_PAGES: HelpPage[] = [
   {
@@ -43,13 +73,14 @@ export const HELP_PAGES: HelpPage[] = [
       "verified caller ID small business",
     ],
     eyebrow: "Caller Trust",
+    publishedAt: "2026-04-30",
+    updatedAt: "2026-04-30",
     intro:
       "If your business number shows as Spam Likely, the problem is usually a mix of caller identity verification, number reputation, and calling behavior. The fix starts with using a number your provider can verify, then keeping your call patterns consistent and legitimate.",
     sections: [
       {
         heading: "The short answer",
-        body:
-          "Carriers label calls when they cannot confidently verify who is calling or when a number's reputation looks risky. A legitimate business can still get flagged if it uses recycled VoIP numbers, caller ID spoofing tools, weak STIR/SHAKEN attestation, or sudden high-volume outbound patterns.",
+        body: "Carriers label calls when they cannot confidently verify who is calling or when a number's reputation looks risky. A legitimate business can still get flagged if it uses recycled VoIP numbers, caller ID spoofing tools, weak STIR/SHAKEN attestation, or sudden high-volume outbound patterns.",
         bullets: [
           "Weak or missing STIR/SHAKEN signing makes the call look less trustworthy.",
           "A recycled number can inherit reputation problems from a previous owner.",
@@ -59,8 +90,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "What STIR/SHAKEN actually changes",
-        body:
-          "STIR/SHAKEN lets phone carriers sign calls so the receiving carrier knows whether the caller is authorized to use the number. A-level attestation is the strongest signal because the provider has verified both the customer and the right to use that specific number.",
+        body: "STIR/SHAKEN lets phone carriers sign calls so the receiving carrier knows whether the caller is authorized to use the number. A-level attestation is the strongest signal because the provider has verified both the customer and the right to use that specific number.",
         bullets: [
           "A-level: strongest verification, usually best for answer rates.",
           "B-level: caller is verified, but number authorization is less complete.",
@@ -69,8 +99,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "What to do first",
-        body:
-          "Start by checking the display on several carriers, then ask your provider what attestation level they sign your outbound calls with. If the answer is unclear, that is useful signal: a provider that offers strong verification usually says so plainly.",
+        body: "Start by checking the display on several carriers, then ask your provider what attestation level they sign your outbound calls with. If the answer is unclear, that is useful signal: a provider that offers strong verification usually says so plainly.",
         bullets: [
           "Call test numbers on AT&T, Verizon, T-Mobile, Rogers, Bell, or Telus if you can.",
           "Avoid tools that display numbers you do not own.",
@@ -80,8 +109,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Where VeraDial fits",
-        body:
-          "VeraDial provisions persistent US and Canadian business numbers with STIR/SHAKEN A-level attestation on purchased numbers. If you already own a number, VeraDial can verify it as a secondary outbound voice caller ID with B-level attestation.",
+        body: "VeraDial provisions persistent US and Canadian business numbers with STIR/SHAKEN A-level attestation on purchased numbers. If you already own a number, VeraDial can verify it as a secondary outbound voice caller ID with B-level attestation.",
       },
     ],
     faqs: [
@@ -121,6 +149,7 @@ export const HELP_PAGES: HelpPage[] = [
           "Compare legitimate caller ID control with caller ID spoofing tools.",
       },
     ],
+    sources: STIR_SHAKEN_SOURCES,
   },
   {
     slug: "ai-calling-for-small-business",
@@ -136,14 +165,15 @@ export const HELP_PAGES: HelpPage[] = [
       "small business phone AI",
     ],
     eyebrow: "AI Calling",
+    publishedAt: "2026-04-30",
+    updatedAt: "2026-04-30",
     embedExplainerVideo: true,
     intro:
       "AI calling works best when the call has a clear goal: confirm an appointment, follow up on a lead, collect basic information, or leave a concise message. It is not a replacement for judgment-heavy conversations, but it can remove a lot of routine phone work.",
     sections: [
       {
         heading: "Good AI calling jobs",
-        body:
-          "The best calls are bounded, repetitive, and easy to evaluate afterward. A good instruction tells the AI who it is calling, why it is calling, what outcome to aim for, and what to do if the recipient asks something unexpected.",
+        body: "The best calls are bounded, repetitive, and easy to evaluate afterward. A good instruction tells the AI who it is calling, why it is calling, what outcome to aim for, and what to do if the recipient asks something unexpected.",
         bullets: [
           "Appointment confirmations and reminders.",
           "Simple lead follow-ups after a form fill or missed call.",
@@ -153,8 +183,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Calls humans should keep",
-        body:
-          "Humans should stay involved for sensitive, emotional, regulated, or high-stakes conversations. AI is strongest as a routine call assistant, not as the final decision-maker in complex customer situations.",
+        body: "Humans should stay involved for sensitive, emotional, regulated, or high-stakes conversations. AI is strongest as a routine call assistant, not as the final decision-maker in complex customer situations.",
         bullets: [
           "Negotiations, complaints, and escalations.",
           "Medical, legal, financial, or regulated advice.",
@@ -163,13 +192,11 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Transparency matters",
-        body:
-          "VeraDial's AI identifies itself upfront. That is a product choice, not just a compliance posture. Recipients should understand that an AI assistant is calling on behalf of a real business, and the business owner should get the transcript afterward.",
+        body: "VeraDial's AI identifies itself upfront. That is a product choice, not just a compliance posture. Recipients should understand that an AI assistant is calling on behalf of a real business, and the business owner should get the transcript afterward.",
       },
       {
         heading: "How to measure whether it is working",
-        body:
-          "Start with a small call type and track outcomes: answered calls, completed confirmations, booked appointments, callbacks requested, and cases where the AI could not complete the goal. The transcript is as important as the result because it shows what happened.",
+        body: "Start with a small call type and track outcomes: answered calls, completed confirmations, booked appointments, callbacks requested, and cases where the AI could not complete the goal. The transcript is as important as the result because it shows what happened.",
       },
     ],
     faqs: [
@@ -209,6 +236,20 @@ export const HELP_PAGES: HelpPage[] = [
           "Compare AI that makes calls with enterprise AI that listens, summarizes, and coaches.",
       },
     ],
+    sources: [
+      {
+        label: "FCC AI-generated voice robocall ruling",
+        href: "https://www.fcc.gov/document/fcc-makes-ai-generated-voices-robocalls-illegal",
+        description:
+          "US regulator guidance relevant to consent, transparency, and AI-generated voice use in calling.",
+      },
+      {
+        label: "FTC AI claims guidance",
+        href: "https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check",
+        description:
+          "Business guidance on making clear, supportable claims about AI-powered products.",
+      },
+    ],
   },
   {
     slug: "appointment-confirmation-scripts",
@@ -224,13 +265,14 @@ export const HELP_PAGES: HelpPage[] = [
       "customer confirmation script",
     ],
     eyebrow: "Scripts",
+    publishedAt: "2026-04-30",
+    updatedAt: "2026-04-30",
     intro:
       "A good appointment confirmation call is short, specific, and easy to answer. The goal is not to sell again; it is to confirm the time, location, access details, and next step before the appointment is missed.",
     sections: [
       {
         heading: "Basic confirmation script",
-        body:
-          "Hi, this is [assistant or business name] calling on behalf of [business name]. We are confirming your appointment for [date] at [time] at [address]. Please reply yes to confirm, or let us know if you need to reschedule.",
+        body: "Hi, this is [assistant or business name] calling on behalf of [business name]. We are confirming your appointment for [date] at [time] at [address]. Please reply yes to confirm, or let us know if you need to reschedule.",
         bullets: [
           "Confirm the date and time.",
           "Confirm the address or job location.",
@@ -240,8 +282,7 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "Contractor and home-services version",
-        body:
-          "Hi, this is [assistant or business name] calling on behalf of [company]. We have you scheduled for [service] on [date] between [arrival window]. Please confirm that someone will be available and that we can access [gate/parking/equipment/location detail].",
+        body: "Hi, this is [assistant or business name] calling on behalf of [company]. We have you scheduled for [service] on [date] between [arrival window]. Please confirm that someone will be available and that we can access [gate/parking/equipment/location detail].",
         bullets: [
           "Ask about access before the technician arrives.",
           "Mention arrival windows instead of exact times when needed.",
@@ -250,13 +291,11 @@ export const HELP_PAGES: HelpPage[] = [
       },
       {
         heading: "No-answer voicemail version",
-        body:
-          "Hi, this is [business name] confirming your appointment for [date] at [time/window]. If that still works, no action is needed. If you need to reschedule, please call or text us at this number.",
+        body: "Hi, this is [business name] confirming your appointment for [date] at [time/window]. If that still works, no action is needed. If you need to reschedule, please call or text us at this number.",
       },
       {
         heading: "Turning the script into an AI prompt",
-        body:
-          "Give the AI the appointment details, the desired outcome, and the fallback path. Keep it narrow: confirm, collect access notes, or request a callback. Do not ask the AI to handle billing disputes, complaints, or open-ended service questions in the same call.",
+        body: "Give the AI the appointment details, the desired outcome, and the fallback path. Keep it narrow: confirm, collect access notes, or request a callback. Do not ask the AI to handle billing disputes, complaints, or open-ended service questions in the same call.",
       },
     ],
     faqs: [
