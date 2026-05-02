@@ -4,10 +4,9 @@ import { ArrowRight } from "lucide-react";
 import { isDemoFunnelEnabled } from "@/lib/demo-flags";
 import { DEMO_PRESETS } from "@/lib/demo-presets";
 
-import { HeroOrbCanvas } from "./HeroOrbCanvas";
-import { generateFibonacciSphere } from "./heroOrbGeometry";
+import { OrbCanvas } from "@/components/orb/OrbCanvas";
+import { generateFibonacciSphere } from "@/components/orb/orbGeometry";
 
-const ORB_COLOR = "#3CFFB8";
 const SSR_PRESET = DEMO_PRESETS[0];
 const FALLBACK_POINT_COUNT = 140;
 
@@ -180,7 +179,7 @@ function PhoneScreen() {
           }}
         >
           <FallbackOrb />
-          <HeroOrbCanvas accent={ORB_COLOR} />
+          <OrbCanvas />
         </div>
       </div>
 

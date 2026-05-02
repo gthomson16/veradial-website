@@ -3,13 +3,15 @@
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
-const HeroOrbScene = dynamic(
-  () => import("./HeroOrbScene").then((mod) => mod.HeroOrbScene),
+import { type OrbState } from "./orbStates";
+
+const OrbScene = dynamic(
+  () => import("./OrbScene").then((mod) => mod.OrbScene),
   { ssr: false },
 );
 
-type HeroOrbCanvasProps = {
-  accent: string;
+type OrbCanvasProps = {
+  state?: OrbState;
 };
 
 function probeWebGL(): boolean {
@@ -52,7 +54,7 @@ const INTERSECTION_ROOT_MARGIN = "200px";
 const IDLE_DEADLINE_MS = 3000;
 const IDLE_FALLBACK_MS = 1500;
 
-export function HeroOrbCanvas({ accent }: HeroOrbCanvasProps) {
+export function OrbCanvas({ state }: OrbCanvasProps) {
   const capable = useSyncExternalStore(
     subscribeCapable,
     getCapableClientSnapshot,
@@ -129,7 +131,7 @@ export function HeroOrbCanvas({ accent }: HeroOrbCanvasProps) {
 
   return (
     <div ref={wrapperRef} aria-hidden="true" className="absolute inset-0">
-      {ready ? <HeroOrbScene accent={accent} /> : null}
+      {ready ? <OrbScene state={state} /> : null}
     </div>
   );
 }

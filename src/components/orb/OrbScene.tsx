@@ -1,28 +1,29 @@
-/* eslint-disable react-hooks/immutability --
- * three.js ShaderMaterial.uniforms is the documented mutation surface for
- * per-frame animation. R3F's render loop reads these mutations directly; the
- * React purity rules don't apply to GPU uniform state. */
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { Points } from "three";
-import { generateFibonacciSphere } from "./heroOrbGeometry";
-import { type OrbCurve, getAmplitude, pickCurve } from "./heroOrbMotion";
 
-type HeroOrbSceneProps = {
-  accent: string;
+import { generateFibonacciSphere } from "./orbGeometry";
+import { type OrbCurve, getAmplitude, pickCurve } from "./orbMotion";
+import {
+  DEFAULT_ORB_STATE,
+  ORB_STATE_CONFIG,
+  type OrbState,
+} from "./orbStates";
+
+type OrbSceneProps = {
+  state?: OrbState;
 };
 
 const POINT_COUNT = 800;
 const FRAME_INTERVAL_MS = 33;
 const AMP_SCALE_GAIN = 0.18;
 const AMP_BRIGHTNESS_GAIN = 0.25;
-const ROTATION_SPEED_RAD_PER_SEC = 0.6;
 const SCALE_SMOOTHING = 0.18;
 const BRIGHTNESS_SMOOTHING = 0.18;
-const BASE_BRIGHTNESS = 0.92;
+const STATE_COLOR_SMOOTHING = 0.06;
 
 const SPHERE_POSITIONS = (() => {
   const points = generateFibonacciSphere(POINT_COUNT);
@@ -77,15 +78,15 @@ const fragmentShader = /* glsl */ `
   }
 `;
 
-function createParticleMaterial(color: string): THREE.ShaderMaterial {
+function createParticleMaterial(initialColor: string): THREE.ShaderMaterial {
   return new THREE.ShaderMaterial({
     uniforms: {
       uRotationY: { value: 0 },
       uScale: { value: 1.0 },
       uPointSize: { value: 5.5 },
       uPixelRatio: { value: 1.0 },
-      uColor: { value: new THREE.Color(color) },
-      uBrightness: { value: BASE_BRIGHTNESS },
+      uColor: { value: new THREE.Color(initialColor) },
+      uBrightness: { value: 0.92 },
     },
     vertexShader,
     fragmentShader,
@@ -97,13 +98,24 @@ function createParticleMaterial(color: string): THREE.ShaderMaterial {
 
 function ParticleSphere({
   amplitudeRef,
-  color,
+  state,
 }: {
   amplitudeRef: React.MutableRefObject<number>;
-  color: string;
+  state: OrbState;
 }) {
+  const config = ORB_STATE_CONFIG[state];
   const pointsRef = useRef<Points>(null);
-  const material = useMemo(() => createParticleMaterial(color), [color]);
+  const targetColor = useMemo(
+    () => new THREE.Color(config.color),
+    [config.color],
+  );
+  const material = useMemo(
+    () => createParticleMaterial(config.color),
+    // Initialize once per mount; subsequent state-driven color changes are
+    // smoothly lerped in useFrame so the material instance is stable.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
   const { gl } = useThree();
 
   useEffect(() => {
@@ -120,15 +132,17 @@ function ParticleSphere({
     const amp = amplitudeRef.current;
     const u = material.uniforms;
 
+    u.uColor.value.lerp(targetColor, STATE_COLOR_SMOOTHING);
+
     u.uRotationY.value =
-      (u.uRotationY.value + ROTATION_SPEED_RAD_PER_SEC * delta) %
+      (u.uRotationY.value + config.rotationSpeedRadPerSec * delta) %
       (Math.PI * 2);
 
-    const targetScale = 1.0 + amp * AMP_SCALE_GAIN;
+    const targetScale = config.baseScale + amp * AMP_SCALE_GAIN;
     u.uScale.value =
       u.uScale.value + (targetScale - u.uScale.value) * SCALE_SMOOTHING;
 
-    const targetBrightness = BASE_BRIGHTNESS + amp * AMP_BRIGHTNESS_GAIN;
+    const targetBrightness = config.baseBrightness + amp * AMP_BRIGHTNESS_GAIN;
     u.uBrightness.value =
       u.uBrightness.value +
       (targetBrightness - u.uBrightness.value) * BRIGHTNESS_SMOOTHING;
@@ -178,7 +192,7 @@ function AmplitudeDriver({
   return null;
 }
 
-export function HeroOrbScene({ accent }: HeroOrbSceneProps) {
+export function OrbScene({ state = DEFAULT_ORB_STATE }: OrbSceneProps) {
   const amplitudeRef = useRef(0);
   const [curve] = useState<OrbCurve>(() => pickCurve());
   const [startOffsetMs] = useState<number>(() => Math.random() * 1500);
@@ -195,7 +209,7 @@ export function HeroOrbScene({ accent }: HeroOrbSceneProps) {
       }}
       camera={{ position: [0, 0, 3.2], fov: 45 }}
     >
-      <ParticleSphere amplitudeRef={amplitudeRef} color={accent} />
+      <ParticleSphere amplitudeRef={amplitudeRef} state={state} />
       <AmplitudeDriver
         amplitudeRef={amplitudeRef}
         curve={curve}
