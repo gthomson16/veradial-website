@@ -85,7 +85,7 @@ export function DemoCallForm() {
         />
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
+      <section className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[1fr_0.9fr]">
         <PhoneInput
           value={phone}
           onChange={setPhone}

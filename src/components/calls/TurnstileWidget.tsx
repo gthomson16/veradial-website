@@ -77,12 +77,14 @@ export function TurnstileWidget({ siteKey, onToken, action, disabled = false }: 
     <div className="space-y-2">
       <div
         ref={containerRef}
-        className="flex min-h-[68px] items-center rounded-2xl border border-border bg-surface px-4"
+        className="flex min-h-[68px] items-center justify-center overflow-hidden rounded-2xl border border-border bg-surface px-0 sm:px-4"
       >
         {isMocked ? (
-          <span className="text-sm font-medium text-accent">Security check verified for preview.</span>
+          <span className="px-4 text-sm font-medium text-accent">
+            Security check verified for preview.
+          </span>
         ) : (
-          <span className="text-sm text-text-muted">Security check loading...</span>
+          <span className="px-4 text-sm text-text-muted">Security check loading...</span>
         )}
       </div>
       <p className="text-xs leading-relaxed text-text-muted">{DEMO_TURNSTILE_DISCLOSURE}</p>

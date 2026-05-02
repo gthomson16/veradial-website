@@ -34,7 +34,7 @@ export default function TryPage() {
           </Badge>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
           <div className="min-w-0">
             <div className="flex items-center gap-3">
               <div
@@ -69,7 +69,7 @@ export default function TryPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-border bg-card/80 p-5 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-7">
+          <div className="min-w-0 rounded-3xl border border-border bg-card/80 p-5 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-7">
             <DemoCallForm />
           </div>
         </div>

@@ -14,7 +14,11 @@ const icons = [CalendarCheck, MessagesSquare, ClipboardCheck];
 
 export function PresetPicker({ value, onChange, presets, disabled = false }: PresetPickerProps) {
   return (
-    <div className="grid gap-3 sm:grid-cols-3" role="radiogroup" aria-label="Demo call type">
+    <div
+      className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-3"
+      role="radiogroup"
+      aria-label="Demo call type"
+    >
       {presets.map((preset, index) => {
         const Icon = icons[index % icons.length];
         const selected = value === preset.id;
