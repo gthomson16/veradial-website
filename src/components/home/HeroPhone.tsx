@@ -1,52 +1,15 @@
-"use client";
-
 import Image from "next/image";
-import { useRef, useState, type MouseEvent } from "react";
-
-const MAX_TILT = 6;
-
-function canTilt() {
-  if (typeof window === "undefined") return false;
-  return (
-    !window.matchMedia("(pointer: coarse)").matches &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
-}
 
 export function HeroPhone() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [enabled] = useState(() => canTilt());
-
-  function handleMove(event: MouseEvent<HTMLDivElement>) {
-    if (!enabled) return;
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const dx = (event.clientX - cx) / (rect.width / 2);
-    const dy = (event.clientY - cy) / (rect.height / 2);
-    setTilt({
-      x: Math.max(-1, Math.min(1, -dy)) * MAX_TILT,
-      y: Math.max(-1, Math.min(1, dx)) * MAX_TILT,
-    });
-  }
-
-  function handleLeave() {
-    setTilt({ x: 0, y: 0 });
-  }
-
   return (
-    <div className="relative flex justify-center" style={{ perspective: "1200px" }}>
+    <div
+      className="relative flex justify-center"
+      style={{ perspective: "1200px" }}
+    >
       <div
-        ref={ref}
-        onMouseMove={handleMove}
-        onMouseLeave={handleLeave}
         className="relative mx-auto w-[280px] sm:w-[300px]"
         style={{
-          transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-          transition: "transform 180ms ease-out",
+          transform: "rotateX(0deg) rotateY(0deg)",
           transformStyle: "preserve-3d",
         }}
       >
@@ -59,6 +22,7 @@ export function HeroPhone() {
               height={2868}
               sizes="(max-width: 640px) 280px, 300px"
               priority
+              quality={70}
               className="w-full"
             />
           </div>

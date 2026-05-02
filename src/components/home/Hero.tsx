@@ -25,15 +25,12 @@ export function Hero() {
             unoptimized
           />
 
-          <Badge
-            variant="hero"
-            className="mt-5"
-          >
+          <Badge variant="hero" className="mt-5">
             AI-powered business calling
           </Badge>
 
           <h1 className="mt-6 font-display text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.03em] min-[420px]:text-4xl sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
-            Your AI assistant calls
+            Your AI assistant calls{" "}
             <span className="block text-text-primary">
               so you{" "}
               <span className="text-accent underline decoration-accent/60 decoration-[0.08em] underline-offset-[0.12em]">
