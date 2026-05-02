@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, PlayCircle } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { GradientMesh } from "@/components/ui/GradientMesh";
@@ -49,33 +51,56 @@ export function Hero() {
 
           <div className="mt-8">
             <div className="flex flex-wrap items-center gap-3">
-              <Button variant="primary" href="#download">
-                Download the app
-              </Button>
               {isDemoFunnelEnabled ? (
-                <Button variant="ghost" href="/try">
-                  Try a free AI call
-                </Button>
-              ) : null}
+                <>
+                  <Button variant="primary" href="/try">
+                    Try a live AI call
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </Button>
+                  <Button variant="ghost" href="#download">
+                    Download the app
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button variant="primary" href="#download">
+                    Download the app
+                  </Button>
+                  <Button variant="ghost" href="#how-it-works">
+                    <PlayCircle size={16} aria-hidden="true" />
+                    Hear the demo call
+                  </Button>
+                </>
+              )}
               <Button variant="ghost" href="/#pricing">
                 See Pricing
               </Button>
             </div>
             <p className="mt-3 text-sm text-text-secondary">
-              Available now on the App Store and Google Play.
+              {isDemoFunnelEnabled
+                ? "No app install required. VeraDial texts first, then calls only after you confirm."
+                : "Available now on the App Store and Google Play."}
             </p>
-            <a
-              href="#how-it-works"
-              className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/[0.06] px-4 py-2 text-base text-text-primary transition-colors hover:border-accent/45 hover:bg-accent/10"
-            >
-              <span
-                aria-hidden="true"
-                className="inline-flex h-2 w-2 rounded-full bg-accent"
-                style={{ animation: "call-pulse 1.8s ease-out infinite" }}
-              />
-              Hear a 31-second demo call
-              <span aria-hidden="true" className="text-accent">&rarr;</span>
-            </a>
+            {isDemoFunnelEnabled ? (
+              <Link
+                href="/try"
+                className="mt-4 inline-flex max-w-xl items-start gap-3 rounded-2xl border border-accent/25 bg-accent/[0.06] px-4 py-3 text-left transition-colors hover:border-accent/45 hover:bg-accent/10"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mt-2 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent"
+                  style={{ animation: "call-pulse 1.8s ease-out infinite" }}
+                />
+                <span>
+                  <span className="block text-sm font-semibold text-text-primary">
+                    Try it on your own phone in about a minute.
+                  </span>
+                  <span className="mt-1 block text-sm leading-relaxed text-text-secondary">
+                    Pick a scenario, verify by SMS, and watch the AI place a real outbound call.
+                  </span>
+                </span>
+              </Link>
+            ) : null}
             <StoreBadges className="mt-6" />
           </div>
         </div>
