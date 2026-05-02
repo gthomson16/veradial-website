@@ -61,18 +61,22 @@ export function OrbCanvas({ state }: OrbCanvasProps) {
     getCapableServerSnapshot,
   );
   const [ready, setReady] = useState(false);
+  // Default visible=true so browsers without IntersectionObserver still
+  // animate. With IO support, the observer callback overrides this with
+  // the actual intersection state on first tick.
+  const [visible, setVisible] = useState(true);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!capable || ready) return;
+    if (!capable) return;
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
     let cancelled = false;
     let idleHandle: number | null = null;
     let idleFallbackTimer: number | null = null;
-    let observer: IntersectionObserver | null = null;
     let triggered = false;
+    let observer: IntersectionObserver | null = null;
 
     const flip = () => {
       if (cancelled) return;
@@ -94,15 +98,16 @@ export function OrbCanvas({ state }: OrbCanvasProps) {
     };
 
     if (typeof IntersectionObserver === "undefined") {
+      // No IO support: visible defaults to true; just defer initial mount.
       scheduleIdle();
     } else {
       observer = new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {
-            if (entry.isIntersecting) {
-              observer?.disconnect();
+            const isIntersecting = entry.isIntersecting;
+            setVisible(isIntersecting);
+            if (isIntersecting && !triggered) {
               scheduleIdle();
-              break;
             }
           }
         },
@@ -125,13 +130,13 @@ export function OrbCanvas({ state }: OrbCanvasProps) {
         clearTimeout(idleFallbackTimer);
       }
     };
-  }, [capable, ready]);
+  }, [capable]);
 
   if (!capable) return null;
 
   return (
     <div ref={wrapperRef} aria-hidden="true" className="absolute inset-0">
-      {ready ? <OrbScene state={state} /> : null}
+      {ready ? <OrbScene state={state} paused={!visible} /> : null}
     </div>
   );
 }

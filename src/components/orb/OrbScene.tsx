@@ -15,6 +15,7 @@ import {
 
 type OrbSceneProps = {
   state?: OrbState;
+  paused?: boolean;
 };
 
 const POINT_COUNT = 800;
@@ -138,11 +139,14 @@ function ParticleSphere({
       (u.uRotationY.value + config.rotationSpeedRadPerSec * delta) %
       (Math.PI * 2);
 
-    const targetScale = config.baseScale + amp * AMP_SCALE_GAIN;
+    const ampScaled = amp * config.amplitudeScale;
+
+    const targetScale = config.baseScale + ampScaled * AMP_SCALE_GAIN;
     u.uScale.value =
       u.uScale.value + (targetScale - u.uScale.value) * SCALE_SMOOTHING;
 
-    const targetBrightness = config.baseBrightness + amp * AMP_BRIGHTNESS_GAIN;
+    const targetBrightness =
+      config.baseBrightness + ampScaled * AMP_BRIGHTNESS_GAIN;
     u.uBrightness.value =
       u.uBrightness.value +
       (targetBrightness - u.uBrightness.value) * BRIGHTNESS_SMOOTHING;
@@ -164,14 +168,17 @@ function AmplitudeDriver({
   amplitudeRef,
   curve,
   startOffsetMs,
+  paused,
 }: {
   amplitudeRef: React.MutableRefObject<number>;
   curve: OrbCurve;
   startOffsetMs: number;
+  paused: boolean;
 }) {
   const { invalidate } = useThree();
 
   useEffect(() => {
+    if (paused) return;
     const startedAt = performance.now() - startOffsetMs;
     let lastTick = 0;
     let raf = 0;
@@ -187,12 +194,15 @@ function AmplitudeDriver({
 
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [amplitudeRef, curve, invalidate, startOffsetMs]);
+  }, [amplitudeRef, curve, invalidate, startOffsetMs, paused]);
 
   return null;
 }
 
-export function OrbScene({ state = DEFAULT_ORB_STATE }: OrbSceneProps) {
+export function OrbScene({
+  state = DEFAULT_ORB_STATE,
+  paused = false,
+}: OrbSceneProps) {
   const amplitudeRef = useRef(0);
   const [curve] = useState<OrbCurve>(() => pickCurve());
   const [startOffsetMs] = useState<number>(() => Math.random() * 1500);
@@ -214,6 +224,7 @@ export function OrbScene({ state = DEFAULT_ORB_STATE }: OrbSceneProps) {
         amplitudeRef={amplitudeRef}
         curve={curve}
         startOffsetMs={startOffsetMs}
+        paused={paused}
       />
     </Canvas>
   );
