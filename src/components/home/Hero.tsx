@@ -41,9 +41,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 text-base leading-relaxed text-text-secondary sm:text-lg lg:max-w-xl lg:text-xl">
-            VeraDial&apos;s AI makes calls on your behalf &mdash; scheduling
-            appointments, following up with clients, and handling the
-            conversations you don&apos;t have time for.
+            VeraDial makes calls on your behalf, screens incoming calls, and
+            sends back transcripts, summaries, and next steps.
           </p>
 
           <div className="mt-8">

@@ -2,74 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { isDemoFunnelEnabled } from "@/lib/demo-flags";
-import { DEMO_PRESETS } from "@/lib/demo-presets";
 
-import { OrbCanvas } from "@/components/orb/OrbCanvas";
-import { generateFibonacciSphere } from "@/components/orb/orbGeometry";
-
-const SSR_PRESET = DEMO_PRESETS[0];
-const FALLBACK_POINT_COUNT = 140;
-
-const FALLBACK_POINTS = generateFibonacciSphere(FALLBACK_POINT_COUNT)
-  .map((p) => ({
-    x: p.x,
-    y: p.y,
-    z: p.z,
-    depth: (p.z + 1) * 0.5,
-  }))
-  .sort((a, b) => a.depth - b.depth);
-
-function FallbackOrb() {
-  return (
-    <svg
-      viewBox="-1.25 -1.25 2.5 2.5"
-      className="absolute inset-0 h-full w-full"
-      aria-hidden="true"
-    >
-      <defs>
-        <radialGradient id="hero-orb-halo-outer" cx="50%" cy="50%" r="55%">
-          <stop offset="0%" stopColor="#00B585" stopOpacity="0.18" />
-          <stop offset="55%" stopColor="#00B585" stopOpacity="0.07" />
-          <stop offset="100%" stopColor="#00B585" stopOpacity="0" />
-        </radialGradient>
-        <radialGradient id="hero-orb-halo-inner" cx="50%" cy="50%" r="38%">
-          <stop offset="0%" stopColor="#3CFFB8" stopOpacity="0.28" />
-          <stop offset="60%" stopColor="#3CFFB8" stopOpacity="0.1" />
-          <stop offset="100%" stopColor="#3CFFB8" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <rect
-        x="-1.25"
-        y="-1.25"
-        width="2.5"
-        height="2.5"
-        fill="url(#hero-orb-halo-outer)"
-      />
-      <rect
-        x="-1.25"
-        y="-1.25"
-        width="2.5"
-        height="2.5"
-        fill="url(#hero-orb-halo-inner)"
-      />
-      <g fill="#3CFFB8">
-        {FALLBACK_POINTS.map((p, i) => {
-          const opacity = (1 - p.depth * 0.68).toFixed(2);
-          const radius = (0.018 + (1 - p.depth) * 0.014).toFixed(3);
-          return (
-            <circle
-              key={i}
-              cx={p.x.toFixed(3)}
-              cy={p.y.toFixed(3)}
-              r={radius}
-              opacity={opacity}
-            />
-          );
-        })}
-      </g>
-    </svg>
-  );
-}
+import { HeroPhoneMockup } from "./HeroPhoneMockup";
 
 function StatusBar() {
   return (
@@ -153,62 +87,37 @@ function StatusBar() {
   );
 }
 
+function BottomBar() {
+  if (isDemoFunnelEnabled) {
+    return (
+      <div className="px-5 pb-5 pt-3">
+        <div className="flex h-10 w-full items-center justify-center gap-2 rounded-full bg-accent text-[10.5px] font-semibold uppercase tracking-[0.2em] text-bg shadow-[0_10px_30px_rgba(115,242,195,0.35)]">
+          <span>Try a live AI call</span>
+          <ArrowRight size={13} strokeWidth={2.6} aria-hidden="true" />
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="flex items-center justify-around px-9 pb-7 pt-5">
+      <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-card/80 text-[8px] font-semibold uppercase tracking-[0.18em] text-text-secondary">
+        Mute
+      </span>
+      <span className="grid h-11 w-11 place-items-center rounded-full bg-rose-500/90 text-[8px] font-semibold uppercase tracking-[0.18em] text-white">
+        End
+      </span>
+    </div>
+  );
+}
+
 function PhoneScreen() {
   return (
     <div className="relative flex aspect-[1320/2868] w-full flex-col overflow-hidden rounded-[2.25rem] bg-bg">
       <StatusBar />
-
-      <div className="px-6 pt-5 text-center">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.32em] text-accent">
-          VeraDial · Outbound call
-        </p>
-        <p className="mt-2 font-display text-base leading-tight text-text-primary">
-          {SSR_PRESET.title}
-        </p>
-        <p className="mt-1 text-[11px] tabular-nums text-text-muted">00:14</p>
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <HeroPhoneMockup />
       </div>
-
-      <div className="flex flex-1 items-center justify-center">
-        <div
-          className="relative h-44 w-44 sm:h-48 sm:w-48"
-          style={{
-            maskImage:
-              "radial-gradient(circle closest-side at center, #000 72%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(circle closest-side at center, #000 72%, transparent 100%)",
-          }}
-        >
-          <FallbackOrb />
-          <OrbCanvas />
-        </div>
-      </div>
-
-      <div className="px-7 text-center">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.32em] text-text-muted">
-          Goal
-        </p>
-        <p className="mt-2 text-[11px] leading-snug text-text-secondary">
-          {SSR_PRESET.goal}
-        </p>
-      </div>
-
-      {isDemoFunnelEnabled ? (
-        <div className="px-6 pb-6 pt-5">
-          <div className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-accent text-[11px] font-semibold uppercase tracking-[0.2em] text-bg shadow-[0_10px_30px_rgba(115,242,195,0.35)]">
-            <span>Try a live AI call</span>
-            <ArrowRight size={13} strokeWidth={2.6} aria-hidden="true" />
-          </div>
-        </div>
-      ) : (
-        <div className="flex items-center justify-around px-9 pb-7 pt-5">
-          <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-card/80 text-[8px] font-semibold uppercase tracking-[0.18em] text-text-secondary">
-            Mute
-          </span>
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-rose-500/90 text-[8px] font-semibold uppercase tracking-[0.18em] text-white">
-            End
-          </span>
-        </div>
-      )}
+      <BottomBar />
     </div>
   );
 }
