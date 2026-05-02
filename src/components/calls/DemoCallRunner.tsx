@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { MessageSquareText, PhoneOff } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { OrbCanvas } from "@/components/orb/OrbCanvas";
+import { useOrbStateFromCall } from "@/components/orb/useOrbStateFromCall";
 import { useMockCallsByDefault } from "@/lib/demo-flags";
 import { CallStatus } from "./CallStatus";
 import { LiveTranscript } from "./LiveTranscript";
@@ -43,6 +45,8 @@ export function DemoCallRunner({
       enabled: Boolean(token) || useMock,
     });
 
+  const orbState = useOrbStateFromCall(status, turns);
+
   const smsHref =
     smsFromNumber && nonce
       ? `sms:${smsFromNumber}?&body=${encodeURIComponent(`YES ${nonce}`)}`
@@ -51,6 +55,10 @@ export function DemoCallRunner({
   return (
     <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
       <aside className="space-y-4">
+        <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-border bg-card/60">
+          <OrbCanvas state={orbState} />
+        </div>
+
         <CallStatus status={status} />
 
         {contractMismatch ? (

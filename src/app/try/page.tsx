@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DemoCallForm } from "@/components/calls/DemoCallForm";
+import { OrbCanvas } from "@/components/orb/OrbCanvas";
 import { Badge } from "@/components/ui/Badge";
 import { DEMO_FUNNEL_CONTRACT_VERSION } from "@/lib/calls/contract";
 import { useMockCallsByDefault } from "@/lib/demo-flags";
@@ -35,9 +36,23 @@ export default function TryPage() {
 
         <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Try VeraDial
-            </p>
+            <div className="flex items-center gap-3">
+              <div
+                aria-hidden="true"
+                className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full"
+                style={{
+                  maskImage:
+                    "radial-gradient(circle closest-side at center, #000 70%, transparent 100%)",
+                  WebkitMaskImage:
+                    "radial-gradient(circle closest-side at center, #000 70%, transparent 100%)",
+                }}
+              >
+                <OrbCanvas state="live_idle" />
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                Try VeraDial
+              </p>
+            </div>
             <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.02] text-text-primary sm:text-6xl">
               Hear an AI call happen live.
             </h1>
