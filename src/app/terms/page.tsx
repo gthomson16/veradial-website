@@ -2,7 +2,8 @@ import { buildPageMetadata } from "@/lib/metadata-helpers";
 
 export const metadata = buildPageMetadata({
   title: "Terms of Service",
-  description: "VeraDial Terms of Service — rules and guidelines for using our service.",
+  description:
+    "VeraDial Terms of Service — rules and guidelines for using our service.",
   path: "/terms",
 });
 
@@ -10,7 +11,7 @@ export default function TermsPage() {
   return (
     <article className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
       <h1 className="font-display text-4xl font-bold">Terms of Service</h1>
-      <p className="mt-2 text-sm text-text-muted">Last updated: April 23, 2026</p>
+      <p className="mt-2 text-sm text-text-muted">Last updated: May 6, 2026</p>
 
       <div className="mt-12 space-y-10 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -20,9 +21,9 @@ export default function TermsPage() {
           <p className="mt-4">
             VeraDial provides caller ID-controlled voice calling, SMS messaging,
             AI-powered calling, call screening, call forwarding, voicemail, call
-            transcription, and per-contact AI memory through purchased and verified phone
-            numbers. The service is delivered through mobile applications available on the
-            Apple App Store and Google Play Store.
+            transcription, and per-contact AI memory through purchased and
+            verified phone numbers. The service is delivered through mobile
+            applications available on the Apple App Store and Google Play Store.
           </p>
         </section>
 
@@ -31,9 +32,9 @@ export default function TermsPage() {
             2. Eligibility
           </h2>
           <p className="mt-4">
-            You must be at least 18 years of age and a resident of the United States or
-            Canada to use VeraDial. By creating an account, you represent that you meet
-            these requirements.
+            You must be at least 18 years of age and a resident of the United
+            States or Canada to use VeraDial. By creating an account, you
+            represent that you meet these requirements.
           </p>
         </section>
 
@@ -44,15 +45,18 @@ export default function TermsPage() {
           <p className="mt-4">You agree not to use VeraDial for:</p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>Harassment, threats, or abusive communications</li>
-            <li>Fraud, impersonation of law enforcement or government officials</li>
+            <li>
+              Fraud, impersonation of law enforcement or government officials
+            </li>
             <li>Illegal telemarketing or robocalling</li>
             <li>Using caller ID to deceive for unlawful purposes</li>
             <li>Sending unsolicited bulk SMS (spam)</li>
             <li>
-              Any use that violates federal, state, or provincial telecommunications
-              regulations including the Telephone Consumer Protection Act (TCPA), Canadian
-              Radio-television and Telecommunications Commission (CRTC) regulations, or
-              the Telemarketing Sales Rule (TSR)
+              Any use that violates federal, state, or provincial
+              telecommunications regulations including the Telephone Consumer
+              Protection Act (TCPA), Canadian Radio-television and
+              Telecommunications Commission (CRTC) regulations, or the
+              Telemarketing Sales Rule (TSR)
             </li>
           </ul>
         </section>
@@ -63,15 +67,17 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              Purchased numbers are provisioned through Twilio and are subject to
-              Twilio&apos;s acceptable use policy.
+              Purchased numbers are provisioned through Twilio and are subject
+              to Twilio&apos;s acceptable use policy.
             </li>
             <li>
-              Numbers may be reclaimed if your account is terminated for policy violations.
+              Numbers may be reclaimed if your account is terminated for policy
+              violations.
             </li>
             <li>We do not guarantee number portability.</li>
             <li>
-              Swap fee: $4.99 per number swap, charged via your in-app wallet balance.
+              Swap fee: $4.99 per number swap, charged via your in-app wallet
+              balance.
             </li>
           </ul>
         </section>
@@ -82,17 +88,17 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              Users must respect recipient opt-out (STOP) requests. VeraDial enforces this
-              automatically.
+              Users must respect recipient opt-out (STOP) requests. VeraDial
+              enforces this automatically.
             </li>
             <li>
-              Canadian local numbers support SMS. Toll-free SMS in Canada requires
-              Twilio toll-free verification.
+              Canadian local numbers support SMS. Toll-free SMS in Canada
+              requires Twilio toll-free verification.
             </li>
             <li>We enforce TCPA-compliant opt-out handling automatically.</li>
             <li>
-              Message delivery is not guaranteed. Carrier filtering may apply to certain
-              messages.
+              Message delivery is not guaranteed. Carrier filtering may apply to
+              certain messages.
             </li>
           </ul>
         </section>
@@ -102,53 +108,56 @@ export default function TermsPage() {
             6. AI Calling
           </h2>
           <p className="mt-4">
-            VeraDial&apos;s AI Call feature allows you to dispatch an AI agent to make
-            phone calls on your behalf. By using this feature, you agree to the
-            following:
+            VeraDial&apos;s AI Call feature allows you to dispatch an AI agent
+            to make phone calls on your behalf. By using this feature, you agree
+            to the following:
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              AI calls are placed by an automated AI agent, not a human. The AI agent
-              will identify itself as an automated system at the start of each call.
+              AI calls are placed by an automated AI agent, not a human. The AI
+              agent will identify itself as an automated system at the start of
+              each call.
             </li>
             <li>
-              You are solely responsible for the content of any custom prompts or
-              instructions you provide to the AI agent. Do not instruct the AI to engage
-              in illegal, deceptive, or harmful behavior.
+              You are solely responsible for the content of any custom prompts
+              or instructions you provide to the AI agent. Do not instruct the
+              AI to engage in illegal, deceptive, or harmful behavior.
             </li>
             <li>
-              You must have a legitimate reason to contact the recipient. Using AI Call
-              to harass, spam, stalk, threaten, or deceive any person is strictly
-              prohibited.
+              You must have a legitimate reason to contact the recipient. Using
+              AI Call to harass, spam, stalk, threaten, or deceive any person is
+              strictly prohibited.
             </li>
             <li>
-              AI calls may be recorded if you enable call recording. Full transcripts and
-              AI-generated summaries are stored in your account and may be reviewed for
-              abuse prevention.
+              AI calls may be recorded if you enable call recording. Full
+              transcripts and AI-generated summaries are stored in your account
+              and may be reviewed for abuse prevention.
             </li>
             <li>
               Call audio is processed in real-time by third-party AI providers,
-              including ElevenLabs, OpenAI, Google (Gemini), and xAI (Grok). The provider
-              used for each call is selected by our server. By using AI Call, you consent
-              to this processing.
+              including ElevenLabs, OpenAI, Google (Gemini), and xAI (Grok). The
+              provider used for each call is selected by our server. By using AI
+              Call, you consent to this processing.
             </li>
             <li>
-              Call audio may be routed through LiveKit&apos;s real-time infrastructure
-              for SIP connectivity. By using AI Call, you consent to this routing.
+              Call audio may be routed through LiveKit&apos;s real-time
+              infrastructure for SIP connectivity. By using AI Call, you consent
+              to this routing.
             </li>
             <li>
-              AI calls consume credits at a rate of 5 credits per minute of call time,
-              pro-rated per second (shorter calls cost less).
+              AI calls consume credits at a rate of 5 credits per minute of call
+              time, pro-rated per second (shorter calls cost less).
             </li>
             <li>
               The AI agent may produce inaccurate, inappropriate, or unexpected
-              responses. VeraDial is not liable for the content of AI-generated speech.
+              responses. VeraDial is not liable for the content of AI-generated
+              speech.
             </li>
             <li>
               You must comply with all applicable laws regarding automated and
-              AI-generated calls, including the Telephone Consumer Protection Act (TCPA),
-              FTC Telemarketing Sales Rule, and any applicable state or provincial
-              regulations.
+              AI-generated calls, including the Telephone Consumer Protection
+              Act (TCPA), FTC Telemarketing Sales Rule, and any applicable state
+              or provincial regulations.
             </li>
             <li>
               Misuse of AI Call may result in immediate account suspension or
@@ -159,27 +168,60 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-semibold text-text-primary">
-            7. Call Screening
+            6.5 Voice Cloning
           </h2>
           <p className="mt-4">
-            VeraDial offers AI-powered call screening for inbound calls. When enabled,
-            an AI agent answers incoming calls on your behalf, asks the caller to
-            identify themselves and state their purpose, and reports this information
-            to you.
+            VeraDial may allow eligible users to create a cloned version of
+            their own voice for voicemail greetings and other VeraDial voice
+            features.
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              Call screening is optional and can be enabled or disabled in your account
-              settings.
+              You may only create a voice clone from your own voice. You may not
+              clone another person, a public figure, a celebrity, or any voice
+              you do not have the right to use.
             </li>
             <li>
-              Screening interactions are processed by a third-party AI provider
-              (ElevenLabs). By enabling call screening, you consent to inbound call
-              audio being processed by this provider.
+              You must provide the required consent acknowledgment before
+              creating a cloned voice, including permission for your recorded
+              voice sample, clone name, and consent record to be sent to
+              Cartesia to create the voice clone.
             </li>
             <li>
-              Screening data (caller identity and stated intent) is stored in your
-              account.
+              You may not use voice cloning to impersonate another person,
+              mislead callers, commit fraud, harass anyone, or violate any
+              person&apos;s rights.
+            </li>
+            <li>You can delete your cloned voice at any time from the app.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-semibold text-text-primary">
+            7. Call Screening
+          </h2>
+          <p className="mt-4">
+            VeraDial offers AI-powered call screening for inbound calls. When
+            enabled, an AI agent answers incoming calls on your behalf, asks the
+            caller to identify themselves and state their purpose, and reports
+            this information to you.
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              Call screening is optional and can be enabled or disabled in your
+              account settings.
+            </li>
+            <li>
+              Screening interactions are processed by a third-party AI provider.
+              Depending on VeraDial&apos;s configured screening provider,
+              inbound call audio may be processed by ElevenLabs or routed
+              through LiveKit to an AI provider such as xAI, Google Gemini, or
+              OpenAI. By enabling call screening, you consent to this processing
+              and routing.
+            </li>
+            <li>
+              Screening data (caller identity and stated intent) is stored in
+              your account.
             </li>
             <li>
               Call screening is limited to 50 screened calls per day, with each
@@ -198,38 +240,42 @@ export default function TermsPage() {
             8. Contact Memory
           </h2>
           <p className="mt-4">
-            VeraDial&apos;s Contact Memory feature generates a rolling AI summary for
-            each phone number you interact with, drawing from your call transcripts,
-            voicemail transcriptions, AI call transcripts and summaries, and SMS message
-            content in your own account.
+            VeraDial&apos;s Contact Memory feature generates a rolling AI
+            summary for each phone number you interact with, drawing from your
+            call transcripts, voicemail transcriptions, AI call transcripts and
+            summaries, and SMS message content in your own account.
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              Contact Memory is enabled by default and can be disabled at any time in
-              Profile &gt; Contact Memory.
+              Contact Memory is off by default and can be enabled or disabled at
+              any time in Profile &gt; Contact Memory.
             </li>
             <li>
-              Summaries are generated by a third-party AI provider (Google Gemini). By
-              using Contact Memory, you consent to this processing.
+              Before Contact Memory is enabled, the app asks you to confirm that
+              call transcripts, voicemail transcriptions, AI call transcripts
+              and summaries, and SMS message content from your account will be
+              sent to Google Gemini to generate summaries. By enabling Contact
+              Memory, you consent to this processing.
             </li>
             <li>
-              When Contact Memory is enabled, summaries are injected as prior context
-              into AI calls you make to that contact, and a suggested next-call goal may
-              be prefilled on the AI tab.
+              When Contact Memory is enabled, summaries are injected as prior
+              context into AI calls you make to that contact, and a suggested
+              next-call goal may be prefilled on the AI tab.
             </li>
             <li>
-              Summaries draw only from interactions stored in your own account. We do
-              not share your summaries with the other party or with other VeraDial users.
+              Summaries draw only from interactions stored in your own account.
+              We do not share your summaries with the other party or with other
+              VeraDial users.
             </li>
             <li>
-              AI-generated summaries may be inaccurate, incomplete, or misinterpret
-              intent. Do not rely on them for decisions with legal, medical, financial,
-              or safety consequences. Review the underlying transcripts before acting on
-              the summary.
+              AI-generated summaries may be inaccurate, incomplete, or
+              misinterpret intent. Do not rely on them for decisions with legal,
+              medical, financial, or safety consequences. Review the underlying
+              transcripts before acting on the summary.
             </li>
             <li>
-              You remain responsible for complying with recording-consent and privacy
-              laws that apply to the content being summarized.
+              You remain responsible for complying with recording-consent and
+              privacy laws that apply to the content being summarized.
             </li>
           </ul>
         </section>
@@ -239,31 +285,33 @@ export default function TermsPage() {
             9. Call Forwarding
           </h2>
           <p className="mt-4">
-            VeraDial allows you to forward inbound calls to another phone number.
+            VeraDial allows you to forward inbound calls to another phone
+            number.
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              Call forwarding is optional and can be enabled or disabled in your account
-              settings.
+              Call forwarding is optional and can be enabled or disabled in your
+              account settings.
             </li>
             <li>
-              When enabled, inbound calls are forwarded immediately to your configured
-              number.
+              When enabled, inbound calls are forwarded immediately to your
+              configured number.
             </li>
             <li>
-              If the forwarded call is not answered and voicemail is enabled, the call
-              may fall through to voicemail.
+              If the forwarded call is not answered and voicemail is enabled,
+              the call may fall through to voicemail.
             </li>
             <li>
-              If call screening is also enabled, forwarding takes precedence over app
-              ringing and screening.
+              If call screening is also enabled, forwarding takes precedence
+              over app ringing and screening.
             </li>
             <li>
-              You are responsible for ensuring you have the right to use the forwarding
-              number you configure.
+              You are responsible for ensuring you have the right to use the
+              forwarding number you configure.
             </li>
             <li>
-              Standard carrier charges may apply to forwarded calls on the receiving end.
+              Standard carrier charges may apply to forwarded calls on the
+              receiving end.
             </li>
           </ul>
         </section>
@@ -274,30 +322,33 @@ export default function TermsPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              When an inbound call to your VeraDial number is not answered by the app or
-              your configured forward target, and voicemail is enabled, the call is
-              directed to voicemail.
+              When an inbound call to your VeraDial number is not answered by
+              the app or your configured forward target, and voicemail is
+              enabled, the call is directed to voicemail.
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5">
               <li>
                 Voicemail recordings have a maximum duration of 120 seconds.
               </li>
               <li>
-                Recordings are automatically transcribed and stored in your account
-                history.
+                Recordings are automatically transcribed and stored in your
+                account history.
               </li>
               <li>
                 You may set a custom voicemail greeting using AI-generated
                 text-to-speech (up to 500 characters, converted to audio by
-                ElevenLabs) or by recording your own greeting (maximum 30 seconds,
-                2&nbsp;MB file size). Greetings are stored in your account.
+                ElevenLabs or Cartesia, depending on the selected voice), a
+                verified cloned voice, or by recording your own greeting
+                (maximum 30 seconds, 2&nbsp;MB file size). Greetings are stored
+                in your account.
               </li>
               <li>
-                Greeting creation is limited to 5 generations or uploads per hour,
-                with a maximum of 10 saved greetings.
+                Greeting creation is limited to 5 generations or uploads per
+                hour, with a maximum of 10 saved greetings.
               </li>
               <li>
-                If no custom greeting is active, a default system greeting is used.
+                If no custom greeting is active, a default system greeting is
+                used.
               </li>
             </ul>
           </div>
@@ -309,22 +360,22 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              You may opt to record outbound calls and AI calls. Recorded calls are
-              stored in your account history.
+              You may opt to record outbound calls and AI calls. Recorded calls
+              are stored in your account history.
             </li>
             <li>
-              Recorded calls are automatically transcribed by a third-party speech
-              recognition service (Deepgram). By using call recording, you consent to
-              call audio being processed by this provider.
+              Recorded calls are automatically transcribed by a third-party
+              speech recognition service (Deepgram). By using call recording,
+              you consent to call audio being processed by this provider.
             </li>
             <li>
-              Transcripts include speaker identification and timestamps and are stored
-              alongside call records in your account.
+              Transcripts include speaker identification and timestamps and are
+              stored alongside call records in your account.
             </li>
             <li>
-              You are responsible for complying with all applicable call recording laws,
-              including one-party and two-party consent requirements in your
-              jurisdiction.
+              You are responsible for complying with all applicable call
+              recording laws, including one-party and two-party consent
+              requirements in your jurisdiction.
             </li>
           </ul>
         </section>
@@ -335,18 +386,18 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              VeraDial may collect your device&apos;s GPS location when you make or
-              receive calls. This data is used to display your calls on an interactive
-              map within the app.
+              VeraDial may collect your device&apos;s GPS location when you make
+              or receive calls. This data is used to display your calls on an
+              interactive map within the app.
             </li>
             <li>
-              Location collection requires your device&apos;s location permission and
-              is optional. You can revoke location access at any time through your
-              device&apos;s system settings.
+              Location collection requires your device&apos;s location
+              permission and is optional. You can revoke location access at any
+              time through your device&apos;s system settings.
             </li>
             <li>
-              Location data is stored alongside call records in your account and is not
-              shared with third parties.
+              Location data is stored alongside call records in your account and
+              is not shared with third parties.
             </li>
           </ul>
         </section>
@@ -357,17 +408,17 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              VeraDial sends push notifications to your device for events including
-              incoming messages, new voicemails, missed calls, AI call completions, and
-              low credit balance alerts.
+              VeraDial sends push notifications to your device for events
+              including incoming messages, new voicemails, missed calls, AI call
+              completions, and low credit balance alerts.
             </li>
             <li>
               For your privacy, notifications do not display message content, AI
               summaries, or other sensitive details on your lock screen.
             </li>
             <li>
-              You can manage notification permissions through your device&apos;s system
-              settings at any time.
+              You can manage notification permissions through your device&apos;s
+              system settings at any time.
             </li>
           </ul>
         </section>
@@ -378,37 +429,43 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              VeraDial requires a monthly subscription ($9.99/month per line) to access
-              phone number features. The subscription includes a 3-day free trial for
-              new users.
+              VeraDial requires a monthly subscription ($9.99/month per line) to
+              access phone number features. The subscription includes a 3-day
+              free trial for new users.
             </li>
             <li>
-              New subscribers receive 50 welcome credits upon starting their free trial.
-              Each paid billing cycle includes 100 credits.
+              New subscribers receive 50 welcome credits upon starting their
+              free trial. Each paid billing cycle includes 100 credits.
             </li>
             <li>
-              Additional phone lines (up to 4 extra) are available as a tiered add-on
-              subscription. If your add-on subscription lapses, over-allowance numbers
-              receive a 7-day grace period before being suspended.
+              Additional phone lines (up to 4 extra) are available as a tiered
+              add-on subscription. If your add-on subscription lapses,
+              over-allowance numbers receive a 7-day grace period before being
+              suspended.
             </li>
             <li>
-              Additional credit packs may be purchased separately through the app.
+              Additional credit packs may be purchased separately through the
+              app.
             </li>
             <li>
-              Credits do not expire and can be used for calls, SMS, and AI calling.
+              Credits do not expire and can be used for calls, SMS, and AI
+              calling.
             </li>
             <li>
-              If your subscription lapses, your phone number is reserved for 25 days
-              before being released.
+              If your subscription lapses, your phone number is reserved for 25
+              days before being released.
             </li>
             <li>
-              All purchases are processed through the Apple App Store or Google Play Store.
+              All purchases are processed through the Apple App Store or Google
+              Play Store.
             </li>
             <li>
-              Refund requests must be directed to Apple or Google per their respective
-              refund policies.
+              Refund requests must be directed to Apple or Google per their
+              respective refund policies.
             </li>
-            <li>We reserve the right to change pricing with reasonable notice.</li>
+            <li>
+              We reserve the right to change pricing with reasonable notice.
+            </li>
           </ul>
         </section>
 
@@ -418,13 +475,13 @@ export default function TermsPage() {
           </h2>
           <div className="mt-4 space-y-3">
             <p>
-              VeraDial does <strong className="text-text-primary">NOT</strong> support 911
-              or any emergency services. You must maintain a separate means of contacting
-              emergency services at all times.
+              VeraDial does <strong className="text-text-primary">NOT</strong>{" "}
+              support 911 or any emergency services. You must maintain a
+              separate means of contacting emergency services at all times.
             </p>
             <p>
-              We are not liable for any failure to connect to emergency services through
-              VeraDial.
+              We are not liable for any failure to connect to emergency services
+              through VeraDial.
             </p>
           </div>
         </section>
@@ -435,16 +492,17 @@ export default function TermsPage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
-              We may suspend or terminate accounts for policy violations without prior
-              notice.
+              We may suspend or terminate accounts for policy violations without
+              prior notice.
             </li>
             <li>
-              Upon termination, purchased numbers are released and remaining credits are
-              forfeited.
+              Upon termination, purchased numbers are released and remaining
+              credits are forfeited.
             </li>
             <li>
-              You may delete your account in-app via Settings (two-step confirmation;
-              Apple Sign-In tokens are revoked as part of the process) or by contacting{" "}
+              You may delete your account in-app via Settings (two-step
+              confirmation; Apple Sign-In tokens are revoked as part of the
+              process) or by contacting{" "}
               <a
                 href="mailto:support@veradial.com"
                 className="text-accent hover:underline"
@@ -461,12 +519,13 @@ export default function TermsPage() {
             17. Limitation of Liability
           </h2>
           <p className="mt-4">
-            VeraDial is provided &ldquo;as-is&rdquo; without warranty of any kind,
-            express or implied. We do not warrant uninterrupted service, call quality, or
-            message delivery. We are not liable for any damages arising from carrier
-            issues, service interruptions, third-party actions, or your use of the
-            service. Our total liability is limited to the amount you have paid for the
-            service in the twelve (12) months preceding the claim.
+            VeraDial is provided &ldquo;as-is&rdquo; without warranty of any
+            kind, express or implied. We do not warrant uninterrupted service,
+            call quality, or message delivery. We are not liable for any damages
+            arising from carrier issues, service interruptions, third-party
+            actions, or your use of the service. Our total liability is limited
+            to the amount you have paid for the service in the twelve (12)
+            months preceding the claim.
           </p>
         </section>
 
@@ -475,9 +534,9 @@ export default function TermsPage() {
             18. Governing Law
           </h2>
           <p className="mt-4">
-            These terms shall be governed by and construed in accordance with the laws of
-            the Province of Ontario, Canada, without regard to its conflict of law
-            provisions.
+            These terms shall be governed by and construed in accordance with
+            the laws of the Province of Ontario, Canada, without regard to its
+            conflict of law provisions.
           </p>
         </section>
 
