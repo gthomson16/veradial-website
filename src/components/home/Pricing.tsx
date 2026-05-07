@@ -106,7 +106,7 @@ export function Pricing() {
               <div className="shrink-0 rounded-2xl border border-accent/15 bg-accent/5 px-5 py-4 text-center">
                 <Sparkles size={18} className="mx-auto text-accent" />
                 <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-accent">
-                  3-day free trial
+                  7-day free trial
                 </p>
               </div>
             </div>

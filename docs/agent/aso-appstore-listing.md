@@ -92,7 +92,7 @@ Captures both outbound (AI calls) and inbound (AI receptionist) in 23 chars. The
 ### Promotional Text
 
 ```
-Start a 3-day free trial with 50 credits. Get a verified business number and an AI that handles routine calls while you're on the job.
+Start a 7-day free trial with 50 credits. Get a verified business number and an AI that handles routine calls while you're on the job.
 ```
 
 **Characters:** 134 / 170
@@ -164,7 +164,7 @@ Built for trust:
 
 Pricing:
 - $9.99 per month per business line, includes 100 monthly credits
-- 3-day free trial with 50 trial credits — test the AI before you pay
+- 7-day free trial with 50 trial credits — test the AI before you pay
 - Optional credit packs from $5.99 — credits never expire
 - Standard call: 2 credits/min. Recorded call: 3 credits/min. AI call: 5 credits/min. SMS: 1 credit per segment
 

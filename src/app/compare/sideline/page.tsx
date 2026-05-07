@@ -138,7 +138,7 @@ const DIFFERENTIATORS = [
   {
     title: "Same price, way more features",
     description:
-      "VeraDial is $9.99/mo with a 3-day free trial and 100 credits every month — the same price as Sideline. But you also get AI calling, voicemail transcription, call recording, and call forwarding that Sideline doesn't offer.",
+      "VeraDial is $9.99/mo with a 7-day free trial and 100 credits every month — the same price as Sideline. But you also get AI calling, voicemail transcription, call recording, and call forwarding that Sideline doesn't offer.",
   },
   {
     title: "Choose which number they see",
@@ -407,7 +407,7 @@ export default function CompareSidelinePage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get a verified number with AI calling, call recording,
-                and voicemail transcription. Start with a 3-day free trial.
+                and voicemail transcription. Start with a 7-day free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">
