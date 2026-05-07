@@ -12,7 +12,7 @@ declare global {
     gtag?: (
       command: "event",
       eventName: string,
-      params?: Record<string, string>
+      params?: Record<string, string>,
     ) => void;
   }
 }
@@ -51,4 +51,23 @@ export function trackStoreClick({
     link_url: linkUrl,
     transport_type: "beacon",
   });
+}
+
+export type BuilderEventName =
+  | "demo_builder_started"
+  | "demo_builder_succeeded"
+  | "demo_builder_failed";
+
+export function trackBuilderEvent(
+  name: BuilderEventName,
+  params: Record<string, string | number | undefined> = {},
+): void {
+  if (typeof window === "undefined" || typeof window.gtag !== "function")
+    return;
+  const cleanParams: Record<string, string> = {};
+  for (const [k, v] of Object.entries(params)) {
+    if (v === undefined) continue;
+    cleanParams[k] = String(v);
+  }
+  window.gtag("event", name, cleanParams);
 }
