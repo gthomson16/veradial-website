@@ -63,7 +63,7 @@ function buildFaqJsonLd(competitorName: string, alternatives: string[]) {
         name: `Is there a cheaper alternative to ${competitorName}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Yes. VeraDial starts at $9.99/mo per business line and includes AI calling, verified caller ID, call recording, business SMS, and 100 credits each month. The 3-day free trial includes 50 bonus credits, so you can test everything before you pay.`,
+          text: `Yes. VeraDial starts at $9.99/mo per business line and includes AI calling, verified caller ID, call recording, business SMS, and 100 credits each month. The 7-day free trial includes 50 bonus credits, so you can test everything before you pay.`,
         },
       },
     ],
@@ -345,7 +345,7 @@ export default async function AlternativesPage({
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 VeraDial gives you AI agents that make calls, verified caller
                 ID, call recording, and transcription &mdash; starting at
-                $9.99/mo with a 3-day free trial.
+                $9.99/mo with a 7-day free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button variant="ghost" href="/">

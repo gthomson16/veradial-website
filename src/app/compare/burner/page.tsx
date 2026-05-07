@@ -132,7 +132,7 @@ const DIFFERENTIATORS = [
   {
     title: "Simple, transparent pricing",
     description:
-      "VeraDial is $9.99/mo for a dedicated line with 100 credits every month and a 3-day free trial. Burner charges $4.99/mo but doesn't include AI calling, voicemail transcription, or call forwarding.",
+      "VeraDial is $9.99/mo for a dedicated line with 100 credits every month and a 7-day free trial. Burner charges $4.99/mo but doesn't include AI calling, voicemail transcription, or call forwarding.",
   },
   {
     title: "Carrier-grade infrastructure",
@@ -351,7 +351,7 @@ export default function CompareBurnerPage() {
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
                 Get a dedicated number with carrier-level verification, AI
-                calling, and call recording. Start with a 3-day
+                calling, and call recording. Start with a 7-day
                 free trial.
               </p>
               <div className="mt-8 flex justify-center gap-4">

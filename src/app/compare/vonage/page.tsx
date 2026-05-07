@@ -138,7 +138,7 @@ const DIFFERENTIATORS = [
   {
     title: "Solo-friendly pricing",
     description:
-      "VeraDial is $9.99/mo per line with 100 credits and a 3-day free trial. Vonage starts at ~$14/user/mo with per-seat pricing designed for teams. If you\u2019re one person, you\u2019re paying a team premium for individual use.",
+      "VeraDial is $9.99/mo per line with 100 credits and a 7-day free trial. Vonage starts at ~$14/user/mo with per-seat pricing designed for teams. If you\u2019re one person, you\u2019re paying a team premium for individual use.",
   },
   {
     title: "Verified calls that get answered",

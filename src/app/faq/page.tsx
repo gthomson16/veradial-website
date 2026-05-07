@@ -93,7 +93,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How does pricing work?",
         answer:
-          "VeraDial costs $9.99 per month per business line. Each subscription includes a dedicated US or Canadian phone number, 100 credits each month, AI calling, call recording, business SMS, voicemail with transcription, and call forwarding. Need more credits? Buy credit packs anytime: 100 credits for $5.99, 300 for $14.99, or 1,000 for $39.99. Credits never expire. Your first subscription includes a 3-day free trial with 50 bonus credits so you can test everything before you pay.",
+          "VeraDial costs $9.99 per month per business line. Each subscription includes a dedicated US or Canadian phone number, 100 credits each month, AI calling, call recording, business SMS, voicemail with transcription, and call forwarding. Need more credits? Buy credit packs anytime: 100 credits for $5.99, 300 for $14.99, or 1,000 for $39.99. Credits never expire. Your first subscription includes a 7-day free trial with 50 bonus credits so you can test everything before you pay.",
       },
       {
         question: "How many credits does a call cost?",
@@ -142,7 +142,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Do I need a subscription?",
         answer:
-          "Yes. A $9.99/month subscription per business line is required to hold a phone number. It includes 100 credits every month, inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 3-day free trial and 50 bonus credits.",
+          "Yes. A $9.99/month subscription per business line is required to hold a phone number. It includes 100 credits every month, inbound calls, voicemail transcription, call forwarding, and SMS. Your first subscription comes with a 7-day free trial and 50 bonus credits.",
       },
       {
         question: "Can I use VeraDial for personal calls?",

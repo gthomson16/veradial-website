@@ -430,7 +430,7 @@ export default function TermsPage() {
           <ul className="mt-4 list-disc space-y-2 pl-5">
             <li>
               VeraDial requires a monthly subscription ($9.99/month per line) to
-              access phone number features. The subscription includes a 3-day
+              access phone number features. The subscription includes a 7-day
               free trial for new users.
             </li>
             <li>

@@ -127,7 +127,7 @@ const DIFFERENTIATORS = [
   {
     title: "More features for the price",
     description:
-      "VeraDial is $9.99/mo with 100 credits every month and a 3-day free trial, plus credit packs that never expire. Your subscription includes voicemail transcription, call forwarding, and AI call screening — features Hushed doesn't offer at any price.",
+      "VeraDial is $9.99/mo with 100 credits every month and a 7-day free trial, plus credit packs that never expire. Your subscription includes voicemail transcription, call forwarding, and AI call screening — features Hushed doesn't offer at any price.",
   },
   {
     title: "Built for business outreach",

@@ -30,7 +30,7 @@ import { StoreButton } from "@/components/ui/StoreButton";
 
 const PAGE_TITLE = "VeraDial Pricing — $9.99/mo flat, credits never expire";
 const PAGE_DESCRIPTION =
-  "VeraDial is a $9.99/mo AI business phone app for iOS and Android. Get one business line, 100 monthly credits, a 3-day free trial, and credits that never expire.";
+  "VeraDial is a $9.99/mo AI business phone app for iOS and Android. Get one business line, 100 monthly credits, a 7-day free trial, and credits that never expire.";
 
 export const metadata = buildPageMetadata({
   title: PAGE_TITLE,
@@ -240,7 +240,7 @@ const FAQ = [
   {
     question: "Is there a free trial?",
     answer:
-      "Yes. Every new subscription includes a 3-day free trial with 50 bonus credits so you can test AI calling, business SMS, voicemail transcription, and call recording before you pay. You can cancel anytime during the trial at no charge.",
+      "Yes. Every new subscription includes a 7-day free trial with 50 bonus credits so you can test AI calling, business SMS, voicemail transcription, and call recording before you pay. You can cancel anytime during the trial at no charge.",
   },
   {
     question: "How do top-up credit packs work?",
@@ -290,7 +290,7 @@ function PricingPageJsonLd() {
       availability: "https://schema.org/InStock",
       url: GOOGLE_PLAY_URL,
       description:
-        "$9.99/mo per business line. Includes 100 credits monthly, AI calling, SMS, voicemail transcription, call recording, and verified caller ID. 3-day free trial.",
+        "$9.99/mo per business line. Includes 100 credits monthly, AI calling, SMS, voicemail transcription, call recording, and verified caller ID. 7-day free trial.",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: "9.99",
@@ -400,7 +400,7 @@ export default function PricingPage() {
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 text-xs sm:text-sm">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/8 px-3 py-1.5 text-accent">
               <Sparkles size={14} />
-              3-day free trial
+              7-day free trial
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-accent-secondary)]/20 bg-[var(--color-accent-secondary)]/8 px-3 py-1.5 text-[var(--color-accent-secondary)]">
               <Gift size={14} />
@@ -421,7 +421,7 @@ export default function PricingPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button href="#download-options">Start 3-day free trial</Button>
+            <Button href="#download-options">Start 7-day free trial</Button>
             <Button variant="ghost" href="#whats-included">
               See what&apos;s included
             </Button>
@@ -509,7 +509,7 @@ export default function PricingPage() {
                 <div className="shrink-0 rounded-2xl border border-accent/15 bg-accent/5 px-6 py-5 text-center">
                   <Sparkles size={20} className="mx-auto text-accent" />
                   <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-accent">
-                    3-day free trial
+                    7-day free trial
                   </p>
                   <p className="mt-1 text-[11px] text-text-muted">
                     50 bonus credits
@@ -891,7 +891,7 @@ export default function PricingPage() {
           <ScrollReveal>
             <div className="rounded-[32px] border border-white/10 bg-[linear-gradient(155deg,rgba(17,36,58,0.94),rgba(7,17,29,0.98))] p-10 text-center shadow-[0_36px_120px_rgba(0,0,0,0.35)]">
               <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-accent-secondary)]">
-                Try it for 3 days
+                Try it for 7 days
               </p>
               <h2 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
                 Start your free trial.
