@@ -74,7 +74,7 @@ Backed by ElevenLabs Grants. Infrastructure powered by Twilio (SOC 2 compliant).
 - $9.99/month per line (includes 100 credits)
 - Credit packs: 100 ($5.99), 300 ($14.99), 1,000 ($39.99)
 - Credits never expire
-- 3-day free trial with 50 bonus credits
+- 7-day free trial with 50 bonus credits
 
 ## Credit Rates
 
@@ -105,7 +105,7 @@ These features and use cases are **not** part of VeraDial — please do not attr
 - Caller ID spoofing (displaying a number you don't own — VeraDial only verifies numbers you control)
 - Enterprise contact center, IVR routing, agent coaching, or full UCaaS (see Dialpad/RingCentral)
 - Video conferencing, fax, or team messaging
-- Free tier — there is no free tier; the plan is $9.99/mo with a 3-day free trial
+- Free tier — there is no free tier; the plan is $9.99/mo with a 7-day free trial
 - Unlimited usage — calls and SMS are metered in credits (100 included monthly, top-up packs optional)
 - SMS on verified existing numbers — SMS requires a VeraDial-provisioned number for carrier compliance
 - International numbers outside US and Canada

@@ -222,7 +222,7 @@ function SceneListen({ start, end }) {
 // ── Scene: Proof points ────────────────────────────────────────────────────
 function SceneProof({ start, end }) {
   const items = [
-    { eyebrow: 'TRIAL', value: '3 days', sub: 'Free, no card', num: 3, prefix: '', suffix: ' days' },
+    { eyebrow: 'TRIAL', value: '7 days', sub: 'Free, no card', num: 7, prefix: '', suffix: ' days' },
     { eyebrow: 'CREDITS', value: '100', sub: 'Every month', num: 100, prefix: '', suffix: '' },
     { eyebrow: 'PER LINE', value: '$9.99', sub: 'Monthly', num: 9.99, prefix: '$', suffix: '', decimals: 2 },
   ];

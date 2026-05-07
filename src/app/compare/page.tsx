@@ -216,7 +216,7 @@ const MATRIX_ROWS: { label: string; cells: Record<string, CellValue> }[] = [
   {
     label: "Free trial",
     cells: {
-      veradial: { text: "3 days", strong: true },
+      veradial: { text: "7 days", strong: true },
       "google-voice": { text: "No trial", icon: "dash" },
       openphone: { text: "7 days" },
       grasshopper: { text: "7 days" },

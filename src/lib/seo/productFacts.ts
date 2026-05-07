@@ -6,7 +6,7 @@
  * Source of truth: ../../../VeraDial/website.md. If website.md changes, mirror
  * the change here and update the timestamp comment so reviewers can verify.
  *
- * Last verified against website.md on 2026-04-30.
+ * Last verified against website.md on 2026-05-07.
  */
 
 export const PRODUCT_FACTS = {
@@ -14,7 +14,7 @@ export const PRODUCT_FACTS = {
   productCategory: "AI-powered business calling",
   pricing: {
     monthlyLineUsd: 9.99,
-    trialDays: 3,
+    trialDays: 7,
     trialBonusCredits: 50,
     monthlyIncludedCredits: 100,
     creditsExpire: false,

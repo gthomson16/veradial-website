@@ -117,7 +117,7 @@ It is designed for people who need to confirm appointments, follow up with leads
 ## Pricing
 
 - Subscription: $9.99/month per line
-- Trial: 3-day free trial with 50 credits
+- Trial: 7-day free trial with 50 credits
 - Included credits: 100 credits/month
 - Credit packs:
   - 100 credits: $5.99

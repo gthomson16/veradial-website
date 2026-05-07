@@ -950,7 +950,7 @@ export default function StirShakenForSmallBusinessPage() {
                 VeraDial gives you a dedicated business number with A-level
                 STIR/SHAKEN attestation on every outbound call — plus AI
                 calling, call recording, SMS, and voicemail transcription. All
-                for $9.99/mo with a 3-day free trial.
+                for $9.99/mo with a 7-day free trial.
               </p>
               <div className="mt-8 flex justify-center gap-3">
                 <StoreButton

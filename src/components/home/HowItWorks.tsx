@@ -257,7 +257,7 @@ export function HowItWorks() {
               href={GOOGLE_PLAY_URL}
               platform="google_play"
             >
-              Start 3-day trial &rarr;
+              Start 7-day trial &rarr;
             </StoreButton>
           </div>
         </div>
